@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - endStage
+  - cameraCheck
+  - Ella
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: 0
+    uniqueID: 786898247
+    locked: 0
+  - name: 1
+    uniqueID: 1301738039
+    locked: 0
+  - name: 2
+    uniqueID: 1225274111
+    locked: 0
+  - name: 22
+    uniqueID: 2619942017
+    locked: 0
+  - name: 3
+    uniqueID: 2642513891
+    locked: 0
