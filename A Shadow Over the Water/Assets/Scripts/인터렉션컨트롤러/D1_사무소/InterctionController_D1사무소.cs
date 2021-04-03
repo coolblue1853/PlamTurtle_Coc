@@ -13,7 +13,7 @@ public class InterctionController_D1사무소 : MonoBehaviour
 
     public GameObject 선택1커피줘;
     public GameObject 선택1직접타기;
-
+    public GameObject 선택1가만히있기;
 
     //1 심리학판정 성공
     public GameObject 일일_오전_엘라_심리학실패;
@@ -58,6 +58,20 @@ public class InterctionController_D1사무소 : MonoBehaviour
 
         }
     }
+
+    public void 선1가만히있기()
+    {
+
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+
+            theDM.ShowDialog(선택1가만히있기.transform.GetComponent<interactionEvent>().GetDialogs());
+
+        }
+    }
+
+
 
 
 

@@ -5,6 +5,32 @@ using UnityEngine.UI;
 public class DialogManager_D1사무소 : MonoBehaviour
 {
     // Start is called before the first frame update
+    public GameObject 대화창일러;
+
+    public GameObject 노아표정1;
+    public GameObject 노아표정2;
+    public GameObject 노아표정3;
+    public GameObject 노아표정4;
+    public GameObject 노아표정5;
+    public GameObject 노아표정6;
+    public GameObject 노아표정7;
+    public GameObject 노아표정8;
+    public GameObject 노아표정9;
+    public GameObject 노아표정10;
+    public GameObject 노아표정11;
+    public GameObject 노아표정12;
+    public GameObject 노아표정13;
+    public GameObject 노아표정14;
+    public GameObject 노아표정15;
+    public GameObject 노아표정16;
+    public GameObject 노아표정17;
+    public GameObject 노아표정18;
+    public GameObject 노아표정19;
+    public GameObject 노아표정20;
+    public GameObject 노아표정21;
+    public GameObject 노아표정22;
+    public GameObject 노아표정23;
+    public GameObject 노아표정24;
 
     // ⓦ 이건 색깔  , 쉼표는 ' 로  \n으로 해서 작성하면 됨 엑셀
 
@@ -126,17 +152,14 @@ public class DialogManager_D1사무소 : MonoBehaviour
     }
 
 
-    public GameObject 대화창일러;
 
-    public GameObject 노아표정1;
-    public GameObject 노아표정2;
 
     void EndDialog()
     {
         PlayerChar.transform.GetComponent<Mins>().다이얼로그다운();
         대화창일러.SetActive(false);
-        노아표정1.SetActive(false);
-        노아표정2.SetActive(false);
+
+
         isDialog = false;
         contextCount = 0;
         lineCount = 0;
@@ -181,7 +204,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
 
 
 
-        bool t_white = false, t_yellow = false;   // 색 추가 지점
+        bool t_white = false, t_yellow = false, t_red = false;   // 색 추가 지점
         bool t_ignore = false;
         
 
@@ -191,9 +214,10 @@ public class DialogManager_D1사무소 : MonoBehaviour
 
             switch (t_ReplaceText[i])
             {
-                case 'ⓦ': t_white = true; t_yellow = false; t_ignore  = true; break;
+                case 'ⓦ': t_white = true; t_yellow = false; t_red = false; t_ignore  = true; break;
 
-                case 'ⓨ': t_white = false; t_yellow = true; t_ignore  = true; break;
+                case 'ⓨ': t_white = false; t_yellow = true; t_red = false; t_ignore  = true; break;
+                case 'ⓡ': t_white = false; t_yellow = false; t_red = true; t_ignore = true; break;
 
                 case '☆':  // 별에 선택지 출현.
                     t_ignore = true;
@@ -215,16 +239,43 @@ public class DialogManager_D1사무소 : MonoBehaviour
                     break;
 
 
+                case '⒭':
+                    theSpriteManager.allReset();
+                    t_ignore = true;
+                    break;
+
                 case '§': 
 
-                    if (t_ReplaceText[i + 1] == '노' && t_ReplaceText[i + 2] == '아' && t_ReplaceText[i + 3] == '1' && t_ReplaceText[i + 4] == '§') { theSpriteManager.노아일러스트1(); };
-                    if (t_ReplaceText[i + 1] == '노' && t_ReplaceText[i + 2] == '아' && t_ReplaceText[i + 3] == '2' && t_ReplaceText[i + 4] == '§') { theSpriteManager.엘라일러스트1(); };
-                    if (t_ReplaceText[i + 1] == '노' && t_ReplaceText[i + 2] == '아' && t_ReplaceText[i + 3] == '4' && t_ReplaceText[i + 4] == '§') { Debug.Log("노아4"); }; 
-                    if (t_ReplaceText[i + 1] == '노' && t_ReplaceText[i + 2] == '아' && t_ReplaceText[i + 3] == '5' && t_ReplaceText[i + 4] == '§') {Debug.Log("노아5"); };
+                    if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '①' && t_ReplaceText[i + 4] == '§') { theSpriteManager.노아일러스트1(); };
+                    if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '②' && t_ReplaceText[i + 4] == '§') { theSpriteManager.노아일러스트2(); };
+                    if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '③' && t_ReplaceText[i + 4] == '§') { theSpriteManager.노아일러스트3(); };
+                    if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '④' && t_ReplaceText[i + 4] == '§') { theSpriteManager.노아일러스트4(); };
+                    if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '⑤' && t_ReplaceText[i + 4] == '§') { theSpriteManager.노아일러스트5(); };
+                    if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '⑥' && t_ReplaceText[i + 4] == '§') { theSpriteManager.노아일러스트6(); };
+                    if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '⑦' && t_ReplaceText[i + 4] == '§') { theSpriteManager.노아일러스트7(); };
+                    if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '⑧' && t_ReplaceText[i + 4] == '§') { theSpriteManager.노아일러스트8(); };
+                    if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '⑨' && t_ReplaceText[i + 4] == '§') { theSpriteManager.노아일러스트9(); };
+                    if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '⑩' && t_ReplaceText[i + 4] == '§') { theSpriteManager.노아일러스트10(); };
+                    if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '⑩' && t_ReplaceText[i + 4] == '①' && t_ReplaceText[i + 5] == '§') { theSpriteManager.노아일러스트11(); };
+                    if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '⑩' && t_ReplaceText[i + 4] == '②' && t_ReplaceText[i + 5] == '§') { theSpriteManager.노아일러스트12(); };
+                    if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '⑩' && t_ReplaceText[i + 4] == '③' && t_ReplaceText[i + 5] == '§') { theSpriteManager.노아일러스트13(); };
+                    if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '⑩' && t_ReplaceText[i + 4] == '④' && t_ReplaceText[i + 5] == '§') { theSpriteManager.노아일러스트14(); };
+                    if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '⑩' && t_ReplaceText[i + 4] == '⑤' && t_ReplaceText[i + 5] == '§') { theSpriteManager.노아일러스트15(); };
+                    if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '⑩' && t_ReplaceText[i + 4] == '⑥' && t_ReplaceText[i + 5] == '§') { theSpriteManager.노아일러스트16(); };
+                    if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '⑩' && t_ReplaceText[i + 4] == '⑦' && t_ReplaceText[i + 5] == '§') { theSpriteManager.노아일러스트17(); };
+                    if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '⑩' && t_ReplaceText[i + 4] == '⑧' && t_ReplaceText[i + 5] == '§') { theSpriteManager.노아일러스트18(); };
+                    if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '⑩' && t_ReplaceText[i + 4] == '⑨' && t_ReplaceText[i + 5] == '§') { theSpriteManager.노아일러스트19(); };
+                    if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '⑫' && t_ReplaceText[i + 4] == '§') { theSpriteManager.노아일러스트20(); };
+                    if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '⑫' && t_ReplaceText[i + 4] == '①' && t_ReplaceText[i + 5] == '§') { theSpriteManager.노아일러스트21(); };
+                    if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '⑫' && t_ReplaceText[i + 4] == '②' && t_ReplaceText[i + 5] == '§') { theSpriteManager.노아일러스트22(); };
+                    if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '⑫' && t_ReplaceText[i + 4] == '③' && t_ReplaceText[i + 5] == '§') { theSpriteManager.노아일러스트23(); };
+                    if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '⑫' && t_ReplaceText[i + 4] == '④' && t_ReplaceText[i + 5] == '§') { theSpriteManager.노아일러스트24(); }; t_ignore = true; break; // 표정변경.
+
+
                     if (t_ReplaceText[i + 1] == '엘' && t_ReplaceText[i + 2] == '라' && t_ReplaceText[i + 3] == '1' && t_ReplaceText[i + 4] == '§') {  theSpriteManager.엘라일러스트1(); }; t_ignore = true; break; // 표정변경.
 
                 //㉠ ㉡ ㉢ ㉣ ㉤ ㉥ ㉦ ㉧ ㉨ ㉩ ㉪ ㉫ ㉬ ㉭
-                //① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨
+                //① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩ ⑪ ⑫
                 case '㉡': if (t_ReplaceText[i - 1] == '§') { t_ignore = true; } break;
                 case '㉧':  if (t_ReplaceText[i - 2] == '§') { t_ignore = true; } break;
                 //case '아': if (t_ReplaceText[i + 2] == '§') { t_ignore = true; } break;
@@ -234,6 +285,13 @@ public class DialogManager_D1사무소 : MonoBehaviour
                 case '③': if (t_ReplaceText[i + 1] == '§') { t_ignore = true; } break;
                 case '④': if (t_ReplaceText[i + 1] == '§') { t_ignore = true; } break;
                 case '⑤': if (t_ReplaceText[i + 1] == '§') { t_ignore = true; } break;
+                case '⑥': if (t_ReplaceText[i + 1] == '§') { t_ignore = true; } break;
+                case '⑦': if (t_ReplaceText[i + 1] == '§') { t_ignore = true; } break;
+                case '⑧': if (t_ReplaceText[i + 1] == '§') { t_ignore = true; } break;
+                case '⑨': if (t_ReplaceText[i + 1] == '§') { t_ignore = true; } break;
+                case '⑩': if (t_ReplaceText[i + 1] == '§' || t_ReplaceText[i + 2] == '§') { t_ignore = true; } break;
+                case '⑫': if (t_ReplaceText[i + 1] == '§' || t_ReplaceText[i + 2] == '§') { t_ignore = true; } break;
+
 
             }
 
@@ -246,6 +304,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
             {
                 if (t_white) { t_letter = "<color=#000000>" + t_letter + "</color>"; }
                 else if(t_yellow) { t_letter = "<color=#FFFF00>" + t_letter + "</color>"; }
+                else if (t_red) { t_letter = "<color=#B30000>" + t_letter + "</color>"; }
                 txt_Dialog.text += t_letter;
             }
             t_ignore = false;

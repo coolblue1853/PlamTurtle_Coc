@@ -68,7 +68,15 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
         interctionController.선1커피직접타기();
     }
 
-
+    public void 선1가만히있기누름()
+    {
+        dialogManager.선택지선택시외부에서페이지넘기기();
+        첫번째_선택지_커피타줘버튼.SetActive(false);
+        첫번째_선택지_직접타기버튼.SetActive(false);
+        첫번째_선택지_가만히버튼.SetActive(false);
+        dialogManager.onButtonSetterF();
+        interctionController.선1가만히있기();
+    }
 
 
 
