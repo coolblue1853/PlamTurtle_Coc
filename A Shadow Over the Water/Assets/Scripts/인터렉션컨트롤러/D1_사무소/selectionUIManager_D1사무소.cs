@@ -105,7 +105,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
         Debug.Log("룰렛값은 : " + 출력기능값);
 
 
-        if (DataBaseManager.심리학 >= 출력기능값)
+        if (DataBaseManager.심리판단 >= 출력기능값)
         {
             Debug.Log("실패");
            // dialogManager.선택지선택시외부에서페이지넘기기();
@@ -115,7 +115,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
 
         }
 
-        if (DataBaseManager.심리학 < 출력기능값)
+        if (DataBaseManager.심리판단 < 출력기능값)
         {
             Debug.Log("성공");
            // dialogManager.선택지선택시외부에서페이지넘기기();
@@ -143,7 +143,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
     public IEnumerator 선택지선택1()
     {
 
-        Debug.Log("현재 근력 수치 : " + DataBaseManager.근력);
+        Debug.Log("현재 근력 수치 : " + DataBaseManager.힘);
 
         룰렛머신온오프.SetActive(true);
         yield return StartCoroutine(룰렛작동());
@@ -153,7 +153,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
         Debug.Log("룰렛값은 : " + 출력기능값);
 
 
-        if (DataBaseManager.근력 >= 출력기능값)
+        if (DataBaseManager.힘 >= 출력기능값)
         {
             Debug.Log("실패");
             dialogManager.선택지선택시외부에서페이지넘기기();
@@ -163,7 +163,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
 
         }
 
-        if (DataBaseManager.근력 < 출력기능값)
+        if (DataBaseManager.힘 < 출력기능값)
         {
             Debug.Log("성공");
             dialogManager.선택지선택시외부에서페이지넘기기();

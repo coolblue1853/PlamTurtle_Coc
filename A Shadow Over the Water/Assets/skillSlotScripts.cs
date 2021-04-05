@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class skillSlotScripts : MonoBehaviour
 {
+    /*
     public GameObject SevTPer;
     public GameObject sixTPer;
     public GameObject fifTper1;
@@ -15,32 +16,32 @@ public class skillSlotScripts : MonoBehaviour
     public GameObject forTper3;
     public GameObject PercenSet;
 
-    public Text 감정txt;
-    public Text 격투txt;
-    public Text 관찰력txt;
-    public Text 도약txt;
-    public Text 도검류txt;
-    public Text 듣기txt;
-    public Text 말재주txt;
-    public Text 법률txt;
+    public Text 맨손격투txt;
+    public Text 사격술txt;
+    public Text 검술txt;
+    public Text 고문술txt;
+    public Text 눈썰미txt;
+    public Text 언변술_협박txt;
+    public Text 던지기txt;
+    public Text 잠수txt;
 
-    public Text 변장txt;
-    public Text 사격txt;
-    public Text 생물학txt;
-    public Text 설득txt;
-    public Text 손놀림txt;
-    public Text 심리학txt;
-    public Text 열쇠공txt;
-    public Text 오르기txt;
+    public Text 의학지식txt;
+    public Text 정보조사txt;
+    public Text 독순술txt;
+    public Text 오컬트지식txt;
+    public Text 정신감정txt;
+    public Text 언변술_설득txt;
+    public Text 붕대감기txt;
+    public Text 법의학txt;
 
-    public Text 오컬트txt;
-    public Text 위협txt;
-    public Text 은밀행동txt;
-    public Text 응급처치txt;
-    public Text 의료txt;
-    public Text 자료조사txt;
-    public Text 정신분석txt;
-    public Text 회피txt;
+    public Text 구르기txt;
+    public Text 변장술txt;
+    public Text 언변술_거짓말txt;
+    public Text 자물쇠따기txt;
+    public Text 손재주txt;
+    public Text 은신txt;
+    public Text 연기술txt;
+    public Text 운동신경txt;
 
 
 
@@ -80,7 +81,7 @@ public class skillSlotScripts : MonoBehaviour
         22자료조사 = 20;
         23정신분석 = 1;
         24회피 = 0;
-    */
+
     
     public void 모두초기화()
     {      
@@ -6486,5 +6487,5 @@ public class skillSlotScripts : MonoBehaviour
             화살표넘버 = 화살표넘버 - 1;
         }
     }
-
+    */
 }

@@ -1850,7 +1850,30 @@ MonoBehaviour:
   "\uC2184": {fileID: 718629776}
   "\uC2185": {fileID: 1311999026}
   "\uC2186": {fileID: 12507903}
-  "\uB178\uC5441": {fileID: 1313786154}
+  "\uB178\uC544\uD45C\uC8151": {fileID: 0}
+  "\uB178\uC544\uD45C\uC8152": {fileID: 0}
+  "\uB178\uC544\uD45C\uC8153": {fileID: 0}
+  "\uB178\uC544\uD45C\uC8154": {fileID: 0}
+  "\uB178\uC544\uD45C\uC8155": {fileID: 0}
+  "\uB178\uC544\uD45C\uC8156": {fileID: 0}
+  "\uB178\uC544\uD45C\uC8157": {fileID: 0}
+  "\uB178\uC544\uD45C\uC8158": {fileID: 0}
+  "\uB178\uC544\uD45C\uC8159": {fileID: 0}
+  "\uB178\uC544\uD45C\uC81510": {fileID: 0}
+  "\uB178\uC544\uD45C\uC81511": {fileID: 0}
+  "\uB178\uC544\uD45C\uC81512": {fileID: 0}
+  "\uB178\uC544\uD45C\uC81513": {fileID: 0}
+  "\uB178\uC544\uD45C\uC81514": {fileID: 0}
+  "\uB178\uC544\uD45C\uC81515": {fileID: 0}
+  "\uB178\uC544\uD45C\uC81516": {fileID: 0}
+  "\uB178\uC544\uD45C\uC81517": {fileID: 0}
+  "\uB178\uC544\uD45C\uC81518": {fileID: 0}
+  "\uB178\uC544\uD45C\uC81519": {fileID: 0}
+  "\uB178\uC544\uD45C\uC81520": {fileID: 0}
+  "\uB178\uC544\uD45C\uC81521": {fileID: 0}
+  "\uB178\uC544\uD45C\uC81522": {fileID: 0}
+  "\uB178\uC544\uD45C\uC81523": {fileID: 0}
+  "\uB178\uC544\uD45C\uC81524": {fileID: 0}
   "\uC5D8\uB77C1": {fileID: 373400829}
 --- !u!1 &737663115
 GameObject:
@@ -5418,7 +5441,7 @@ MonoBehaviour:
   txt_name: {fileID: 86764292}
   min: {fileID: 0}
   isSelectButton: 0
-  textDelay: 0.05
+  textDelay: 0.005
   "\uB300\uD654\uCC3D\uC77C\uB7EC": {fileID: 1837165780}
   "\uB178\uC544\uD45C\uC8151": {fileID: 1313786154}
   "\uB178\uC544\uD45C\uC8152": {fileID: 373400829}

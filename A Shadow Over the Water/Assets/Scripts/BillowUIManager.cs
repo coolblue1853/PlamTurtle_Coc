@@ -30,7 +30,7 @@ public class BillowUIManager : MonoBehaviour
 
 
         반영이성 = 1;
-        최초이성 = DataBaseManager.이성;
+        최초이성 = DataBaseManager.정신력;
         단위이성 = 1 / 최초이성;
 
     }
