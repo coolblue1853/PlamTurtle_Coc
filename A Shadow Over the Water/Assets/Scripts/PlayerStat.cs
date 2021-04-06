@@ -48,9 +48,12 @@ public class PlayerStat : MonoBehaviour
     int 힘스킬배분숫자;
     int 지능스킬배분숫자;
     int 민첩스킬배분숫자;
+
+    public GameObject 다음페이지_스킬버튼;
+    
     public void OnclickSetStat()// 스탯 생성 버튼
     {
-
+        다음페이지_스킬버튼.SetActive(true);
 
         Transform[] 힘차일드 =힘게이지.GetComponentsInChildren<Transform>(true);
         if (힘차일드 != null)
@@ -143,14 +146,14 @@ public class PlayerStat : MonoBehaviour
             }
         }
 
-        DataBaseManager.힘 = Random.Range(1, 9);
-        DataBaseManager.지능 = Random.Range(1, 9);
-        DataBaseManager.민첩 = Random.Range(1, 9);
-        DataBaseManager.행운 = Random.Range(1, 9);
+        DataBaseManager.힘 = Random.Range(1, 10);
+        DataBaseManager.지능 = Random.Range(1, 10);
+        DataBaseManager.민첩 = Random.Range(1, 10);
+        DataBaseManager.행운 = Random.Range(1, 10);
         
-        DataBaseManager.활력 = Random.Range(1, 9);
-        DataBaseManager.마력 = Random.Range(1, 9);
-        DataBaseManager.의지력 = Random.Range(1, 9);
+        DataBaseManager.활력 = Random.Range(1, 10);
+        DataBaseManager.마력 = Random.Range(1, 10);
+        DataBaseManager.의지력 = Random.Range(1, 10);
 
         DataBaseManager.체력 = DataBaseManager.활력 + DataBaseManager.의지력;
         DataBaseManager.정신력 = DataBaseManager.마력 + DataBaseManager.의지력;
@@ -252,12 +255,44 @@ public class PlayerStat : MonoBehaviour
             GameObject.Instantiate(게이지오브젝트).transform.parent = 스트레스내성게이지.transform;
         }
 
+        맨손격투reset();
+        사격술reset();
+        검술reset();
+        고문술reset();
+        눈썰미reset();
+        언변술협박reset();
+        던지기reset();
+        잠수reset();
+
+        의학지식reset();
+        정보조사reset();
+        심리판단reset();
+        오컬트지식reset();
+        정신감정reset();
+        언변술설득reset();
+        붕대감기reset();
+        법의학reset();
+
+        구르기reset();
+        변장술reset();
+        언변술거짓말reset();
+        자물쇠따기reset();
+        손재주reset();
+        은신reset();
+        연기술reset();
+        운동신경reset();
+
+
         힘스킬배분숫자 = DataBaseManager.힘 * 2;
         힘스킬배분치txt.text = 힘스킬배분숫자.ToString();
         지능스킬배분숫자 = DataBaseManager.지능 * 2;
         지능스킬배분치txt.text = 지능스킬배분숫자.ToString();
         민첩스킬배분숫자 = DataBaseManager.민첩 * 2;
         민첩스킬배분치txt.text = 민첩스킬배분숫자.ToString();
+
+
+
+
 
     }
 
@@ -285,9 +320,167 @@ public class PlayerStat : MonoBehaviour
     public GameObject 잠수게이지;
     public Text 잠수게이지txt;
 
+    
+
+    public void 힘기술랜덤배분()
+    {
+        
+        int 뭘배분 = 0;
+        while(0< 힘스킬배분숫자)
+        {
+            뭘배분 = Random.Range(1, 9);
+            switch (뭘배분)
+            {
+                case 1:
+                    맨손격투up();
+                    break;
+                case 2:
+                    사격술up();
+                    break;
+                case 3:
+                    단검술up();
+                    break;
+                case 4:
+                    고문술up();
+                    break;
+                case 5:
+                    눈썰미up();
+                    break;
+                case 6:
+                    언변술협박up();
+                    break;
+                case 7:
+                    던지기up();
+                    break;
+                case 8:
+                    잠수up();
+                    break;
+            }
+                
+           
+
+        }
+    }
+
+    public void 힘기술전체초기화()
+    {
+        맨손격투reset();
+        사격술reset();
+        검술reset();
+        고문술reset();
+        눈썰미reset();
+        언변술협박reset();
+        던지기reset();
+        잠수reset();
+    }
 
 
 
+    public void 지능기술랜덤배분()
+    {
+
+        int 뭘배분 = 0;
+        while (0 < 지능스킬배분숫자)
+        {
+            뭘배분 = Random.Range(1, 9);
+            switch (뭘배분)
+            {
+                case 1:
+                    의학지식up();
+                    break;
+                case 2:
+                    정보조사up();
+                    break;
+                case 3:
+                    심리판단up();
+                    break;
+                case 4:
+                    오컬트지식up();
+                    break;
+                case 5:
+                    정신감정up();
+                    break;
+                case 6:
+                    언변술설득up();
+                    break;
+                case 7:
+                    붕대감기up();
+                    break;
+                case 8:
+                    법의학up();
+                    break;
+            }
+
+
+
+        }
+    }
+
+    public void 지능기술전체초기화()
+    {
+        의학지식reset();
+        정보조사reset();
+        심리판단reset();
+        오컬트지식reset();
+        정신감정reset();
+        언변술설득reset();
+        붕대감기reset();
+        법의학reset();
+    }
+
+
+
+    public void 민첩기술랜덤배분()
+    {
+
+        int 뭘배분 = 0;
+        while (0 < 민첩스킬배분숫자)
+        {
+            뭘배분 = Random.Range(1, 9);
+            switch (뭘배분)
+            {
+                case 1:
+                    구르기up();
+                    break;
+                case 2:
+                    변장술up();
+                    break;
+                case 3:
+                    언변술거짓말up();
+                    break;
+                case 4:
+                    자물쇠따기up();
+                    break;
+                case 5:
+                    손재주up();
+                    break;
+                case 6:
+                    은신up();
+                    break;
+                case 7:
+                    연기술up();
+                    break;
+                case 8:
+                    운동신경up();
+                    break;
+            }
+
+
+
+        }
+    }
+
+    public void 민첩기술전체초기화()
+    {
+        구르기reset();
+        변장술reset();
+        언변술거짓말reset();
+        자물쇠따기reset();
+        손재주reset();
+        은신reset();
+        연기술reset();
+        운동신경reset();
+    }
     //힘기반 기술
     public void 맨손격투up()
     {
@@ -1744,9 +1937,41 @@ public class PlayerStat : MonoBehaviour
         운동신경게이지txt.text = "운동신경 : " + DataBaseManager.운동신경.ToString();
     }
 
+
+
+    public GameObject 힘배분치남음알람;
+    public GameObject 지능배분치남음알람;
+    public GameObject 민첩배분치남음알람;
     // Update is called once per frame
     void Update()
     {
+        if (힘스킬배분숫자 == 0)
+        {
+            힘배분치남음알람.SetActive(false);
+        }
+        else
+        {
+            힘배분치남음알람.SetActive(true);
+        }
+
+        if (지능스킬배분숫자 == 0)
+        {
+            지능배분치남음알람.SetActive(false);
+        }
+        else
+        {
+            지능배분치남음알람.SetActive(true);
+        }
+
+        if (민첩스킬배분숫자 == 0)
+        {
+            민첩배분치남음알람.SetActive(false);
+        }
+        else
+        {
+            민첩배분치남음알람.SetActive(true);
+        }
+
         if (화살표넘버 == 1)
         {
             일페이지.SetActive(true);
