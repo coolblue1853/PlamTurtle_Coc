@@ -2791,9 +2791,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "<\uC9C0\uB2A5>\n\uC804\uBC18\uC801\uC73C\uB85C \uBC1B\uC740 \uAD50\uC721
-    \uC218\uCE58, \uC774\uD574\uB825 \uC218\uCE58\uC758 \uCD1D\uAD04\uC785\uB2C8\uB2E4.
-    \uB2F9\uC2E0\uC774 \uC5BC\uB9C8\uB098 \uB611\uB611\uD55C\uC9C0\uC758 \uC9C0\uD45C\uC785\uB2C8\uB2E4."
+  m_Text: "<\uB9C8\uB825>\n"
 --- !u!222 &103691522
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3707,9 +3705,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "<\uC9C0\uB2A5>\n\uC804\uBC18\uC801\uC73C\uB85C \uBC1B\uC740 \uAD50\uC721
-    \uC218\uCE58, \uC774\uD574\uB825 \uC218\uCE58\uC758 \uCD1D\uAD04\uC785\uB2C8\uB2E4.
-    \uB2F9\uC2E0\uC774 \uC5BC\uB9C8\uB098 \uB611\uB611\uD55C\uC9C0\uC758 \uC9C0\uD45C\uC785\uB2C8\uB2E4."
+  m_Text: "<\uC758\uC9C0\uB825>\n"
 --- !u!222 &154931121
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9394,9 +9390,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "<\uC9C0\uB2A5>\n\uC804\uBC18\uC801\uC73C\uB85C \uBC1B\uC740 \uAD50\uC721
-    \uC218\uCE58, \uC774\uD574\uB825 \uC218\uCE58\uC758 \uCD1D\uAD04\uC785\uB2C8\uB2E4.
-    \uB2F9\uC2E0\uC774 \uC5BC\uB9C8\uB098 \uB611\uB611\uD55C\uC9C0\uC758 \uC9C0\uD45C\uC785\uB2C8\uB2E4."
+  m_Text: "<\uC2A4\uD2B8\uB808\uC2A4 \uB0B4\uC131>\n"
 --- !u!222 &416396531
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11311,9 +11305,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "<\uC9C0\uB2A5>\n\uC804\uBC18\uC801\uC73C\uB85C \uBC1B\uC740 \uAD50\uC721
-    \uC218\uCE58, \uC774\uD574\uB825 \uC218\uCE58\uC758 \uCD1D\uAD04\uC785\uB2C8\uB2E4.
-    \uB2F9\uC2E0\uC774 \uC5BC\uB9C8\uB098 \uB611\uB611\uD55C\uC9C0\uC758 \uC9C0\uD45C\uC785\uB2C8\uB2E4."
+  m_Text: "<\uC815\uC2E0\uB825>\n"
 --- !u!222 &497835102
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14327,6 +14319,7 @@ GameObject:
   - component: {fileID: 632844015}
   - component: {fileID: 632844017}
   - component: {fileID: 632844016}
+  - component: {fileID: 632844018}
   m_Layer: 5
   m_Name: "\uC815\uC2E0"
   m_TagString: Untagged
@@ -14392,6 +14385,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632844014}
   m_CullTransparentMesh: 0
+--- !u!114 &632844018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632844014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2007829638}
+          m_MethodName: "\uC815\uC2E0\uB825\uC124\uBA85\uB4F1\uC7A5"
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2007829638}
+          m_MethodName: "\uC815\uC2E0\uB825\uC124\uBA85\uAC00\uB9BC"
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &638325373
 GameObject:
   m_ObjectHideFlags: 0
@@ -14617,7 +14664,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "<\uC9C0\uB2A5>\n"
+  m_Text: "<\uD589\uC6B4>\n"
 --- !u!222 &644446754
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23265,6 +23312,7 @@ GameObject:
   - component: {fileID: 1018497755}
   - component: {fileID: 1018497757}
   - component: {fileID: 1018497756}
+  - component: {fileID: 1018497758}
   m_Layer: 5
   m_Name: "\uD589\uC6B4"
   m_TagString: Untagged
@@ -23330,6 +23378,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1018497754}
   m_CullTransparentMesh: 0
+--- !u!114 &1018497758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018497754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2007829638}
+          m_MethodName: "\uD589\uC6B4\uC124\uBA85\uB4F1\uC7A5"
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2007829638}
+          m_MethodName: "\uD589\uC6B4\uC124\uBA85\uAC00\uB9BC"
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1021732273
 GameObject:
   m_ObjectHideFlags: 0
@@ -24677,6 +24768,7 @@ GameObject:
   - component: {fileID: 1086778191}
   - component: {fileID: 1086778193}
   - component: {fileID: 1086778192}
+  - component: {fileID: 1086778194}
   m_Layer: 5
   m_Name: "\uC2A4\uD2B8\uB808\uC2A4\uAC10\uB2F9\uC218\uCE58"
   m_TagString: Untagged
@@ -24742,6 +24834,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1086778190}
   m_CullTransparentMesh: 0
+--- !u!114 &1086778194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086778190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2007829638}
+          m_MethodName: "\uC2A4\uD2B8\uB808\uC2A4\uB0B4\uC131\uC124\uBA85\uB4F1\uC7A5"
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2007829638}
+          m_MethodName: "\uC2A4\uD2B8\uB808\uC2A4\uB0B4\uC131\uC124\uBA85\uAC00\uB9BC"
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1097289202
 GameObject:
   m_ObjectHideFlags: 0
@@ -26530,6 +26665,7 @@ GameObject:
   - component: {fileID: 1174595633}
   - component: {fileID: 1174595635}
   - component: {fileID: 1174595634}
+  - component: {fileID: 1174595636}
   m_Layer: 5
   m_Name: "\uCCB4\uB825"
   m_TagString: Untagged
@@ -26595,6 +26731,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1174595632}
   m_CullTransparentMesh: 0
+--- !u!114 &1174595636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174595632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2007829638}
+          m_MethodName: "\uCCB4\uB825\uC124\uBA85\uB4F1\uC7A5"
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2007829638}
+          m_MethodName: "\uCCB4\uB825\uC124\uBA85\uAC00\uB9BC"
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1185168874
 GameObject:
   m_ObjectHideFlags: 0
@@ -40540,6 +40719,7 @@ GameObject:
   - component: {fileID: 1856996420}
   - component: {fileID: 1856996422}
   - component: {fileID: 1856996421}
+  - component: {fileID: 1856996423}
   m_Layer: 5
   m_Name: "\uC758\uC9C0"
   m_TagString: Untagged
@@ -40605,6 +40785,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1856996419}
   m_CullTransparentMesh: 0
+--- !u!114 &1856996423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856996419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2007829638}
+          m_MethodName: "\uC758\uC9C0\uB825\uC124\uBA85\uB4F1\uC7A5"
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2007829638}
+          m_MethodName: "\uC758\uC9C0\uB825\uC124\uBA85\uAC00\uB9BC"
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1858257831
 GameObject:
   m_ObjectHideFlags: 0
@@ -43182,6 +43405,13 @@ MonoBehaviour:
   "\uD798\uC124\uBA85": {fileID: 745653848}
   "\uC9C0\uB2A5\uC124\uBA85": {fileID: 185416783}
   "\uBBFC\uCCA9\uC124\uBA85": {fileID: 599022116}
+  "\uD589\uC6B4\uC124\uBA85": {fileID: 644446751}
+  "\uD65C\uB825\uC124\uBA85": {fileID: 2018747557}
+  "\uC758\uC9C0\uB825\uC124\uBA85": {fileID: 154931118}
+  "\uB9C8\uB825\uC124\uBA85": {fileID: 103691519}
+  "\uCCB4\uB825\uC124\uBA85": {fileID: 2099772631}
+  "\uC815\uC2E0\uB825\uC124\uBA85": {fileID: 497835099}
+  "\uC2A4\uD2B8\uB808\uC2A4\uB0B4\uC131\uC124\uBA85": {fileID: 416396528}
 --- !u!4 &2007829639
 Transform:
   m_ObjectHideFlags: 0
@@ -43495,9 +43725,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "<\uC9C0\uB2A5>\n\uC804\uBC18\uC801\uC73C\uB85C \uBC1B\uC740 \uAD50\uC721
-    \uC218\uCE58, \uC774\uD574\uB825 \uC218\uCE58\uC758 \uCD1D\uAD04\uC785\uB2C8\uB2E4.
-    \uB2F9\uC2E0\uC774 \uC5BC\uB9C8\uB098 \uB611\uB611\uD55C\uC9C0\uC758 \uC9C0\uD45C\uC785\uB2C8\uB2E4."
+  m_Text: "<\uD65C\uB825>"
 --- !u!222 &2018747560
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -43932,6 +44160,7 @@ GameObject:
   - component: {fileID: 2029652725}
   - component: {fileID: 2029652727}
   - component: {fileID: 2029652726}
+  - component: {fileID: 2029652728}
   m_Layer: 5
   m_Name: "\uD65C"
   m_TagString: Untagged
@@ -43997,6 +44226,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2029652724}
   m_CullTransparentMesh: 0
+--- !u!114 &2029652728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029652724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2007829638}
+          m_MethodName: "\uD65C\uB825\uC124\uBA85\uB4F1\uC7A5"
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2007829638}
+          m_MethodName: "\uD65C\uB825\uC124\uBA85\uAC00\uB9BC"
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2033421259
 GameObject:
   m_ObjectHideFlags: 0
@@ -45263,9 +45535,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "<\uC9C0\uB2A5>\n\uC804\uBC18\uC801\uC73C\uB85C \uBC1B\uC740 \uAD50\uC721
-    \uC218\uCE58, \uC774\uD574\uB825 \uC218\uCE58\uC758 \uCD1D\uAD04\uC785\uB2C8\uB2E4.
-    \uB2F9\uC2E0\uC774 \uC5BC\uB9C8\uB098 \uB611\uB611\uD55C\uC9C0\uC758 \uC9C0\uD45C\uC785\uB2C8\uB2E4."
+  m_Text: "<\uCCB4\uB825>\n"
 --- !u!222 &2099772634
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -45908,6 +46178,7 @@ GameObject:
   - component: {fileID: 2121326777}
   - component: {fileID: 2121326779}
   - component: {fileID: 2121326778}
+  - component: {fileID: 2121326780}
   m_Layer: 5
   m_Name: "\uB9C8"
   m_TagString: Untagged
@@ -45973,6 +46244,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2121326776}
   m_CullTransparentMesh: 0
+--- !u!114 &2121326780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121326776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2007829638}
+          m_MethodName: "\uB9C8\uB825\uC124\uBA85\uB4F1\uC7A5"
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2007829638}
+          m_MethodName: "\uB9C8\uB825\uC124\uBA85\uAC00\uB9BC"
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2121600731
 GameObject:
   m_ObjectHideFlags: 0
