@@ -1938,13 +1938,22 @@ public class PlayerStat : MonoBehaviour
     }
 
 
-
+    public GameObject 게임시작버튼;
     public GameObject 힘배분치남음알람;
     public GameObject 지능배분치남음알람;
     public GameObject 민첩배분치남음알람;
     // Update is called once per frame
     void Update()
     {
+        if(힘스킬배분숫자 ==0 && 지능스킬배분숫자 ==0 && 민첩스킬배분숫자 == 0)
+        {
+            게임시작버튼.SetActive(true);
+        }
+        else
+        {
+            게임시작버튼.SetActive(false);
+        }
+
         if (힘스킬배분숫자 == 0)
         {
             힘배분치남음알람.SetActive(false);
