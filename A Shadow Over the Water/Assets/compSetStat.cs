@@ -16,6 +16,11 @@ public class compSetStat : MonoBehaviour
         SceneManager.LoadScene("1st_Mor_MyRoom");
     }
 
+
+    public void 임시()
+    {
+        SceneManager.LoadScene("1st_Mor_MyRoom 2");
+    }
     // Update is called once per frame
     void Update()
     {

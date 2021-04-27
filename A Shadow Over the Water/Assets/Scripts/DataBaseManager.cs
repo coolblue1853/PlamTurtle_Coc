@@ -5,8 +5,12 @@ using UnityEngine.UI;
 public class DataBaseManager : MonoBehaviour
 {
 
-
-
+    public static bool 노아정보1=true;
+    public static bool 노아정보2=false;
+    public static bool 노아정보3=false;
+    public static bool 노아정보4=false;
+    public static bool 노아정보5=false;
+    public static bool 노아정보6=false;
 
     // Start is called before the first frame update
     public static int 힘;
@@ -112,7 +116,11 @@ public class DataBaseManager : MonoBehaviour
         은신 = 0;
         연기술 = 0;
         운동신경 = 0;
-       
+
+
+
+
+
     }
 
     public string[] var_name;

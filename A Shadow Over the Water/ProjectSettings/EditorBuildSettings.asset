@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Play_Scenes/1st_Morning/START_OPEN.unity
     guid: fd0f64bca1f836d4fbc18a37a0ffdc70
+  - enabled: 1
+    path: Assets/Scenes/Play_Scenes/1st_Morning/1st_Mor_MyRoom 2.unity
+    guid: 184588380a00d944cbb65b6997dddb1f
   m_configObjects: {}
