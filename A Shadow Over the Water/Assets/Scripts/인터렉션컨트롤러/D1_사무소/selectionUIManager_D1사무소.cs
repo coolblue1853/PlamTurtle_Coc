@@ -36,7 +36,37 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
 
 
     bool 기능사용안하고넘기기 = false;
+    int 일번선택지합쳐지는파트 = 0;
     int 출력기능수치;
+
+    public void 일번선택지넘기기()
+    {
+        일번선택지합쳐지는파트 = 1;
+    }
+
+    void Update()
+    {
+        if (기능사용안하고넘기기 = true)
+        {
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                기능사용안하고넘기기 = false;
+                엘라심리학선택지버튼.SetActive(false);
+            }
+        }
+
+
+
+        if(일번선택지합쳐지는파트 == 1 && Input.GetKeyDown(KeyCode.Z))
+        {
+            일번선택지합쳐지는파트 = 2;
+            dialogManager.선택지선택시외부에서페이지넘기기();
+            dialogManager.onButtonSetterF();
+            선1이후출력();
+        }
+    }
+
+
 
     public void 선택지출력1(string oneTxt, string twoTxt)
     {
@@ -77,6 +107,15 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
         dialogManager.onButtonSetterF();
         interctionController.선1가만히있기();
     }
+
+    public void 선1이후출력()
+    {
+
+
+        interctionController.선1이후연결();
+    }
+
+
 
 
 
@@ -406,16 +445,5 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if(기능사용안하고넘기기 = true)
-        {
-            if (Input.GetKeyDown(KeyCode.Z))
-            {
-                기능사용안하고넘기기 = false;
-                엘라심리학선택지버튼.SetActive(false);
-            }
-        }
 
-    }
 }

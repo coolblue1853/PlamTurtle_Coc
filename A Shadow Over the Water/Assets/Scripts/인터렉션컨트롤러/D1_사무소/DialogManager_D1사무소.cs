@@ -223,10 +223,42 @@ public class DialogManager_D1사무소 : MonoBehaviour
                     t_ignore = true;
                     if (t_ReplaceText[i + 1] == '①')
                     {
-
+                        t_ignore = true;
                         selectionUIManager.선택지출력1("예,그렇습니다", "아니오, 처음 뵙는군요.");
                         isSelectButton = true;
+
+                        break;
+
+                    }
+                    if (t_ReplaceText[i + 1] == '②')//행성대직렬 정보 1 추가.
+                    {
+                        if (t_ReplaceText[i + 2] == 'ㅇ')
+                        {
+                            if (t_ReplaceText[i + 3] == 'ㅁ')
+                            {
+                                t_ignore = true;
+                                DataBaseManager.악몽정보2 = true;
+                                isSelectButton = true;
+                                break;
+                            }
+
+                        }
+
+
+
+                    }
+                    break;
+
+
+                case '★':  // 검은별은 선택지이후 연결파트 표시
+                    t_ignore = true;
+                    if (t_ReplaceText[i + 1] == '①')
+                    {
+                        
                         t_ignore = true;
+                        selectionUIManager.일번선택지넘기기();
+                        isSelectButton = true;
+
                         break;
 
                     }
@@ -280,8 +312,8 @@ public class DialogManager_D1사무소 : MonoBehaviour
                 case '㉧':  if (t_ReplaceText[i - 2] == '§') { t_ignore = true; } break;
                 //case '아': if (t_ReplaceText[i + 2] == '§') { t_ignore = true; } break;
                 //case '0': if (t_ReplaceText[i + 1] == '§') { t_ignore = true; } if (t_ReplaceText[i - 1] == '☆') { t_ignore = true; } break;
-                case '①': if (t_ReplaceText[i -3 ] == '§' || t_ReplaceText[i - 1] == '☆') { t_ignore = true; } break;
-                case '②': if (t_ReplaceText[i + 1] == '§') { t_ignore = true; } break;
+                case '①': if (t_ReplaceText[i -3 ] == '§' || t_ReplaceText[i - 1] == '☆' || t_ReplaceText[i - 1] == '★') { t_ignore = true; } break;
+                case '②': if (t_ReplaceText[i + 1] == '§' || t_ReplaceText[i - 1] == '☆') { t_ignore = true; } break;
                 case '③': if (t_ReplaceText[i + 1] == '§') { t_ignore = true; } break;
                 case '④': if (t_ReplaceText[i + 1] == '§') { t_ignore = true; } break;
                 case '⑤': if (t_ReplaceText[i + 1] == '§') { t_ignore = true; } break;
@@ -291,7 +323,8 @@ public class DialogManager_D1사무소 : MonoBehaviour
                 case '⑨': if (t_ReplaceText[i + 1] == '§') { t_ignore = true; } break;
                 case '⑩': if (t_ReplaceText[i + 1] == '§' || t_ReplaceText[i + 2] == '§') { t_ignore = true; } break;
                 case '⑫': if (t_ReplaceText[i + 1] == '§' || t_ReplaceText[i + 2] == '§') { t_ignore = true; } break;
-
+                case 'ㅇ': if (t_ReplaceText[i + -2] == '☆') { t_ignore = true; } break;
+                case 'ㅁ': if (t_ReplaceText[i + -3] == '☆') { t_ignore = true; } break;
 
             }
 

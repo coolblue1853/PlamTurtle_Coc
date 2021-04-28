@@ -12,6 +12,13 @@ public class DataBaseManager : MonoBehaviour
     public static bool 노아정보5=false;
     public static bool 노아정보6=false;
 
+    public static bool 악몽정보1 = true;
+    public static bool 악몽정보2 = false;
+    public static bool 악몽정보3 = false;
+    public static bool 악몽정보4 = false;
+    public static bool 악몽정보5 = false;
+    public static bool 악몽정보6 = false;
+
     // Start is called before the first frame update
     public static int 힘;
     public static int 지능;
