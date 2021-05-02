@@ -17,9 +17,12 @@ public class InterctionController_D1사무소 : MonoBehaviour
 
     public GameObject 선1이후;
 
+
+
+
     //1 심리학판정 성공
-    public GameObject 일일_오전_엘라_심리학실패;
-    public GameObject 일일_오전_엘라_심리학성공;
+    public GameObject 엘라심리학성공;
+    public GameObject 엘라심리학실패;
     // Start is called before the first frame update
 
     public DialogManager_D1사무소 theDM;
@@ -181,7 +184,7 @@ public class InterctionController_D1사무소 : MonoBehaviour
         {
             theDM.isDialogON = true;
             기능판정DM.isDialogON = true;
-            기능판정DM.ShowDialog(일일_오전_엘라_심리학성공.transform.GetComponent<interactionEvent>().GetDialogs());
+            기능판정DM.ShowDialog(엘라심리학성공.transform.GetComponent<interactionEvent>().GetDialogs());
 
         }
     }
@@ -192,7 +195,7 @@ public class InterctionController_D1사무소 : MonoBehaviour
         {
             theDM.isDialogON = true;
             기능판정DM.isDialogON = true;
-            기능판정DM.ShowDialog(일일_오전_엘라_심리학실패.transform.GetComponent<interactionEvent>().GetDialogs());
+            기능판정DM.ShowDialog(엘라심리학실패.transform.GetComponent<interactionEvent>().GetDialogs());
 
         }
     }

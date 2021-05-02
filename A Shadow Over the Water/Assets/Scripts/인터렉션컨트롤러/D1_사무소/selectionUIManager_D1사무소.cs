@@ -12,7 +12,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
     public GameObject 첫번째_선택지_가만히버튼;
 
 
-
+    bool 엘라심리학실시여부 = false;
 
 
     public GameObject 엘라심리학선택지버튼;
@@ -46,6 +46,11 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Debug.Log(DataBaseManager.심리판단);
+        }
+
         if (기능사용안하고넘기기 = true)
         {
             if (Input.GetKeyDown(KeyCode.Z))
@@ -66,6 +71,12 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
         }
     }
 
+
+    public void 기능사용안하고넘기기외부()
+    {
+        기능사용안하고넘기기 = false;
+        엘라심리학선택지버튼.SetActive(false);
+    }
 
 
     public void 선택지출력1(string oneTxt, string twoTxt)
@@ -121,14 +132,20 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
 
     public void 엘라심리학선택지출력()
     {
-        엘라심리학선택지버튼.SetActive(true);
+        if (엘라심리학실시여부 == false)
+        {
+            엘라심리학선택지버튼.SetActive(true);
+        }
+        
+        
 
     }
     public void 엘라심리학선택지클릭()
     {
-        기능사용안하고넘기기 = true;
+        엘라심리학선택지버튼.SetActive(false);
+        엘라심리학실시여부 = true;
+        기능사용안하고넘기기 = true;          //요거는  단발성 메시지에서 사용하면 바로 넘겨짐
         StartCoroutine(심리학기능사용선택지());
-
         theDM.isSelectButton = true;
     }
 
@@ -223,6 +240,219 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
         룰렛머신온오프.SetActive(false);
     }
 
+    public IEnumerator 룰렛작동()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+
+            랜덤일의자리 = Random.Range(0, 10);
+
+
+
+            일의자리.text = 랜덤일의자리.ToString();
+
+            yield return new WaitForSeconds(0.1f);
+
+        }
+        for (int i = 0; i < 30; i++)
+        {
+
+            랜덤일의자리 = Random.Range(1, 10);
+
+
+            랜덤십의몸통위치 = Random.Range(1, 10);
+
+
+            if (랜덤십의몸통위치 == 1)
+            {
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 1f, 십의자리몸통.transform.position.y - 0.5f);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 1, 십의자리몸통.transform.position.y);
+                yield return new WaitForSeconds(0.025f);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 1f, 십의자리몸통.transform.position.y + 0.5f);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 1, 십의자리몸통.transform.position.y);
+            }
+            if (랜덤십의몸통위치 == 2)
+            {
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 0.5f, 일의자리몸통.transform.position.y - 0.5f);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 1, 십의자리몸통.transform.position.y);
+                yield return new WaitForSeconds(0.025f);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 1, 십의자리몸통.transform.position.y);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 0.5f, 일의자리몸통.transform.position.y + 0.5f);
+
+            }
+            if (랜덤십의몸통위치 == 3)
+            {
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 0.5f, 일의자리몸통.transform.position.y + 0.5f);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x, 십의자리몸통.transform.position.y - 1);
+                yield return new WaitForSeconds(0.025f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 0.5f, 일의자리몸통.transform.position.y - 0.5f);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x, 십의자리몸통.transform.position.y + 1);
+            }
+            if (랜덤십의몸통위치 == 4)
+            {
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 1, 일의자리몸통.transform.position.y - 0.5f);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x, 십의자리몸통.transform.position.y + 1);
+                yield return new WaitForSeconds(0.025f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 1, 일의자리몸통.transform.position.y + 0.5f);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x, 십의자리몸통.transform.position.y - 1);
+            }
+            if (랜덤십의몸통위치 == 5)
+            {
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 1, 십의자리몸통.transform.position.y + 0.5f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 1, 일의자리몸통.transform.position.y + 0.5f);
+                yield return new WaitForSeconds(0.025f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 1, 일의자리몸통.transform.position.y - 0.5f);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 1, 십의자리몸통.transform.position.y - 0.5f);
+            }
+            if (랜덤십의몸통위치 == 6)
+            {
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 1, 십의자리몸통.transform.position.y - 0.5f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x, 일의자리몸통.transform.position.y + 1);
+                yield return new WaitForSeconds(0.025f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x, 일의자리몸통.transform.position.y - 1);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 1, 십의자리몸통.transform.position.y + 0.5f);
+            }
+            if (랜덤십의몸통위치 == 7)
+            {
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 0.5f, 십의자리몸통.transform.position.y + 0.5f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x, 일의자리몸통.transform.position.y - 1);
+                yield return new WaitForSeconds(0.025f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x, 일의자리몸통.transform.position.y + 1);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 0.5f, 십의자리몸통.transform.position.y - 0.5f);
+            }
+            if (랜덤십의몸통위치 == 8)
+            {
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 0.5f, 십의자리몸통.transform.position.y - 0.5f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 1, 일의자리몸통.transform.position.y);
+                yield return new WaitForSeconds(0.025f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 1, 일의자리몸통.transform.position.y);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 0.5f, 십의자리몸통.transform.position.y + 0.5f);
+            }
+            if (랜덤십의몸통위치 == 9)
+            {
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 1, 일의자리몸통.transform.position.y);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 1f, 십의자리몸통.transform.position.y - 0.5f);
+                yield return new WaitForSeconds(0.025f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 1, 일의자리몸통.transform.position.y);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 1f, 십의자리몸통.transform.position.y + 0.5f);
+            }
+
+
+
+
+
+
+
+
+
+            십의자리.text = 랜덤십의자리.ToString();
+            일의자리.text = 랜덤일의자리.ToString();
+
+            yield return new WaitForSeconds(0.025f);
+
+        }
+        for (int i = 0; i < 80; i++)
+        {
+            랜덤십의자리 = Random.Range(1, 10);
+            랜덤일의자리 = Random.Range(1, 10);
+            랜덤십의몸통위치 = Random.Range(1, 10);
+
+            if (랜덤십의몸통위치 == 1)
+            {
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 2f, 십의자리몸통.transform.position.y - 1f);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 2, 십의자리몸통.transform.position.y);
+                yield return new WaitForSeconds(0.005f);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 2f, 십의자리몸통.transform.position.y + 1f);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 2, 십의자리몸통.transform.position.y);
+            }
+            if (랜덤십의몸통위치 == 2)
+            {
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 1f, 일의자리몸통.transform.position.y - 1f);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 2, 십의자리몸통.transform.position.y);
+                yield return new WaitForSeconds(0.005f);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 2, 십의자리몸통.transform.position.y);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 1f, 일의자리몸통.transform.position.y + 1f);
+
+            }
+            if (랜덤십의몸통위치 == 3)
+            {
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 1f, 일의자리몸통.transform.position.y + 1);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x, 십의자리몸통.transform.position.y - 1);
+                yield return new WaitForSeconds(0.005f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 1, 일의자리몸통.transform.position.y - 1);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x, 십의자리몸통.transform.position.y + 1);
+            }
+            if (랜덤십의몸통위치 == 4)
+            {
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 2, 일의자리몸통.transform.position.y - 1);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x, 십의자리몸통.transform.position.y + 2);
+                yield return new WaitForSeconds(0.005f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 2, 일의자리몸통.transform.position.y + 1);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x, 십의자리몸통.transform.position.y - 2);
+            }
+            if (랜덤십의몸통위치 == 5)
+            {
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 2, 십의자리몸통.transform.position.y + 1);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 2, 일의자리몸통.transform.position.y + 1);
+                yield return new WaitForSeconds(0.005f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 2, 일의자리몸통.transform.position.y - 1);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 2, 십의자리몸통.transform.position.y - 1);
+            }
+            if (랜덤십의몸통위치 == 6)
+            {
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 2, 십의자리몸통.transform.position.y - 1);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x, 일의자리몸통.transform.position.y + 2);
+                yield return new WaitForSeconds(0.005f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x, 일의자리몸통.transform.position.y - 2);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 2, 십의자리몸통.transform.position.y + 1);
+            }
+            if (랜덤십의몸통위치 == 7)
+            {
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 1, 십의자리몸통.transform.position.y + 1);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x, 일의자리몸통.transform.position.y - 2);
+                yield return new WaitForSeconds(0.005f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x, 일의자리몸통.transform.position.y + 2);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 1, 십의자리몸통.transform.position.y - 1);
+            }
+            if (랜덤십의몸통위치 == 8)
+            {
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 1, 십의자리몸통.transform.position.y - 1);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 2, 일의자리몸통.transform.position.y);
+                yield return new WaitForSeconds(0.005f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 2, 일의자리몸통.transform.position.y);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 1, 십의자리몸통.transform.position.y + 1);
+            }
+            if (랜덤십의몸통위치 == 9)
+            {
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 2, 일의자리몸통.transform.position.y);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 2, 십의자리몸통.transform.position.y - 1);
+                yield return new WaitForSeconds(0.005f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 2, 일의자리몸통.transform.position.y);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 2, 십의자리몸통.transform.position.y + 1);
+            }
+
+
+
+            일의자리.text = 랜덤일의자리.ToString();
+
+            yield return new WaitForSeconds(0.005f);
+
+        }
+
+        출력기능값 =  (랜덤일의자리);
+        if (출력기능값 == 0)
+        {
+            출력기능값 = 10;
+        }
+
+        yield return new WaitForSeconds(2f);
+
+
+
+    }
+
+
+    /* 룰렛 두자리
     public IEnumerator 룰렛작동()
     {
         for (int i = 0; i < 10; i++)
@@ -434,10 +664,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
 
 
     }
-
-
-
-
+    */
     // Start is called before the first frame update
     void Start()
     {
