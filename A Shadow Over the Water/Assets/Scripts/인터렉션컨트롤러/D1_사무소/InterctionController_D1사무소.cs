@@ -15,6 +15,15 @@ public class InterctionController_D1사무소 : MonoBehaviour
     public GameObject 선택1직접타기;
     public GameObject 선택1가만히있기;
 
+
+    public GameObject 선택2_1오브젝트;
+    public GameObject 선택2_2오브젝트;
+    public GameObject 선택2_3오브젝트;
+
+    public GameObject 선택3_1오브젝트;
+    public GameObject 선택3_2오브젝트;
+    public GameObject 선택3_3오브젝트;
+
     public GameObject 선1이후;
 
 
@@ -91,10 +100,42 @@ public class InterctionController_D1사무소 : MonoBehaviour
 
 
 
+    // 2번째 선택지
+    public void 선2_1()
+    {
 
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
 
+            theDM.ShowDialog(선택2_1오브젝트.transform.GetComponent<interactionEvent>().GetDialogs());
 
+        }
+    }
 
+    public void 선2_2()
+    {
+
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+
+            theDM.ShowDialog(선택2_2오브젝트.transform.GetComponent<interactionEvent>().GetDialogs());
+
+        }
+    }
+
+    public void 선2_3()
+    {
+
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+
+            theDM.ShowDialog(선택2_3오브젝트.transform.GetComponent<interactionEvent>().GetDialogs());
+
+        }
+    }
 
 
 

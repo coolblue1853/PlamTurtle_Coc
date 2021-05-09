@@ -11,6 +11,14 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
     public GameObject 첫번째_선택지_직접타기버튼;
     public GameObject 첫번째_선택지_가만히버튼;
 
+    public GameObject 두번째_선택지_1;
+    public GameObject 두번째_선택지_2;
+    public GameObject 두번째_선택지_3;
+
+    public GameObject 세번째_선택지_1;
+    public GameObject 세번째_선택지_2;
+    public GameObject 세번째_선택지_3;
+
 
     bool 엘라심리학실시여부 = false;
 
@@ -79,7 +87,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
     }
 
 
-    public void 선택지출력1(string oneTxt, string twoTxt)
+    public void 선택지출력1()
     {
 
         첫번째_선택지_커피타줘버튼.SetActive(true);
@@ -125,6 +133,105 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
 
         interctionController.선1이후연결();
     }
+
+
+
+    // 선택지 2번
+    public void 선택지출력2()
+    {
+
+        두번째_선택지_1.SetActive(true);
+        두번째_선택지_2.SetActive(true);
+        두번째_선택지_3.SetActive(true);
+
+    }
+
+
+    public void 선2_1누름()
+    {
+        dialogManager.선택지선택시외부에서페이지넘기기();
+        두번째_선택지_1.SetActive(false);
+        두번째_선택지_2.SetActive(false);
+        두번째_선택지_3.SetActive(false);
+        dialogManager.onButtonSetterF();
+        interctionController.선2_1(); ;
+
+    }
+    public void 선2_2누름()
+    {
+        dialogManager.선택지선택시외부에서페이지넘기기();
+        두번째_선택지_1.SetActive(false);
+        두번째_선택지_2.SetActive(false);
+        두번째_선택지_3.SetActive(false);
+        dialogManager.onButtonSetterF();
+        interctionController.선2_2();
+    }
+
+    public void 선2_3누름()
+    {
+        dialogManager.선택지선택시외부에서페이지넘기기();
+        두번째_선택지_1.SetActive(false);
+        두번째_선택지_2.SetActive(false);
+        두번째_선택지_3.SetActive(false);
+        dialogManager.onButtonSetterF();
+        interctionController.선2_3();
+    }
+
+
+    // 선택지 3번
+
+    public void 선택지출력3()
+    {
+
+        세번째_선택지_1.SetActive(true);
+        세번째_선택지_2.SetActive(true);
+        세번째_선택지_3.SetActive(true);
+
+    }
+
+
+    public void 선3_1누름()
+    {
+        dialogManager.선택지선택시외부에서페이지넘기기();
+        세번째_선택지_1.SetActive(false);
+        세번째_선택지_2.SetActive(false);
+        세번째_선택지_3.SetActive(false);
+        dialogManager.onButtonSetterF();
+        interctionController.선2_1(); ;
+
+    }
+    public void 선3_2누름()
+    {
+        dialogManager.선택지선택시외부에서페이지넘기기();
+        세번째_선택지_1.SetActive(false);
+        세번째_선택지_2.SetActive(false);
+        세번째_선택지_3.SetActive(false);
+        dialogManager.onButtonSetterF();
+        interctionController.선2_2();
+    }
+
+    public void 선3_3누름()
+    {
+        dialogManager.선택지선택시외부에서페이지넘기기();
+        두번째_선택지_1.SetActive(false);
+        두번째_선택지_2.SetActive(false);
+        두번째_선택지_3.SetActive(false);
+        dialogManager.onButtonSetterF();
+        interctionController.선2_3();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
