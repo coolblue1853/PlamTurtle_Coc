@@ -63,7 +63,9 @@ public class DataBaseManager : MonoBehaviour
     public static int 연기술 = 0;
     public static int 운동신경 = 0;
 
-
+    //1일차 오전 사무소 확인여부
+    public static bool _1일차오전심리학판정성공여부 = false;
+    public static bool 선택1_3가만히있기를했는가 = false;
 
 
     static public DataBaseManager instance;

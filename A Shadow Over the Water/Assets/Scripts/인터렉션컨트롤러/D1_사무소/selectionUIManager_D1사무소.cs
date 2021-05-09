@@ -15,9 +15,9 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
     public GameObject 두번째_선택지_2;
     public GameObject 두번째_선택지_3;
 
-    public GameObject 세번째_선택지_1;
-    public GameObject 세번째_선택지_2;
-    public GameObject 세번째_선택지_3;
+    public GameObject 세번째_선택지_거절;
+    public GameObject 세번째_선택지_수락;
+
 
 
     bool 엘라심리학실시여부 = false;
@@ -119,6 +119,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
 
     public void 선1가만히있기누름()
     {
+        DataBaseManager.선택1_3가만히있기를했는가 = true;
         dialogManager.선택지선택시외부에서페이지넘기기();
         첫번째_선택지_커피타줘버튼.SetActive(false);
         첫번째_선택지_직접타기버튼.SetActive(false);
@@ -142,7 +143,12 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
 
         두번째_선택지_1.SetActive(true);
         두번째_선택지_2.SetActive(true);
-        두번째_선택지_3.SetActive(true);
+
+        if(DataBaseManager.선택1_3가만히있기를했는가 == true)
+        {
+            두번째_선택지_3.SetActive(true);
+        }
+
 
     }
 
@@ -183,41 +189,28 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
     public void 선택지출력3()
     {
 
-        세번째_선택지_1.SetActive(true);
-        세번째_선택지_2.SetActive(true);
-        세번째_선택지_3.SetActive(true);
+        세번째_선택지_거절.SetActive(true);
+        세번째_선택지_수락.SetActive(true);
 
     }
 
 
-    public void 선3_1누름()
+    public void 선3_거절누름()
     {
         dialogManager.선택지선택시외부에서페이지넘기기();
-        세번째_선택지_1.SetActive(false);
-        세번째_선택지_2.SetActive(false);
-        세번째_선택지_3.SetActive(false);
+        세번째_선택지_거절.SetActive(false);
+        세번째_선택지_수락.SetActive(false);
         dialogManager.onButtonSetterF();
-        interctionController.선2_1(); ;
+        interctionController.선3_의뢰거절(); ;
 
     }
-    public void 선3_2누름()
+    public void 선3_수락누름()
     {
         dialogManager.선택지선택시외부에서페이지넘기기();
-        세번째_선택지_1.SetActive(false);
-        세번째_선택지_2.SetActive(false);
-        세번째_선택지_3.SetActive(false);
+        세번째_선택지_거절.SetActive(false);
+        세번째_선택지_수락.SetActive(false);
         dialogManager.onButtonSetterF();
-        interctionController.선2_2();
-    }
-
-    public void 선3_3누름()
-    {
-        dialogManager.선택지선택시외부에서페이지넘기기();
-        두번째_선택지_1.SetActive(false);
-        두번째_선택지_2.SetActive(false);
-        두번째_선택지_3.SetActive(false);
-        dialogManager.onButtonSetterF();
-        interctionController.선2_3();
+        interctionController.선3_의뢰수락();
     }
 
 
@@ -226,15 +219,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
 
 
 
-
-
-
-
-
-
-
-
-
+    //기능판단
 
 
     public void 엘라심리학선택지출력()
@@ -281,6 +266,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
         if (DataBaseManager.심리판단 < 출력기능값)
         {
             Debug.Log("성공");
+
            // dialogManager.선택지선택시외부에서페이지넘기기();
             interctionController.엘라심리학실패출력대사();
             엘라심리학선택지버튼.SetActive(false);
@@ -329,6 +315,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
         if (DataBaseManager.힘 < 출력기능값)
         {
             Debug.Log("성공");
+            DataBaseManager._1일차오전심리학판정성공여부 = true;
             dialogManager.선택지선택시외부에서페이지넘기기();
             interctionController.선택지1실패출력대사();
             //첫번째_선택지_버튼.SetActive(false);

@@ -20,9 +20,12 @@ public class InterctionController_D1사무소 : MonoBehaviour
     public GameObject 선택2_2오브젝트;
     public GameObject 선택2_3오브젝트;
 
-    public GameObject 선택3_1오브젝트;
-    public GameObject 선택3_2오브젝트;
-    public GameObject 선택3_3오브젝트;
+    public GameObject 선택3_거절_심리X;
+    public GameObject 선택3_거절_심리O;
+    public GameObject 선택3_거절_선택1에1선택;
+    public GameObject 선택3_수락;
+    public GameObject 선택3_수락_선택1에1선택;
+
 
     public GameObject 선1이후;
 
@@ -136,6 +139,77 @@ public class InterctionController_D1사무소 : MonoBehaviour
 
         }
     }
+
+
+
+    //의뢰 수락 OR 거절
+
+
+    public void 선3_의뢰거절()
+    {
+        if (DataBaseManager.선택1_3가만히있기를했는가 == true)
+        {
+            if (theDM.isDialogON == false)
+            {
+                theDM.isDialogON = true;
+
+                theDM.ShowDialog(선택3_거절_선택1에1선택.transform.GetComponent<interactionEvent>().GetDialogs());
+
+            }
+        }
+        else if (DataBaseManager._1일차오전심리학판정성공여부 == true)
+        {
+            if (theDM.isDialogON == false)
+            {
+                theDM.isDialogON = true;
+
+                theDM.ShowDialog(선택3_거절_심리O.transform.GetComponent<interactionEvent>().GetDialogs());
+
+            }
+        }
+        else
+        {
+            if (theDM.isDialogON == false)
+            {
+                theDM.isDialogON = true;
+
+                theDM.ShowDialog(선택3_거절_심리X.transform.GetComponent<interactionEvent>().GetDialogs());
+
+            }
+        }
+
+
+
+    }
+
+    public void 선3_의뢰수락()
+    {
+        if (DataBaseManager.선택1_3가만히있기를했는가 == true)
+        {
+            if (theDM.isDialogON == false)
+            {
+                theDM.isDialogON = true;
+
+                theDM.ShowDialog(선택3_수락_선택1에1선택.transform.GetComponent<interactionEvent>().GetDialogs());
+
+            }
+        }
+        else
+        {
+            if (theDM.isDialogON == false)
+            {
+                theDM.isDialogON = true;
+
+                theDM.ShowDialog(선택3_수락.transform.GetComponent<interactionEvent>().GetDialogs());
+
+            }
+        }
+
+
+    }
+
+
+
 
 
 
