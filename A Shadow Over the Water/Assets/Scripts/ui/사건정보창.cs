@@ -114,20 +114,20 @@ public class 사건정보창 : MonoBehaviour
         }
     }
 
-    public void 노아정보표기()
+    public void 악몽정보표기()
     {
         악몽.SetActive(true);
         행성대직렬.SetActive(false);
         편집증.SetActive(false);
     }
 
-    public void 멜리사정보표기()
+    public void 행성대직렬정보표기()
     {
         악몽.SetActive(false);
         행성대직렬.SetActive(true);
         편집증.SetActive(false);
     }
-    public void 나르댕정보표기()
+    public void 편집증정보표기()
     {
         악몽.SetActive(false);
         행성대직렬.SetActive(false);

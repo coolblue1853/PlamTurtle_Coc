@@ -2,30 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class 인물정보창 : MonoBehaviour
+public class 장소정보창 : MonoBehaviour
 {
-    public GameObject 노아;
-    public GameObject 멜리사;
-    public GameObject 나르댕;
+    public GameObject 탐정사무소;
+    public GameObject 의뢰자의집;
+    public GameObject 데일리뉴스신문사;
+    public GameObject 병원;
 
+
+    /*
     public GameObject 노아1;
     public GameObject 노아2;
     public GameObject 노아3;
     public GameObject 노아4;
     public GameObject 노아5;
     public GameObject 노아6;
+    */
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
+
+
     // Update is called once per frame
     void Update()
     {
-        노아정보업데이트문();
+        //노아정보업데이트문();
 
         //임시로 확인용으로 넣어둔 파일, 추후 삭제
+
         if (Input.GetKeyDown(KeyCode.F1))
         {
             DataBaseManager.노아정보2 = true;
@@ -49,7 +56,7 @@ public class 인물정보창 : MonoBehaviour
 
 
     }
-
+    /*
     void 노아정보업데이트문()
     {
         if (DataBaseManager.노아정보1 == true)
@@ -112,25 +119,34 @@ public class 인물정보창 : MonoBehaviour
 
         }
     }
-
-    public void 노아정보표기()
+    */
+    public void 탐정사무소정보표기()
     {
-        노아.SetActive(true);
-        멜리사.SetActive(false);
-        나르댕.SetActive(false);
+        탐정사무소.SetActive(true);
+        데일리뉴스신문사.SetActive(false);
+        의뢰자의집.SetActive(false);
+        병원.SetActive(false);
     }
 
-    public void 멜리사정보표기()
+    public void 데일리뉴스신문사정보표기()
     {
-        노아.SetActive(false);
-        멜리사.SetActive(true);
-        나르댕.SetActive(false);
+        탐정사무소.SetActive(false);
+        데일리뉴스신문사.SetActive(true);
+        의뢰자의집.SetActive(false);
+        병원.SetActive(false);
     }
-    public void 나르댕정보표기()
+    public void 의뢰자의집정보표기()
     {
-        노아.SetActive(false);
-        멜리사.SetActive(false);
-        나르댕.SetActive(true);
+        탐정사무소.SetActive(false);
+        데일리뉴스신문사.SetActive(false);
+        의뢰자의집.SetActive(true);
+        병원.SetActive(false);
     }
-
+    public void 병원정보표기()
+    {
+        탐정사무소.SetActive(false);
+        데일리뉴스신문사.SetActive(false);  
+        의뢰자의집.SetActive(false);
+        병원.SetActive(true);
+    }
 }

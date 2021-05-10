@@ -157,7 +157,8 @@ public class PlayerStat : MonoBehaviour
 
         DataBaseManager.체력 = DataBaseManager.활력 + DataBaseManager.의지력;
         DataBaseManager.정신력 = DataBaseManager.마력 + DataBaseManager.의지력;
-
+        DataBaseManager.현재체력 = DataBaseManager.체력;
+        DataBaseManager.현재정신력 = DataBaseManager.정신력;
         DataBaseManager.스트레스게이지 = DataBaseManager.의지력;
 
 
@@ -1945,7 +1946,8 @@ public class PlayerStat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(힘스킬배분숫자 ==0 && 지능스킬배분숫자 ==0 && 민첩스킬배분숫자 == 0)
+
+        if (힘스킬배분숫자 ==0 && 지능스킬배분숫자 ==0 && 민첩스킬배분숫자 == 0)
         {
             게임시작버튼.SetActive(true);
         }

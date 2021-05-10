@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2815658605281964298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2815658605281964299}
+  - component: {fileID: 2815658605281964308}
+  m_Layer: 0
+  m_Name: PlayerStatManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2815658605281964299
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2815658605281964298}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 921.5, y: 505, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2815658605281964308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2815658605281964298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cfa8e09e18b82d41b3fc18629c25256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "\uD798\uD14D\uC2A4\uD2B8": {fileID: 0}
+  "\uC9C0\uB2A5\uD14D\uC2A4\uD2B8": {fileID: 0}
+  "\uBBFC\uCCA9\uD14D\uC2A4\uD2B8": {fileID: 0}
+  "\uD589\uC6B4\uD14D\uC2A4\uD2B8": {fileID: 0}
+  "\uD65C\uB825\uD14D\uC2A4\uD2B8": {fileID: 0}
+  "\uB9C8\uB825\uD14D\uC2A4\uD2B8": {fileID: 0}
+  "\uC758\uC9C0\uB825\uD14D\uC2A4\uD2B8": {fileID: 0}
+  "\uCCB4\uB825\uD14D\uC2A4\uD2B8": {fileID: 0}
+  "\uC815\uC2E0\uB825\uD14D\uC2A4\uD2B8": {fileID: 0}
+  "\uCD5C\uB300\uC2A4\uD2B8\uB808\uC2A4\uD14D\uC2A4\uD2B8": {fileID: 0}
+  "\uAC8C\uC774\uC9C0\uC624\uBE0C\uC81D\uD2B8": {fileID: 5670511199174926868, guid: 596086d6826b97746ae831f9579d4523,
+    type: 3}
+  "\uD798\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uC9C0\uB2A5\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uBBFC\uCCA9\uC774\uC9C0": {fileID: 0}
+  "\uD589\uC6B4\uC774\uC9C0": {fileID: 0}
+  "\uD65C\uB825\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uC758\uC9C0\uB825\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uB9C8\uB825\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uCCB4\uB825\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uC815\uC2E0\uB825\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uC2A4\uD2B8\uB808\uC2A4\uB0B4\uC131\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uB2E4\uC74C\uD398\uC774\uC9C0_\uC2A4\uD0AC\uBC84\uD2BC": {fileID: 0}
+  "\uD798\uC2A4\uD0AC\uBC30\uBD84\uCE58txt": {fileID: 0}
+  "\uC9C0\uB2A5\uC2A4\uD0AC\uBC30\uBD84\uCE58txt": {fileID: 0}
+  "\uBBFC\uCCA9\uC2A4\uD0AC\uBC30\uBD84\uCE58txt": {fileID: 0}
+  "\uB9E8\uC190\uACA9\uD22C\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uB9E8\uC190\uACA9\uD22C\uAC8C\uC774\uC9C0txt": {fileID: 0}
+  "\uC0AC\uACA9\uC220\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uC0AC\uACA9\uC220\uAC8C\uC774\uC9C0txt": {fileID: 0}
+  "\uB2E8\uAC80\uC220\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uB2E8\uAC80\uC220\uAC8C\uC774\uC9C0txt": {fileID: 0}
+  "\uACE0\uBB38\uC220\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uACE0\uBB38\uC220\uAC8C\uC774\uC9C0txt": {fileID: 0}
+  "\uB208\uC370\uBBF8\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uB208\uC370\uBBF8\uAC8C\uC774\uC9C0txt": {fileID: 0}
+  "\uC5B8\uBCC0\uC220\uD611\uBC15\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uC5B8\uBCC0\uC220\uD611\uBC15\uAC8C\uC774\uC9C0txt": {fileID: 0}
+  "\uB358\uC9C0\uAE30\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uB358\uC9C0\uAE30\uAC8C\uC774\uC9C0txt": {fileID: 0}
+  "\uC7A0\uC218\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uC7A0\uC218\uAC8C\uC774\uC9C0txt": {fileID: 0}
+  "\uC758\uD559\uC9C0\uC2DD\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uC758\uD559\uC9C0\uC2DD\uAC8C\uC774\uC9C0txt": {fileID: 0}
+  "\uC815\uBCF4\uC870\uC0AC\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uC815\uBCF4\uC870\uC0AC\uAC8C\uC774\uC9C0txt": {fileID: 0}
+  "\uC2EC\uB9AC\uD310\uB2E8\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uC2EC\uB9AC\uD310\uB2E8\uAC8C\uC774\uC9C0txt": {fileID: 0}
+  "\uC624\uCEEC\uD2B8\uC9C0\uC2DD\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uC624\uCEEC\uD2B8\uC9C0\uC2DD\uAC8C\uC774\uC9C0txt": {fileID: 0}
+  "\uC815\uC2E0\uAC10\uC815\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uC815\uC2E0\uAC10\uC815\uAC8C\uC774\uC9C0txt": {fileID: 0}
+  "\uC5B8\uBCC0\uC220\uC124\uB4DD\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uC5B8\uBCC0\uC220\uC124\uB4DD\uAC8C\uC774\uC9C0txt": {fileID: 0}
+  "\uBD95\uB300\uAC10\uAE30\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uBD95\uB300\uAC10\uAE30\uAC8C\uC774\uC9C0txt": {fileID: 0}
+  "\uBC95\uC758\uD559\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uBC95\uC758\uD559\uAC8C\uC774\uC9C0txt": {fileID: 0}
+  "\uAD6C\uB974\uAE30\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uAD6C\uB974\uAE30\uAC8C\uC774\uC9C0txt": {fileID: 0}
+  "\uBCC0\uC7A5\uC220\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uBCC0\uC7A5\uC220\uAC8C\uC774\uC9C0txt": {fileID: 0}
+  "\uC5B8\uBCC0\uC220\uAC70\uC9D3\uB9D0\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uC5B8\uBCC0\uC220\uAC70\uC9D3\uB9D0\uAC8C\uC774\uC9C0txt": {fileID: 0}
+  "\uC790\uBB3C\uC1E0\uB530\uAE30\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uC790\uBB3C\uC1E0\uB530\uAE30\uAC8C\uC774\uC9C0txt": {fileID: 0}
+  "\uC190\uC7AC\uC8FC\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uC190\uC7AC\uC8FC\uAC8C\uC774\uC9C0txt": {fileID: 0}
+  "\uC740\uC2E0\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uC740\uC2E0\uAC8C\uC774\uC9C0txt": {fileID: 0}
+  "\uC5F0\uAE30\uC220\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uC5F0\uAE30\uC220\uAC8C\uC774\uC9C0txt": {fileID: 0}
+  "\uC6B4\uB3D9\uC2E0\uACBD\uAC8C\uC774\uC9C0": {fileID: 0}
+  "\uC6B4\uB3D9\uC2E0\uACBD\uAC8C\uC774\uC9C0txt": {fileID: 0}
+  "\uAC8C\uC784\uC2DC\uC791\uBC84\uD2BC": {fileID: 0}
+  "\uD798\uBC30\uBD84\uCE58\uB0A8\uC74C\uC54C\uB78C": {fileID: 0}
+  "\uC9C0\uB2A5\uBC30\uBD84\uCE58\uB0A8\uC74C\uC54C\uB78C": {fileID: 0}
+  "\uBBFC\uCCA9\uBC30\uBD84\uCE58\uB0A8\uC74C\uC54C\uB78C": {fileID: 0}
+  "\uC77C\uD398\uC774\uC9C0": {fileID: 0}
+  "\uC774\uD398\uC774\uC9C0": {fileID: 0}
+  "\uC0BC\uD398\uC774\uC9C0": {fileID: 0}
+  "\uD654\uC0B4\uD45C\uB118\uBC84": 1

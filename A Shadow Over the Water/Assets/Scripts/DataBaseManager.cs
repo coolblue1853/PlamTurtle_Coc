@@ -31,6 +31,8 @@ public class DataBaseManager : MonoBehaviour
 
     public static int 체력;
     public static int 정신력;
+    public static int 현재체력;
+    public static int 현재정신력;
     public static int 스트레스게이지;
 
 

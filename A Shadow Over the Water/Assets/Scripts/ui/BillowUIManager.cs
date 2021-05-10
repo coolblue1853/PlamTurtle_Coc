@@ -13,6 +13,7 @@ public class BillowUIManager : MonoBehaviour
     public Text 체력텍스트;
     public Text 정신력텍스트;
 
+    public GameObject 정보창;
 
     public float 반영체력;
     public float  최초체력;
@@ -42,6 +43,14 @@ public class BillowUIManager : MonoBehaviour
 
     }
 
+    public void 상태창켜기()
+    {
+
+    }
+    public void 정보창켜기()
+    {
+        정보창.SetActive(true);
+    }
 
 
     // Update is called once per frame
@@ -64,7 +73,7 @@ public class BillowUIManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            DataBaseManager.체력 -= 1;
+            DataBaseManager.현재체력 -= 1;
             반영체력 = 반영체력 - 단위체력;
 
             체력바.fillAmount = 반영체력;
@@ -75,7 +84,7 @@ public class BillowUIManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            DataBaseManager.정신력 -= 1;
+            DataBaseManager.현재정신력 -= 1;
             반영이성 = 반영이성 - 단위이성;
 
             이성바.color = new Color(1, 1, 1, 반영이성);
@@ -124,6 +133,9 @@ public class BillowUIManager : MonoBehaviour
 
             DataBaseManager.체력 = DataBaseManager.활력 + DataBaseManager.의지력;
             DataBaseManager.정신력 = DataBaseManager.마력 + DataBaseManager.의지력;
+
+            DataBaseManager.현재체력 = DataBaseManager.체력;
+            DataBaseManager.현재정신력 = DataBaseManager.정신력;
 
             DataBaseManager.스트레스게이지 = DataBaseManager.의지력;
 
