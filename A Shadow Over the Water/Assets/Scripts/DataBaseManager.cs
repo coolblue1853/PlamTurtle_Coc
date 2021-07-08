@@ -58,16 +58,34 @@ public class DataBaseManager : MonoBehaviour
     //민첩 기반
     public static int 구르기 = 0;
     public static int 변장술 = 0;
-    public static int 언변술_거짓말 = 0;
+    public static int 언변술 = 0;
     public static int 자물쇠따기 = 0;
     public static int 손재주 = 0;
     public static int 은신 = 0;
     public static int 연기술 = 0;
     public static int 운동신경 = 0;
 
+
+    public static bool 메뉴창켜짐 = false;
+
     //1일차 오전 사무소 확인여부
     public static bool _1일차오전심리학판정성공여부 = false;
     public static bool 선택1_3가만히있기를했는가 = false;
+
+
+
+    void 매뉴창켜지면정지()
+    {
+        if (메뉴창켜짐 == false)
+        {
+            Time.timeScale = 1;
+        }
+        if (메뉴창켜짐 == true)
+        {
+            Time.timeScale = 0;
+        }
+    }
+    
 
 
     static public DataBaseManager instance;
@@ -121,7 +139,7 @@ public class DataBaseManager : MonoBehaviour
         법의학 = 0;
         구르기 = 0;
         변장술 = 0;
-        언변술_거짓말 = 0;
+        언변술 = 0;
         자물쇠따기 = 0;
         손재주 = 0;
         은신 = 0;

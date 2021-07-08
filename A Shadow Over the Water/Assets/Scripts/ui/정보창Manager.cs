@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class 정보창Manager : MonoBehaviour
 {
 
@@ -14,7 +14,12 @@ public class 정보창Manager : MonoBehaviour
     public GameObject 장소창;
 
     public GameObject 정보창;
-    
+
+
+
+
+
+
     public void 정보창끄기()
     {
         정보창.SetActive(false);

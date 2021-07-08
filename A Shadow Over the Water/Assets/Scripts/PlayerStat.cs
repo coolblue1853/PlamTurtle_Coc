@@ -1495,14 +1495,14 @@ public class PlayerStat : MonoBehaviour
 
     public void 언변술거짓말up()
     {
-        if (DataBaseManager.언변술_거짓말 < 9)
+        if (DataBaseManager.언변술 < 9)
         {
             if (민첩스킬배분숫자 > 0)
             {
                 민첩스킬배분숫자 = 민첩스킬배분숫자 - 1;
                 민첩스킬배분치txt.text = 민첩스킬배분숫자.ToString();
-                DataBaseManager.언변술_거짓말 = DataBaseManager.언변술_거짓말 + 1;
-                언변술거짓말게이지txt.text = "언변술(거짓말) : " + DataBaseManager.언변술_거짓말.ToString();
+                DataBaseManager.언변술 = DataBaseManager.언변술 + 1;
+                언변술거짓말게이지txt.text = "언변술(거짓말) : " + DataBaseManager.언변술.ToString();
                 GameObject.Instantiate(게이지오브젝트).transform.parent = 언변술거짓말게이지.transform;
             }
 
@@ -1512,12 +1512,12 @@ public class PlayerStat : MonoBehaviour
     }
     public void 언변술거짓말down()
     {
-        if (DataBaseManager.언변술_거짓말 > 0)
+        if (DataBaseManager.언변술 > 0)
         {
             민첩스킬배분숫자 = 민첩스킬배분숫자 + 1;
             민첩스킬배분치txt.text = 민첩스킬배분숫자.ToString();
-            DataBaseManager.언변술_거짓말 = DataBaseManager.언변술_거짓말 - 1;
-            언변술거짓말게이지txt.text = "언변술(거짓말) : " + DataBaseManager.언변술_거짓말.ToString();
+            DataBaseManager.언변술 = DataBaseManager.언변술 - 1;
+            언변술거짓말게이지txt.text = "언변술(거짓말) : " + DataBaseManager.언변술.ToString();
             Transform[] 언변술거짓말차일드 = 언변술거짓말게이지.GetComponentsInChildren<Transform>(true);
             if (언변술거짓말차일드 != null)
             {
@@ -1533,10 +1533,10 @@ public class PlayerStat : MonoBehaviour
 
     public void 언변술거짓말reset()
     {
-        민첩스킬배분숫자 = 민첩스킬배분숫자 + DataBaseManager.언변술_거짓말;
+        민첩스킬배분숫자 = 민첩스킬배분숫자 + DataBaseManager.언변술;
         민첩스킬배분치txt.text = 민첩스킬배분숫자.ToString();
-        DataBaseManager.언변술_거짓말 = 0;
-        언변술거짓말게이지txt.text = "언변술(거짓말) : " + DataBaseManager.언변술_거짓말.ToString();
+        DataBaseManager.언변술 = 0;
+        언변술거짓말게이지txt.text = "언변술(거짓말) : " + DataBaseManager.언변술.ToString();
         Transform[] 언변술거짓말차일드 = 언변술거짓말게이지.GetComponentsInChildren<Transform>(true);
         if (언변술거짓말차일드 != null)
         {
@@ -1930,7 +1930,7 @@ public class PlayerStat : MonoBehaviour
 
         구르기게이지txt.text = "구르기 : " + DataBaseManager.구르기.ToString();
         변장술게이지txt.text = "변장술 : " + DataBaseManager.변장술.ToString();
-        언변술거짓말게이지txt.text = "언변술(거짓말) : " + DataBaseManager.언변술_거짓말.ToString();
+        언변술거짓말게이지txt.text = "언변술 : " + DataBaseManager.언변술.ToString();
         자물쇠따기게이지txt.text = "오컬트지식 : " + DataBaseManager.자물쇠따기.ToString();
         손재주게이지txt.text = "손재주 : " + DataBaseManager.손재주.ToString();
         은신게이지txt.text = "은신 : " + DataBaseManager.은신.ToString();
