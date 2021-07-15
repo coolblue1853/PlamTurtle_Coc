@@ -42,6 +42,13 @@ public class Enemy : MonoBehaviour
 
             체력 = 활력 + 의지력;
             정신력 = 마력 + 의지력;
+
+
+            심해인맨손격투 = Random.Range(3, 6);
+
+            심해인회피 = Random.Range(3, 6);
+
+            심해인듣기 = Random.Range(3, 6);
         }
 
 

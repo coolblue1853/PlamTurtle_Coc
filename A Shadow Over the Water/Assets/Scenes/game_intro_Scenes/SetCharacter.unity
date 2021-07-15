@@ -11581,7 +11581,7 @@ GameObject:
   - component: {fileID: 1070325961}
   - component: {fileID: 1070325960}
   m_Layer: 5
-  m_Name: "\uB9E8\uC190\uACA9\uD22C"
+  m_Name: "\uADFC\uC811\uACA9\uD22C"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11638,7 +11638,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "<\uB9E8\uC190\uACA9\uD22C>\n"
+  m_Text: "<\uADFC\uC811\uACA9\uD22C>\n"
 --- !u!222 &1070325961
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24354,6 +24354,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 193300464}
+    - target: {fileID: 4098868817414016117, guid: ed7c8898bce5cdc44843d701b4af1259,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4098868817425302108, guid: ed7c8898bce5cdc44843d701b4af1259,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -24369,6 +24374,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 193300464}
+    - target: {fileID: 4098868817495208806, guid: ed7c8898bce5cdc44843d701b4af1259,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4098868817501175616, guid: ed7c8898bce5cdc44843d701b4af1259,
         type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -24739,6 +24749,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 193300464}
+    - target: {fileID: 4098868818213833604, guid: ed7c8898bce5cdc44843d701b4af1259,
+        type: 3}
+      propertyPath: m_Text
+      value: "\uADFC\uC811\uACA9\uD22C  : "
+      objectReference: {fileID: 0}
     - target: {fileID: 4098868818219691737, guid: ed7c8898bce5cdc44843d701b4af1259,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -25044,6 +25059,11 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2007829638}
+    - target: {fileID: 4098868819351370140, guid: ed7c8898bce5cdc44843d701b4af1259,
+        type: 3}
+      propertyPath: m_Name
+      value: "\uC2A4\uD0AC:\uADFC\uC811\uACA9\uD22C"
+      objectReference: {fileID: 0}
     - target: {fileID: 4098868819358618309, guid: ed7c8898bce5cdc44843d701b4af1259,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
