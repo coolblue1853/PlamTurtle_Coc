@@ -30,7 +30,7 @@ public class BillowUIManager : MonoBehaviour
     public float 반영이성;
     public float 최초이성;
     public float 단위이성;
-
+    
     public GameObject 스트레스게이지;
     RectTransform 스트레스게이지사이즈;
 

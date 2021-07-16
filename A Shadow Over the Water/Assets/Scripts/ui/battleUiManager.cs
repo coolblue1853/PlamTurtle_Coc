@@ -65,9 +65,16 @@ public class battleUiManager : MonoBehaviour
     {
         확인용스탯생성();
         체력바관리();
-        체력감소();
+
         이성감소();
 
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            DataBaseManager.구르기 = 5;
+            DataBaseManager.맨손격투 = 5;
+            DataBaseManager.사격술 = 5;
+            DataBaseManager.던지기 = 5;
+        }
 
     }
 
@@ -137,7 +144,6 @@ public class battleUiManager : MonoBehaviour
 
 
 
- 
 
 
 
@@ -146,18 +152,27 @@ public class battleUiManager : MonoBehaviour
 
 
 
+    bool first = false;
 
-    void 체력감소()
+    public void 체력감소()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if(first == false)
         {
+            반영체력 = 1;
+            최초체력 = DataBaseManager.체력;
+            단위체력 = 1 / 최초체력;
+            first = true;
+        }
+
+
+
+
             DataBaseManager.현재체력 -= 1;
 
             반영체력 = 반영체력 - 단위체력;
 
             체력바.fillAmount = 반영체력;
 
-        }
     }
     void 이성감소()
     {

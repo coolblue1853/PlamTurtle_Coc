@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
         public int 활력 = 0;
         public int 마력 = 0;
         public int 의지력 = 0;
-
+        public int 전체체력 = 0;
         public int 체력 = 0;
         public int 정신력 = 0;
 
@@ -43,7 +43,7 @@ public class Enemy : MonoBehaviour
             체력 = 활력 + 의지력;
             정신력 = 마력 + 의지력;
 
-
+            전체체력 = 체력;
             심해인맨손격투 = Random.Range(3, 6);
 
             심해인회피 = Random.Range(3, 6);

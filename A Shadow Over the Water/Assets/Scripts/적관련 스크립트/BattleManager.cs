@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class BattleManager : MonoBehaviour
 {
-
+    public battleUiManager 배틀유아이;
     public int 현재턴수 = 0;
     public int 내부여턴수 = 0;
     public int 적부여턴수1 = 0;
@@ -26,6 +26,10 @@ public class BattleManager : MonoBehaviour
 
     public GameObject 공격_도주_눈썰미_재장전;
     public GameObject 격투_투척_단검_사격;
+
+
+
+
     public void 심해인등장()
     {
 
@@ -295,8 +299,24 @@ public class BattleManager : MonoBehaviour
 
     public void 현재가누구턴인지확인()
     {
+        if(심해인1.체력 <= 0)
+        {
+            심해인1이미지.SetActive(false);
+        }
+        if (심해인2.체력 <= 0)
+        {
+            심해인2이미지.SetActive(false);
+        }
+        if (심해인3.체력 <= 0)
+        {
+            심해인3이미지.SetActive(false);
+        }
 
-        if(현재턴수 == 5 && 등장수 == 3)
+
+
+
+
+        if (현재턴수 == 5 && 등장수 == 3)
         {
             현재턴수 = 1;
         }
@@ -313,23 +333,26 @@ public class BattleManager : MonoBehaviour
         if (현재턴수 == 내부여턴수 && 턴시작 == false)
         {
             턴시작 = true;
-
+            턴시작시초기화();
             내턴();
         }
 
         if (현재턴수 == 적부여턴수1 && 턴시작 == false)
         {
+            턴시작시초기화();
             턴시작 = true;
             적1의턴();
         }
 
         if (현재턴수 == 적부여턴수2 && 턴시작 == false)
         {
+            턴시작시초기화();
             턴시작 = true;
             적2의턴();
         }
         if (현재턴수 == 적부여턴수3 && 턴시작 == false)
         {
+            턴시작시초기화();
             턴시작 = true;
             적3의턴();
         }
@@ -349,7 +372,12 @@ public class BattleManager : MonoBehaviour
     public GameObject 공격뒤로가기;
     public GameObject 근접뒤로가기;
     public GameObject 공격적선택뒤로가기;
+    public GameObject 공격아이템칸뒤로가기;
     public GameObject 적선택가리개;
+
+    //무기선택창
+    public GameObject 도구선택창;
+
     public void 내턴()
     {
         whiteBox.SetActive(true);
@@ -488,7 +516,51 @@ public class BattleManager : MonoBehaviour
         공격뒤로가기.SetActive(false);
 
     }
+    public void 내턴_격투뒤로가기()
+    {
+        기술명 = null;
+        공격_도주_눈썰미_재장전.SetActive(false);
+        whiteBox.SetActive(true);
 
+
+        격투_투척_단검_사격.SetActive(true);
+        공격뒤로가기.SetActive(true);
+
+        적화살표1.SetActive(false);
+        적선택차례 = false;
+        근접뒤로가기.SetActive(false);
+        적선택가리개.SetActive(false);
+
+    }
+    public void 내턴_템선택창뒤로가기()
+    {
+        공격_도주_눈썰미_재장전.SetActive(false);
+        whiteBox.SetActive(true);
+        격투_투척_단검_사격.SetActive(true);
+        공격뒤로가기.SetActive(true);
+
+        근접뒤로가기.SetActive(false);
+        적선택가리개.SetActive(false);
+
+        적화살표1.SetActive(false);
+        공격아이템칸뒤로가기.SetActive(false);
+        도구선택창.SetActive(false);
+        rednum = 1;
+    }
+    public void 내턴_공격류적선뒤로가기()
+    {
+        whiteBox.SetActive(true);
+        공격_도주_눈썰미_재장전.SetActive(false);
+        공격적선택뒤로가기.SetActive(false);
+        격투_투척_단검_사격.SetActive(true);
+        공격뒤로가기.SetActive(true);
+
+        근접뒤로가기.SetActive(false);
+        적선택가리개.SetActive(false);
+
+        적화살표1.SetActive(false);
+
+    }
     public void 내턴_공격버튼()
     {
         공격_도주_눈썰미_재장전.SetActive(false);
@@ -515,41 +587,343 @@ public class BattleManager : MonoBehaviour
         공격적선택뒤로가기.SetActive(true);
         적화살표1.SetActive(true);
     }
-
-    public void 내턴_격투뒤로가기()
+    public void 내턴_사격버튼()
     {
-        기술명 = null;
-        공격_도주_눈썰미_재장전.SetActive(false);
-        whiteBox.SetActive(true);
+        기술명 = "사격술";
+        격투_투척_단검_사격.SetActive(false);
+        공격뒤로가기.SetActive(false);
+        whiteBox.SetActive(false);
+
+        공격아이템칸뒤로가기.SetActive(true);
+        도구선택창.SetActive(true);
+        rednum = 1;
+
+    }
+    public void 내턴_던지기버튼()
+    {
+        기술명 = "투척";
+        격투_투척_단검_사격.SetActive(false);
+        공격뒤로가기.SetActive(false);
+        whiteBox.SetActive(false);
 
 
-        격투_투척_단검_사격.SetActive(true);
-        공격뒤로가기.SetActive(true);
+    }
+    public void 내턴_단검술버튼()
+    {
+        기술명 = "단검술";
+        격투_투척_단검_사격.SetActive(false);
+        공격뒤로가기.SetActive(false);
+        whiteBox.SetActive(false);
 
-        적화살표1.SetActive(false);
-        적선택차례 = false;
-        근접뒤로가기.SetActive(false);
-        적선택가리개.SetActive(false);
 
     }
 
-    public void 내턴_공격류적선뒤로가기()
+
+    //총기선택 버튼
+    public GameObject 장탄수부족메시지;
+    public void 매그넘선택()
     {
-        whiteBox.SetActive(true);
+        if(리볼버장탄수 != 0)
+        {
+            도구선택창.SetActive(false);
+            선택된무기 = "리볼버";
+            적선택차례 = true;
+            적선택가리개.SetActive(true);
+            근접뒤로가기.SetActive(true);
+            공격적선택뒤로가기.SetActive(true);
+            적화살표1.SetActive(true);
+
+        }
+        else
+        {
+            StartCoroutine(장탄수부족());
+        }
+
+    }
+
+    public IEnumerator 장탄수부족()
+    {
+        
+        장탄수부족메시지.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        장탄수부족메시지.SetActive(false);
+    }
+
+
+
+    int rednum = 1;
+    public GameObject r1;
+    public GameObject r2;
+    public GameObject r3;
+    public GameObject r4;
+    public GameObject r5;
+    public GameObject r6;
+    public GameObject r7;
+    public GameObject r8;
+    // //////////////////////////////////아이템창 관리
+    void 메뉴창업데이터()
+    {
+
+        if (rednum == 1)
+        {
+            r1.SetActive(false);
+            r2.SetActive(false);
+            r3.SetActive(false);
+            r4.SetActive(false);
+            r5.SetActive(false);
+            r6.SetActive(false);
+            r7.SetActive(false);
+            r8.SetActive(false);
+
+            r1.SetActive(true);
+        }
+
+        else if (rednum == 2)
+        {
+            r1.SetActive(false);
+            r2.SetActive(false);
+            r3.SetActive(false);
+            r4.SetActive(false);
+            r5.SetActive(false);
+            r6.SetActive(false);
+            r7.SetActive(false);
+            r8.SetActive(false);
+
+            r2.SetActive(true);
+        }
+
+        else if (rednum == 3)
+        {
+            r1.SetActive(false);
+            r2.SetActive(false);
+            r3.SetActive(false);
+            r4.SetActive(false);
+            r5.SetActive(false);
+            r6.SetActive(false);
+            r7.SetActive(false);
+            r8.SetActive(false);
+
+            r3.SetActive(true);
+        }
+
+        else if (rednum == 4)
+        {
+            r1.SetActive(false);
+            r2.SetActive(false);
+            r3.SetActive(false);
+            r4.SetActive(false);
+            r5.SetActive(false);
+            r6.SetActive(false);
+            r7.SetActive(false);
+            r8.SetActive(false);
+
+            r4.SetActive(true);
+        }
+
+        else if (rednum == 5)
+        {
+            r1.SetActive(false);
+            r2.SetActive(false);
+            r3.SetActive(false);
+            r4.SetActive(false);
+            r5.SetActive(false);
+            r6.SetActive(false);
+            r7.SetActive(false);
+            r8.SetActive(false);
+
+            r5.SetActive(true);
+        }
+        else if (rednum == 6)
+        {
+            r1.SetActive(false);
+            r2.SetActive(false);
+            r3.SetActive(false);
+            r4.SetActive(false);
+            r5.SetActive(false);
+            r6.SetActive(false);
+            r7.SetActive(false);
+            r8.SetActive(false);
+
+            r6.SetActive(true);
+        }
+        else if (rednum == 7)
+        {
+            r1.SetActive(false);
+            r2.SetActive(false);
+            r3.SetActive(false);
+            r4.SetActive(false);
+            r5.SetActive(false);
+            r6.SetActive(false);
+            r7.SetActive(false);
+            r8.SetActive(false);
+
+            r7.SetActive(true);
+        }
+
+        else if (rednum == 8)
+        {
+            r1.SetActive(false);
+            r2.SetActive(false);
+            r3.SetActive(false);
+            r4.SetActive(false);
+            r5.SetActive(false);
+            r6.SetActive(false);
+            r7.SetActive(false);
+            r8.SetActive(false);
+
+            r8.SetActive(true);
+        }
+
+
+    }
+    void 총기류메뉴창()
+    {
+
+
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            if (rednum == 8)
+            {
+                rednum = 1;
+            }
+
+            else
+            {
+                rednum = rednum + 1;
+            }
+
+
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            if (rednum == 1)
+            {
+                rednum = 5;
+            }
+            else if (rednum == 2)
+            {
+                rednum = 6;
+            }
+            else if (rednum == 3)
+            {
+                rednum = 7;
+            }
+            else if (rednum == 4)
+            {
+                rednum = 8;
+            }
+            else if (rednum == 5)
+            {
+                rednum = 1;
+            }
+            else if (rednum == 6)
+            {
+                rednum = 2;
+            }
+            else if (rednum == 7)
+            {
+                rednum = 3;
+            }
+            else if (rednum == 8)
+            {
+                rednum = 4;
+            }
+
+
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            if (rednum == 1)
+            {
+                rednum = 5;
+            }
+            else if (rednum == 2)
+            {
+                rednum = 6;
+            }
+            else if (rednum == 3)
+            {
+                rednum = 7;
+            }
+            else if (rednum == 4)
+            {
+                rednum = 8;
+            }
+            else if (rednum == 5)
+            {
+                rednum = 1;
+            }
+            else if (rednum == 6)
+            {
+                rednum = 2;
+            }
+            else if (rednum == 7)
+            {
+                rednum = 3;
+            }
+            else if (rednum == 8)
+            {
+                rednum = 4;
+            }
+
+
+
+
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            if (rednum == 1)
+            {
+                rednum = 8;
+            }
+
+            else
+            {
+                rednum = rednum - 1;
+            }
+        }
+
+    }
+
+    public void 리볼버정보창엔터()
+    {
+        대상이름.text = "32구경 리볼버";
+        대상설명.text = "SW사의 소구경 리볼버, 최대장탄수 6발, 대미지 1~8 현재 장탄수 " + 리볼버장탄수;
+
+    }
+    public void 리볼버정보창아웃()
+    {
+        대상이름.text = "";
+        대상설명.text = "";
+
+    }
+
+    public void 턴시작시초기화()
+    {
+        리볼버정보창아웃();
         공격_도주_눈썰미_재장전.SetActive(false);
         공격적선택뒤로가기.SetActive(false);
-        격투_투척_단검_사격.SetActive(true);
-        공격뒤로가기.SetActive(true);
-
         근접뒤로가기.SetActive(false);
-        적선택가리개.SetActive(false);
+        
 
+        적선택가리개.SetActive(false);
         적화살표1.SetActive(false);
 
+
+        기술명 = "";
+        공격아이템칸뒤로가기.SetActive(false);
+        노아제목.text = "------";
+        적제목.text = "------";
+        노아기술.text = "------";
+        적기술.text = "------";
+        노아결과.text = "------";
+        적기결과.text = "------";
+        결과.text = "------";
+        whiteNum = 1;
+        내턴인가 = false;
+        내턴기본 = false;
     }
-
-
-
 
 
 
@@ -636,13 +1010,34 @@ public class BattleManager : MonoBehaviour
 
     }
 
-    public int 대미지;
+    public int 근력대미지;
+    public int 리볼버대미지;
+    public int 리볼버장탄수 = 6;
+
+    string 선택된무기;
+
+
+    //무기선택버튼 관련
+
+
+
+
     public IEnumerator 적클릭1()
     {
+
+
+        근력대미지 = Random.Range(1, 4);
+
+        리볼버대미지 = Random.Range(1, 10);
+
+
+
         판정창.SetActive(true);
-        if (기술명 == "근접격투")
+
+        //근접전투 관련 공격
+        if (기술명 == "근접격투" && 심해인1.체력 > ((double)심해인1.전체체력 / 2f))
         {
-            대미지 = Random.Range(1, 4);
+
             노아제목.text = "노아 : 공격";
             적제목.text = "??? : 반격";
 
@@ -660,51 +1055,51 @@ public class BattleManager : MonoBehaviour
 
 
 
-            if (출력기능값 <= DataBaseManager.맨손격투/3 || DataBaseManager.맨손격투 == 1)
-            {
-                노아결과.text = "대성공";
 
-            }
-            else if (DataBaseManager.맨손격투 == 10)
-            {
-                노아결과.text = "대실패";
 
-            }
-
-            else if (출력기능값 <= DataBaseManager.맨손격투)
+             if (출력기능값 <= DataBaseManager.맨손격투)
             {
                 노아결과.text = "보통성공";
 
             }
-            else if (출력기능값 > DataBaseManager.맨손격투)
+             if (출력기능값 > DataBaseManager.맨손격투)
             {
                 노아결과.text = "실패";
 
             }
+            if (출력기능값 <= ((double)DataBaseManager.맨손격투 / 3f) && (double)DataBaseManager.맨손격투 >= 3f)
+            {
+                노아결과.text = "대성공";
 
+            }
+             if (출력기능값 == 10)
+            {
+                노아결과.text = "대실패";
+
+            }
             // 전판정
 
-            if (출력기능값 <= 심해인1.심해인맨손격투 / 3 || 심해인1.심해인맨손격투 == 1)
-            {
-                적기결과.text = "대성공";
 
-            }
-            else if (심해인1.심해인맨손격투 == 10)
-            {
-                적기결과.text = "대실패";
-
-            }
-            else if(적출력기능값 <= 심해인1.심해인맨손격투)
+            if (적출력기능값 <= 심해인1.심해인맨손격투)
             {
                 적기결과.text = "보통성공";
 
             }
-            else if (적출력기능값 > 심해인1.심해인맨손격투)
+            if (적출력기능값 > 심해인1.심해인맨손격투)
             {
                 적기결과.text = "실패";
 
             }
+            if (적출력기능값 <= ((double)심해인1.심해인맨손격투 / 3f) && (double)심해인1.심해인맨손격투 >= 3f)
+            {
+                적기결과.text = "대성공";
 
+            }
+            if (적출력기능값 == 10)
+            {
+                적기결과.text = "대실패";
+
+            }
             yield return new WaitForSeconds(2f);
 
 
@@ -742,39 +1137,759 @@ public class BattleManager : MonoBehaviour
             if(결과.text == "노아 판정승")
             {
                 Debug.Log(심해인1.체력);
-                Debug.Log(대미지);
-                심해인1.체력 = 심해인1.체력 - 대미지;
+                Debug.Log(근력대미지);
+                심해인1.체력 = 심해인1.체력 - 근력대미지;
                 Debug.Log(심해인1.체력);
-            } 
+            }
+
+            if (결과.text == "적 판정승")
+            {
+                if (근력대미지 == 1)
+                {
+                    BattleUiManager.체력감소();
+                }
+
+                else if (근력대미지 == 2)
+                {
+                    BattleUiManager.체력감소();
+                    BattleUiManager.체력감소();
+                }
+                else if (근력대미지 == 3)
+                {
+                    BattleUiManager.체력감소();
+                    BattleUiManager.체력감소();
+                    BattleUiManager.체력감소();
+                }
+            }
+
+            yield return new WaitForSeconds(2f);
+
+            판정창.SetActive(false);
+
+
+            턴시작 = false;
+            현재턴수 = 현재턴수 + 1;
+        }
+
+        else if (기술명 == "근접격투" && 심해인1.체력 <= ((double)심해인1.전체체력 / 2f))
+        {
+
+            노아제목.text = "노아 : 공격";
+            적제목.text = "??? : 회피";
+
+            yield return new WaitForSeconds(2f);
+
+            노아기술.text = "근접격투 : " + DataBaseManager.맨손격투;
+            적기술.text = "회피 : " + 심해인1.심해인회피;
+
+            yield return new WaitForSeconds(2f);
+
+            StartCoroutine(룰렛작동());
+            StartCoroutine(적룰렛작동());
+            yield return new WaitForSeconds(6f);
+
+
+
+
+
+
+            if (출력기능값 <= DataBaseManager.맨손격투)
+            {
+                노아결과.text = "보통성공";
+
+            }
+            if (출력기능값 > DataBaseManager.맨손격투)
+            {
+                노아결과.text = "실패";
+
+            }
+            if (출력기능값 <= ((double)DataBaseManager.맨손격투 / 3f) && (double)DataBaseManager.맨손격투 >= 3f)
+            {
+                노아결과.text = "대성공";
+
+            }
+            if (출력기능값 == 10)
+            {
+                노아결과.text = "대실패";
+
+            }
+            // 전판정
+
+
+            if (적출력기능값 <= 심해인1.심해인회피)
+            {
+                적기결과.text = "보통성공";
+
+            }
+            if (적출력기능값 > 심해인1.심해인회피)
+            {
+                적기결과.text = "실패";
+
+            }
+            if (적출력기능값 <= ((double)심해인1.심해인회피 / 3f) && (double)심해인1.심해인회피 >= 3f)
+            {
+                적기결과.text = "대성공";
+
+            }
+            if (적출력기능값 == 10)
+            {
+                적기결과.text = "대실패";
+
+            }
+            yield return new WaitForSeconds(2f);
+
+            //노아 불리판정
+            if ((노아결과.text == "대성공") && (적기결과.text == "보통성공" || (노아결과.text == "대성공") && (적기결과.text == "실패") || (노아결과.text == "대성공") && (적기결과.text == "대실패")))
+            {
+                결과.text = "노아 판정승";
+            }
+            else if ((노아결과.text == "대성공") && (적기결과.text == "대성공"))
+            {
+                결과.text = "적 판정승";
+            }
+      
+
+            else if ( (노아결과.text == "보통성공" && 적기결과.text == "실패") || (노아결과.text == "보통성공" && 적기결과.text == "대실패"))
+            {
+                결과.text = "노아 판정승";
+            }
+            else if ((노아결과.text == "보통성공" && 적기결과.text == "보통성공") || (노아결과.text == "보통성공" && 적기결과.text == "대성공"))
+            {
+                결과.text = "적 판정승";
+            }
+
+            else if ( (노아결과.text == "실패" && 적기결과.text == "대실패"))
+            {
+                결과.text = "노아 판정승";
+            }
+            else if ((노아결과.text == "실패" && 적기결과.text == "실패") || (노아결과.text == "실패" && 적기결과.text == "보통성공") || (노아결과.text == "실패" && 적기결과.text == "대성공"))
+            {
+                결과.text = "적 판정승";
+            }
+     
+
+            else if ((노아결과.text == "대실패"))
+            {
+                결과.text = "적 판정승";
+            }
+
+
+
+
+            if (결과.text == "노아 판정승")
+            {
+                Debug.Log(심해인1.체력);
+                Debug.Log(근력대미지);
+                심해인1.체력 = 심해인1.체력 - 근력대미지;
+                Debug.Log(심해인1.체력);
+            }
+            yield return new WaitForSeconds(2f);
+
+            판정창.SetActive(false);
+
+
+            턴시작 = false;
+            현재턴수 = 현재턴수 + 1;
+        }
+
+        if (기술명 == "사격술" && 심해인1.체력 > ((double)심해인1.전체체력 / 2f))
+        {
+            
+            노아제목.text = "노아 : 공격";
+            적제목.text = "??? : 반격";
+
+            yield return new WaitForSeconds(2f);
+
+            노아기술.text = "사격술 : " + DataBaseManager.사격술;
+            적기술.text = "근접격투 : " + 심해인1.심해인맨손격투;
+
+            yield return new WaitForSeconds(2f);
+
+            StartCoroutine(룰렛작동());
+            StartCoroutine(적룰렛작동());
+            yield return new WaitForSeconds(6f);
+
+
+
+
+
+
+            if (출력기능값 <= DataBaseManager.사격술)
+            {
+                노아결과.text = "보통성공";
+
+            }
+            if (출력기능값 > DataBaseManager.사격술)
+            {
+                노아결과.text = "실패";
+
+            }
+            if (출력기능값 <= ((double)DataBaseManager.사격술 / 3f) && (double)DataBaseManager.사격술 >= 3f)
+            {
+                노아결과.text = "대성공";
+
+            }
+            if (출력기능값 == 10)
+            {
+                노아결과.text = "대실패";
+
+            }
+            // 전판정
+
+
+            if (적출력기능값 <= 심해인1.심해인맨손격투)
+            {
+                적기결과.text = "보통성공";
+
+            }
+            if (적출력기능값 > 심해인1.심해인맨손격투)
+            {
+                적기결과.text = "실패";
+
+            }
+            if (적출력기능값 <= ((double)심해인1.심해인맨손격투 / 3f) && (double)심해인1.심해인맨손격투 >= 3f)
+            {
+                적기결과.text = "대성공";
+
+            }
+            if (적출력기능값 == 10)
+            {
+                적기결과.text = "대실패";
+
+            }
+            yield return new WaitForSeconds(2f);
+
+
+            if ((노아결과.text == "대성공"))
+            {
+                결과.text = "노아 판정승";
+            }
+            else if ((노아결과.text == "보통성공" && 적기결과.text == "보통성공") || (노아결과.text == "보통성공" && 적기결과.text == "실패") || (노아결과.text == "보통성공" && 적기결과.text == "대실패"))
+            {
+                결과.text = "노아 판정승";
+            }
+            else if ((노아결과.text == "보통성공" && 적기결과.text == "대성공"))
+            {
+                결과.text = "적 판정승";
+            }
+            else if ((노아결과.text == "실패" && 적기결과.text == "보통성공") || (노아결과.text == "실패" && 적기결과.text == "대성공"))
+            {
+                결과.text = "적 판정승";
+            }
+            else if ((노아결과.text == "실패" && 적기결과.text == "실패") || (노아결과.text == "실패" && 적기결과.text == "대실패"))
+            {
+                결과.text = "노아 판정승";
+            }
+            else if ((노아결과.text == "대실패" && 적기결과.text == "대실패"))
+            {
+                결과.text = "노아 판정승";
+            }
+            else if ((노아결과.text == "대실패" && 적기결과.text == "보통성공") || (노아결과.text == "대실패" && 적기결과.text == "실패") || (노아결과.text == "대실패" && 적기결과.text == "대성공"))
+            {
+                결과.text = "적 판정승";
+            }
+
+            if (선택된무기 == "리볼버")
+            {
+                리볼버장탄수 = 리볼버장탄수 - 1;
+                if (결과.text == "노아 판정승")
+                {
+                    Debug.Log(심해인1.체력);
+                    Debug.Log(리볼버대미지);
+                    심해인1.체력 = 심해인1.체력 - 리볼버대미지;
+                    Debug.Log(심해인1.체력);
+                }
+
+            }
+
+
+            if (결과.text == "적 판정승")
+            {
+                if (근력대미지 == 1)
+                {
+                    BattleUiManager.체력감소();
+                }
+
+                else if (근력대미지 == 2)
+                {
+                    BattleUiManager.체력감소();
+                    BattleUiManager.체력감소();
+                }
+                else if (근력대미지 == 3)
+                {
+                    BattleUiManager.체력감소();
+                    BattleUiManager.체력감소();
+                    BattleUiManager.체력감소();
+                }
+            }
+
+            yield return new WaitForSeconds(2f);
+
+            판정창.SetActive(false);
+
+
+            턴시작 = false;
+            현재턴수 = 현재턴수 + 1;
         }
 
 
+        else if (기술명 == "사격술" && 심해인1.체력 <= ((double)심해인1.전체체력 / 2f))
+        {
+
+            노아제목.text = "노아 : 공격";
+            적제목.text = "??? : 회피";
+
+            yield return new WaitForSeconds(2f);
+
+            노아기술.text = "사격술 : " + DataBaseManager.사격술;
+            적기술.text = "회피 : " + 심해인1.심해인회피;
+
+            yield return new WaitForSeconds(2f);
+
+            StartCoroutine(룰렛작동());
+            StartCoroutine(적룰렛작동());
+            yield return new WaitForSeconds(6f);
 
 
 
 
+
+
+            if (출력기능값 <= DataBaseManager.사격술)
+            {
+                노아결과.text = "보통성공";
+
+            }
+            if (출력기능값 > DataBaseManager.사격술)
+            {
+                노아결과.text = "실패";
+
+            }
+            if (출력기능값 <= ((double)DataBaseManager.사격술 / 3f) && (double)DataBaseManager.사격술 >= 3f)
+            {
+                노아결과.text = "대성공";
+
+            }
+            if (출력기능값 == 10)
+            {
+                노아결과.text = "대실패";
+
+            }
+            // 전판정
+
+
+            if (적출력기능값 <= 심해인1.심해인회피)
+            {
+                적기결과.text = "보통성공";
+
+            }
+            if (적출력기능값 > 심해인1.심해인회피)
+            {
+                적기결과.text = "실패";
+
+            }
+            if (적출력기능값 <= ((double)심해인1.심해인회피 / 3f) && (double)심해인1.심해인회피 >= 3f)
+            {
+                적기결과.text = "대성공";
+
+            }
+            if (적출력기능값 == 10)
+            {
+                적기결과.text = "대실패";
+
+            }
+            yield return new WaitForSeconds(2f);
+
+            //노아 불리판정
+            if ((노아결과.text == "대성공") && (적기결과.text == "보통성공" || (노아결과.text == "대성공") && (적기결과.text == "실패") || (노아결과.text == "대성공") && (적기결과.text == "대실패")))
+            {
+                결과.text = "노아 판정승";
+            }
+            else if ((노아결과.text == "대성공") && (적기결과.text == "대성공"))
+            {
+                결과.text = "적 판정승";
+            }
+
+
+            else if ((노아결과.text == "보통성공" && 적기결과.text == "실패") || (노아결과.text == "보통성공" && 적기결과.text == "대실패"))
+            {
+                결과.text = "노아 판정승";
+            }
+            else if ((노아결과.text == "보통성공" && 적기결과.text == "보통성공") || (노아결과.text == "보통성공" && 적기결과.text == "대성공"))
+            {
+                결과.text = "적 판정승";
+            }
+
+            else if ((노아결과.text == "실패" && 적기결과.text == "대실패"))
+            {
+                결과.text = "노아 판정승";
+            }
+            else if ((노아결과.text == "실패" && 적기결과.text == "실패") || (노아결과.text == "실패" && 적기결과.text == "보통성공") || (노아결과.text == "실패" && 적기결과.text == "대성공"))
+            {
+                결과.text = "적 판정승";
+            }
+
+
+            else if ((노아결과.text == "대실패"))
+            {
+                결과.text = "적 판정승";
+            }
+
+
+            if(선택된무기 == "리볼버")
+            {
+                리볼버장탄수 = 리볼버장탄수 - 1;
+                if (결과.text == "노아 판정승")
+                {
+                    Debug.Log(심해인1.체력);
+                    Debug.Log(리볼버대미지);
+                    심해인1.체력 = 심해인1.체력 - 리볼버대미지;
+                    Debug.Log(심해인1.체력);
+                }
+            }
+
+ 
+            yield return new WaitForSeconds(2f);
+
+            판정창.SetActive(false);
+
+
+            턴시작 = false;
+            현재턴수 = 현재턴수 + 1;
+        }
+        //근접전투 총기 관련
+
+    }
+
+
+    public GameObject 회피반격버튼;
+
+
+    public void 적공격반응시버튼등장()
+    {
+        회피반격버튼.SetActive(true);
+
+    }
+    public void 적공격반응_회피()
+    {
+        회피반격버튼.SetActive(false);
+        노아제목.text = "노아 : 회피";
+        StartCoroutine(적공격());
+    }
+
+    public void 적공격반응_반격()
+    {
+        회피반격버튼.SetActive(false);
+        노아제목.text = "노아 : 반격";
+        StartCoroutine(적공격());
     }
 
 
 
 
+    public IEnumerator 적공격()
+    {
+        근력대미지 = Random.Range(1, 4);
 
+
+
+        판정창.SetActive(true);
+        if (노아제목.text == "노아 : 회피")
+        {
+
+
+            적제목.text = "??? : 공격";
+
+            yield return new WaitForSeconds(2f);
+
+            노아기술.text = "구르기 : " + DataBaseManager.구르기;
+            적기술.text = "근접격투 : " + 심해인1.심해인맨손격투;
+
+            yield return new WaitForSeconds(2f);
+
+            StartCoroutine(룰렛작동());
+            StartCoroutine(적룰렛작동());
+            yield return new WaitForSeconds(6f);
+
+
+
+
+
+
+             if (출력기능값 <= DataBaseManager.구르기)
+            {
+                노아결과.text = "보통성공";
+
+            }
+             if (출력기능값 > DataBaseManager.구르기)
+            {
+                노아결과.text = "실패";
+
+            }
+            if (출력기능값 <= ((double)DataBaseManager.구르기 / 3f) && (double)DataBaseManager.구르기 >= 3f)
+            {
+                노아결과.text = "대성공";
+
+            }
+            if (출력기능값 == 10)
+            {
+                노아결과.text = "대실패";
+
+            }
+            // 적판정
+
+ 
+             if (적출력기능값 <= 심해인1.심해인맨손격투)
+            {
+                적기결과.text = "보통성공";
+
+            }
+             if (적출력기능값 > 심해인1.심해인맨손격투)
+            {
+                적기결과.text = "실패";
+
+            }
+            if (적출력기능값 <= ((double)심해인1.심해인맨손격투 / 3f) && (double)심해인1.심해인맨손격투 >= 3f)
+            {
+                적기결과.text = "대성공";
+
+            }
+            if (적출력기능값 == 10)
+            {
+                적기결과.text = "대실패";
+
+            }
+            yield return new WaitForSeconds(2f);
+
+            //노아 유리판정
+            if ((노아결과.text == "대성공"))
+            {
+                결과.text = "노아 판정승";
+            }
+            else if ((노아결과.text == "보통성공" && 적기결과.text == "보통성공") || (노아결과.text == "보통성공" && 적기결과.text == "실패") || (노아결과.text == "보통성공" && 적기결과.text == "대실패"))
+            {
+                결과.text = "노아 판정승";
+            }
+            else if ((노아결과.text == "보통성공" && 적기결과.text == "대성공"))
+            {
+                결과.text = "적 판정승";
+            }
+            else if ((노아결과.text == "실패" && 적기결과.text == "보통성공") || (노아결과.text == "실패" && 적기결과.text == "대성공"))
+            {
+                결과.text = "적 판정승";
+            }
+            else if ((노아결과.text == "실패" && 적기결과.text == "실패") || (노아결과.text == "실패" && 적기결과.text == "대실패"))
+            {
+                결과.text = "노아 판정승";
+            }
+            else if ((노아결과.text == "대실패" && 적기결과.text == "대실패"))
+            {
+                결과.text = "노아 판정승";
+            }
+            else if ((노아결과.text == "대실패" && 적기결과.text == "보통성공") || (노아결과.text == "대실패" && 적기결과.text == "실패") || (노아결과.text == "대실패" && 적기결과.text == "대성공"))
+            {
+                결과.text = "적 판정승";
+            }
+
+
+
+            if (결과.text == "적 판정승")
+            {
+                if(근력대미지 == 1)
+                {
+                    BattleUiManager.체력감소();
+                }
+
+                else if (근력대미지 == 2)
+                {
+                    BattleUiManager.체력감소();
+                    BattleUiManager.체력감소();
+                }
+                else if (근력대미지 == 3)
+                {
+                    BattleUiManager.체력감소();
+                    BattleUiManager.체력감소();
+                    BattleUiManager.체력감소();
+                }
+            }
+
+            yield return new WaitForSeconds(2f);
+            판정창.SetActive(false);
+
+            턴시작 = false;
+            현재턴수 = 현재턴수 + 1;
+
+        }
+
+
+         else if ( 노아제목.text == "노아 : 반격")
+        {
+
+
+            적제목.text = "??? : 공격";
+
+            yield return new WaitForSeconds(2f);
+
+            노아기술.text = "근접격투 : " + DataBaseManager.맨손격투;
+            적기술.text = "근접격투 : " + 심해인1.심해인맨손격투;
+
+            yield return new WaitForSeconds(2f);
+
+            StartCoroutine(룰렛작동());
+            StartCoroutine(적룰렛작동());
+            yield return new WaitForSeconds(6f);
+
+
+
+
+
+
+             if (출력기능값 <= DataBaseManager.맨손격투)
+            {
+                노아결과.text = "보통성공";
+
+            }
+             if (출력기능값 > DataBaseManager.맨손격투)
+            {
+                노아결과.text = "실패";
+
+            }
+            if (출력기능값 <= ((double)DataBaseManager.맨손격투 / 3f) && (double)DataBaseManager.맨손격투 >= 3f)
+            {
+                노아결과.text = "대성공";
+
+            }
+            if (출력기능값 == 10)
+            {
+                노아결과.text = "대실패";
+
+            }
+            // 적판정
+
+ 
+             if (적출력기능값 <= 심해인1.심해인맨손격투)
+            {
+                적기결과.text = "보통성공";
+
+            }
+             if (적출력기능값 > 심해인1.심해인맨손격투)
+            {
+                적기결과.text = "실패";
+
+            }
+            if (적출력기능값 <= ((double)심해인1.심해인맨손격투 / 3f) && (double)심해인1.심해인맨손격투 >= 3f)
+            {
+                적기결과.text = "대성공";
+
+            }
+            if (적출력기능값 == 10)
+            {
+                적기결과.text = "대실패";
+
+            }
+            yield return new WaitForSeconds(2f);
+
+            if ((노아결과.text == "대성공") && (적기결과.text == "보통성공" || (노아결과.text == "대성공") && (적기결과.text == "실패") || (노아결과.text == "대성공") && (적기결과.text == "대실패")))
+            {
+                결과.text = "노아 판정승";
+            }
+            else if ((노아결과.text == "대성공") && (적기결과.text == "대성공"))
+            {
+                결과.text = "적 판정승";
+            }
+
+
+            else if ((노아결과.text == "보통성공" && 적기결과.text == "실패") || (노아결과.text == "보통성공" && 적기결과.text == "대실패"))
+            {
+                결과.text = "노아 판정승";
+            }
+            else if ((노아결과.text == "보통성공" && 적기결과.text == "보통성공") || (노아결과.text == "보통성공" && 적기결과.text == "대성공"))
+            {
+                결과.text = "적 판정승";
+            }
+
+            else if ((노아결과.text == "실패" && 적기결과.text == "대실패"))
+            {
+                결과.text = "노아 판정승";
+            }
+            else if ((노아결과.text == "실패" && 적기결과.text == "실패") || (노아결과.text == "실패" && 적기결과.text == "보통성공") || (노아결과.text == "실패" && 적기결과.text == "대성공"))
+            {
+                결과.text = "적 판정승";
+            }
+
+
+            else if ((노아결과.text == "대실패"))
+            {
+                결과.text = "적 판정승";
+            }
+
+
+
+            if (결과.text == "적 판정승")
+            {
+                if(근력대미지 == 1)
+                {
+                    BattleUiManager.체력감소();
+                }
+
+                else if (근력대미지 == 2)
+                {
+                    BattleUiManager.체력감소();
+                    BattleUiManager.체력감소();
+                }
+                else if (근력대미지 == 3)
+                {
+                    BattleUiManager.체력감소();
+                    BattleUiManager.체력감소();
+                    BattleUiManager.체력감소();
+                }
+            }
+            if (결과.text == "노아 판정승")
+            {
+                Debug.Log(심해인1.체력);
+                Debug.Log(근력대미지);
+                심해인1.체력 = 심해인1.체력 - 근력대미지;
+                Debug.Log(심해인1.체력);
+            }
+            yield return new WaitForSeconds(2f);
+            판정창.SetActive(false);
+
+            턴시작 = false;
+            현재턴수 = 현재턴수 + 1;
+
+        }
+
+        
+
+    }
+
+
+    
 
 
     public void 적1의턴()
     {
+        내턴인가 = false;
+        내턴기본 = false;
         whiteBox.SetActive(false);
         공격_도주_눈썰미_재장전.SetActive(false);
+        적공격반응시버튼등장();
     }
     public void 적2의턴()
     {
+        내턴인가 = false;
+        내턴기본 = false;
         whiteBox.SetActive(false);
         공격_도주_눈썰미_재장전.SetActive(false);
+        적공격반응시버튼등장();
     }
     public void 적3의턴()
     {
+        내턴인가 = false;
+        내턴기본 = false;
         whiteBox.SetActive(false);
         공격_도주_눈썰미_재장전.SetActive(false);
+        적공격반응시버튼등장();
     }
 
 
@@ -783,7 +1898,7 @@ public class BattleManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        리볼버장탄수 = 6;
         심해인전투시작();
         현재턴수 = 현재턴수 + 1;
 
@@ -793,7 +1908,8 @@ public class BattleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        총기류메뉴창();
+        메뉴창업데이터();
         if (Input.GetKeyDown(KeyCode.Q))
         {
             StartCoroutine(룰렛작동());
@@ -821,6 +1937,17 @@ public class BattleManager : MonoBehaviour
         yield return StartCoroutine(룰렛작동());
         룰렛머신온오프.SetActive(false);
     }
+
+
+
+
+    // 설명창류
+
+    public Text 대상이름;
+    public Text 대상설명;
+
+
+
 
 
 
@@ -859,8 +1986,8 @@ public class BattleManager : MonoBehaviour
 
     int 랜덤십의몸통위치;
     int 적랜덤십의몸통위치;
-    public static int 출력기능값;
-    public static int 적출력기능값;
+    public static float 출력기능값;
+    public static float 적출력기능값;
 
 
 
@@ -984,8 +2111,8 @@ public class BattleManager : MonoBehaviour
         }
         for (int i = 0; i < 80; i++)
         {
-            랜덤십의자리 = Random.Range(1, 10);
-            랜덤일의자리 = Random.Range(1, 10);
+            랜덤십의자리 = Random.Range(0, 10);
+            랜덤일의자리 = Random.Range(0, 10);
             랜덤십의몸통위치 = Random.Range(1, 10);
 
             if (랜덤십의몸통위치 == 1)
@@ -1097,7 +2224,7 @@ public class BattleManager : MonoBehaviour
         for (int i = 0; i < 30; i++)
         {
 
-            적랜덤일의자리 = Random.Range(1, 10);
+            적랜덤일의자리 = Random.Range(0, 10);
 
 
             적랜덤십의몸통위치 = Random.Range(1, 10);
@@ -1193,8 +2320,8 @@ public class BattleManager : MonoBehaviour
         }
         for (int i = 0; i < 80; i++)
         {
-            랜덤십의자리 = Random.Range(1, 10);
-            적랜덤일의자리 = Random.Range(1, 10);
+            랜덤십의자리 = Random.Range(0, 10);
+            적랜덤일의자리 = Random.Range(0, 10);
             적랜덤십의몸통위치 = Random.Range(1, 10);
 
             if (적랜덤십의몸통위치 == 1)
