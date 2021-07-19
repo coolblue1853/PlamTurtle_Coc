@@ -511,9 +511,11 @@ public class BattleManager : MonoBehaviour
 
     public void 내턴_공격뒤로가기()
     {
+        whiteBox.SetActive(true);
         공격_도주_눈썰미_재장전.SetActive(true);
         격투_투척_단검_사격.SetActive(false);
         공격뒤로가기.SetActive(false);
+        도구선택창.SetActive(false);
 
     }
     public void 내턴_격투뒤로가기()
@@ -573,7 +575,17 @@ public class BattleManager : MonoBehaviour
 
         적화살표1.SetActive(false);
     }
+    public void 내턴_재장전버튼()
+    {
+        기술명 = "재장전";
+        공격_도주_눈썰미_재장전.SetActive(false);
+        공격뒤로가기.SetActive(true);
+        whiteBox.SetActive(false);
 
+        공격아이템칸뒤로가기.SetActive(false);
+        도구선택창.SetActive(true);
+        rednum = 1;
+    }
     public void 내턴_격투버튼()
     {
         기술명 = "근접격투";
@@ -619,36 +631,345 @@ public class BattleManager : MonoBehaviour
     }
 
 
+
+
+
+
+
+
     //총기선택 버튼
-    public GameObject 장탄수부족메시지;
+
     public void 매그넘선택()
     {
-        if(리볼버장탄수 != 0)
-        {
-            도구선택창.SetActive(false);
-            선택된무기 = "리볼버";
-            적선택차례 = true;
-            적선택가리개.SetActive(true);
-            근접뒤로가기.SetActive(true);
-            공격적선택뒤로가기.SetActive(true);
-            적화살표1.SetActive(true);
 
+        if(기술명 != "재장전")
+        {
+            if (DataBaseManager.리볼버장탄수 != 0)
+            {
+                도구선택창.SetActive(false);
+                선택된무기 = "리볼버";
+                적선택차례 = true;
+                적선택가리개.SetActive(true);
+                근접뒤로가기.SetActive(true);
+                공격적선택뒤로가기.SetActive(true);
+                적화살표1.SetActive(true);
+
+            }
+            else
+            {
+                장탄수부족on();
+            }
+        }
+
+
+
+        else
+        {
+            if (DataBaseManager.리볼버장탄수 == 6)
+            {
+                이미탄꽉참부족();
+
+            }
+
+            else if (DataBaseManager.보유리볼버탄약 != 0)
+            {
+
+                if (DataBaseManager.보유리볼버탄약 >= 6)
+                {
+                    DataBaseManager.보유리볼버탄약 -= 6;
+                    DataBaseManager.리볼버장탄수 += 6;
+                    턴시작 = false;
+                    현재턴수 = 현재턴수 + 1;
+
+                }
+
+                else
+                {
+                    DataBaseManager.리볼버장탄수 = DataBaseManager.보유리볼버탄약;
+                    DataBaseManager.보유리볼버탄약 = 0;
+                    턴시작 = false;
+                    현재턴수 = 현재턴수 + 1;
+
+                }
+
+            }
+            else
+            {
+
+                보유탄수부족부족();
+
+
+            }
+        }
+
+
+    }
+    public void 소형권총선택()
+    {
+
+
+        if (기술명 != "재장전")
+        {
+            if (DataBaseManager.소형권총장탄수 != 0)
+            {
+                도구선택창.SetActive(false);
+                선택된무기 = "소형권총";
+                적선택차례 = true;
+                적선택가리개.SetActive(true);
+                근접뒤로가기.SetActive(true);
+                공격적선택뒤로가기.SetActive(true);
+                적화살표1.SetActive(true);
+
+            }
+            else
+            {
+                장탄수부족on();
+            }
+        }
+
+        else
+        {
+            if (DataBaseManager.소형권총장탄수 == 1)
+            {
+
+                이미탄꽉참부족();
+            }
+
+            else if (DataBaseManager.보유권총탄약 != 0 && DataBaseManager.소형권총장탄수 != 1)
+            {
+
+ 
+                    DataBaseManager.보유권총탄약 -= 1;
+                    DataBaseManager.소형권총장탄수 += 1;
+                    턴시작 = false;
+                    현재턴수 = 현재턴수 + 1;
+
+
+
+
+                
+
+            }
+            else
+            {
+
+
+                보유탄수부족부족();
+
+
+            }
+
+        }
+
+
+
+    }
+    public void 샷건선택()
+    {
+        if (기술명 != "재장전")
+        {
+            if (DataBaseManager.샷건장탄수 != 0)
+            {
+                도구선택창.SetActive(false);
+                선택된무기 = "샷건";
+                적선택차례 = true;
+                적선택가리개.SetActive(true);
+                근접뒤로가기.SetActive(true);
+                공격적선택뒤로가기.SetActive(true);
+                적화살표1.SetActive(true);
+
+            }
+            else
+            {
+                장탄수부족on();
+            }
         }
         else
         {
-            StartCoroutine(장탄수부족());
+            if (DataBaseManager.샷건장탄수 == 2)
+            {
+
+                이미탄꽉참부족();
+            }
+
+            else if (DataBaseManager.보유샷건탄약 != 0)
+            {
+
+                if (DataBaseManager.보유샷건탄약 >= 2 )
+                {
+                    DataBaseManager.보유샷건탄약 -= 2;
+                    DataBaseManager.샷건장탄수 += 2;
+                    턴시작 = false;
+                    현재턴수 = 현재턴수 + 1;
+
+                }
+
+                else
+                {
+                    DataBaseManager.샷건장탄수 = DataBaseManager.보유샷건탄약;
+                    DataBaseManager.보유샷건탄약 = 0;
+                    턴시작 = false;
+                    현재턴수 = 현재턴수 + 1;
+
+                }
+
+            }
+            else
+            {
+
+
+                보유탄수부족부족();
+
+
+
+            }
+        }
+
+
+
+
+
+    }
+    public void 소총선택()
+    {
+        if (기술명 != "재장전")
+        {
+            if (DataBaseManager.소총장탄수 != 0)
+            {
+                도구선택창.SetActive(false);
+                선택된무기 = "소총";
+                적선택차례 = true;
+                적선택가리개.SetActive(true);
+                근접뒤로가기.SetActive(true);
+                공격적선택뒤로가기.SetActive(true);
+                적화살표1.SetActive(true);
+
+            }
+            else
+            {
+                장탄수부족on();
+            }
+        }
+
+        else
+        {
+
+            if(DataBaseManager.소총장탄수 == 1)
+            {
+
+
+                이미탄꽉참부족(); ;
+            }
+
+            else if (DataBaseManager.보유소총탄약 != 0)
+            {
+
+
+                DataBaseManager.보유소총탄약 -= 1;
+                DataBaseManager.소총장탄수 += 1;
+                턴시작 = false;
+                현재턴수 = 현재턴수 + 1;
+
+
+            }
+            else
+            {
+
+
+
+                보유탄수부족부족();
+
+
+
+            }
+
         }
 
     }
 
-    public IEnumerator 장탄수부족()
+
+    public GameObject 장탄수부족메시지;
+    public GameObject 보유탄수부족메시지;
+    public GameObject 이미탄약꽉참메시지;
+    public GameObject 꺼지는버튼;
+    public void 장탄수부족on()
     {
-        
+        꺼지는버튼.SetActive(true);
         장탄수부족메시지.SetActive(true);
-        yield return new WaitForSeconds(3f);
+
+    }
+    public void 알림창off()
+    {
+        꺼지는버튼.SetActive(false);
         장탄수부족메시지.SetActive(false);
+        보유탄수부족메시지.SetActive(false);
+        이미탄약꽉참메시지.SetActive(false);
+    }
+    public void 보유탄수부족부족()
+    {
+        꺼지는버튼.SetActive(true);
+        보유탄수부족메시지.SetActive(true);
+
+    }
+    public void 이미탄꽉참부족()
+    {
+        꺼지는버튼.SetActive(true);
+        이미탄약꽉참메시지.SetActive(true);
+
+    }
+    public void 시작시총알미리장전()
+    {
+        if (DataBaseManager.리볼버장탄수 < 6)
+        {
+            while (DataBaseManager.리볼버장탄수 < 6)
+            {
+               if(DataBaseManager.보유리볼버탄약 == 0)
+                {
+                    break;
+                }
+
+                DataBaseManager.리볼버장탄수 += 1;
+                DataBaseManager.보유리볼버탄약 -= 1;
+
+            }
+        }
+
+        if (DataBaseManager.소형권총장탄수 < 1 && DataBaseManager.보유권총탄약 >=1)
+        {
+
+
+            DataBaseManager.소형권총장탄수 += 1;
+            DataBaseManager.보유권총탄약 -= 1;
+
+        }
+
+        if (DataBaseManager.소총장탄수 < 1 && DataBaseManager.보유소총탄약 >= 1)
+        {
+
+            DataBaseManager.소총장탄수 += 1;
+            DataBaseManager.보유소총탄약 -= 1;
+
+
+        }
+
+        if (DataBaseManager.샷건장탄수 < 2)
+        {
+            while (DataBaseManager.샷건장탄수 < 2)
+            {
+                if (DataBaseManager.보유샷건탄약 == 0)
+                {
+                    break;
+                }
+
+                DataBaseManager.샷건장탄수 += 1;
+                DataBaseManager.보유샷건탄약 -= 1;
+
+            }
+        }
+
     }
 
+    
 
 
     int rednum = 1;
@@ -886,10 +1207,12 @@ public class BattleManager : MonoBehaviour
 
     }
 
+
+    // 무기 마우스 정보창
     public void 리볼버정보창엔터()
     {
-        대상이름.text = "32구경 리볼버";
-        대상설명.text = "SW사의 소구경 리볼버, 최대장탄수 6발, 대미지 1~8 현재 장탄수 " + 리볼버장탄수;
+        대상이름.text = "리볼버";
+        대상설명.text = "38구경 리볼버, 최대장탄수 6발, 대미지 1~8 현재 장탄수 " + DataBaseManager.리볼버장탄수;
 
     }
     public void 리볼버정보창아웃()
@@ -899,13 +1222,37 @@ public class BattleManager : MonoBehaviour
 
     }
 
+    public void 소형권총정보창엔터()
+    {
+        대상이름.text = "소형 권총";
+        대상설명.text = "호신용 권총 , 최대장탄수 1발, 대미지 1~6 현재 장탄수 " + DataBaseManager.소형권총장탄수;
+
+    }
+
+    public void 샷건권총정보창엔터()
+    {
+        대상이름.text = "16게이지 산탄총";
+        대상설명.text = "펌프액션 방식의 산탄총 , 최대장탄수 2발, 대미지 (1~5)x2 현재 장탄수 " + DataBaseManager.샷건장탄수;
+
+    }
+    public void 소총권총정보창엔터()
+    {
+        대상이름.text = "30구경 소총";
+        대상설명.text = "볼트액션 방식의 소총 , 최대장탄수 1발, 대미지 (1~6)x2 현재 장탄수 " + DataBaseManager.소총장탄수;
+
+    }
+
+
+
     public void 턴시작시초기화()
     {
+        장탄수부족메시지.SetActive(false);
         리볼버정보창아웃();
         공격_도주_눈썰미_재장전.SetActive(false);
         공격적선택뒤로가기.SetActive(false);
         근접뒤로가기.SetActive(false);
-        
+        공격뒤로가기.SetActive(false);
+        도구선택창.SetActive(false);
 
         적선택가리개.SetActive(false);
         적화살표1.SetActive(false);
@@ -1010,11 +1357,22 @@ public class BattleManager : MonoBehaviour
 
     }
 
+    //데미지 와 장탄수
     public int 근력대미지;
     public int 리볼버대미지;
-    public int 리볼버장탄수 = 6;
 
-    string 선택된무기;
+
+    public int 소총대미지;
+
+
+    public int 소형권총대미지;
+
+
+    public int 샷건대미지;
+
+
+
+    public string 선택된무기;
 
 
     //무기선택버튼 관련
@@ -1028,9 +1386,10 @@ public class BattleManager : MonoBehaviour
 
         근력대미지 = Random.Range(1, 4);
 
-        리볼버대미지 = Random.Range(1, 10);
-
-
+        리볼버대미지 = Random.Range(1, 9);
+        샷건대미지 = Random.Range(2, 11);
+        소형권총대미지 = Random.Range(1, 7);
+        소총대미지 = Random.Range(2, 13);
 
         판정창.SetActive(true);
 
@@ -1391,7 +1750,7 @@ public class BattleManager : MonoBehaviour
 
             if (선택된무기 == "리볼버")
             {
-                리볼버장탄수 = 리볼버장탄수 - 1;
+                DataBaseManager.리볼버장탄수 = DataBaseManager.리볼버장탄수 - 1;
                 if (결과.text == "노아 판정승")
                 {
                     Debug.Log(심해인1.체력);
@@ -1402,7 +1761,42 @@ public class BattleManager : MonoBehaviour
 
             }
 
+            else if (선택된무기 == "소형권총")
+            {
+                DataBaseManager.소형권총장탄수 = DataBaseManager.소형권총장탄수 - 1;
+                if (결과.text == "노아 판정승")
+                {
+                    Debug.Log(심해인1.체력);
+                    Debug.Log(소형권총대미지);
+                    심해인1.체력 = 심해인1.체력 - 소형권총대미지;
+                    Debug.Log(심해인1.체력);
+                }
 
+            }
+            if (선택된무기 == "소총")
+            {
+                DataBaseManager.소총장탄수 = DataBaseManager.소총장탄수 - 1;
+                if (결과.text == "노아 판정승")
+                {
+                    Debug.Log(심해인1.체력);
+                    Debug.Log(소총대미지);
+                    심해인1.체력 = 심해인1.체력 - 소총대미지;
+                    Debug.Log(심해인1.체력);
+                }
+
+            }
+            if (선택된무기 == "샷건")
+            {
+                DataBaseManager.샷건장탄수 = DataBaseManager.샷건장탄수 - 1;
+                if (결과.text == "노아 판정승")
+                {
+                    Debug.Log(심해인1.체력);
+                    Debug.Log(샷건대미지);
+                    심해인1.체력 = 심해인1.체력 - 샷건대미지;
+                    Debug.Log(심해인1.체력);
+                }
+
+            }
             if (결과.text == "적 판정승")
             {
                 if (근력대미지 == 1)
@@ -1538,7 +1932,7 @@ public class BattleManager : MonoBehaviour
 
             if(선택된무기 == "리볼버")
             {
-                리볼버장탄수 = 리볼버장탄수 - 1;
+                DataBaseManager.리볼버장탄수 = DataBaseManager.리볼버장탄수 - 1;
                 if (결과.text == "노아 판정승")
                 {
                     Debug.Log(심해인1.체력);
@@ -1898,7 +2292,10 @@ public class BattleManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        리볼버장탄수 = 6;
+
+        시작시총알미리장전();
+
+
         심해인전투시작();
         현재턴수 = 현재턴수 + 1;
 

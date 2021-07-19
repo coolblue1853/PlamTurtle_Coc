@@ -70,12 +70,19 @@ public class battleUiManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            DataBaseManager.구르기 = 5;
-            DataBaseManager.맨손격투 = 5;
-            DataBaseManager.사격술 = 5;
+            DataBaseManager.구르기 = 6;
+            DataBaseManager.맨손격투 = 3;
+            DataBaseManager.사격술 = 6;
+
             DataBaseManager.던지기 = 5;
         }
-
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            DataBaseManager.보유권총탄약 = DataBaseManager.보유권총탄약+ 4;
+            DataBaseManager.보유리볼버탄약 = DataBaseManager.보유리볼버탄약 + 6;
+            DataBaseManager.보유샷건탄약 = DataBaseManager.보유샷건탄약 + 4;
+            DataBaseManager.보유소총탄약 = DataBaseManager.보유소총탄약 + 5;
+        }
     }
 
 

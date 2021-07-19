@@ -66,6 +66,18 @@ public class DataBaseManager : MonoBehaviour
     public static int 운동신경 = 0;
 
 
+    //총알
+    public static int 보유리볼버탄약 = 6;
+    public static int 보유소총탄약 = 6;
+    public static int 보유권총탄약 = 6;
+    public static int 보유샷건탄약 = 6;
+
+    public static int 리볼버장탄수 = 0;
+    public static int 소총장탄수 = 0;
+    public static int 샷건장탄수 = 0;
+    public static int 소형권총장탄수 = 0;
+
+
     public static bool 메뉴창켜짐 = false;
 
     //1일차 오전 사무소 확인여부
