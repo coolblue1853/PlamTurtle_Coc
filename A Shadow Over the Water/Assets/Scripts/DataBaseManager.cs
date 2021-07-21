@@ -72,6 +72,7 @@ public class DataBaseManager : MonoBehaviour
     public static int 보유권총탄약 = 6;
     public static int 보유샷건탄약 = 6;
 
+    public static int 화염병보유수 = 0;
     public static int 리볼버장탄수 = 0;
     public static int 소총장탄수 = 0;
     public static int 샷건장탄수 = 0;

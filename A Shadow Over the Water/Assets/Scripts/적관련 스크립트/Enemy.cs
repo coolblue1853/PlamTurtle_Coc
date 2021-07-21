@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
         {
             힘 = Random.Range(4, 8);
             지능 = Random.Range(4, 7);
-            민첩= Random.Range(4, 8);
+            민첩= Random.Range(4, 7);
 
             활력 = Random.Range(3, 6);
             마력 = Random.Range(4, 7);
