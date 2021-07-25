@@ -4,6 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 public class DataBaseManager : MonoBehaviour
 {
+    public static bool  스킵활성화 = false;
+
+
+    public static float 텍스트딜레이;
+    public static float 음악소리크기 = 0.5f;
+    public static float 이펙트소리크기 = 0.5f;
 
     public static bool 노아정보1=true;
     public static bool 노아정보2=false;
@@ -121,7 +127,7 @@ public class DataBaseManager : MonoBehaviour
             instance = this;
         }
 
-
+ 
         힘 = 0;
         지능 = 0;
         민첩 = 0;

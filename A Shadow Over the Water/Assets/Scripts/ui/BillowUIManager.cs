@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class BillowUIManager : MonoBehaviour
 {
-
+    public GameObject 대화창활성화여부;
     public Image 체력바;
     public Image 이성바;
-    public PlayerStat 플레이어스탯생성기;
+
 
     public Text 체력텍스트;
     public Text 정신력텍스트;
@@ -59,8 +59,12 @@ public class BillowUIManager : MonoBehaviour
 
     public void 상태창켜기()
     {
-        정보창.SetActive(true);
-        itemMenuNum = 1;
+        if(대화창활성화여부.activeSelf== false)
+        {
+            정보창.SetActive(true);
+            itemMenuNum = 1;
+        }
+
     }
     
 
@@ -158,31 +162,33 @@ public class BillowUIManager : MonoBehaviour
     public bool 상태창켜짐 = false;
     public void 상태창on()
     {
+        if (대화창활성화여부.activeSelf == false)
+        {
+            상태스탯창.SetActive(true);
+            보유장비.SetActive(false);
+            보유기술.SetActive(false);
+            //보유기술.SetActive(false);
+            //체력텍스트.text = "체력 : " + DataBaseManager.현재체력;
+            현재체력텍스트2.text = "체력 : " + DataBaseManager.현재체력;
+            현재정신력텍스트2.text = "정신력 : " + DataBaseManager.현재정신력;
 
-        상태스탯창.SetActive(true);
-        보유장비.SetActive(false);
-        보유기술.SetActive(false);
-        //보유기술.SetActive(false);
-        //체력텍스트.text = "체력 : " + DataBaseManager.현재체력;
-        현재체력텍스트2.text = "체력 : " + DataBaseManager.현재체력;
-        현재정신력텍스트2.text = "정신력 : " + DataBaseManager.현재정신력;
+            힘텍스트.text = "힘 : " + DataBaseManager.힘.ToString();
+            지능텍스트.text = "지능 : " + DataBaseManager.지능.ToString();
+            민첩텍스트.text = "민첩 : " + DataBaseManager.민첩.ToString();
+            행운텍스트.text = "행운 : " + DataBaseManager.행운.ToString();
 
-        힘텍스트.text = "힘 : " + DataBaseManager.힘.ToString();
-        지능텍스트.text = "지능 : " + DataBaseManager.지능.ToString();
-        민첩텍스트.text = "민첩 : " + DataBaseManager.민첩.ToString();
-        행운텍스트.text = "행운 : " + DataBaseManager.행운.ToString();
+            활력텍스트.text = "활력 : " + DataBaseManager.활력.ToString();
+            의지력텍스트.text = "의지력 : " + DataBaseManager.의지력.ToString();
+            마력텍스트.text = "마력 : " + DataBaseManager.마력.ToString();
 
-        활력텍스트.text = "활력 : " + DataBaseManager.활력.ToString();
-        의지력텍스트.text = "의지력 : " + DataBaseManager.의지력.ToString();
-        마력텍스트.text = "마력 : " + DataBaseManager.마력.ToString();
-
-        정신력텍스트2.text = "정신력 : " + DataBaseManager.정신력.ToString();
-        체략텍스트2.text = "체력 : " + DataBaseManager.체력.ToString();
-        스트래스내성텍스트.text = "스트래스 내성 : " + DataBaseManager.스트레스게이지.ToString();
-        인물정보창.상태창_보유기술_반영하기();
-        Time.timeScale = 0;
-        상태창s.SetActive(true);
-        상태창켜짐 = true;
+            정신력텍스트2.text = "정신력 : " + DataBaseManager.정신력.ToString();
+            체략텍스트2.text = "체력 : " + DataBaseManager.체력.ToString();
+            스트래스내성텍스트.text = "스트래스 내성 : " + DataBaseManager.스트레스게이지.ToString();
+            인물정보창.상태창_보유기술_반영하기();
+            Time.timeScale = 0;
+            상태창s.SetActive(true);
+            상태창켜짐 = true;
+        }
     }
     public void 상태창off()
     {
@@ -288,9 +294,12 @@ public class BillowUIManager : MonoBehaviour
     }
     public void 정보창켜기()
     {
-        Time.timeScale = 0;
-        정보창켜짐 = true;
-        정보창.SetActive(true);
+        if (대화창활성화여부.activeSelf == false)
+        {
+            Time.timeScale = 0;
+            정보창켜짐 = true;
+            정보창.SetActive(true);
+        }
     }
     public void 정보창끄기()
     {
@@ -325,10 +334,13 @@ public class BillowUIManager : MonoBehaviour
     {
         if (상태창s.activeSelf == false&& 상태창켜짐 == false)
         {
-            if (Input.GetKeyDown(KeyCode.I))
+            if (대화창활성화여부.activeSelf == false)
             {
-                정보창끄기();
-                상태창on();
+                if (Input.GetKeyDown(KeyCode.I))
+                {
+                    정보창끄기();
+                    상태창on();
+                }
             }
         }
 
@@ -361,10 +373,13 @@ public class BillowUIManager : MonoBehaviour
          // 정보창관리
         if (정보창.activeSelf == false && 정보창켜짐 == false)
         {
-            if (Input.GetKeyDown(KeyCode.O))
+            if (대화창활성화여부.activeSelf == false)
             {
-                상태창off();
-                정보창켜기();
+                if (Input.GetKeyDown(KeyCode.O))
+                {
+                    상태창off();
+                    정보창켜기();
+                }
             }
         }
 
@@ -1455,6 +1470,87 @@ public class BillowUIManager : MonoBehaviour
 
     }
 
+
+    public void 마우스인벤토리정보창1()
+    {
+        itemMenuNum = 1;
+    }
+    public void 마우스인벤토리정보창2()
+    {
+        itemMenuNum = 2;
+    }
+    public void 마우스인벤토리정보창3()
+    {
+        itemMenuNum =3;
+    }
+    public void 마우스인벤토리정보창4()
+    {
+        itemMenuNum = 4;
+    }
+    public void 마우스인벤토리정보창5()
+    {
+        itemMenuNum = 5;
+    }
+    public void 마우스인벤토리정보창6()
+    {
+        itemMenuNum = 6;
+    }
+    public void 마우스인벤토리정보창7()
+    {
+        itemMenuNum = 7;
+    }
+    public void 마우스인벤토리정보창8()
+    {
+        itemMenuNum = 8;
+    }
+    public void 마우스인벤토리정보창9()
+    {
+        itemMenuNum = 9;
+    }
+    public void 마우스인벤토리정보창10()
+    {
+        itemMenuNum = 10;
+    }
+    public void 마우스인벤토리정보창11()
+    {
+        itemMenuNum = 11;
+    }
+    public void 마우스인벤토리정보창12()
+    {
+        itemMenuNum = 12;
+    }
+    public void 마우스인벤토리정보창13()
+    {
+        itemMenuNum = 13;
+    }
+    public void 마우스인벤토리정보창14()
+    {
+        itemMenuNum = 14;
+    }
+    public void 마우스인벤토리정보창15()
+    {
+        itemMenuNum = 15;
+    }
+    public void 마우스인벤토리정보창16()
+    {
+        itemMenuNum = 16;
+    }
+    public void 마우스인벤토리정보창17()
+    {
+        itemMenuNum = 17;
+    }
+    public void 마우스인벤토리정보창18()
+    {
+        itemMenuNum = 18;
+    }
+    public void 마우스인벤토리정보창19()
+    {
+        itemMenuNum = 19;
+    }
+    public void 마우스인벤토리정보창20()
+    {
+        itemMenuNum = 20;
+    }
 
 
 }

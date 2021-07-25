@@ -33,7 +33,7 @@ public class DialogManager : MonoBehaviour
 
 
     [Header("텍스트 출력 딜레이.")]
-    [SerializeField] float textDelay;
+    float textDelay;
 
 
     private void Start()
@@ -43,6 +43,9 @@ public class DialogManager : MonoBehaviour
     } 
     void Update()
     {
+        textDelay = DataBaseManager.텍스트딜레이;
+
+
         if (isDialog)
         {
             if (isNext)
@@ -83,7 +86,43 @@ public class DialogManager : MonoBehaviour
 
 
 
+    public void 스킵()
+    {
+        for(int i= 0; i < 1000; i++)
+        {
+            if (isDialog)
+            {
+                if (isNext)
+                {
+                    if (isSelectButton == false)
+                    {
+                        isNext = false;
+                        txt_Dialog.text = "";
+                        if (++contextCount < dialogs[lineCount].contexts.Length)
+                        {
+                            StartCoroutine(TypeWriter());
+                        }
+                        else
+                        {
+                            contextCount = 0;
+                            if (++lineCount < dialogs.Length)
+                            {
+                                StartCoroutine(TypeWriter());
+                            }
 
+                            else
+                            {
+                                EndDialog();
+                            }
+                        }
+
+
+                    }
+                }
+            }
+        }
+       
+    }
 
 
     public void 선택지선택시외부에서페이지넘기기()

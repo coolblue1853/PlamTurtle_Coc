@@ -781,7 +781,7 @@ public class BattleManager : MonoBehaviour
         판정창.SetActive(true);
         노아제목.text = "노아 : 도주";
         적제목.text = "??? : 붙잡기";
-
+            
         yield return new WaitForSeconds(2f);
 
         노아기술.text = "민첩 : " + DataBaseManager.민첩;

@@ -69,6 +69,15 @@ public class DialogManager_D1사무소 : MonoBehaviour
     } 
     void Update()
     {
+        if(DataBaseManager.텍스트딜레이 == 0)
+        {
+            textDelay = 0.02f;
+        }
+        else
+        {
+            textDelay = DataBaseManager.텍스트딜레이;
+        }
+
         if (isDialog)
         {
             if (isNext)
@@ -107,13 +116,102 @@ public class DialogManager_D1사무소 : MonoBehaviour
     }
 
 
+    public bool 선택지등장 = false;
+
+    public GameObject 스킵버튼;
+    public GameObject 스킵스탑버튼;
+    public void 스킵온()
+    {
+        스킵버튼.SetActive(false);
+        스킵스탑버튼.SetActive(true);
+        DataBaseManager.스킵활성화 = true;
+        DataBaseManager.텍스트딜레이 = 0.00000000000001f;
+        StartCoroutine(스킵());
+    }
+
+    public void 스킵스탑온()
+    {
+        DataBaseManager.스킵활성화 = false;
+
+        스킵스탑버튼.SetActive(false);
+
+        선택지등장 = true;
+
+        StartCoroutine(정상화());
+    }
+
+    IEnumerator 정상화()
+    {
+        yield return new WaitForSeconds(0.5f);
+        선택지등장 = false;
+        스킵버튼.SetActive(true);
+
+    }
+
+
+    IEnumerator 스킵()
+    {
+
+        yield return new WaitForSeconds(0.001f);
+        선택지선택시외부에서페이지넘기기t();
+        yield return new WaitForSeconds(0.001f);
+        if (선택지등장 == false)
+        {
+            StartCoroutine(스킵());
+        }
+
+        else if (선택지등장 == true)
+        {
+            DataBaseManager.스킵활성화 = false;
+        }
+
+    }
+
+
+    public void 선택지선택시외부에서페이지넘기기t()
+    {
+        if (isDialog)
+        {
+            if (isNext)
+            {
+
+
+                isNext = false;
+                txt_Dialog.text = "";
+                if (++contextCount < dialogs[lineCount].contexts.Length)
+                {
+                    StartCoroutine(TypeWriter());
+                }
+                else
+                {
+                    contextCount = 0;
+                    if (++lineCount < dialogs.Length)
+                    {
+                        StartCoroutine(TypeWriter());
+                    }
+
+                    else
+                    {
+                        EndDialog();
+                    }
+                }
+
+
+
+            }
+        }
 
 
 
 
-
+        settingPlayerCon();
+    }
     public void 선택지선택시외부에서페이지넘기기()
     {
+        스킵버튼.SetActive(true);
+        스킵스탑버튼.SetActive(false);
+        DataBaseManager.스킵활성화 = false;
+        선택지등장 = false;
         if (isDialog)
         {
             if (isNext)
@@ -223,6 +321,9 @@ public class DialogManager_D1사무소 : MonoBehaviour
                     t_ignore = true;
                     if (t_ReplaceText[i + 1] == '①')
                     {
+                        선택지등장 = true;
+                        스킵버튼.SetActive(false);
+                        스킵스탑버튼.SetActive(false);
                         t_ignore = true;
                         selectionUIManager.선택지출력1(); // 1번선택지.
                         isSelectButton = true;
@@ -233,6 +334,9 @@ public class DialogManager_D1사무소 : MonoBehaviour
 
                     if (t_ReplaceText[i + 1] == '⑵')
                     {
+                        스킵버튼.SetActive(false);
+                        스킵스탑버튼.SetActive(false);
+                        선택지등장 = true;
                         t_ignore = true;
                         selectionUIManager.선택지출력2(); // 2번선택지.
                         isSelectButton = true;
@@ -242,6 +346,9 @@ public class DialogManager_D1사무소 : MonoBehaviour
                     }
                     if (t_ReplaceText[i + 1] == '⑶')
                     {
+                        스킵버튼.SetActive(false);
+                        스킵스탑버튼.SetActive(false);
+                        선택지등장 = true;
                         t_ignore = true;
                         selectionUIManager.선택지출력3(); // 2번선택지.
                         isSelectButton = true;

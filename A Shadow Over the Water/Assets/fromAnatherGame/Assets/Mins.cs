@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class Mins : MonoBehaviour
 {
 	Animator anime;
@@ -213,6 +214,12 @@ public class Mins : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+			SceneManager.LoadScene("예비파일");
+        }
+
+
 		상호작용체커();
 
 		if (!isDialogONing)
