@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
+
+using WindowsInput;
 public class DialogManager_D1사무소 : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -37,17 +40,17 @@ public class DialogManager_D1사무소 : MonoBehaviour
     public GameObject PlayerChar;
 
     public selectionUIManager_D1사무소 selectionUIManager;
-    public  bool  isDialogON = false;
+    public bool isDialogON = false;
     [SerializeField] GameObject go_dialogBar;
     [SerializeField] GameObject go_dialogNameBar;
 
     [SerializeField] Text txt_Dialog;
     [SerializeField] Text txt_name;
     Dialog[] dialogs;
-    public Mins  min;
+    public Mins min;
     bool isDialog = false;
     bool isNext = false; // 특정 키 입력 대기.
-    public  bool isSelectButton = false;
+    public bool isSelectButton = false;
 
 
     int lineCount = 0; // 대화 카운트(사람)
@@ -66,10 +69,10 @@ public class DialogManager_D1사무소 : MonoBehaviour
     {
         isSelectButton = false;
         theSpriteManager = FindObjectOfType<SpriteManager>();
-    } 
+    }
     void Update()
     {
-        if(DataBaseManager.텍스트딜레이 == 0)
+        if (DataBaseManager.텍스트딜레이 == 0)
         {
             textDelay = 0.02f;
         }
@@ -86,14 +89,14 @@ public class DialogManager_D1사무소 : MonoBehaviour
                 {
                     isNext = false;
                     txt_Dialog.text = "";
-                    if(++contextCount < dialogs[lineCount].contexts.Length)
+                    if (++contextCount < dialogs[lineCount].contexts.Length)
                     {
                         StartCoroutine(TypeWriter());
                     }
                     else
                     {
                         contextCount = 0;
-                        if(++lineCount < dialogs.Length)
+                        if (++lineCount < dialogs.Length)
                         {
                             StartCoroutine(TypeWriter());
                         }
@@ -153,6 +156,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
     {
 
         yield return new WaitForSeconds(0.001f);
+        selectionUIManager.엘라심리학선택지끄기();
         선택지선택시외부에서페이지넘기기t();
         yield return new WaitForSeconds(0.001f);
         if (선택지등장 == false)
@@ -218,25 +222,25 @@ public class DialogManager_D1사무소 : MonoBehaviour
             {
 
 
-                    isNext = false;
-                    txt_Dialog.text = "";
-                    if (++contextCount < dialogs[lineCount].contexts.Length)
+                isNext = false;
+                txt_Dialog.text = "";
+                if (++contextCount < dialogs[lineCount].contexts.Length)
+                {
+                    StartCoroutine(TypeWriter());
+                }
+                else
+                {
+                    contextCount = 0;
+                    if (++lineCount < dialogs.Length)
                     {
                         StartCoroutine(TypeWriter());
                     }
+
                     else
                     {
-                        contextCount = 0;
-                        if (++lineCount < dialogs.Length)
-                        {
-                            StartCoroutine(TypeWriter());
-                        }
-
-                        else
-                        {
-                            EndDialog();
-                        }
+                        EndDialog();
                     }
+                }
 
 
 
@@ -304,17 +308,17 @@ public class DialogManager_D1사무소 : MonoBehaviour
 
         bool t_white = false, t_yellow = false, t_red = false;   // 색 추가 지점
         bool t_ignore = false;
-        
 
-        for(int i =0; i < t_ReplaceText.Length; i++)
+
+        for (int i = 0; i < t_ReplaceText.Length; i++)
         {
 
 
             switch (t_ReplaceText[i])
             {
-                case 'ⓦ': t_white = true; t_yellow = false; t_red = false; t_ignore  = true; break;
+                case 'ⓦ': t_white = true; t_yellow = false; t_red = false; t_ignore = true; break;
 
-                case 'ⓨ': t_white = false; t_yellow = true; t_red = false; t_ignore  = true; break;
+                case 'ⓨ': t_white = false; t_yellow = true; t_red = false; t_ignore = true; break;
                 case 'ⓡ': t_white = false; t_yellow = false; t_red = true; t_ignore = true; break;
 
                 case '☆':  // 별에 선택지 출현.
@@ -360,7 +364,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
 
                     if (t_ReplaceText[i + 1] == '②')//행성대직렬 정보 1 추가.
                     {
-                        
+
                         if (t_ReplaceText[i + 2] == '㉧')
                         {
                             if (t_ReplaceText[i + 3] == '㉤')
@@ -380,7 +384,9 @@ public class DialogManager_D1사무소 : MonoBehaviour
                     t_ignore = true;
                     if (t_ReplaceText[i + 1] == '①')
                     {
-                        
+                        스킵버튼.SetActive(false);
+                        스킵스탑버튼.SetActive(false);
+                        선택지등장 = true;
                         t_ignore = true;
                         selectionUIManager.일번선택지넘기기();
                         isSelectButton = true;
@@ -389,9 +395,12 @@ public class DialogManager_D1사무소 : MonoBehaviour
 
                     }
                     break;
+                case '♠'://기능판단오프
+                    selectionUIManager.엘라심리학선택지끄기();
+                    t_ignore = true;
+                    break;
 
-
-                    // 최초 심리학 기능판정 선택지 출력창.
+                // 최초 심리학 기능판정 선택지 출력창.
                 case '※'://기능판단온
                     if (t_ReplaceText[i + 1] == '㉦') { selectionUIManager.엘라심리학선택지출력(); };
                     t_ignore = true;
@@ -402,7 +411,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
                     t_ignore = true;
                     break;
 
-                case '§': 
+                case '§':
 
                     if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '①' && t_ReplaceText[i + 4] == '§') { theSpriteManager.노아일러스트1(); };
                     if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '②' && t_ReplaceText[i + 4] == '§') { theSpriteManager.노아일러스트2(); };
@@ -430,19 +439,19 @@ public class DialogManager_D1사무소 : MonoBehaviour
                     if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '⑫' && t_ReplaceText[i + 4] == '④' && t_ReplaceText[i + 5] == '§') { theSpriteManager.노아일러스트24(); }; t_ignore = true; break; // 표정변경.
 
 
-                    if (t_ReplaceText[i + 1] == '엘' && t_ReplaceText[i + 2] == '라' && t_ReplaceText[i + 3] == '1' && t_ReplaceText[i + 4] == '§') {  theSpriteManager.엘라일러스트1(); }; t_ignore = true; break; // 표정변경.
+                    if (t_ReplaceText[i + 1] == '엘' && t_ReplaceText[i + 2] == '라' && t_ReplaceText[i + 3] == '1' && t_ReplaceText[i + 4] == '§') { theSpriteManager.엘라일러스트1(); }; t_ignore = true; break; // 표정변경.
 
                 //㉠ ㉡ ㉢ ㉣ ㉤ ㉥ ㉦ ㉧ ㉨ ㉩ ㉪ ㉫ ㉬ ㉭
                 //① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩ ⑪ ⑫
                 case '㉡': if (t_ReplaceText[i - 1] == '§') { t_ignore = true; } break;
-                case '㉧':  if (t_ReplaceText[i - 2] == '§'||t_ReplaceText[i + -2] == '☆') { t_ignore = true; } break;
+                case '㉧': if (t_ReplaceText[i - 2] == '§' || t_ReplaceText[i + -2] == '☆') { t_ignore = true; } break;
                 case '㉦': if (t_ReplaceText[i - 1] == '※') { t_ignore = true; } break;
                 case '㉤': if (t_ReplaceText[i + -3] == '☆') { t_ignore = true; } break;
 
 
 
                 //case '0': if (t_ReplaceText[i + 1] == '§') { t_ignore = true; } if (t_ReplaceText[i - 1] == '☆') { t_ignore = true; } break;
-                case '①': if (t_ReplaceText[i -3 ] == '§' || t_ReplaceText[i - 1] == '☆' || t_ReplaceText[i - 1] == '★') { t_ignore = true; } break;
+                case '①': if (t_ReplaceText[i - 3] == '§' || t_ReplaceText[i - 1] == '☆' || t_ReplaceText[i - 1] == '★') { t_ignore = true; } break;
                 case '②': if (t_ReplaceText[i + 1] == '§' || t_ReplaceText[i - 1] == '☆') { t_ignore = true; } break;
                 case '③': if (t_ReplaceText[i + 1] == '§') { t_ignore = true; } break;
                 case '④': if (t_ReplaceText[i + 1] == '§') { t_ignore = true; } break;
@@ -457,7 +466,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
 
             }
 
-            
+
 
 
             string t_letter = t_ReplaceText[i].ToString();
@@ -465,7 +474,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
             if (!t_ignore)
             {
                 if (t_white) { t_letter = "<color=#000000>" + t_letter + "</color>"; }
-                else if(t_yellow) { t_letter = "<color=#FFFF00>" + t_letter + "</color>"; }
+                else if (t_yellow) { t_letter = "<color=#FFFF00>" + t_letter + "</color>"; }
                 else if (t_red) { t_letter = "<color=#B30000>" + t_letter + "</color>"; }
                 txt_Dialog.text += t_letter;
             }
@@ -484,7 +493,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
 
         if (P_flag)
         {
-            if(dialogs[lineCount].name == "")
+            if (dialogs[lineCount].name == "")
             {
                 go_dialogNameBar.SetActive(false);
 
@@ -503,7 +512,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
     void settingPlayerCon()
     {
 
-        if(go_dialogBar.activeSelf == true)
+        if (go_dialogBar.activeSelf == true)
         {
             PlayerChar.transform.GetComponent<Mins>().isDialogOnChangeT();
         }

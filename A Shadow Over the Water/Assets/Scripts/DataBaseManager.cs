@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class DataBaseManager : MonoBehaviour
 {
     public static bool  스킵활성화 = false;
-
-
+    public static int 시간대 = 2;
+    public static string 이동지;
     public static float 텍스트딜레이;
     public static float 음악소리크기 = 0.5f;
     public static float 이펙트소리크기 = 0.5f;

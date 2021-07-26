@@ -1,9 +1,76 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class rotate : MonoBehaviour
 {
+
+    public GameObject 페이드이미지오브젝트;
+    public Image 페이드이미지;
+    public Image 페이드이미지2;
+    IEnumerator 페이드아웃코루틴()
+    {
+        float 페이드카운트 = 1;
+        yield return new WaitForSeconds(3f);
+        페이드이미지오브젝트.SetActive(true);
+
+        while (페이드카운트 > 0)
+        {
+            페이드카운트 -= 0.01f;
+            yield return new WaitForSeconds(0.01f);
+            페이드이미지.color = new Color(0, 0, 0, 페이드카운트);
+        }
+    }
+
+    bool 체커 = false;
+    IEnumerator 시간끝이동()
+    {
+        if(체커 == false)
+        {
+            체커 = true;
+               yield return new WaitForSeconds(7f);
+            StartCoroutine(장면전환());
+
+        }
+        else
+        {
+
+        }
+    }
+
+
+    IEnumerator 장면전환()
+    {
+
+
+        float 페이드카운트 = 0;
+        while (페이드카운트 < 1.0f)
+        {
+            페이드카운트 += 0.01f;
+            yield return new WaitForSeconds(0.01f);
+            페이드이미지.color = new Color(0, 0, 0, 페이드카운트);
+
+
+        }
+
+        if (DataBaseManager.이동지 == "대학")
+        {
+            SceneManager.LoadScene("1st_Mor_Uni");
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
     float timer;
     int waitingTime;
     int updownder;
@@ -23,8 +90,9 @@ public class rotate : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(페이드아웃코루틴());
         timer = 0.0f;
-        waitingTime = 5;
+        waitingTime = 7;
         넘 = 0;
         촉수체커 = false;
     }
@@ -106,6 +174,7 @@ public class rotate : MonoBehaviour
         }
         if (isRing2End == false)
         {
+            StartCoroutine(시간끝이동());
             ring2.transform.Rotate(Vector3.forward, turnSpeed2 * Time.deltaTime);
         }
         if (isRing3End == false)

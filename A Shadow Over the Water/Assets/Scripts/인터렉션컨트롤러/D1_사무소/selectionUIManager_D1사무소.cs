@@ -232,6 +232,18 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
         
 
     }
+    public void 엘라심리학선택지끄기()
+    {
+
+            엘라심리학선택지버튼.SetActive(false);
+
+
+
+
+    }
+
+
+
     public void 엘라심리학선택지클릭()
     {
         엘라심리학선택지버튼.SetActive(false);
