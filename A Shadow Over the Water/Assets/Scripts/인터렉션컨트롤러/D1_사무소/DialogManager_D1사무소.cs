@@ -72,6 +72,17 @@ public class DialogManager_D1사무소 : MonoBehaviour
     }
     void Update()
     {
+        settingPlayerCon();
+          
+        텍스트체커();
+
+
+
+
+    }
+
+    void 텍스트체커()
+    {
         if (DataBaseManager.텍스트딜레이 == 0)
         {
             textDelay = 0.02f;
@@ -111,11 +122,6 @@ public class DialogManager_D1사무소 : MonoBehaviour
                 }
             }
         }
-
-
-
-
-        settingPlayerCon();
     }
 
 
@@ -208,7 +214,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
 
 
 
-        settingPlayerCon();
+
     }
     public void 선택지선택시외부에서페이지넘기기()
     {
@@ -249,8 +255,6 @@ public class DialogManager_D1사무소 : MonoBehaviour
 
 
 
-
-        settingPlayerCon();
     }
 
 
@@ -260,7 +264,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
     {
         PlayerChar.transform.GetComponent<Mins>().다이얼로그다운();
         대화창일러.SetActive(false);
-
+        대화창일러.SetActive(false);
 
         isDialog = false;
         contextCount = 0;
@@ -514,11 +518,16 @@ public class DialogManager_D1사무소 : MonoBehaviour
 
         if (go_dialogBar.activeSelf == true)
         {
+            DataBaseManager.장면이동중 = true;
             PlayerChar.transform.GetComponent<Mins>().isDialogOnChangeT();
         }
 
         if (go_dialogBar.activeSelf == false)
+        {
+            DataBaseManager.장면이동중 = false;
             PlayerChar.transform.GetComponent<Mins>().isDialogOnChangeF();
+        }
+
 
     }
 

@@ -27,7 +27,10 @@ public class CameraManager : MonoBehaviour
         isCheckEnd = false;
     }
 
-
+    public void 카메라멈추기()
+    {
+        isCheckEnd = true;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

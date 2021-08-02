@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 public class DataBaseManager : MonoBehaviour
 {
+    public static bool 장면이동중;
+
+
     public static bool  스킵활성화 = false;
     public static int 시간대 = 2;
     public static string 이동지;

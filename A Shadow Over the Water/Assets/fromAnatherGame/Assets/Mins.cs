@@ -24,9 +24,9 @@ public class Mins : MonoBehaviour
 	public CameraManager 카메라;
 
 
-	public bool isDialogONing = false;
+	public  bool isDialogONing = false;
 
-	public bool isEllaON = false;
+	public  bool isEllaON = false;
 
 	public InterctionController Ella ;
 
@@ -211,42 +211,36 @@ public class Mins : MonoBehaviour
 		anime = gameObject.GetComponent<Animator>();
 	}
 
-	// Update is called once per frame
-	void Update()
+    // Update is called once per frame
+    private void Update()
+    {
+		if (isDialogONing == false)
+		{
+			runAndWalkChanger();
+			Move();
+		} 
+	}
+
+    void FixedUpdate()
 	{
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-			SceneManager.LoadScene("예비파일");
-        }
 
 
 		상호작용체커();
 
 		if (!isDialogONing)
-        {
+		{
 			//Jump();
-			AttackCheker();
+
 		}
 
 
 		if (isEllaON)
-        {
+		{
 			if (Input.GetKeyDown(KeyCode.Space))
 			{
 				Ella.checkObject();
 			}
 		}
-	}
-
-	void FixedUpdate()
-	{
-
-		if (!isDialogONing)
-		{
-			runAndWalkChanger();
-			Move();
-		}
-
 
 	}
 
