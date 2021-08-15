@@ -160,6 +160,9 @@ MonoBehaviour:
   min: {fileID: 0}
   isSelectButton: 0
   textDelay: 0.00001
+  "\uC120\uD0DD\uC9C0\uB4F1\uC7A5": 0
+  "\uC2A4\uD0B5\uBC84\uD2BC": {fileID: 0}
+  "\uC2A4\uD0B5\uC2A4\uD0D1\uBC84\uD2BC": {fileID: 0}
 --- !u!1 &7289599681059343969
 GameObject:
   m_ObjectHideFlags: 0

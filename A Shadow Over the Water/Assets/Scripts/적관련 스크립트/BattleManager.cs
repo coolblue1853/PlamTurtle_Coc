@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class BattleManager : MonoBehaviour
 {
+    public GameObject 근접공격;
+    
     public battleUiManager 배틀유아이;
     public int 현재턴수 = 0;
     public int 내부여턴수 = 0;
@@ -32,8 +35,16 @@ public class BattleManager : MonoBehaviour
 
     public void 심해인등장()
     {
+        if(SceneManager.GetActiveScene().name == "도로전투")
+        {
+            등장수 = 1;
 
-        등장수 = Random.Range(1, 4);
+        }
+        else
+        {
+            등장수 = Random.Range(1, 4);
+        }
+
 
         Debug.Log(등장수);
         if (등장수 == 1)
@@ -633,7 +644,7 @@ public class BattleManager : MonoBehaviour
         whiteBox.SetActive(true);
         격투_투척_단검_사격.SetActive(true);
         공격뒤로가기.SetActive(true);
-
+        대기상태로이미지교체();
         근접뒤로가기.SetActive(false);
         적선택가리개.SetActive(false);
 
@@ -688,6 +699,7 @@ public class BattleManager : MonoBehaviour
         총기류아이템창.SetActive(true);
         rednum = 1;
     }
+
     public void 내턴_격투버튼()
     {
         기술명 = "근접격투";
@@ -702,6 +714,8 @@ public class BattleManager : MonoBehaviour
         화살표모음.SetActive(true);
         화살표초기화();
     }
+    
+    
     public void 내턴_사격버튼()
     {
         기술명 = "사격술";
@@ -912,6 +926,63 @@ public class BattleManager : MonoBehaviour
 
 
     //총기선택 버튼
+    public GameObject 플레이어대기;
+    public GameObject 플레이어리볼버조준;
+    public GameObject 플레이어소총조준;
+    public GameObject 플레이어데린저조준;
+    public GameObject 플레이어샷건조준;
+
+    void 리볼버조준이미지교체()
+    {
+        플레이어대기.SetActive(false);
+        플레이어리볼버조준.SetActive(true);
+        플레이어소총조준.SetActive(false);
+        플레이어데린저조준.SetActive(false);
+        플레이어샷건조준.SetActive(false);
+    }
+
+    void 샷건조준이미지교체()
+    {
+        플레이어대기.SetActive(false);
+        플레이어리볼버조준.SetActive(false);
+        플레이어소총조준.SetActive(false);
+        플레이어데린저조준.SetActive(false);
+        플레이어샷건조준.SetActive(true);
+    }
+
+    void 소총조준이미지교체()
+    {
+        플레이어대기.SetActive(false);
+        플레이어리볼버조준.SetActive(false);
+        플레이어소총조준.SetActive(true);
+        플레이어데린저조준.SetActive(false);
+        플레이어샷건조준.SetActive(false);
+    }
+
+    void 데맂너조준이미지교체()
+    {
+        플레이어대기.SetActive(false);
+        플레이어리볼버조준.SetActive(false);
+        플레이어소총조준.SetActive(false);
+        플레이어데린저조준.SetActive(true);
+        플레이어샷건조준.SetActive(false);
+    }
+
+    void 대기상태로이미지교체()
+    {
+        플레이어대기.SetActive(true);
+        플레이어리볼버조준.SetActive(false);
+        플레이어소총조준.SetActive(false);
+        플레이어데린저조준.SetActive(false);
+        플레이어샷건조준.SetActive(false);
+
+        플레이어몽둥이조준.SetActive(false);
+        플레이어단검조준.SetActive(false);
+        플레이어도끼조준.SetActive(false);
+
+
+    }
+
 
     public void 매그넘선택()
     {
@@ -927,6 +998,9 @@ public class BattleManager : MonoBehaviour
                 도구선택창.SetActive(false);
                 선택된무기 = "리볼버";
                 적선택차례 = true;
+
+                리볼버조준이미지교체();
+
                 적선택가리개.SetActive(true);
                 근접뒤로가기.SetActive(true);
                 공격적선택뒤로가기.SetActive(true);
@@ -991,6 +1065,7 @@ public class BattleManager : MonoBehaviour
 
             if (DataBaseManager.소형권총장탄수 != 0)
             {
+                데맂너조준이미지교체();
                 화살표모음.SetActive(true);
                 단검류아이템창.SetActive(false);
                 총기류아이템창.SetActive(false);
@@ -1054,6 +1129,7 @@ public class BattleManager : MonoBehaviour
         {
             if (DataBaseManager.샷건장탄수 != 0)
             {
+                샷건조준이미지교체();
                 화살표모음.SetActive(true);
                 단검류아이템창.SetActive(false);
                 총기류아이템창.SetActive(false);
@@ -1125,6 +1201,7 @@ public class BattleManager : MonoBehaviour
         {
             if (DataBaseManager.소총장탄수 != 0)
             {
+                소총조준이미지교체();
                 화살표모음.SetActive(true);
                 단검류아이템창.SetActive(false);
                 총기류아이템창.SetActive(false);
@@ -1181,8 +1258,45 @@ public class BattleManager : MonoBehaviour
     }
 
 
+
+    public GameObject 플레이어몽둥이조준;
+    public GameObject 플레이어단검조준;
+    public GameObject 플레이어도끼조준;
+    
+    void 몽둥이조준이미지교체()
+    {
+        플레이어대기.SetActive(false);
+        플레이어몽둥이조준.SetActive(true);
+        플레이어단검조준.SetActive(false);
+        플레이어도끼조준.SetActive(false);
+
+    }
+
+
+    void 단검조준이미지교체()
+    {
+        플레이어대기.SetActive(false);
+        플레이어몽둥이조준.SetActive(false);
+        플레이어단검조준.SetActive(true);
+        플레이어도끼조준.SetActive(false);
+
+    }
+
+    void 도끼조준이미지교체()
+    {
+        플레이어대기.SetActive(false);
+        플레이어몽둥이조준.SetActive(false);
+        플레이어단검조준.SetActive(false);
+        플레이어도끼조준.SetActive(true);
+
+    }
+
+
+
+
     public void 단검선택()
     {
+        단검조준이미지교체();
         화살표모음.SetActive(true);
         도구선택창.SetActive(false);
         단검류아이템창.SetActive(false);
@@ -1200,9 +1314,10 @@ public class BattleManager : MonoBehaviour
 
     public void 손도끼선택()
     {
+        도끼조준이미지교체();
         화살표모음.SetActive(true);
         도구선택창.SetActive(false);
-        단검류아이템창.SetActive(false);
+        단검류아이템창.SetActive(false);   
         총기류아이템창.SetActive(false);
         투척류아이템창.SetActive(false);
         선택된무기 = "손도끼";
@@ -1217,6 +1332,7 @@ public class BattleManager : MonoBehaviour
 
     public void 몽둥이선택()
     {
+        몽둥이조준이미지교체();
         화살표모음.SetActive(true);
         도구선택창.SetActive(false);
         단검류아이템창.SetActive(false);
@@ -1883,8 +1999,11 @@ public class BattleManager : MonoBehaviour
 
     public string 선택된무기;
 
-
+    public GameObject 적대기이미지;
+    public GameObject 적피격이미지;
+    public GameObject 적공격이미지;
     //무기선택버튼 관련
+ 
 
 
 
@@ -1910,7 +2029,7 @@ public class BattleManager : MonoBehaviour
 
         판정창.SetActive(true);
 
-
+        
 
 
 
@@ -2012,14 +2131,43 @@ public class BattleManager : MonoBehaviour
                 결과.text = "적 판정승";
             }
 
+            yield return new WaitForSeconds(2f);
+
+            판정창.SetActive(false);
 
 
-            if(결과.text == "노아 판정승")
+
+
+
+            if (결과.text == "노아 판정승")
             {
                 Debug.Log(심해인1.체력);
                 Debug.Log(근력대미지);
                 심해인1.체력 = 심해인1.체력 - 근력대미지;
                 Debug.Log(심해인1.체력);
+               
+                
+                
+                var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+                clone.GetComponent<플로팅택스트>().Text.text = 근력대미지.ToString();
+                clone.transform.SetParent(ui창.transform);
+
+                DataBaseManager.카메라워킹온오프 = true;
+
+                플레이어대기.SetActive(false);
+                근접공격.SetActive(true);
+
+                적대기이미지.SetActive(false);
+                적피격이미지.SetActive(true);
+
+                yield return new WaitForSeconds(3f);
+
+                플레이어대기.SetActive(true);
+                근접공격.SetActive(false);
+
+                적대기이미지.SetActive(true);
+                적피격이미지.SetActive(false);
+
             }
 
             if (결과.text == "적 판정승")
@@ -2042,9 +2190,7 @@ public class BattleManager : MonoBehaviour
                 }
             }
 
-            yield return new WaitForSeconds(2f);
 
-            판정창.SetActive(false);
 
 
             턴시작 = false;
@@ -5451,7 +5597,6 @@ public class BattleManager : MonoBehaviour
 
 
 
-
     public GameObject 회피반격버튼;
 
 
@@ -5801,26 +5946,23 @@ public class BattleManager : MonoBehaviour
     public Text 누적데미지_심해인2;
     public Text 누적데미지_심해인3;
     // Update is called once per frame
+    public GameObject ui창;
+    public GameObject 플로팅텍스트오브젝트;
+    public GameObject 적플로팅위치;
     void Update()
     {
+
+
         누적데미지_심해인1.text = "누적 : " + (심해인1.전체체력 - 심해인1.체력);
         누적데미지_심해인2.text = "누적 : " + (심해인2.전체체력 - 심해인2.체력);
         누적데미지_심해인3.text = "누적 : " + (심해인3.전체체력 - 심해인3.체력);
         총기류메뉴창();
         메뉴창업데이터();
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            StartCoroutine(룰렛작동());
-            StartCoroutine(적룰렛작동());
-        }
+
 
         내턴기본white관리();
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            턴시작 = false;
-            현재턴수 = 현재턴수 + 1;
-        }
+
 
 
         현재가누구턴인지확인();
