@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 5302358472099625333}
   - component: {fileID: 5302358472099625335}
   - component: {fileID: 5302358472099625332}
-  - component: {fileID: -5581210483262057256}
-  - component: {fileID: 5446933184446387302}
+  - component: {fileID: 1865545138694196057}
   m_Layer: 5
-  m_Name: "\uC801\uD50C\uB85C\uD305"
+  m_Name: "\uC801\uD50C\uB85C\uD305 \uC88C\uCE21"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +26,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5302358472099625338}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.78125, y: 0.78124994, z: 0.78124994}
   m_Children: []
@@ -67,8 +66,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_Font: {fileID: 12800000, guid: e2c1f30f8cfbbe44d898f957f3c26270, type: 3}
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -80,7 +79,7 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 
---- !u!114 &-5581210483262057256
+--- !u!114 &1865545138694196057
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,24 +88,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5302358472099625338}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb2d7d79e196757448ceb77fc4041e04, type: 3}
+  m_Script: {fileID: 11500000, guid: 218ec8ead7ab79c4ea16e304e1492fd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  destroyTime: 3
+  destroyTime: 2.5
   Text: {fileID: 5302358472099625332}
---- !u!114 &5446933184446387302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5302358472099625338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 364034465ffd34f4d99496a19a817ee7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 0
-  destroyTime: 0
-  "\uC624\uBE0C\uC81D\uD2B8": {fileID: 0}

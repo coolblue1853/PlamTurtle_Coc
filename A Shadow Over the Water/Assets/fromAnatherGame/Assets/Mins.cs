@@ -24,7 +24,7 @@ public class Mins : MonoBehaviour
 	public CameraManager 카메라;
 
 
-	public  bool isDialogONing = false;
+	public static bool isDialogONing = false ;
 
 	public  bool isEllaON = false;
 
@@ -214,11 +214,11 @@ public class Mins : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-		if (isDialogONing == false)
+		if (isDialogONing == false && DataBaseManager.연출중움직임제한 == false)
 		{
 			runAndWalkChanger();
 			Move();
-		} 
+		}
 	}
 
     void FixedUpdate()
@@ -227,11 +227,6 @@ public class Mins : MonoBehaviour
 
 		상호작용체커();
 
-		if (!isDialogONing)
-		{
-			//Jump();
-
-		}
 
 
 		if (isEllaON)
@@ -244,62 +239,6 @@ public class Mins : MonoBehaviour
 
 	}
 
-	void endAttack()
-    {
-		isAttack = false;
-		isAttack2 = false;
-		attcount = 0;
-	}
-
-	int attcount = 0;
-	void AttackCheker()
-    {
-
-		if(isGrounded == true)
-        {
-
-
-		}
-
-
-		                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-		anime.SetBool("attack", isAttack);
-	}
-
-
-	IEnumerator Attack1()
-	{
-		att1Time = Time.time;
-		isAttack = true;
-
-
-		while (Time.time - att1Time > 2f)
-		{
-			Debug.Log("연속");
-			if (Input.GetKey(KeyCode.X))
-            {
-				Debug.Log("연속");
-				StartCoroutine(Attack2());
-				yield break;
-
-            }
-
-
-        }
-
-		yield return null;	
-
-
-	}
-
-	IEnumerator Attack2()
-    {
-		isAttack2 = true;
-		anime.SetBool("attack", isAttack2);
-		yield break;
-	}
 
 
 	public void 다이얼로그온()
@@ -388,33 +327,6 @@ public class Mins : MonoBehaviour
 			transform.position += moveVelocity * runPower * Time.deltaTime;
 	}
 
-	bool isjumping = false;
-	void Jump()
-	{
-
-
-
-
-		if (Input.GetKeyDown(KeyCode.C) && jumpCount < 2)
-		{
-
-			if (Input.GetKeyDown(KeyCode.C) && jumpCount == 1)
-			{
-				Instantiate(JumpStemp, trans.position - new Vector3(0, 0.8f), Quaternion.identity);
-				anime.SetFloat("DBJump", 1);
-			}
-
-			jumpCount++;
-			rigid.velocity = Vector2.zero;
-			Vector2 jumpVelocity = new Vector2(0, jumpPower);
-			rigid.AddForce(jumpVelocity, ForceMode2D.Impulse);
-
-		}
-
-		anime.SetBool("isJump", isGrounded);
-
-
-	}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

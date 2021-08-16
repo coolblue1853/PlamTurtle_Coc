@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class 애니메이션우측이동 : MonoBehaviour
+public class 애니메이션좌측이동 : MonoBehaviour
 {
 
     public float moveSpeed;
@@ -26,15 +26,15 @@ public class 애니메이션우측이동 : MonoBehaviour
     {
         if(this.gameObject.activeSelf == true)
         {
-            vector.Set(이미지.transform.position.x + (moveSpeed * Time.deltaTime), 이미지.transform.position.y, 이미지.transform.position.z);
-            이미지.transform.position = vector;
+            vector.Set(this.gameObject.transform.position.x - (moveSpeed * Time.deltaTime), this.gameObject.transform.position.y, this.gameObject.transform.position.z);
+            this.gameObject.transform.position = vector;
 
             destroyTime -= Time.deltaTime;
 
             if (destroyTime <= 0)
             {
                 destroyTime = 3;
-                이미지.transform.position = 초기위치;
+                this.gameObject.transform.position = 초기위치;
                 this.gameObject.SetActive(false);
             }
         }

@@ -41,6 +41,25 @@ public class 카메라워킹우측 : MonoBehaviour
             }
         }
 
+        if (DataBaseManager.카메라왼쪽워킹온오프 == true)
+        {
+            vector.Set(오브젝트.transform.position.x - (moveSpeed * Time.deltaTime), 오브젝트.transform.position.y, 오브젝트.transform.position.z);
+            오브젝트.transform.position = vector;
+
+            destroyTime -= Time.deltaTime;
+
+            if (destroyTime <= 0)
+            {
+
+                destroyTime = 3;
+                오브젝트.transform.position = 초기위치;
+                DataBaseManager.카메라왼쪽워킹온오프 = false;
+
+            }
+        }
+
+
+
     }
 
 

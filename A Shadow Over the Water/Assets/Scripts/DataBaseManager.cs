@@ -4,8 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 public class DataBaseManager : MonoBehaviour
 {
+    public static bool 연출중움직임제한;
+
+
     public static bool 장면이동중;
     public static bool 카메라워킹온오프;
+    public static bool 카메라왼쪽워킹온오프;
+
     public static bool  스킵활성화 = false;
     public static int 시간대 = 2;
     public static string 이동지;

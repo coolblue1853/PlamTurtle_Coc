@@ -262,6 +262,8 @@ public class DialogManager_D1사무소 : MonoBehaviour
 
     void EndDialog()
     {
+
+
         PlayerChar.transform.GetComponent<Mins>().다이얼로그다운();
         대화창일러.SetActive(false);
         대화창일러.SetActive(false);

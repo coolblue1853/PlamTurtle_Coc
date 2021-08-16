@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class 플로팅택스트 : MonoBehaviour
+public class 플로팅텍스트좌측 : MonoBehaviour
 {
 
     public float moveSpeed;
     public float destroyTime;
 
+
+
     public Text Text;
 
-    private Vector3 vector;         
+    private Vector3 vector;
 
     // Start is called before the first frame update
     void Start()
@@ -23,15 +25,21 @@ public class 플로팅택스트 : MonoBehaviour
     void Update()
     {
 
-        vector.Set(Text.transform.position.x, Text.transform.position.y + (moveSpeed * Time.deltaTime), Text.transform.position.z);
-        Text.transform.position = vector;
+        vector.Set(Text.transform.position.x - (1 * Time.deltaTime), Text.transform.position.y + (moveSpeed * Time.deltaTime), Text.transform.position.z);
+        Text.transform.position = vector;   
 
         destroyTime -= Time.deltaTime;
 
-        if(destroyTime <= 0)
+        if (destroyTime <= 0)
         {
             Destroy(this.gameObject);
         }
+
+
+
+
+
+
     }
 
 
