@@ -2078,9 +2078,11 @@ public class BattleManager : MonoBehaviour
     public GameObject 적피격이미지;
     public GameObject 적공격이미지;
     //무기선택버튼 관련
- 
 
-
+    public GameObject 적소총피격이미지;
+    public GameObject 적샷건피격이미지;
+    public GameObject 적데린저피격이미지;
+    public GameObject 적리볼버피격이미지;
 
     public IEnumerator 적클릭1()
     {
@@ -2591,13 +2593,13 @@ public class BattleManager : MonoBehaviour
                     clone.GetComponent<플로팅택스트>().Text.text = 리볼버대미지.ToString();
                     clone.transform.SetParent(ui창.transform);
 
-                    DataBaseManager.카메라왼쪽워킹온오프 = true;
+                    DataBaseManager.카메라워킹온오프 = true;
 
                     플레이어리볼버조준.SetActive(false);
                     노아리볼버공격이미지.SetActive(true);
 
                     적대기이미지.SetActive(false);
-                    적피격이미지.SetActive(true);
+                    적리볼버피격이미지.SetActive(true);
 
                     yield return new WaitForSeconds(3f);
 
@@ -2605,7 +2607,7 @@ public class BattleManager : MonoBehaviour
                     노아리볼버공격이미지.SetActive(false);
 
                     적대기이미지.SetActive(true);
-                    적피격이미지.SetActive(false);
+                    적리볼버피격이미지.SetActive(false);
                 }
 
             }
@@ -2625,13 +2627,13 @@ public class BattleManager : MonoBehaviour
                     clone.GetComponent<플로팅택스트>().Text.text = 소형권총대미지.ToString();
                     clone.transform.SetParent(ui창.transform);
 
-                    DataBaseManager.카메라왼쪽워킹온오프 = true;
+                    DataBaseManager.카메라워킹온오프 = true;
 
                     플레이어데린저조준.SetActive(false);
                     노아데린저공격이미지.SetActive(true);
 
                     적대기이미지.SetActive(false);
-                    적피격이미지.SetActive(true);
+                    적데린저피격이미지.SetActive(true);
 
                     yield return new WaitForSeconds(3f);
 
@@ -2639,7 +2641,7 @@ public class BattleManager : MonoBehaviour
                     노아데린저공격이미지.SetActive(false);
 
                     적대기이미지.SetActive(true);
-                    적피격이미지.SetActive(false);
+                    적데린저피격이미지.SetActive(false);
                 }
 
             }
@@ -2659,13 +2661,13 @@ public class BattleManager : MonoBehaviour
                     clone.GetComponent<플로팅택스트>().Text.text = 소총대미지.ToString();
                     clone.transform.SetParent(ui창.transform);
 
-                    DataBaseManager.카메라왼쪽워킹온오프 = true;
+                    DataBaseManager.카메라워킹온오프 = true;
 
                     플레이어소총조준.SetActive(false);
                     노아소총공격이미지.SetActive(true);
 
                     적대기이미지.SetActive(false);
-                    적피격이미지.SetActive(true);
+                    적소총피격이미지.SetActive(true);
 
                     yield return new WaitForSeconds(3f);
 
@@ -2673,7 +2675,7 @@ public class BattleManager : MonoBehaviour
                     노아소총공격이미지.SetActive(false);
 
                     적대기이미지.SetActive(true);
-                    적피격이미지.SetActive(false);
+                    적소총피격이미지.SetActive(false);
                 }
 
             }
@@ -2691,13 +2693,13 @@ public class BattleManager : MonoBehaviour
                     clone.GetComponent<플로팅택스트>().Text.text = 샷건대미지.ToString();
                     clone.transform.SetParent(ui창.transform);
 
-                    DataBaseManager.카메라왼쪽워킹온오프 = true;
+                    DataBaseManager.카메라워킹온오프 = true;
 
                     플레이어샷건조준.SetActive(false);
                     노아샷건공격이미지.SetActive(true);
 
                     적대기이미지.SetActive(false);
-                    적피격이미지.SetActive(true);
+                    적샷건피격이미지.SetActive(true);
 
                     yield return new WaitForSeconds(3f);
 
@@ -2705,7 +2707,7 @@ public class BattleManager : MonoBehaviour
                     노아샷건공격이미지.SetActive(false);
 
                     적대기이미지.SetActive(true);
-                    적피격이미지.SetActive(false);
+                    적샷건피격이미지.SetActive(false);
                 }
 
             }
@@ -2847,7 +2849,7 @@ public class BattleManager : MonoBehaviour
                     clone.GetComponent<플로팅택스트>().Text.text = 리볼버대미지.ToString();
                     clone.transform.SetParent(ui창.transform);
 
-                    DataBaseManager.카메라왼쪽워킹온오프 = true;
+                    DataBaseManager.카메라워킹온오프 = true;
 
                     플레이어리볼버조준.SetActive(false);
                     노아리볼버공격이미지.SetActive(true);
@@ -2881,7 +2883,7 @@ public class BattleManager : MonoBehaviour
                     clone.GetComponent<플로팅택스트>().Text.text = 소형권총대미지.ToString();
                     clone.transform.SetParent(ui창.transform);
 
-                    DataBaseManager.카메라왼쪽워킹온오프 = true;
+                    DataBaseManager.카메라워킹온오프 = true;
 
                     플레이어데린저조준.SetActive(false);
                     노아데린저공격이미지.SetActive(true);
@@ -2915,7 +2917,7 @@ public class BattleManager : MonoBehaviour
                     clone.GetComponent<플로팅택스트>().Text.text = 소총대미지.ToString();
                     clone.transform.SetParent(ui창.transform);
 
-                    DataBaseManager.카메라왼쪽워킹온오프 = true;
+                    DataBaseManager.카메라워킹온오프 = true;
 
                     플레이어소총조준.SetActive(false);
                     노아소총공격이미지.SetActive(true);
@@ -2947,7 +2949,7 @@ public class BattleManager : MonoBehaviour
                     clone.GetComponent<플로팅택스트>().Text.text = 샷건대미지.ToString();
                     clone.transform.SetParent(ui창.transform);
 
-                    DataBaseManager.카메라왼쪽워킹온오프 = true;
+                    DataBaseManager.카메라워킹온오프 = true;
 
                     플레이어샷건조준.SetActive(false);
                     노아샷건공격이미지.SetActive(true);

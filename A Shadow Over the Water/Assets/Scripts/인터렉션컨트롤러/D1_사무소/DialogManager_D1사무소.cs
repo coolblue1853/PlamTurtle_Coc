@@ -304,7 +304,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
 
 
         t_ReplaceText = t_ReplaceText.Replace("^", ",");
-
+        t_ReplaceText = t_ReplaceText.Replace('@', '"');
         t_ReplaceText = t_ReplaceText.Replace("\\n", "\n");
 
 
@@ -479,7 +479,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
 
             if (!t_ignore)
             {
-                if (t_white) { t_letter = "<color=#000000>" + t_letter + "</color>"; }
+                if (t_white) { t_letter = "<color=#FFFFFF>" + t_letter + "</color>"; }
                 else if (t_yellow) { t_letter = "<color=#FFFF00>" + t_letter + "</color>"; }
                 else if (t_red) { t_letter = "<color=#B30000>" + t_letter + "</color>"; }
                 txt_Dialog.text += t_letter;
