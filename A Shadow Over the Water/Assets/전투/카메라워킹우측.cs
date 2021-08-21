@@ -41,8 +41,8 @@ public class 카메라워킹우측 : MonoBehaviour
 
     int 랜덤일의자리;
 
-    float 흔드는범위 = 0.015f;
-    float 흔드는큰범위 = 0.03f;
+    float 흔드는범위 = 0.03f;
+    float 흔드는큰범위 = 0.06f;
     IEnumerator 카메라진동()
     {
         for (int i = 0; i < 20; i++)
@@ -139,8 +139,8 @@ public class 카메라워킹우측 : MonoBehaviour
 
         while (카메라.orthographicSize > 4.5)
         {
-            카메라사이즈 = 카메라사이즈- 0.01f;
-            돌아가는각도 = 돌아가는각도 + 0.1f;
+            카메라사이즈 = 카메라사이즈- 0.05f;
+            돌아가는각도 = 돌아가는각도 + 0.5f;
 
             오브젝트.transform.rotation = Quaternion.Euler(0, 0, 돌아가는각도);
             카메라.orthographicSize = 카메라사이즈;
@@ -185,8 +185,8 @@ public class 카메라워킹우측 : MonoBehaviour
 
         while (카메라.orthographicSize > 4.5)
         {
-            카메라사이즈 = 카메라사이즈 - 0.01f;
-            돌아가는각도 = 돌아가는각도 - 0.1f;
+            카메라사이즈 = 카메라사이즈 - 0.05f;
+            돌아가는각도 = 돌아가는각도 - 0.5f;
 
             오브젝트.transform.rotation = Quaternion.Euler(0, 0, 돌아가는각도);
             카메라.orthographicSize = 카메라사이즈;

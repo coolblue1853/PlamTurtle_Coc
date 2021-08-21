@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class BattleManager : MonoBehaviour
 {
+
+    public battleSoundManager 배틀사운드매니저;
     public GameObject 근접공격;
     
     public battleUiManager 배틀유아이;
@@ -992,6 +994,7 @@ public class BattleManager : MonoBehaviour
         {
             if (DataBaseManager.리볼버장탄수 != 0)
             {
+                배틀사운드매니저.리볼버조준효과음함수();
                 화살표모음.SetActive(true);
                 단검류아이템창.SetActive(false);
                 총기류아이템창.SetActive(false);
@@ -1010,6 +1013,7 @@ public class BattleManager : MonoBehaviour
             }
             else
             {
+                배틀사운드매니저.리볼버탄약부족효과음함수();
                 장탄수부족on();
             }
         }
@@ -1029,6 +1033,7 @@ public class BattleManager : MonoBehaviour
 
                 if (DataBaseManager.보유리볼버탄약 >= 6)
                 {
+                    배틀사운드매니저.리볼버장전효과음함수();
                     DataBaseManager.보유리볼버탄약 -= 6;
                     DataBaseManager.리볼버장탄수 += 6;
                     StartCoroutine(리볼버장전코루틴());
@@ -1037,6 +1042,7 @@ public class BattleManager : MonoBehaviour
 
                 else
                 {
+                    배틀사운드매니저.리볼버장전효과음함수();
                     DataBaseManager.리볼버장탄수 = DataBaseManager.보유리볼버탄약;
                     DataBaseManager.보유리볼버탄약 = 0;
                     StartCoroutine(리볼버장전코루틴());
@@ -1046,7 +1052,7 @@ public class BattleManager : MonoBehaviour
             }
             else
             {
-
+                배틀사운드매니저.리볼버탄약부족효과음함수();
                 보유탄수부족부족();
 
 
@@ -1064,6 +1070,7 @@ public class BattleManager : MonoBehaviour
 
             if (DataBaseManager.소형권총장탄수 != 0)
             {
+                배틀사운드매니저.데린저조준효과음함수();
                 데맂너조준이미지교체();
                 화살표모음.SetActive(true);
                 단검류아이템창.SetActive(false);
@@ -1080,6 +1087,7 @@ public class BattleManager : MonoBehaviour
             }
             else
             {
+                배틀사운드매니저.데린저탄약부족효과음함수();
                 장탄수부족on();
             }
         }
@@ -1095,8 +1103,8 @@ public class BattleManager : MonoBehaviour
             else if (DataBaseManager.보유권총탄약 != 0 && DataBaseManager.소형권총장탄수 != 1)
             {
 
- 
-                    DataBaseManager.보유권총탄약 -= 1;
+                배틀사운드매니저.데린저장전효과음함수();
+                DataBaseManager.보유권총탄약 -= 1;
                     DataBaseManager.소형권총장탄수 += 1;
                 StartCoroutine(데린저장전코루틴());
 
@@ -1108,7 +1116,7 @@ public class BattleManager : MonoBehaviour
             else
             {
 
-
+                배틀사운드매니저.데린저탄약부족효과음함수();
                 보유탄수부족부족();
 
 
@@ -1126,6 +1134,7 @@ public class BattleManager : MonoBehaviour
         {
             if (DataBaseManager.샷건장탄수 != 0)
             {
+                배틀사운드매니저.샷건조준효과음함수();
                 샷건조준이미지교체();
                 화살표모음.SetActive(true);
                 단검류아이템창.SetActive(false);
@@ -1142,6 +1151,7 @@ public class BattleManager : MonoBehaviour
             }
             else
             {
+                배틀사운드매니저.샷건탄약부족효과음함수();
                 장탄수부족on();
             }
         }
@@ -1158,6 +1168,7 @@ public class BattleManager : MonoBehaviour
 
                 if (DataBaseManager.보유샷건탄약 >= 2 )
                 {
+                    배틀사운드매니저.샷건장전효과음함수();
                     DataBaseManager.보유샷건탄약 -= 2;
                     DataBaseManager.샷건장탄수 += 2;
 
@@ -1166,6 +1177,7 @@ public class BattleManager : MonoBehaviour
 
                 else
                 {
+                    배틀사운드매니저.샷건장전효과음함수();
                     DataBaseManager.샷건장탄수 = DataBaseManager.보유샷건탄약;
                     DataBaseManager.보유샷건탄약 = 0;
                     StartCoroutine(샷건장전코루틴());
@@ -1176,7 +1188,7 @@ public class BattleManager : MonoBehaviour
             else
             {
 
-
+                배틀사운드매니저.샷건탄약부족효과음함수();
                 보유탄수부족부족();
 
 
@@ -1196,6 +1208,7 @@ public class BattleManager : MonoBehaviour
         {
             if (DataBaseManager.소총장탄수 != 0)
             {
+                배틀사운드매니저.소총조준효과음함수();
                 소총조준이미지교체();
                 화살표모음.SetActive(true);
                 단검류아이템창.SetActive(false);
@@ -1212,6 +1225,7 @@ public class BattleManager : MonoBehaviour
             }
             else
             {
+                배틀사운드매니저.소총탄약부족효과음함수();
                 장탄수부족on();
             }
         }
@@ -1229,7 +1243,7 @@ public class BattleManager : MonoBehaviour
             else if (DataBaseManager.보유소총탄약 != 0)
             {
 
-
+                배틀사운드매니저.소총장전효과음함수();
                 DataBaseManager.보유소총탄약 -= 1;
                 DataBaseManager.소총장탄수 += 1;
                 StartCoroutine(소총장전코루틴());
@@ -1239,7 +1253,7 @@ public class BattleManager : MonoBehaviour
             else
             {
 
-
+                배틀사운드매니저.소총탄약부족효과음함수();
 
                 보유탄수부족부족();
 
@@ -1260,7 +1274,7 @@ public class BattleManager : MonoBehaviour
     {
         플레이어대기.SetActive(false);
         소총장전이미지.SetActive(true);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
         플레이어대기.SetActive(true);
         소총장전이미지.SetActive(false);
         턴시작 = false;
@@ -1271,7 +1285,7 @@ public class BattleManager : MonoBehaviour
     {
         플레이어대기.SetActive(false);
         샷건장전이미지.SetActive(true);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
         플레이어대기.SetActive(true);
         샷건장전이미지.SetActive(false);
         턴시작 = false;
@@ -1281,7 +1295,7 @@ public class BattleManager : MonoBehaviour
     {
         플레이어대기.SetActive(false);
         데린저장전이미지.SetActive(true);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
         플레이어대기.SetActive(true);
         데린저장전이미지.SetActive(false);
         턴시작 = false;
@@ -1291,7 +1305,7 @@ public class BattleManager : MonoBehaviour
     {
         플레이어대기.SetActive(false);
         리볼버장전이미지.SetActive(true);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
         플레이어대기.SetActive(true);
         리볼버장전이미지.SetActive(false);
         턴시작 = false;
@@ -2118,7 +2132,7 @@ public class BattleManager : MonoBehaviour
             적제목.text = "??? : 반격";
 
             yield return new WaitForSeconds(2f);
-
+            배틀사운드매니저.찰칵효과음함수();
             노아기술.text = "근접격투 : " + DataBaseManager.맨손격투;
             적기술.text = "근접격투 : " + 심해인1.심해인맨손격투;
 
@@ -2127,13 +2141,13 @@ public class BattleManager : MonoBehaviour
             StartCoroutine(룰렛작동());
             StartCoroutine(적룰렛작동());
             yield return new WaitForSeconds(6f);
+            배틀사운드매니저.찰칵효과음함수();
 
 
 
 
 
-
-             if (출력기능값 <= DataBaseManager.맨손격투)
+            if (출력기능값 <= DataBaseManager.맨손격투)
             {
                 노아결과.text = "보통성공";
 
@@ -2178,7 +2192,7 @@ public class BattleManager : MonoBehaviour
             }
             yield return new WaitForSeconds(2f);
 
-
+            배틀사운드매니저.찰칵효과음함수();
             if ((노아결과.text == "대성공" ))
             {
                 결과.text = "노아 판정승";
@@ -2218,6 +2232,7 @@ public class BattleManager : MonoBehaviour
 
             if (결과.text == "노아 판정승")
             {
+                배틀사운드매니저.근접공격효과음함수();
                 Debug.Log(심해인1.체력);
                 Debug.Log(근력대미지);
                 심해인1.체력 = 심해인1.체력 - 근력대미지;
@@ -2251,6 +2266,7 @@ public class BattleManager : MonoBehaviour
             {
                 if (근력대미지 == 1)
                 {
+                    배틀사운드매니저.근접공격효과음함수();
                     BattleUiManager.체력감소();
                     var clone = Instantiate(우측플로팅텍스트, 내플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
                     clone.GetComponent<플로팅텍스트좌측>().Text.text = 1.ToString();
@@ -2276,6 +2292,7 @@ public class BattleManager : MonoBehaviour
 
                 else if (근력대미지 == 2)
                 {
+                    배틀사운드매니저.근접공격효과음함수();
                     BattleUiManager.체력감소();
                     BattleUiManager.체력감소();
                     var clone = Instantiate(우측플로팅텍스트, 내플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
@@ -2301,6 +2318,7 @@ public class BattleManager : MonoBehaviour
                 }
                 else if (근력대미지 == 3)
                 {
+                    배틀사운드매니저.근접공격효과음함수();
                     BattleUiManager.체력감소();
                     BattleUiManager.체력감소();
                     BattleUiManager.체력감소();
@@ -2340,7 +2358,7 @@ public class BattleManager : MonoBehaviour
             적제목.text = "??? : 회피";
 
             yield return new WaitForSeconds(2f);
-
+            배틀사운드매니저.찰칵효과음함수();
             노아기술.text = "근접격투 : " + DataBaseManager.맨손격투;
             적기술.text = "회피 : " + 심해인1.심해인회피;
 
@@ -2349,7 +2367,7 @@ public class BattleManager : MonoBehaviour
             StartCoroutine(룰렛작동());
             StartCoroutine(적룰렛작동());
             yield return new WaitForSeconds(6f);
-
+            배틀사운드매니저.찰칵효과음함수();
 
 
 
@@ -2399,7 +2417,7 @@ public class BattleManager : MonoBehaviour
 
             }
             yield return new WaitForSeconds(2f);
-
+            배틀사운드매니저.찰칵효과음함수();
             //노아 불리판정
             if ((노아결과.text == "대성공") && (적기결과.text == "보통성공" || (노아결과.text == "대성공") && (적기결과.text == "실패") || (노아결과.text == "대성공") && (적기결과.text == "대실패")))
             {
@@ -2442,6 +2460,7 @@ public class BattleManager : MonoBehaviour
 
             if (결과.text == "노아 판정승")
             {
+                배틀사운드매니저.근접공격효과음함수();
                 Debug.Log(심해인1.체력);
                 Debug.Log(근력대미지);
                 심해인1.체력 = 심해인1.체력 - 근력대미지;
@@ -2481,7 +2500,7 @@ public class BattleManager : MonoBehaviour
             적제목.text = "??? : 반격";
 
             yield return new WaitForSeconds(2f);
-
+            배틀사운드매니저.찰칵효과음함수();
             노아기술.text = "사격술 : " + DataBaseManager.사격술;
             적기술.text = "근접격투 : " + 심해인1.심해인맨손격투;
 
@@ -2490,7 +2509,7 @@ public class BattleManager : MonoBehaviour
             StartCoroutine(룰렛작동());
             StartCoroutine(적룰렛작동());
             yield return new WaitForSeconds(6f);
-
+            배틀사운드매니저.찰칵효과음함수();
 
 
 
@@ -2541,7 +2560,7 @@ public class BattleManager : MonoBehaviour
             }
             yield return new WaitForSeconds(2f);
 
-
+            배틀사운드매니저.찰칵효과음함수();
             if ((노아결과.text == "대성공"))
             {
                 결과.text = "노아 판정승";
@@ -2584,6 +2603,7 @@ public class BattleManager : MonoBehaviour
                 DataBaseManager.리볼버장탄수 = DataBaseManager.리볼버장탄수 - 1;
                 if (결과.text == "노아 판정승")
                 {
+                    배틀사운드매니저.리볼버발포효과음함수();
                     Debug.Log(심해인1.체력);
                     Debug.Log(리볼버대미지);
                     심해인1.체력 = 심해인1.체력 - 리볼버대미지;
@@ -2617,6 +2637,7 @@ public class BattleManager : MonoBehaviour
                 DataBaseManager.소형권총장탄수 = DataBaseManager.소형권총장탄수 - 1;
                 if (결과.text == "노아 판정승")
                 {
+                    배틀사운드매니저.데린저발포효과음함수();
                     Debug.Log(심해인1.체력);
                     Debug.Log(소형권총대미지);
                     심해인1.체력 = 심해인1.체력 - 소형권총대미지;
@@ -2650,6 +2671,7 @@ public class BattleManager : MonoBehaviour
                 DataBaseManager.소총장탄수 = DataBaseManager.소총장탄수 - 1;
                 if (결과.text == "노아 판정승")
                 {
+                    배틀사운드매니저.소총발포효과음함수();
                     Debug.Log(심해인1.체력);
                     Debug.Log(소총대미지);
                     심해인1.체력 = 심해인1.체력 - 소총대미지;
@@ -2684,6 +2706,7 @@ public class BattleManager : MonoBehaviour
                 DataBaseManager.샷건장탄수 = DataBaseManager.샷건장탄수 - 1;
                 if (결과.text == "노아 판정승")
                 {
+                    배틀사운드매니저.샷건발포효과음함수();
                     Debug.Log(심해인1.체력);
                     Debug.Log(샷건대미지);
                     심해인1.체력 = 심해인1.체력 - 샷건대미지;
@@ -2731,7 +2754,7 @@ public class BattleManager : MonoBehaviour
             적제목.text = "??? : 회피";
 
             yield return new WaitForSeconds(2f);
-
+            배틀사운드매니저.찰칵효과음함수();
             노아기술.text = "사격술 : " + DataBaseManager.사격술;
             적기술.text = "회피 : " + 심해인1.심해인회피;
 
@@ -2740,7 +2763,7 @@ public class BattleManager : MonoBehaviour
             StartCoroutine(룰렛작동());
             StartCoroutine(적룰렛작동());
             yield return new WaitForSeconds(6f);
-
+            배틀사운드매니저.찰칵효과음함수();
 
 
 
@@ -2790,7 +2813,7 @@ public class BattleManager : MonoBehaviour
 
             }
             yield return new WaitForSeconds(2f);
-
+            배틀사운드매니저.찰칵효과음함수();
             //노아 불리판정
             if ((노아결과.text == "대성공") && (적기결과.text == "보통성공" || (노아결과.text == "대성공") && (적기결과.text == "실패") || (노아결과.text == "대성공") && (적기결과.text == "대실패")))
             {
@@ -2840,6 +2863,7 @@ public class BattleManager : MonoBehaviour
                 DataBaseManager.리볼버장탄수 = DataBaseManager.리볼버장탄수 - 1;
                 if (결과.text == "노아 판정승")
                 {
+                    배틀사운드매니저.리볼버발포효과음함수();
                     Debug.Log(심해인1.체력);
                     Debug.Log(리볼버대미지);
                     심해인1.체력 = 심해인1.체력 - 리볼버대미지;
@@ -2873,6 +2897,7 @@ public class BattleManager : MonoBehaviour
                 DataBaseManager.소형권총장탄수 = DataBaseManager.소형권총장탄수 - 1;
                 if (결과.text == "노아 판정승")
                 {
+                    배틀사운드매니저.데린저발포효과음함수();
                     Debug.Log(심해인1.체력);
                     Debug.Log(소형권총대미지);
                     심해인1.체력 = 심해인1.체력 - 소형권총대미지;
@@ -2906,6 +2931,7 @@ public class BattleManager : MonoBehaviour
                 DataBaseManager.소총장탄수 = DataBaseManager.소총장탄수 - 1;
                 if (결과.text == "노아 판정승")
                 {
+                    배틀사운드매니저.소총발포효과음함수();
                     Debug.Log(심해인1.체력);
                     Debug.Log(소총대미지);
                     심해인1.체력 = 심해인1.체력 - 소총대미지;
@@ -2940,6 +2966,7 @@ public class BattleManager : MonoBehaviour
                 DataBaseManager.샷건장탄수 = DataBaseManager.샷건장탄수 - 1;
                 if (결과.text == "노아 판정승")
                 {
+                    배틀사운드매니저.샷건발포효과음함수();
                     Debug.Log(심해인1.체력);
                     Debug.Log(샷건대미지);
                     심해인1.체력 = 심해인1.체력 - 샷건대미지;
@@ -2988,7 +3015,7 @@ public class BattleManager : MonoBehaviour
             적제목.text = "??? : 반격";
 
             yield return new WaitForSeconds(2f);
-
+            배틀사운드매니저.찰칵효과음함수();
             노아기술.text = "단검술 : " + DataBaseManager.검술;
             적기술.text = "근접격투 : " + 심해인1.심해인맨손격투;
 
@@ -2997,7 +3024,7 @@ public class BattleManager : MonoBehaviour
             StartCoroutine(룰렛작동());
             StartCoroutine(적룰렛작동());
             yield return new WaitForSeconds(6f);
-
+            배틀사운드매니저.찰칵효과음함수();
 
 
 
@@ -3048,7 +3075,7 @@ public class BattleManager : MonoBehaviour
             }
             yield return new WaitForSeconds(2f);
 
-
+            배틀사운드매니저.찰칵효과음함수();
             if ((노아결과.text == "대성공"))
             {
                 결과.text = "노아 판정승";
@@ -3178,6 +3205,7 @@ public class BattleManager : MonoBehaviour
             {
                 if (근력대미지 == 1)
                 {
+                    배틀사운드매니저.근접공격효과음함수();
                     BattleUiManager.체력감소();
                     var clone = Instantiate(우측플로팅텍스트, 내플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
                     clone.GetComponent<플로팅텍스트좌측>().Text.text = 1.ToString();
@@ -3203,6 +3231,7 @@ public class BattleManager : MonoBehaviour
 
                 else if (근력대미지 == 2)
                 {
+                    배틀사운드매니저.근접공격효과음함수();
                     BattleUiManager.체력감소();
                     BattleUiManager.체력감소();
                     var clone = Instantiate(우측플로팅텍스트, 내플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
@@ -3228,6 +3257,7 @@ public class BattleManager : MonoBehaviour
                 }
                 else if (근력대미지 == 3)
                 {
+                    배틀사운드매니저.근접공격효과음함수();
                     BattleUiManager.체력감소();
                     BattleUiManager.체력감소();
                     BattleUiManager.체력감소();
@@ -3274,7 +3304,7 @@ public class BattleManager : MonoBehaviour
             적제목.text = "??? : 회피";
 
             yield return new WaitForSeconds(2f);
-
+            배틀사운드매니저.찰칵효과음함수();
             노아기술.text = "사격술 : " + DataBaseManager.검술;
             적기술.text = "회피 : " + 심해인1.심해인회피;
 
@@ -3283,7 +3313,7 @@ public class BattleManager : MonoBehaviour
             StartCoroutine(룰렛작동());
             StartCoroutine(적룰렛작동());
             yield return new WaitForSeconds(6f);
-
+            배틀사운드매니저.찰칵효과음함수();
 
 
 
@@ -3333,7 +3363,7 @@ public class BattleManager : MonoBehaviour
 
             }
             yield return new WaitForSeconds(2f);
-
+            배틀사운드매니저.찰칵효과음함수();
             //노아 불리판정
             if ((노아결과.text == "대성공") && (적기결과.text == "보통성공" || (노아결과.text == "대성공") && (적기결과.text == "실패") || (노아결과.text == "대성공") && (적기결과.text == "대실패")))
             {
@@ -3484,7 +3514,7 @@ public class BattleManager : MonoBehaviour
             적제목.text = "??? : 반격";
 
             yield return new WaitForSeconds(2f);
-
+            배틀사운드매니저.찰칵효과음함수();
             노아기술.text = "던지기 : " + DataBaseManager.던지기;
             적기술.text = "근접격투 : " + 심해인1.심해인맨손격투;
 
@@ -3493,7 +3523,7 @@ public class BattleManager : MonoBehaviour
             StartCoroutine(룰렛작동());
             StartCoroutine(적룰렛작동());
             yield return new WaitForSeconds(6f);
-
+            배틀사운드매니저.찰칵효과음함수();
 
 
 
@@ -3544,7 +3574,7 @@ public class BattleManager : MonoBehaviour
             }
             yield return new WaitForSeconds(2f);
 
-
+            배틀사운드매니저.찰칵효과음함수();
             if ((노아결과.text == "대성공"))
             {
                 결과.text = "노아 판정승";
@@ -3669,7 +3699,7 @@ public class BattleManager : MonoBehaviour
             적제목.text = "??? : 회피";
 
             yield return new WaitForSeconds(2f);
-
+            배틀사운드매니저.찰칵효과음함수();
             노아기술.text = "던지기 : " + DataBaseManager.던지기;
             적기술.text = "회피 : " + 심해인1.심해인회피;
 
@@ -3678,7 +3708,7 @@ public class BattleManager : MonoBehaviour
             StartCoroutine(룰렛작동());
             StartCoroutine(적룰렛작동());
             yield return new WaitForSeconds(6f);
-
+            배틀사운드매니저.찰칵효과음함수();
 
 
 
@@ -3728,7 +3758,7 @@ public class BattleManager : MonoBehaviour
 
             }
             yield return new WaitForSeconds(2f);
-
+            배틀사운드매니저.찰칵효과음함수();
             //노아 불리판정
             if ((노아결과.text == "대성공") && (적기결과.text == "보통성공" || (노아결과.text == "대성공") && (적기결과.text == "실패") || (노아결과.text == "대성공") && (적기결과.text == "대실패")))
             {
@@ -6263,8 +6293,9 @@ public class BattleManager : MonoBehaviour
 
             적제목.text = "??? : 공격";
 
-            yield return new WaitForSeconds(2f);
 
+            yield return new WaitForSeconds(2f);
+            배틀사운드매니저.찰칵효과음함수();
             노아기술.text = "구르기 : " + DataBaseManager.구르기;
             적기술.text = "근접격투 : " + 심해인1.심해인맨손격투;
 
@@ -6273,13 +6304,13 @@ public class BattleManager : MonoBehaviour
             StartCoroutine(룰렛작동());
             StartCoroutine(적룰렛작동());
             yield return new WaitForSeconds(6f);
+            배틀사운드매니저.찰칵효과음함수();
 
 
 
 
 
-
-             if (출력기능값 <= DataBaseManager.구르기)
+            if (출력기능값 <= DataBaseManager.구르기)
             {
                 노아결과.text = "보통성공";
 
@@ -6323,7 +6354,7 @@ public class BattleManager : MonoBehaviour
 
             }
             yield return new WaitForSeconds(2f);
-
+            배틀사운드매니저.찰칵효과음함수();
             //노아 유리판정
             if ((노아결과.text == "대성공"))
             {
@@ -6360,6 +6391,7 @@ public class BattleManager : MonoBehaviour
             {
                 if (근력대미지 == 1)
                 {
+                    배틀사운드매니저.근접공격효과음함수();
                     BattleUiManager.체력감소();
                     var clone = Instantiate(우측플로팅텍스트, 내플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
                     clone.GetComponent<플로팅텍스트좌측>().Text.text = 1.ToString();
@@ -6385,6 +6417,7 @@ public class BattleManager : MonoBehaviour
 
                 else if (근력대미지 == 2)
                 {
+                    배틀사운드매니저.근접공격효과음함수();
                     BattleUiManager.체력감소();
                     BattleUiManager.체력감소();
                     var clone = Instantiate(우측플로팅텍스트, 내플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
@@ -6410,6 +6443,7 @@ public class BattleManager : MonoBehaviour
                 }
                 else if (근력대미지 == 3)
                 {
+                    배틀사운드매니저.근접공격효과음함수();
                     BattleUiManager.체력감소();
                     BattleUiManager.체력감소();
                     BattleUiManager.체력감소();
@@ -6452,7 +6486,7 @@ public class BattleManager : MonoBehaviour
             적제목.text = "??? : 공격";
 
             yield return new WaitForSeconds(2f);
-
+            배틀사운드매니저.찰칵효과음함수();
             노아기술.text = "근접격투 : " + DataBaseManager.맨손격투;
             적기술.text = "근접격투 : " + 심해인1.심해인맨손격투;
 
@@ -6461,13 +6495,13 @@ public class BattleManager : MonoBehaviour
             StartCoroutine(룰렛작동());
             StartCoroutine(적룰렛작동());
             yield return new WaitForSeconds(6f);
+            배틀사운드매니저.찰칵효과음함수();
 
 
 
 
 
-
-             if (출력기능값 <= DataBaseManager.맨손격투)
+            if (출력기능값 <= DataBaseManager.맨손격투)
             {
                 노아결과.text = "보통성공";
 
@@ -6511,7 +6545,7 @@ public class BattleManager : MonoBehaviour
 
             }
             yield return new WaitForSeconds(2f);
-
+            배틀사운드매니저.찰칵효과음함수();
             if ((노아결과.text == "대성공") && (적기결과.text == "보통성공" || (노아결과.text == "대성공") && (적기결과.text == "실패") || (노아결과.text == "대성공") && (적기결과.text == "대실패")))
             {
                 결과.text = "노아 판정승";
@@ -6553,6 +6587,7 @@ public class BattleManager : MonoBehaviour
             {
                 if (근력대미지 == 1)
                 {
+                    배틀사운드매니저.근접공격효과음함수();
                     BattleUiManager.체력감소();
                     var clone = Instantiate(우측플로팅텍스트, 내플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
                     clone.GetComponent<플로팅텍스트좌측>().Text.text = 1.ToString();
@@ -6578,6 +6613,7 @@ public class BattleManager : MonoBehaviour
 
                 else if (근력대미지 == 2)
                 {
+                    배틀사운드매니저.근접공격효과음함수();
                     BattleUiManager.체력감소();
                     BattleUiManager.체력감소();
                     var clone = Instantiate(우측플로팅텍스트, 내플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
@@ -6603,6 +6639,7 @@ public class BattleManager : MonoBehaviour
                 }
                 else if (근력대미지 == 3)
                 {
+                    배틀사운드매니저.근접공격효과음함수();
                     BattleUiManager.체력감소();
                     BattleUiManager.체력감소();
                     BattleUiManager.체력감소();
@@ -6629,6 +6666,7 @@ public class BattleManager : MonoBehaviour
             }
             if (결과.text == "노아 판정승")
             {
+                배틀사운드매니저.근접공격효과음함수();
                 Debug.Log(심해인1.체력);
                 Debug.Log(근력대미지);
                 심해인1.체력 = 심해인1.체력 - 근력대미지;
@@ -6817,6 +6855,8 @@ public class BattleManager : MonoBehaviour
 
     public IEnumerator 룰렛작동()
     {
+
+        배틀사운드매니저.기계돌아가는효과음함수();
         for (int i = 0; i < 10; i++)
         {
 
@@ -6917,9 +6957,13 @@ public class BattleManager : MonoBehaviour
 
 
 
-
             십의자리.text = 랜덤십의자리.ToString();
             일의자리.text = 랜덤일의자리.ToString();
+
+
+
+
+
 
             yield return new WaitForSeconds(0.025f);
 
@@ -7012,10 +7056,197 @@ public class BattleManager : MonoBehaviour
 
         }
 
+
+
+
+        배틀사운드매니저.효과음멈춤();
+        배틀사운드매니저.찰칵효과음함수();
         출력기능값 = (랜덤일의자리);
         if (출력기능값 == 0)
         {
             출력기능값 = 10;
+        }
+
+        //연출흔들기
+        for (int i = 0; i < 10; i++)
+        {
+
+            float 큰흔들기값= 4f;
+            float 작은흔들기값=2f;
+
+            랜덤십의몸통위치 = Random.Range(1, 10);
+
+            if (랜덤십의몸통위치 == 1)
+            {
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 큰흔들기값, 십의자리몸통.transform.position.y - 작은흔들기값);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 큰흔들기값, 십의자리몸통.transform.position.y);
+                yield return new WaitForSeconds(0.005f);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 큰흔들기값, 십의자리몸통.transform.position.y + 작은흔들기값);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 큰흔들기값, 십의자리몸통.transform.position.y);
+            }
+            if (랜덤십의몸통위치 == 2)
+            {
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 작은흔들기값, 일의자리몸통.transform.position.y - 작은흔들기값);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 큰흔들기값, 십의자리몸통.transform.position.y);
+                yield return new WaitForSeconds(0.005f);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 큰흔들기값, 십의자리몸통.transform.position.y);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 작은흔들기값, 일의자리몸통.transform.position.y + 작은흔들기값);
+
+            }
+            if (랜덤십의몸통위치 == 3)
+            {
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 작은흔들기값, 일의자리몸통.transform.position.y + 작은흔들기값);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x, 십의자리몸통.transform.position.y - 작은흔들기값);
+                yield return new WaitForSeconds(0.005f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 작은흔들기값, 일의자리몸통.transform.position.y - 작은흔들기값);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x, 십의자리몸통.transform.position.y + 작은흔들기값);
+            }
+            if (랜덤십의몸통위치 == 4)
+            {
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 큰흔들기값, 일의자리몸통.transform.position.y - 작은흔들기값);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x, 십의자리몸통.transform.position.y + 큰흔들기값);
+                yield return new WaitForSeconds(0.005f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 큰흔들기값, 일의자리몸통.transform.position.y + 작은흔들기값);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x, 십의자리몸통.transform.position.y - 큰흔들기값);
+            }
+            if (랜덤십의몸통위치 == 5)
+            {
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 큰흔들기값, 십의자리몸통.transform.position.y + 작은흔들기값);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 큰흔들기값, 일의자리몸통.transform.position.y + 작은흔들기값);
+                yield return new WaitForSeconds(0.005f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 큰흔들기값, 일의자리몸통.transform.position.y - 작은흔들기값);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 큰흔들기값, 십의자리몸통.transform.position.y - 작은흔들기값);
+            }
+            if (랜덤십의몸통위치 == 6)
+            {
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 큰흔들기값, 십의자리몸통.transform.position.y - 작은흔들기값);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x, 일의자리몸통.transform.position.y + 큰흔들기값);
+                yield return new WaitForSeconds(0.005f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x, 일의자리몸통.transform.position.y - 큰흔들기값);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 큰흔들기값, 십의자리몸통.transform.position.y + 작은흔들기값);
+            }
+            if (랜덤십의몸통위치 == 7)
+            {
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 작은흔들기값, 십의자리몸통.transform.position.y + 작은흔들기값);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x, 일의자리몸통.transform.position.y - 큰흔들기값);
+                yield return new WaitForSeconds(0.005f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x, 일의자리몸통.transform.position.y + 큰흔들기값);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 작은흔들기값, 십의자리몸통.transform.position.y - 작은흔들기값);
+            }
+            if (랜덤십의몸통위치 == 8)
+            {
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 작은흔들기값, 십의자리몸통.transform.position.y - 작은흔들기값);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 큰흔들기값, 일의자리몸통.transform.position.y);
+                yield return new WaitForSeconds(0.005f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 큰흔들기값, 일의자리몸통.transform.position.y);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 작은흔들기값, 십의자리몸통.transform.position.y + 작은흔들기값);
+            }
+            if (랜덤십의몸통위치 == 9)
+            {
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 큰흔들기값, 일의자리몸통.transform.position.y);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 큰흔들기값, 십의자리몸통.transform.position.y - 작은흔들기값);
+                yield return new WaitForSeconds(0.005f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 큰흔들기값, 일의자리몸통.transform.position.y);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 큰흔들기값, 십의자리몸통.transform.position.y + 작은흔들기값   );
+            }
+
+
+
+
+            yield return new WaitForSeconds(0.005f);
+
+        }
+        for (int i = 0; i < 5; i++)
+        {
+
+            float 큰흔들기값 = 3f;
+            float 작은흔들기값 = 2f;
+
+
+            랜덤십의몸통위치 = Random.Range(1, 10);
+
+
+            if (랜덤십의몸통위치 == 1)
+            {
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 큰흔들기값, 십의자리몸통.transform.position.y - 작은흔들기값);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 큰흔들기값, 십의자리몸통.transform.position.y);
+                yield return new WaitForSeconds(0.025f);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 큰흔들기값, 십의자리몸통.transform.position.y + 작은흔들기값);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 큰흔들기값, 십의자리몸통.transform.position.y);
+            }
+            if (랜덤십의몸통위치 == 2)
+            {
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 작은흔들기값, 일의자리몸통.transform.position.y - 작은흔들기값);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 큰흔들기값, 십의자리몸통.transform.position.y);
+                yield return new WaitForSeconds(0.025f);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 큰흔들기값, 십의자리몸통.transform.position.y);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 작은흔들기값, 일의자리몸통.transform.position.y + 작은흔들기값);
+
+            }
+            if (랜덤십의몸통위치 == 3)
+            {
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 작은흔들기값, 일의자리몸통.transform.position.y + 작은흔들기값);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x, 십의자리몸통.transform.position.y - 큰흔들기값);
+                yield return new WaitForSeconds(0.025f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 작은흔들기값, 일의자리몸통.transform.position.y - 작은흔들기값);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x, 십의자리몸통.transform.position.y + 큰흔들기값);
+            }
+            if (랜덤십의몸통위치 == 4)
+            {
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 큰흔들기값, 일의자리몸통.transform.position.y - 작은흔들기값);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x, 십의자리몸통.transform.position.y + 1);
+                yield return new WaitForSeconds(0.025f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 큰흔들기값, 일의자리몸통.transform.position.y + 작은흔들기값);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x, 십의자리몸통.transform.position.y - 큰흔들기값);
+            }
+            if (랜덤십의몸통위치 == 5)
+            {
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 큰흔들기값, 십의자리몸통.transform.position.y + 작은흔들기값);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 큰흔들기값, 일의자리몸통.transform.position.y + 작은흔들기값);
+                yield return new WaitForSeconds(0.025f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 큰흔들기값, 일의자리몸통.transform.position.y - 작은흔들기값);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 큰흔들기값, 십의자리몸통.transform.position.y - 작은흔들기값);
+            }
+            if (랜덤십의몸통위치 == 6)
+            {
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 큰흔들기값, 십의자리몸통.transform.position.y - 작은흔들기값);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x, 일의자리몸통.transform.position.y + 1);
+                yield return new WaitForSeconds(0.025f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x, 일의자리몸통.transform.position.y - 1);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 큰흔들기값, 십의자리몸통.transform.position.y + 작은흔들기값);
+            }
+            if (랜덤십의몸통위치 == 7)
+            {
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 작은흔들기값, 십의자리몸통.transform.position.y + 작은흔들기값);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x, 일의자리몸통.transform.position.y - 큰흔들기값);
+                yield return new WaitForSeconds(0.025f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x, 일의자리몸통.transform.position.y + 큰흔들기값);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 작은흔들기값, 십의자리몸통.transform.position.y - 작은흔들기값);
+            }
+            if (랜덤십의몸통위치 == 8)
+            {
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 작은흔들기값, 십의자리몸통.transform.position.y - 작은흔들기값);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 큰흔들기값, 일의자리몸통.transform.position.y);
+                yield return new WaitForSeconds(0.025f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 큰흔들기값, 일의자리몸통.transform.position.y);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 작은흔들기값, 십의자리몸통.transform.position.y + 작은흔들기값);
+            }
+            if (랜덤십의몸통위치 == 9)
+            {
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 큰흔들기값, 일의자리몸통.transform.position.y);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 큰흔들기값, 십의자리몸통.transform.position.y - 작은흔들기값);
+                yield return new WaitForSeconds(0.025f);
+                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 큰흔들기값, 일의자리몸통.transform.position.y);
+                십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 큰흔들기값, 십의자리몸통.transform.position.y + 작은흔들기값);
+            }
+
+
+
+
+
+
+            yield return new WaitForSeconds(0.025f);
+
         }
 
         yield return new WaitForSeconds(2f);
@@ -7226,7 +7457,189 @@ public class BattleManager : MonoBehaviour
         {
             적출력기능값 = 10;
         }
+        for (int i = 0; i < 10; i++)
+        {
+            float 큰흔들기값 = 4f;
+            float 작은흔들기값 = 2f;
 
+            적랜덤십의몸통위치 = Random.Range(1, 10);
+
+            if (적랜덤십의몸통위치 == 1)
+            {
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x + 큰흔들기값, 적십의자리몸통.transform.position.y - 1f);
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x + 큰흔들기값, 적십의자리몸통.transform.position.y);
+                yield return new WaitForSeconds(0.005f);
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x - 큰흔들기값, 적십의자리몸통.transform.position.y + 1f);
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x - 큰흔들기값, 적십의자리몸통.transform.position.y);
+            }
+            if (적랜덤십의몸통위치 == 2)
+            {
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x + 1f, 적일의자리몸통.transform.position.y - 1f);
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x - 큰흔들기값, 적십의자리몸통.transform.position.y);
+                yield return new WaitForSeconds(0.005f);
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x + 큰흔들기값, 적십의자리몸통.transform.position.y);
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x - 1f, 적일의자리몸통.transform.position.y + 1f);
+
+            }
+            if (적랜덤십의몸통위치 == 3)
+            {
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x - 1f, 적일의자리몸통.transform.position.y + 1);
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x, 적십의자리몸통.transform.position.y - 1);
+                yield return new WaitForSeconds(0.005f);
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x + 1, 적일의자리몸통.transform.position.y - 1);
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x, 적십의자리몸통.transform.position.y + 1);
+            }
+            if (적랜덤십의몸통위치 == 4)
+            {
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x - 큰흔들기값, 적일의자리몸통.transform.position.y - 1);
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x, 적십의자리몸통.transform.position.y + 큰흔들기값);
+                yield return new WaitForSeconds(0.005f);
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x + 큰흔들기값, 적일의자리몸통.transform.position.y + 1);
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x, 적십의자리몸통.transform.position.y - 큰흔들기값);
+            }
+            if (적랜덤십의몸통위치 == 5)
+            {
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x + 큰흔들기값, 적십의자리몸통.transform.position.y + 1);
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x + 큰흔들기값, 적일의자리몸통.transform.position.y + 1);
+                yield return new WaitForSeconds(0.005f);
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x - 큰흔들기값, 적일의자리몸통.transform.position.y - 1);
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x - 큰흔들기값, 적십의자리몸통.transform.position.y - 1);
+            }
+            if (적랜덤십의몸통위치 == 6)
+            {
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x - 큰흔들기값, 적십의자리몸통.transform.position.y - 1);
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x, 적일의자리몸통.transform.position.y + 큰흔들기값);
+                yield return new WaitForSeconds(0.005f);
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x, 적일의자리몸통.transform.position.y - 큰흔들기값);
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x + 큰흔들기값, 적십의자리몸통.transform.position.y + 1);
+            }
+            if (적랜덤십의몸통위치 == 7)
+            {
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x - 1, 적십의자리몸통.transform.position.y + 1);
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x, 적일의자리몸통.transform.position.y - 큰흔들기값);
+                yield return new WaitForSeconds(0.005f);
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x, 적일의자리몸통.transform.position.y + 큰흔들기값);
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x + 1, 적십의자리몸통.transform.position.y - 1);
+            }
+            if (적랜덤십의몸통위치 == 8)
+            {
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x + 1, 적십의자리몸통.transform.position.y - 1);
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x - 큰흔들기값, 적일의자리몸통.transform.position.y);
+                yield return new WaitForSeconds(0.005f);
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x + 큰흔들기값, 적일의자리몸통.transform.position.y);
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x - 1, 적십의자리몸통.transform.position.y + 1);
+            }
+            if (적랜덤십의몸통위치 == 9)
+            {
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x + 큰흔들기값, 적일의자리몸통.transform.position.y);
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x + 큰흔들기값, 적십의자리몸통.transform.position.y - 1);
+                yield return new WaitForSeconds(0.005f);
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x - 큰흔들기값, 적일의자리몸통.transform.position.y);
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x - 큰흔들기값, 적십의자리몸통.transform.position.y + 1);
+            }
+
+
+
+
+
+            yield return new WaitForSeconds(0.005f);
+
+        }
+        for (int i = 0; i < 5; i++)
+        {
+            float 큰흔들기값 = 3f;
+            float 작은흔들기값 = 2f;
+
+            적랜덤일의자리 = Random.Range(0, 10);
+
+
+            적랜덤십의몸통위치 = Random.Range(1, 10);
+
+
+            if (적랜덤십의몸통위치 == 1)
+            {
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x + 큰흔들기값, 적십의자리몸통.transform.position.y - 작은흔들기값);
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x + 큰흔들기값, 적십의자리몸통.transform.position.y);
+                yield return new WaitForSeconds(0.025f);
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x - 큰흔들기값, 적십의자리몸통.transform.position.y + 작은흔들기값);
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x - 큰흔들기값, 적십의자리몸통.transform.position.y);
+            }
+            if (적랜덤십의몸통위치 == 2)
+            {
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x + 작은흔들기값, 적일의자리몸통.transform.position.y - 작은흔들기값);
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x - 큰흔들기값, 적십의자리몸통.transform.position.y);
+                yield return new WaitForSeconds(0.025f);
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x + 큰흔들기값, 적십의자리몸통.transform.position.y);
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x - 작은흔들기값, 적일의자리몸통.transform.position.y + 작은흔들기값);
+
+            }
+            if (적랜덤십의몸통위치 == 3)
+            {
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x - 작은흔들기값, 적일의자리몸통.transform.position.y + 작은흔들기값);
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x, 적십의자리몸통.transform.position.y - 큰흔들기값);
+                yield return new WaitForSeconds(0.025f);
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x + 작은흔들기값, 적일의자리몸통.transform.position.y - 작은흔들기값);
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x, 적십의자리몸통.transform.position.y + 큰흔들기값);
+            }
+            if (적랜덤십의몸통위치 == 4)
+            {
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x - 큰흔들기값, 적일의자리몸통.transform.position.y - 작은흔들기값);
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x, 적십의자리몸통.transform.position.y + 큰흔들기값);
+                yield return new WaitForSeconds(0.025f);
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x + 큰흔들기값, 적일의자리몸통.transform.position.y + 작은흔들기값);
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x, 적십의자리몸통.transform.position.y - 큰흔들기값);
+            }
+            if (적랜덤십의몸통위치 == 5)
+            {
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x + 큰흔들기값, 적십의자리몸통.transform.position.y + 작은흔들기값);
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x + 큰흔들기값, 적일의자리몸통.transform.position.y + 작은흔들기값);
+                yield return new WaitForSeconds(0.025f);
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x - 큰흔들기값, 적일의자리몸통.transform.position.y - 작은흔들기값);
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x - 큰흔들기값, 적십의자리몸통.transform.position.y - 작은흔들기값);
+            }
+            if (적랜덤십의몸통위치 == 6)
+            {
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x - 큰흔들기값, 적십의자리몸통.transform.position.y - 작은흔들기값);
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x, 적일의자리몸통.transform.position.y + 큰흔들기값);
+                yield return new WaitForSeconds(0.025f);
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x, 적일의자리몸통.transform.position.y - 큰흔들기값);
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x + 큰흔들기값, 적십의자리몸통.transform.position.y + 작은흔들기값);
+            }
+            if (적랜덤십의몸통위치 == 7)
+            {
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x - 작은흔들기값, 적십의자리몸통.transform.position.y + 작은흔들기값);
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x, 적일의자리몸통.transform.position.y - 큰흔들기값);
+                yield return new WaitForSeconds(0.025f);
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x, 적일의자리몸통.transform.position.y + 큰흔들기값);
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x + 작은흔들기값, 적십의자리몸통.transform.position.y - 작은흔들기값);
+            }
+            if (적랜덤십의몸통위치 == 8)
+            {
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x + 작은흔들기값, 적십의자리몸통.transform.position.y - 작은흔들기값);
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x - 큰흔들기값, 적일의자리몸통.transform.position.y);
+                yield return new WaitForSeconds(0.025f);
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x + 큰흔들기값, 적일의자리몸통.transform.position.y);
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x - 작은흔들기값, 적십의자리몸통.transform.position.y + 작은흔들기값);
+            }
+            if (적랜덤십의몸통위치 == 9)
+            {
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x + 큰흔들기값, 적일의자리몸통.transform.position.y);
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x + 큰흔들기값, 적십의자리몸통.transform.position.y - 작은흔들기값);
+                yield return new WaitForSeconds(0.025f);
+                적일의자리몸통.transform.position = new Vector2(적일의자리몸통.transform.position.x - 큰흔들기값, 적일의자리몸통.transform.position.y);
+                적십의자리몸통.transform.position = new Vector2(적십의자리몸통.transform.position.x - 큰흔들기값, 적십의자리몸통.transform.position.y + 작은흔들기값);
+            }
+
+
+
+
+
+
+
+
+            yield return new WaitForSeconds(0.025f);
+
+        }
         yield return new WaitForSeconds(2f);
     }
 
