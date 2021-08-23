@@ -56,6 +56,8 @@ public class DialogManager_D1사무소 : MonoBehaviour
     int lineCount = 0; // 대화 카운트(사람)
     int contextCount = 0; // 대사 카운트 (줄)
 
+    public 아침사무소연출 연출매니저;
+
 
 
     SpriteManager theSpriteManager;
@@ -312,7 +314,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
 
 
 
-        bool t_white = false, t_yellow = false, t_red = false;   // 색 추가 지점
+        bool t_white = false, t_yellow = false, t_red = false, t_green = false, t_blue = false;   // 색 추가 지점
         bool t_ignore = false;
 
 
@@ -322,10 +324,68 @@ public class DialogManager_D1사무소 : MonoBehaviour
 
             switch (t_ReplaceText[i])
             {
-                case 'ⓦ': t_white = true; t_yellow = false; t_red = false; t_ignore = true; break;
+                case 'ⓦ': t_white = true; t_yellow = false; t_red = false; t_green = false; t_blue = false; t_ignore = true; break;
 
-                case 'ⓨ': t_white = false; t_yellow = true; t_red = false; t_ignore = true; break;
-                case 'ⓡ': t_white = false; t_yellow = false; t_red = true; t_ignore = true; break;
+                case 'ⓨ': t_white = false; t_yellow = true; t_red = false; t_green = false; t_blue = false; t_ignore = true; break;
+                case 'ⓡ': t_white = false; t_yellow = false; t_red = true; t_green = false; t_blue = false; t_ignore = true; break;
+                case 'ⓑ': t_white = false; t_yellow = false; t_red = false; t_green = false; t_blue = true; t_ignore = true; break;
+                case 'ⓖ': t_white = false; t_yellow = false; t_red = false; t_green = true; t_blue = false; t_ignore = true; break;
+
+
+                case '◎':  // 연출관련
+                    t_ignore = true; // 의뢰자 들어오는연출
+                    if (t_ReplaceText[i + 1] == '①')
+                    {
+                        t_ignore = true;
+
+                        연출매니저.노크소리온();
+
+                        break;
+
+                    }
+                    if (t_ReplaceText[i + 1] == '②')
+                    {
+                        t_ignore = true;
+
+                        연출매니저.첫번째의뢰인들어오는연출 = false;
+
+
+                        break;
+
+                    }
+                    if (t_ReplaceText[i + 1] == '③')
+                    {
+                        t_ignore = true;
+
+                        연출매니저.의뢰인앉는연출 = false;
+
+
+                        break;
+
+                    }
+                    if (t_ReplaceText[i + 1] == '④')
+                    {
+                        t_ignore = true;
+
+                        연출매니저.의뢰인나감연출 = false;
+
+
+                        break;
+
+
+
+                    }
+                    if (t_ReplaceText[i + 1] == '⑤')
+                    {
+                        t_ignore = true;
+
+                        연출매니저.연출끝();
+
+
+                        break;
+
+                    }
+                    break;
 
                 case '☆':  // 별에 선택지 출현.
                     t_ignore = true;
@@ -457,17 +517,17 @@ public class DialogManager_D1사무소 : MonoBehaviour
 
 
                 //case '0': if (t_ReplaceText[i + 1] == '§') { t_ignore = true; } if (t_ReplaceText[i - 1] == '☆') { t_ignore = true; } break;
-                case '①': if (t_ReplaceText[i - 3] == '§' || t_ReplaceText[i - 1] == '☆' || t_ReplaceText[i - 1] == '★') { t_ignore = true; } break;
-                case '②': if (t_ReplaceText[i + 1] == '§' || t_ReplaceText[i - 1] == '☆') { t_ignore = true; } break;
-                case '③': if (t_ReplaceText[i + 1] == '§') { t_ignore = true; } break;
-                case '④': if (t_ReplaceText[i + 1] == '§') { t_ignore = true; } break;
-                case '⑤': if (t_ReplaceText[i + 1] == '§') { t_ignore = true; } break;
-                case '⑥': if (t_ReplaceText[i + 1] == '§') { t_ignore = true; } break;
-                case '⑦': if (t_ReplaceText[i + 1] == '§') { t_ignore = true; } break;
-                case '⑧': if (t_ReplaceText[i + 1] == '§') { t_ignore = true; } break;
-                case '⑨': if (t_ReplaceText[i + 1] == '§') { t_ignore = true; } break;
-                case '⑩': if (t_ReplaceText[i + 1] == '§' || t_ReplaceText[i + 2] == '§') { t_ignore = true; } break;
-                case '⑫': if (t_ReplaceText[i + 1] == '§' || t_ReplaceText[i + 2] == '§') { t_ignore = true; } break;
+                case '①': if (t_ReplaceText[i - 3] == '§' || t_ReplaceText[i - 1] == '☆' || t_ReplaceText[i - 1] == '★' || t_ReplaceText[i - 1] == '◎') { t_ignore = true; } break;
+                case '②': if (t_ReplaceText[i - 3] == '§' || t_ReplaceText[i - 1] == '☆' || t_ReplaceText[i - 1] == '◎') { t_ignore = true; } break;
+                case '③': if (t_ReplaceText[i - 3] == '§' || t_ReplaceText[i - 1] == '◎') { t_ignore = true; } break;
+                case '④': if (t_ReplaceText[i - 3] == '§' || t_ReplaceText[i - 1] == '◎') { t_ignore = true; } break;
+                case '⑤': if (t_ReplaceText[i - 3] == '§' || t_ReplaceText[i - 1] == '◎') { t_ignore = true; } break;
+                case '⑥': if (t_ReplaceText[i - 3] == '§' || t_ReplaceText[i - 1] == '◎') { t_ignore = true; } break;
+                case '⑦': if (t_ReplaceText[i - 3] == '§' || t_ReplaceText[i - 1] == '◎') { t_ignore = true; } break;
+                case '⑧': if (t_ReplaceText[i - 3] == '§' || t_ReplaceText[i - 1] == '◎') { t_ignore = true; } break;
+                case '⑨': if (t_ReplaceText[i - 3] == '§' || t_ReplaceText[i - 1] == '◎') { t_ignore = true; } break;
+                case '⑩': if (t_ReplaceText[i - 3] == '§' || t_ReplaceText[i + 2] == '§') { t_ignore = true; } break;
+                case '⑫': if (t_ReplaceText[i - 3] == '§' || t_ReplaceText[i + 2] == '§') { t_ignore = true; } break;
 
 
             }
@@ -482,6 +542,8 @@ public class DialogManager_D1사무소 : MonoBehaviour
                 if (t_white) { t_letter = "<color=#FFFFFF>" + t_letter + "</color>"; }
                 else if (t_yellow) { t_letter = "<color=#FFFF00>" + t_letter + "</color>"; }
                 else if (t_red) { t_letter = "<color=#B30000>" + t_letter + "</color>"; }
+                else if (t_blue) { t_letter = "<color=#0026A9>" + t_letter + "</color>"; }
+                else if (t_green) { t_letter = "<color=#1A6800>" + t_letter + "</color>"; }
                 txt_Dialog.text += t_letter;
             }
             t_ignore = false;

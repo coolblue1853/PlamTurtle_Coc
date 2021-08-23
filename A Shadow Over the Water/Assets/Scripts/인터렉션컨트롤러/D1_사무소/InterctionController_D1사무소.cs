@@ -8,6 +8,10 @@ public class InterctionController_D1사무소 : MonoBehaviour
     //public GameObject 선1아니오;
     public GameObject 엘라;
     public GameObject 독백;
+    public GameObject 의뢰자등장후;
+    public GameObject 의뢰자앉은후;
+    public GameObject 의뢰자나간후;
+
     public GameObject 선택지1성공;
     public GameObject 선택지1실패;
 
@@ -51,6 +55,53 @@ public class InterctionController_D1사무소 : MonoBehaviour
     {
 
     }
+
+
+
+    public void 의뢰자등장후대화()
+    {
+
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+
+            theDM.ShowDialog(의뢰자등장후.transform.GetComponent<interactionEvent>().GetDialogs());
+
+        }
+    }
+
+    public void 의뢰자앉은후대화()
+    {
+
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+
+            theDM.ShowDialog(의뢰자앉은후.transform.GetComponent<interactionEvent>().GetDialogs());
+
+        }
+    }
+
+    public void 의뢰자나간후대화()
+    {
+
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+
+            theDM.ShowDialog(의뢰자나간후.transform.GetComponent<interactionEvent>().GetDialogs());
+
+        }
+    }
+    // ////////////////////////////////////////////////
+
+
+
+
+
+
+
+
 
     public void 선1커피타줘()
     {

@@ -10,7 +10,6 @@ public class 페이드인 : MonoBehaviour
     IEnumerator 페이드아웃코루틴()
     {
         float 페이드카운트 = 1;
-        yield return new WaitForSeconds(3f);
         페이드이미지오브젝트.SetActive(true);
 
         while (페이드카운트 > 0)
@@ -22,6 +21,10 @@ public class 페이드인 : MonoBehaviour
 
         페이드이미지오브젝트.SetActive(false);
     }
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {

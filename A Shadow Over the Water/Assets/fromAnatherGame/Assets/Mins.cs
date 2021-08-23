@@ -129,7 +129,7 @@ public class Mins : MonoBehaviour
 		{
             if (Input.GetKeyDown(KeyCode.Z))
             {
-
+				DataBaseManager.연출중움직임제한 = true;
 				신문whiteNum = 1;
 				신문상호작용.SetActive(true);
 			}
@@ -139,8 +139,8 @@ public class Mins : MonoBehaviour
 		// 켜져 있는가?
 		else if( 신문상호작용.activeSelf == true)
         {
-			Time.timeScale = 0;
-			if (Input.GetKeyDown(KeyCode.DownArrow))
+
+			if (Input.GetKeyDown(KeyCode.S))
             {
 				if(신문whiteNum== 1)
                 {
@@ -153,7 +153,7 @@ public class Mins : MonoBehaviour
 
 				}
 			}
-			if (Input.GetKeyDown(KeyCode.UpArrow))
+			if (Input.GetKeyDown(KeyCode.W))
 			{
 				if (신문whiteNum == 2)
 				{
@@ -171,14 +171,16 @@ public class Mins : MonoBehaviour
 				
 				if (신문whiteNum == 1)
 				{
-					Time.timeScale = 1;
+
 					신문상호작용.SetActive(false);
+					DataBaseManager.연출중움직임제한 = false;
 					// 살펴보기 함수 발동
 				}
 				else if (신문whiteNum == 2)
 				{
-					Time.timeScale = 1;
+
 					신문상호작용.SetActive(false);
+					DataBaseManager.연출중움직임제한 = false;
 					// 기능발동 함수 발동
 				}
 
@@ -213,7 +215,8 @@ public class Mins : MonoBehaviour
 
     // Update is called once per frame
     private void Update()
-    {
+	{
+		상호작용체커();
 		if (isDialogONing == false && DataBaseManager.연출중움직임제한 == false)
 		{
 			runAndWalkChanger();
@@ -225,7 +228,7 @@ public class Mins : MonoBehaviour
 	{
 
 
-		상호작용체커();
+
 
 
 

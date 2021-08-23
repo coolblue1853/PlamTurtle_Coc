@@ -329,7 +329,7 @@ public class PlayerStat : MonoBehaviour
         int 뭘배분 = 0;
         while(0< 힘스킬배분숫자)
         {
-            뭘배분 = Random.Range(1, 9);
+            뭘배분 = Random.Range(1, 7);
             switch (뭘배분)
             {
                 case 1:
@@ -342,20 +342,15 @@ public class PlayerStat : MonoBehaviour
                     단검술up();
                     break;
                 case 4:
-                    고문술up();
-                    break;
-                case 5:
                     눈썰미up();
                     break;
-                case 6:
-                    언변술협박up();
-                    break;
-                case 7:
+                case 5:
                     던지기up();
                     break;
-                case 8:
+                case 6:
                     잠수up();
                     break;
+
             }
                 
            
@@ -383,7 +378,7 @@ public class PlayerStat : MonoBehaviour
         int 뭘배분 = 0;
         while (0 < 지능스킬배분숫자)
         {
-            뭘배분 = Random.Range(1, 9);
+            뭘배분 = Random.Range(1, 7);
             switch (뭘배분)
             {
                 case 1:
@@ -402,14 +397,9 @@ public class PlayerStat : MonoBehaviour
                     정신감정up();
                     break;
                 case 6:
-                    언변술설득up();
-                    break;
-                case 7:
                     붕대감기up();
                     break;
-                case 8:
-                    법의학up();
-                    break;
+
             }
 
 
@@ -437,7 +427,7 @@ public class PlayerStat : MonoBehaviour
         int 뭘배분 = 0;
         while (0 < 민첩스킬배분숫자)
         {
-            뭘배분 = Random.Range(1, 9);
+            뭘배분 = Random.Range(1, 7);
             switch (뭘배분)
             {
                 case 1:
@@ -458,12 +448,7 @@ public class PlayerStat : MonoBehaviour
                 case 6:
                     은신up();
                     break;
-                case 7:
-                    연기술up();
-                    break;
-                case 8:
-                    운동신경up();
-                    break;
+
             }
 
 

@@ -477,6 +477,9 @@ public class BattleManager : MonoBehaviour
     public GameObject 화살표모음;
     public void 내턴()
     {
+        적가이드일.SetActive(true);
+        적가이드이.SetActive(true);
+        적가이드삼.SetActive(true);
         whiteBox.SetActive(true);
         공격_도주_눈썰미_재장전.SetActive(true);
         내턴인가 = true;
@@ -1031,12 +1034,17 @@ public class BattleManager : MonoBehaviour
             else if (DataBaseManager.보유리볼버탄약 != 0)
             {
 
-                if (DataBaseManager.보유리볼버탄약 >= 6)
+                if (DataBaseManager.보유리볼버탄약 >= 1)
                 {
                     배틀사운드매니저.리볼버장전효과음함수();
-                    DataBaseManager.보유리볼버탄약 -= 6;
-                    DataBaseManager.리볼버장탄수 += 6;
                     StartCoroutine(리볼버장전코루틴());
+                    while (DataBaseManager.보유리볼버탄약 >0 && DataBaseManager.리볼버장탄수 < 6)
+                    {
+                        DataBaseManager.보유리볼버탄약 -= 1;
+                        DataBaseManager.리볼버장탄수 += 1;
+                    }
+
+
 
                 }
 
@@ -1166,7 +1174,15 @@ public class BattleManager : MonoBehaviour
             else if (DataBaseManager.보유샷건탄약 != 0)
             {
 
-                if (DataBaseManager.보유샷건탄약 >= 2 )
+                if (DataBaseManager.보유샷건탄약 >= 2 && DataBaseManager.샷건장탄수 >=1 )
+                {
+                    배틀사운드매니저.샷건장전효과음함수();
+                    DataBaseManager.보유샷건탄약 -= 1;
+                    DataBaseManager.샷건장탄수 += 1;
+
+                    StartCoroutine(샷건장전코루틴());
+                }
+                else if (DataBaseManager.보유샷건탄약 >= 2 && DataBaseManager.샷건장탄수 <1)
                 {
                     배틀사운드매니저.샷건장전효과음함수();
                     DataBaseManager.보유샷건탄약 -= 2;
@@ -1174,7 +1190,6 @@ public class BattleManager : MonoBehaviour
 
                     StartCoroutine(샷건장전코루틴());
                 }
-
                 else
                 {
                     배틀사운드매니저.샷건장전효과음함수();
@@ -2012,7 +2027,9 @@ public class BattleManager : MonoBehaviour
     public Text 노아결과;
     public Text 적기결과;
 
-
+    public GameObject 적가이드일;
+    public GameObject 적가이드이;
+    public GameObject 적가이드삼;
 
     public Text 결과;
 
@@ -2020,6 +2037,9 @@ public class BattleManager : MonoBehaviour
     {
         if(적선택차례 == true)
         {
+            적가이드일.SetActive(false);
+            적가이드이.SetActive(false);
+            적가이드삼.SetActive(false);
             화살표모음.SetActive(false);
             적화살표1.SetActive(false);
             적화살표2.SetActive(false);
@@ -2033,6 +2053,9 @@ public class BattleManager : MonoBehaviour
     {
         if (적선택차례 == true)
         {
+            적가이드일.SetActive(false);
+            적가이드이.SetActive(false);
+            적가이드삼.SetActive(false);
             화살표모음.SetActive(false);
             적화살표1.SetActive(false);
             적화살표2.SetActive(false);
@@ -2045,6 +2068,9 @@ public class BattleManager : MonoBehaviour
     {
         if (적선택차례 == true)
         {
+            적가이드일.SetActive(false);
+            적가이드이.SetActive(false);
+            적가이드삼.SetActive(false);
             화살표모음.SetActive(false);
             적화살표1.SetActive(false);
             적화살표2.SetActive(false);
@@ -6775,6 +6801,7 @@ public class BattleManager : MonoBehaviour
         {
             DataBaseManager.던지기 = DataBaseManager.던지기 + 1;
             DataBaseManager.화염병보유수 = DataBaseManager.화염병보유수 + 1;
+            DataBaseManager.보유리볼버탄약 = DataBaseManager.보유리볼버탄약 +6;
         }
 
 

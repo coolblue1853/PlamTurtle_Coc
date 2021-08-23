@@ -16,7 +16,23 @@ public class SoundManager : MonoBehaviour
     public AudioSource 효과음창;
 
     bool 달리기효과음켜짐 = false;
-    
+
+    public AudioClip 문열고닫기효과음;
+    public AudioClip 놑크효과음;
+    public void 문열고닫기함수()
+    {
+        //효과음창.Play();
+
+        효과음창.PlayOneShot(문열고닫기효과음);
+    }
+    public void 노크효과음효과음함수()
+    {
+        //효과음창.Play();
+
+        효과음창.PlayOneShot(놑크효과음);
+    }
+
+
     void 효과음관리()
     {
 
@@ -32,8 +48,11 @@ public class SoundManager : MonoBehaviour
         {
             효과음창.clip = null;
             달리기효과음켜짐 = false;
+            if(DataBaseManager.연출중움직임제한 == false)
+            {
+                효과음창.Stop();
+            }
 
-            효과음창.Stop();
         }
     }
 
