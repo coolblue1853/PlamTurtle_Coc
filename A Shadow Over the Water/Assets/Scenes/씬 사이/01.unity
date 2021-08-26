@@ -1271,6 +1271,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "\uC5D8\uB77C": {fileID: 1054407754}
   "\uB3C5\uBC31": {fileID: 547981782}
+  "\uC758\uB8B0\uC790\uB4F1\uC7A5\uD6C4": {fileID: 0}
+  "\uC758\uB8B0\uC790\uC549\uC740\uD6C4": {fileID: 0}
+  "\uC758\uB8B0\uC790\uB098\uAC04\uD6C4": {fileID: 0}
   "\uC120\uD0DD\uC9C01\uC131\uACF5": {fileID: 0}
   "\uC120\uD0DD\uC9C01\uC2E4\uD328": {fileID: 0}
   "\uC120\uD0DD1\uCEE4\uD53C\uC918": {fileID: 441586030}
@@ -6628,8 +6631,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -178.5, y: 31.6}
-  m_SizeDelta: {x: 1646.2579, y: 948.11475}
+  m_AnchoredPosition: {x: 13070, y: -14234}
+  m_SizeDelta: {x: 42256.848, y: 39349.285}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1243119260
 MonoBehaviour:

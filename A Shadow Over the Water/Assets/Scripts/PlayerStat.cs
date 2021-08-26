@@ -22,6 +22,8 @@ public class PlayerStat : MonoBehaviour
     public Text 체력텍스트;
     public Text 정신력텍스트;
     public Text 최대스트레스텍스트;
+
+    public Text 재력텍스트;
     /*
 
     public GameObject SevTPer;
@@ -160,11 +162,11 @@ public class PlayerStat : MonoBehaviour
         DataBaseManager.현재체력 = DataBaseManager.체력;
         DataBaseManager.현재정신력 = DataBaseManager.정신력;
         DataBaseManager.스트레스게이지 = DataBaseManager.의지력;
+        DataBaseManager.재력 = Random.Range(10, 51);
 
 
 
 
-        
 
         /*
         if (skillSlotScripts.칠십퍼배정 == 24)
@@ -214,8 +216,8 @@ public class PlayerStat : MonoBehaviour
         정신력텍스트.text = "정신력 : " + DataBaseManager.정신력.ToString();//
 
         최대스트레스텍스트.text = "스트레스 내성 : " + DataBaseManager.스트레스게이지.ToString();//
-
-        for(int i=0;i< DataBaseManager.힘; i++)
+        재력텍스트.text = "재력(소지금) : " + DataBaseManager.재력.ToString() + '$';
+        for (int i=0;i< DataBaseManager.힘; i++)
         {
             GameObject.Instantiate(게이지오브젝트).transform.parent = 힘게이지.transform;
         }

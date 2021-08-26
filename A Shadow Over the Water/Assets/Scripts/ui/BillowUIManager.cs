@@ -71,6 +71,7 @@ public class BillowUIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //인벤토리체커();
         확인용스탯생성();
         체력바관리();
         체력감소();
@@ -203,7 +204,8 @@ public class BillowUIManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if(itemMenuNum == 20)
+            아이템설명초기회();
+            if (itemMenuNum == 20)
             {
                 itemMenuNum = 1;
             }
@@ -217,6 +219,7 @@ public class BillowUIManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
+            아이템설명초기회();
             if (itemMenuNum == 1)
             {
                 itemMenuNum = 16;
@@ -246,6 +249,7 @@ public class BillowUIManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
+            아이템설명초기회();
             if (itemMenuNum == 16)
             {
                 itemMenuNum = 1;
@@ -276,6 +280,7 @@ public class BillowUIManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            아이템설명초기회();
             if (itemMenuNum == 1)
             {
                 itemMenuNum = 20;
@@ -707,10 +712,47 @@ public class BillowUIManager : MonoBehaviour
     public GameObject 무기류배경칸;
     public GameObject 일반배경칸;
     public GameObject 열쇠;
+
+
     public GameObject 자동권총;
     public GameObject 인벤토리그리드;
 
 
+    public GameObject 소형권총이미지;
+    public GameObject 리볼버이미지;
+    public GameObject 소총이미지;
+    public GameObject 샷건이미지;
+
+    public GameObject 소형권총설명;
+    public GameObject 리볼버설명;
+    public GameObject 소총설명;
+    public GameObject 샷건설명;
+
+
+    public void 인벤토리체커()
+    {
+        if(DataBaseManager.소형권총구매여부 == true)
+        {
+
+            소형권총이미지.SetActive(true);    
+        }
+        if (DataBaseManager.리볼버구매여부 == true)
+        {
+
+            리볼버이미지.SetActive(true);
+        }
+        if (DataBaseManager.소총구매여부 == true)
+        {
+
+            소총이미지.SetActive(true);
+        }
+        if (DataBaseManager.샷건구매여부 == true)
+        {
+
+            샷건이미지.SetActive(true);
+        }
+
+    }
 
     void 아이템설명초기회()
     {
@@ -718,22 +760,51 @@ public class BillowUIManager : MonoBehaviour
         일반배경칸.SetActive(false);
         자동권총.SetActive(false);
         열쇠.SetActive(false);
+
+        소형권총설명.SetActive(false);
+        리볼버설명.SetActive(false);
+        소총설명.SetActive(false);
+        샷건설명.SetActive(false);
     }
     void 아이템설명업데이터()
     {
         if(itemMenuNum ==1)
         {
-            if (인벤토리그리드.transform.GetChild(0).name == "총")
+            if (인벤토리그리드.transform.GetChild(0).name == "총" && 자동권총.activeSelf == true)
             {
                 아이템설명초기회();
                 무기류배경칸.SetActive(true);
                 자동권총.SetActive(true);
             }
-            if (인벤토리그리드.transform.GetChild(0).name == "열쇠")
+            if (인벤토리그리드.transform.GetChild(0).name == "열쇠" && 열쇠.activeSelf == true)
             {
                 아이템설명초기회();
                 일반배경칸.SetActive(true);
                 열쇠.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(0).name == "소형권총" )
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                소형권총설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(0).name == "리볼버" )
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                리볼버설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(0).name == "소총")
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                소총설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(0).name == "샷건" )
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                샷건설명.SetActive(true);
             }
 
         }
@@ -751,8 +822,113 @@ public class BillowUIManager : MonoBehaviour
                 일반배경칸.SetActive(true);
                 열쇠.SetActive(true);
             }
+            if (인벤토리그리드.transform.GetChild(1).name == "소형권총")
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                소형권총설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(1).name == "리볼버" )
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                리볼버설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(1).name == "소총" )
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                소총설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(1).name == "샷건")
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                샷건설명.SetActive(true);
+            }
 
         }
+        if (itemMenuNum == 3)
+        {
+            if (인벤토리그리드.transform.GetChild(2).name == "총")
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                자동권총.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(2).name == "열쇠")
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                열쇠.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(2).name == "소형권총")
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                소형권총설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(2).name == "리볼버")
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                리볼버설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(2).name == "소총")
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                소총설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(2).name == "샷건")
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                샷건설명.SetActive(true);
+            }
+
+        }
+        if (itemMenuNum == 4)
+        {
+            if (인벤토리그리드.transform.GetChild(3).name == "총")
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                자동권총.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(3).name == "열쇠")
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                열쇠.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(3).name == "소형권총")
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                소형권총설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(3).name == "리볼버")
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                리볼버설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(3).name == "소총")
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                소총설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(3).name == "샷건")
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                샷건설명.SetActive(true);
+            }
+
+        }
+
     }
 
 

@@ -41150,6 +41150,14 @@ MonoBehaviour:
   "\uC5F4\uC1E0": {fileID: 60441198}
   "\uC790\uB3D9\uAD8C\uCD1D": {fileID: 1035634273}
   "\uC778\uBCA4\uD1A0\uB9AC\uADF8\uB9AC\uB4DC": {fileID: 2049057431}
+  "\uC18C\uD615\uAD8C\uCD1D\uC774\uBBF8\uC9C0": {fileID: 0}
+  "\uB9AC\uBCFC\uBC84\uC774\uBBF8\uC9C0": {fileID: 0}
+  "\uC18C\uCD1D\uC774\uBBF8\uC9C0": {fileID: 0}
+  "\uC0F7\uAC74\uC774\uBBF8\uC9C0": {fileID: 0}
+  "\uC18C\uD615\uAD8C\uCD1D\uC124\uBA85": {fileID: 0}
+  "\uB9AC\uBCFC\uBC84\uC124\uBA85": {fileID: 0}
+  "\uC18C\uCD1D\uC124\uBA85": {fileID: 0}
+  "\uC0F7\uAC74\uC124\uBA85": {fileID: 0}
 --- !u!1 &8478417495574304537
 GameObject:
   m_ObjectHideFlags: 0
@@ -43418,6 +43426,7 @@ MonoBehaviour:
   txt_name: {fileID: 8478417495483278365}
   min: {fileID: 0}
   isSelectButton: 0
+  "\uC5F0\uCD9C\uB9E4\uB2C8\uC800": {fileID: 0}
   textDelay: 0.01
   "\uC120\uD0DD\uC9C0\uB4F1\uC7A5": 0
   "\uC2A4\uD0B5\uBC84\uD2BC": {fileID: 0}
@@ -44432,21 +44441,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1328399373322320958, guid: 27c9082018d7e3f4e9993b61f2dbc6bc,
-        type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2473421628151884771, guid: 27c9082018d7e3f4e9993b61f2dbc6bc,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 674877117}
-    - target: {fileID: 2953396653164888880, guid: 27c9082018d7e3f4e9993b61f2dbc6bc,
-        type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 3502871428163100361, guid: 27c9082018d7e3f4e9993b61f2dbc6bc,
         type: 3}
       propertyPath: m_Name
