@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class BillowUIManager : MonoBehaviour
 {
     public GameObject 대화창활성화여부;
@@ -71,7 +71,7 @@ public class BillowUIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //인벤토리체커();
+        인벤토리체커();
         확인용스탯생성();
         체력바관리();
         체력감소();
@@ -711,6 +711,7 @@ public class BillowUIManager : MonoBehaviour
     // 인벤토리에 들어갈 템들은 여기에 넣어둬야함
     public GameObject 무기류배경칸;
     public GameObject 일반배경칸;
+    public GameObject 단검류배경칸;
     public GameObject 열쇠;
 
 
@@ -723,39 +724,157 @@ public class BillowUIManager : MonoBehaviour
     public GameObject 소총이미지;
     public GameObject 샷건이미지;
 
+    public GameObject 몽둥이이미지;
+    public GameObject 단검이미지;
+    public GameObject 도끼이미지;
+
+    public GameObject 화염병이미지;
+
+    //설명파트
     public GameObject 소형권총설명;
     public GameObject 리볼버설명;
     public GameObject 소총설명;
     public GameObject 샷건설명;
+
+    public GameObject 몽둥이설명;
+    public GameObject 단검설명;
+    public GameObject 도끼설명;
+
+    public GameObject 화염병설명;
+
+
+    public GameObject 소형권총탄약이미지;
+    public GameObject 리볼버탄약이미지;
+    public GameObject 소총탄약이미지;
+    public GameObject 샷건탄약이미지;
+
+    public GameObject 권총탄약설명;
+    public GameObject 리볼버탄약설명;
+    public GameObject 소총탄약설명;
+    public GameObject 샷건탄약설명;
+
+    public Text 권총탄약설명텍스트;
+    public Text 리볼버탄약설명텍스트;
+    public Text 소총탄약설명텍스트;
+    public Text 샷건탄약설명텍스트;
+
+    public Text 화염병설명텍스트;
+
+
+    public Text 권총탄약보유수텍스트;
+    public Text 리볼버탄약보유수텍스트;
+    public Text 소총탄약보유수텍스트;
+    public Text 샷건탄약보유수텍스트;
+
+     public void 임시전투이동()
+    {
+        SceneManager.LoadScene("도로전투");
+    }
 
 
     public void 인벤토리체커()
     {
         if(DataBaseManager.소형권총구매여부 == true)
         {
-
+            권총탄약보유수텍스트.text = "보유 탄약 : " + DataBaseManager.보유권총탄약;
             소형권총이미지.SetActive(true);    
         }
         if (DataBaseManager.리볼버구매여부 == true)
         {
-
+            리볼버탄약보유수텍스트.text = "보유 탄약 : " + DataBaseManager.보유리볼버탄약;
             리볼버이미지.SetActive(true);
         }
         if (DataBaseManager.소총구매여부 == true)
         {
-
+            소총탄약보유수텍스트.text = "보유 탄약 : " + DataBaseManager.보유소총탄약;
             소총이미지.SetActive(true);
         }
         if (DataBaseManager.샷건구매여부 == true)
         {
-
+            샷건탄약보유수텍스트.text = "보유 탄약 : " + DataBaseManager.보유샷건탄약;
             샷건이미지.SetActive(true);
         }
+        //단검류
+        if (DataBaseManager.몽둥이구매여부 == true)
+        {
 
+            몽둥이이미지.SetActive(true);
+        }
+        if (DataBaseManager.단검구매여부 == true)
+        {
+
+            단검이미지.SetActive(true);
+        }
+        if (DataBaseManager.도끼구매여부 == true)
+        {
+
+            도끼이미지.SetActive(true);
+        }
+
+
+        //탄약류
+        if (DataBaseManager.보유권총탄약 > 0)
+        {
+            소형권총탄약이미지.SetActive(true);
+            권총탄약설명텍스트.text = "소형권총에 사용하는 탄약. 현재 "+DataBaseManager.보유권총탄약 +"개 가지고 있다.";
+
+        }
+        if (DataBaseManager.보유권총탄약 <= 0)
+        {
+            소형권총탄약이미지.SetActive(false);
+        }
+
+
+        if (DataBaseManager.보유리볼버탄약 > 0)
+        {
+            리볼버탄약이미지.SetActive(true);
+            리볼버탄약설명텍스트.text = "리볼버에에 사용하는 탄약. 현재 " + DataBaseManager.보유리볼버탄약 + "개 가지고 있다.";
+
+        }
+        if (DataBaseManager.보유리볼버탄약 <= 0)
+        {
+            리볼버탄약이미지.SetActive(false);
+        }
+
+
+        if (DataBaseManager.보유소총탄약 > 0)
+        {
+            소총탄약이미지.SetActive(true);
+            소총탄약설명텍스트.text = "볼트액션 소총에 사용하는 탄약. 현재 " + DataBaseManager.보유소총탄약 + "개 가지고 있다.";
+
+        }
+        if (DataBaseManager.보유소총탄약 <= 0)
+        {
+            소총탄약이미지.SetActive(false);
+        }
+
+
+        if (DataBaseManager.보유샷건탄약 > 0)
+        {
+            샷건탄약이미지.SetActive(true);
+            샷건탄약설명텍스트.text = "16게이지 샷건에 사용하는 탄약. 현재 " + DataBaseManager.보유샷건탄약 + "개 가지고 있다.";
+
+        }
+        if (DataBaseManager.보유샷건탄약 <= 0)
+        {
+            샷건탄약이미지.SetActive(false);
+        }
+
+        if (DataBaseManager.화염병보유수 > 0)
+        {
+            화염병이미지.SetActive(true);
+            화염병설명텍스트.text = "개량된 화염병. 현재 " + DataBaseManager.화염병보유수 + "개 가지고 있다.";
+
+        }
+        if (DataBaseManager.화염병보유수 <= 0)
+        {
+            화염병이미지.SetActive(false);
+        }
     }
 
     void 아이템설명초기회()
     {
+        단검류배경칸.SetActive(false);
         무기류배경칸.SetActive(false);
         일반배경칸.SetActive(false);
         자동권총.SetActive(false);
@@ -765,169 +884,1371 @@ public class BillowUIManager : MonoBehaviour
         리볼버설명.SetActive(false);
         소총설명.SetActive(false);
         샷건설명.SetActive(false);
+        
+        권총탄약설명.SetActive(false);
+        리볼버탄약설명.SetActive(false);
+        샷건탄약설명.SetActive(false);
+        소총탄약설명.SetActive(false);
+
+        도끼설명.SetActive(false);
+        단검설명.SetActive(false);
+        몽둥이설명.SetActive(false);
+
+        화염병설명.SetActive(false);
     }
     void 아이템설명업데이터()
     {
         if(itemMenuNum ==1)
         {
-            if (인벤토리그리드.transform.GetChild(0).name == "총" && 자동권총.activeSelf == true)
+            if (인벤토리그리드.transform.GetChild(itemMenuNum-1).name == "총" && 자동권총.activeSelf == true)
             {
                 아이템설명초기회();
                 무기류배경칸.SetActive(true);
                 자동권총.SetActive(true);
             }
-            if (인벤토리그리드.transform.GetChild(0).name == "열쇠" && 열쇠.activeSelf == true)
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "열쇠" && 열쇠.activeSelf == true)
             {
                 아이템설명초기회();
                 일반배경칸.SetActive(true);
                 열쇠.SetActive(true);
             }
-            if (인벤토리그리드.transform.GetChild(0).name == "소형권총" )
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소형권총" && 소형권총이미지.activeSelf == true)
             {
                 아이템설명초기회();
                 무기류배경칸.SetActive(true);
                 소형권총설명.SetActive(true);
             }
-            if (인벤토리그리드.transform.GetChild(0).name == "리볼버" )
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "리볼버" &&  리볼버이미지.activeSelf == true)
+
             {
                 아이템설명초기회();
                 무기류배경칸.SetActive(true);
                 리볼버설명.SetActive(true);
             }
-            if (인벤토리그리드.transform.GetChild(0).name == "소총")
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소총" && 소총이미지.activeSelf == true)
             {
                 아이템설명초기회();
                 무기류배경칸.SetActive(true);
                 소총설명.SetActive(true);
             }
-            if (인벤토리그리드.transform.GetChild(0).name == "샷건" )
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "샷건" && 샷건이미지.activeSelf == true)
             {
                 아이템설명초기회();
                 무기류배경칸.SetActive(true);
                 샷건설명.SetActive(true);
             }
 
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "권총탄약" && 소형권총탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                권총탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "리볼버탄약" && 리볼버탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                리볼버탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소총탄약" && 소총탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                소총탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "샷건탄약" && 샷건탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                샷건탄약설명.SetActive(true);
+            }
+
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "몽둥이" && 몽둥이이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                몽둥이설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "도끼" && 도끼이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                도끼설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "단검" && 단검이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                단검설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "화염병" && 화염병이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                화염병설명.SetActive(true);
+            }
         }
         if (itemMenuNum == 2)
         {
-            if (인벤토리그리드.transform.GetChild(1).name == "총")
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "총" && 자동권총.activeSelf == true)
             {
                 아이템설명초기회();
                 무기류배경칸.SetActive(true);
                 자동권총.SetActive(true);
             }
-            if (인벤토리그리드.transform.GetChild(1).name == "열쇠")
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "열쇠" && 열쇠.activeSelf == true)
             {
                 아이템설명초기회();
                 일반배경칸.SetActive(true);
                 열쇠.SetActive(true);
             }
-            if (인벤토리그리드.transform.GetChild(1).name == "소형권총")
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소형권총" && 소형권총이미지.activeSelf == true)
             {
                 아이템설명초기회();
                 무기류배경칸.SetActive(true);
                 소형권총설명.SetActive(true);
             }
-            if (인벤토리그리드.transform.GetChild(1).name == "리볼버" )
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "리볼버" && 리볼버이미지.activeSelf == true)
+
             {
                 아이템설명초기회();
                 무기류배경칸.SetActive(true);
                 리볼버설명.SetActive(true);
             }
-            if (인벤토리그리드.transform.GetChild(1).name == "소총" )
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소총" && 소총이미지.activeSelf == true)
             {
                 아이템설명초기회();
                 무기류배경칸.SetActive(true);
                 소총설명.SetActive(true);
             }
-            if (인벤토리그리드.transform.GetChild(1).name == "샷건")
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "샷건" && 샷건이미지.activeSelf == true)
             {
                 아이템설명초기회();
                 무기류배경칸.SetActive(true);
                 샷건설명.SetActive(true);
             }
 
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "권총탄약" && 소형권총탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                권총탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "리볼버탄약" && 리볼버탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                리볼버탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소총탄약" && 소총탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                소총탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "샷건탄약" && 샷건탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                샷건탄약설명.SetActive(true);
+            }
+
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "몽둥이" && 몽둥이이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                몽둥이설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "도끼" && 도끼이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                도끼설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "단검" && 단검이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                단검설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "화염병" && 화염병이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                화염병설명.SetActive(true);
+            }
         }
         if (itemMenuNum == 3)
         {
-            if (인벤토리그리드.transform.GetChild(2).name == "총")
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "총" && 자동권총.activeSelf == true)
             {
                 아이템설명초기회();
                 무기류배경칸.SetActive(true);
                 자동권총.SetActive(true);
             }
-            if (인벤토리그리드.transform.GetChild(2).name == "열쇠")
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "열쇠" && 열쇠.activeSelf == true)
             {
                 아이템설명초기회();
                 일반배경칸.SetActive(true);
                 열쇠.SetActive(true);
             }
-            if (인벤토리그리드.transform.GetChild(2).name == "소형권총")
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소형권총" && 소형권총이미지.activeSelf == true)
             {
                 아이템설명초기회();
                 무기류배경칸.SetActive(true);
                 소형권총설명.SetActive(true);
             }
-            if (인벤토리그리드.transform.GetChild(2).name == "리볼버")
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "리볼버" && 리볼버이미지.activeSelf == true)
+
             {
                 아이템설명초기회();
                 무기류배경칸.SetActive(true);
                 리볼버설명.SetActive(true);
             }
-            if (인벤토리그리드.transform.GetChild(2).name == "소총")
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소총" && 소총이미지.activeSelf == true)
             {
                 아이템설명초기회();
                 무기류배경칸.SetActive(true);
                 소총설명.SetActive(true);
             }
-            if (인벤토리그리드.transform.GetChild(2).name == "샷건")
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "샷건" && 샷건이미지.activeSelf == true)
             {
                 아이템설명초기회();
                 무기류배경칸.SetActive(true);
                 샷건설명.SetActive(true);
             }
 
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "권총탄약" && 소형권총탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                권총탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "리볼버탄약" && 리볼버탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                리볼버탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소총탄약" && 소총탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                소총탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "샷건탄약" && 샷건탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                샷건탄약설명.SetActive(true);
+            }
+
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "몽둥이" && 몽둥이이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                몽둥이설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "도끼" && 도끼이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                도끼설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "단검" && 단검이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                단검설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "화염병" && 화염병이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                화염병설명.SetActive(true);
+            }
         }
         if (itemMenuNum == 4)
         {
-            if (인벤토리그리드.transform.GetChild(3).name == "총")
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "총" && 자동권총.activeSelf == true)
             {
                 아이템설명초기회();
                 무기류배경칸.SetActive(true);
                 자동권총.SetActive(true);
             }
-            if (인벤토리그리드.transform.GetChild(3).name == "열쇠")
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "열쇠" && 열쇠.activeSelf == true)
             {
                 아이템설명초기회();
                 일반배경칸.SetActive(true);
                 열쇠.SetActive(true);
             }
-            if (인벤토리그리드.transform.GetChild(3).name == "소형권총")
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소형권총" && 소형권총이미지.activeSelf == true)
             {
                 아이템설명초기회();
                 무기류배경칸.SetActive(true);
                 소형권총설명.SetActive(true);
             }
-            if (인벤토리그리드.transform.GetChild(3).name == "리볼버")
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "리볼버" && 리볼버이미지.activeSelf == true)
+
             {
                 아이템설명초기회();
                 무기류배경칸.SetActive(true);
                 리볼버설명.SetActive(true);
             }
-            if (인벤토리그리드.transform.GetChild(3).name == "소총")
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소총" && 소총이미지.activeSelf == true)
             {
                 아이템설명초기회();
                 무기류배경칸.SetActive(true);
                 소총설명.SetActive(true);
             }
-            if (인벤토리그리드.transform.GetChild(3).name == "샷건")
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "샷건" && 샷건이미지.activeSelf == true)
             {
                 아이템설명초기회();
                 무기류배경칸.SetActive(true);
                 샷건설명.SetActive(true);
             }
 
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "권총탄약" && 소형권총탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                권총탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "리볼버탄약" && 리볼버탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                리볼버탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소총탄약" && 소총탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                소총탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "샷건탄약" && 샷건탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                샷건탄약설명.SetActive(true);
+            }
+
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "몽둥이" && 몽둥이이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                몽둥이설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "도끼" && 도끼이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                도끼설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "단검" && 단검이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                단검설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "화염병" && 화염병이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                화염병설명.SetActive(true);
+            }
         }
+        if (itemMenuNum == 5)
+        {
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "총" && 자동권총.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                자동권총.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "열쇠" && 열쇠.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                열쇠.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소형권총" && 소형권총이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                소형권총설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "리볼버" && 리볼버이미지.activeSelf == true)
+
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                리볼버설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소총" && 소총이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                소총설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "샷건" && 샷건이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                샷건설명.SetActive(true);
+            }
+
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "권총탄약" && 소형권총탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                권총탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "리볼버탄약" && 리볼버탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                리볼버탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소총탄약" && 소총탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                소총탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "샷건탄약" && 샷건탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                샷건탄약설명.SetActive(true);
+            }
+
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "몽둥이" && 몽둥이이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                몽둥이설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "도끼" && 도끼이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                도끼설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "단검" && 단검이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                단검설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "화염병" && 화염병이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                화염병설명.SetActive(true);
+            }
+        }
+        if (itemMenuNum == 6)
+        {
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "총" && 자동권총.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                자동권총.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "열쇠" && 열쇠.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                열쇠.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소형권총" && 소형권총이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                소형권총설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "리볼버" && 리볼버이미지.activeSelf == true)
+
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                리볼버설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소총" && 소총이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                소총설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "샷건" && 샷건이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                샷건설명.SetActive(true);
+            }
+
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "권총탄약" && 소형권총탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                권총탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "리볼버탄약" && 리볼버탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                리볼버탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소총탄약" && 소총탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                소총탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "샷건탄약" && 샷건탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                샷건탄약설명.SetActive(true);
+            }
+
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "몽둥이" && 몽둥이이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                몽둥이설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "도끼" && 도끼이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                도끼설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "단검" && 단검이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                단검설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "화염병" && 화염병이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                화염병설명.SetActive(true);
+            }
+        }
+        if (itemMenuNum == 7)
+        {
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "총" && 자동권총.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                자동권총.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "열쇠" && 열쇠.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                열쇠.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소형권총" && 소형권총이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                소형권총설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "리볼버" && 리볼버이미지.activeSelf == true)
+
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                리볼버설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소총" && 소총이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                소총설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "샷건" && 샷건이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                샷건설명.SetActive(true);
+            }
+
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "권총탄약" && 소형권총탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                권총탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "리볼버탄약" && 리볼버탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                리볼버탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소총탄약" && 소총탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                소총탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "샷건탄약" && 샷건탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                샷건탄약설명.SetActive(true);
+            }
+
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "몽둥이" && 몽둥이이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                몽둥이설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "도끼" && 도끼이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                도끼설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "단검" && 단검이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                단검설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "화염병" && 화염병이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                화염병설명.SetActive(true);
+            }
+        }
+        if (itemMenuNum == 8)
+        {
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "총" && 자동권총.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                자동권총.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "열쇠" && 열쇠.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                열쇠.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소형권총" && 소형권총이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                소형권총설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "리볼버" && 리볼버이미지.activeSelf == true)
+
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                리볼버설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소총" && 소총이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                소총설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "샷건" && 샷건이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                샷건설명.SetActive(true);
+            }
+
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "권총탄약" && 소형권총탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                권총탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "리볼버탄약" && 리볼버탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                리볼버탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소총탄약" && 소총탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                소총탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "샷건탄약" && 샷건탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                샷건탄약설명.SetActive(true);
+            }
+
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "몽둥이" && 몽둥이이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                몽둥이설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "도끼" && 도끼이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                도끼설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "단검" && 단검이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                단검설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "화염병" && 화염병이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                화염병설명.SetActive(true);
+            }
+        }
+        if (itemMenuNum == 9)
+        {
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "총" && 자동권총.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                자동권총.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "열쇠" && 열쇠.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                열쇠.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소형권총" && 소형권총이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                소형권총설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "리볼버" && 리볼버이미지.activeSelf == true)
+
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                리볼버설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소총" && 소총이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                소총설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "샷건" && 샷건이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                샷건설명.SetActive(true);
+            }
+
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "권총탄약" && 소형권총탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                권총탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "리볼버탄약" && 리볼버탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                리볼버탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소총탄약" && 소총탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                소총탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "샷건탄약" && 샷건탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                샷건탄약설명.SetActive(true);
+            }
+
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "몽둥이" && 몽둥이이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                몽둥이설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "도끼" && 도끼이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                도끼설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "단검" && 단검이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                단검설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "화염병" && 화염병이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                화염병설명.SetActive(true);
+            }
+        }
+        if (itemMenuNum == 10)
+        {
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "총" && 자동권총.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                자동권총.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "열쇠" && 열쇠.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                열쇠.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소형권총" && 소형권총이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                소형권총설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "리볼버" && 리볼버이미지.activeSelf == true)
+
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                리볼버설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소총" && 소총이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                소총설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "샷건" && 샷건이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                샷건설명.SetActive(true);
+            }
+
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "권총탄약" && 소형권총탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                권총탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "리볼버탄약" && 리볼버탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                리볼버탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소총탄약" && 소총탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                소총탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "샷건탄약" && 샷건탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                샷건탄약설명.SetActive(true);
+            }
+
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "몽둥이" && 몽둥이이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                몽둥이설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "도끼" && 도끼이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                도끼설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "단검" && 단검이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                단검설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "화염병" && 화염병이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                화염병설명.SetActive(true);
+            }
+        }
+        if (itemMenuNum == 11)
+        {
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "총" && 자동권총.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                자동권총.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "열쇠" && 열쇠.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                열쇠.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소형권총" && 소형권총이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                소형권총설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "리볼버" && 리볼버이미지.activeSelf == true)
+
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                리볼버설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소총" && 소총이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                소총설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "샷건" && 샷건이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                샷건설명.SetActive(true);
+            }
+
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "권총탄약" && 소형권총탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                권총탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "리볼버탄약" && 리볼버탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                리볼버탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소총탄약" && 소총탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                소총탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "샷건탄약" && 샷건탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                샷건탄약설명.SetActive(true);
+            }
+
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "몽둥이" && 몽둥이이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                몽둥이설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "도끼" && 도끼이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                도끼설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "단검" && 단검이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                단검설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "화염병" && 화염병이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                화염병설명.SetActive(true);
+            }
+        }
+        if (itemMenuNum == 12)
+        {
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "총" && 자동권총.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                자동권총.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "열쇠" && 열쇠.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                열쇠.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소형권총" && 소형권총이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                소형권총설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "리볼버" && 리볼버이미지.activeSelf == true)
+
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                리볼버설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소총" && 소총이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                소총설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "샷건" && 샷건이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                샷건설명.SetActive(true);
+            }
+
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "권총탄약" && 소형권총탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                권총탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "리볼버탄약" && 리볼버탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                리볼버탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소총탄약" && 소총탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                소총탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "샷건탄약" && 샷건탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                샷건탄약설명.SetActive(true);
+            }
+
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "몽둥이" && 몽둥이이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                몽둥이설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "도끼" && 도끼이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                도끼설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "단검" && 단검이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                단검설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "화염병" && 화염병이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                화염병설명.SetActive(true);
+            }
+        }
+        if (itemMenuNum == 13)
+        {
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "총" && 자동권총.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                자동권총.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "열쇠" && 열쇠.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                열쇠.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소형권총" && 소형권총이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                소형권총설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "리볼버" && 리볼버이미지.activeSelf == true)
+
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                리볼버설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소총" && 소총이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                소총설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "샷건" && 샷건이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                샷건설명.SetActive(true);
+            }
+
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "권총탄약" && 소형권총탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                권총탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "리볼버탄약" && 리볼버탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                리볼버탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소총탄약" && 소총탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                소총탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "샷건탄약" && 샷건탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                샷건탄약설명.SetActive(true);
+            }
+
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "몽둥이" && 몽둥이이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                몽둥이설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "도끼" && 도끼이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                도끼설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "단검" && 단검이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                단검설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "화염병" && 화염병이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                화염병설명.SetActive(true);
+            }
+        }
+        if (itemMenuNum == 14)
+        {
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "총" && 자동권총.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                자동권총.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "열쇠" && 열쇠.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                열쇠.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소형권총" && 소형권총이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                소형권총설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "리볼버" && 리볼버이미지.activeSelf == true)
+
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                리볼버설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소총" && 소총이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                소총설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "샷건" && 샷건이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                샷건설명.SetActive(true);
+            }
+
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "권총탄약" && 소형권총탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                권총탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "리볼버탄약" && 리볼버탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                리볼버탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소총탄약" && 소총탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                소총탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "샷건탄약" && 샷건탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                샷건탄약설명.SetActive(true);
+            }
+
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "몽둥이" && 몽둥이이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                몽둥이설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "도끼" && 도끼이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                도끼설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "단검" && 단검이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                단검설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "화염병" && 화염병이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                화염병설명.SetActive(true);
+            }
+        }
+        if (itemMenuNum == 15)
+        {
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "총" && 자동권총.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                자동권총.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "열쇠" && 열쇠.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                열쇠.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소형권총" && 소형권총이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                소형권총설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "리볼버" && 리볼버이미지.activeSelf == true)
+
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                리볼버설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소총" && 소총이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                소총설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "샷건" && 샷건이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                무기류배경칸.SetActive(true);
+                샷건설명.SetActive(true);
+            }
+
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "권총탄약" && 소형권총탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                권총탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "리볼버탄약" && 리볼버탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                리볼버탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "소총탄약" && 소총탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                소총탄약설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "샷건탄약" && 샷건탄약이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                샷건탄약설명.SetActive(true);
+            }
+
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "몽둥이" && 몽둥이이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                몽둥이설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "도끼" && 도끼이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                도끼설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "단검" && 단검이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                단검류배경칸.SetActive(true);
+                단검설명.SetActive(true);
+            }
+            if (인벤토리그리드.transform.GetChild(itemMenuNum - 1).name == "화염병" && 화염병이미지.activeSelf == true)
+            {
+                아이템설명초기회();
+                일반배경칸.SetActive(true);
+                화염병설명.SetActive(true);
+            }
+        }
+
 
     }
 

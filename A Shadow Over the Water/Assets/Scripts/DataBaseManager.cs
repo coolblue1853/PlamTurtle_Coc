@@ -4,12 +4,30 @@ using UnityEngine;
 using UnityEngine.UI;
 public class DataBaseManager : MonoBehaviour
 {
+    //총알
+    public static int 보유리볼버탄약 = 0;
+    public static int 보유소총탄약 = 0;
+    public static int 보유권총탄약 = 0;
+    public static int 보유샷건탄약 = 0;
+    public static int 화염병보유수 = 0;
+    
+    
+    public static int 리볼버장탄수 = 0;
+    public static int 소총장탄수 = 0;
+    public static int 샷건장탄수 = 0;
+    public static int 소형권총장탄수 = 0;
+
     //상점구매관련, 재력관련 파트
     public static int 재력 = 0;
     public static bool 리볼버구매여부 = false;
     public static bool 소형권총구매여부 = false;
     public static bool 샷건구매여부 = false;
     public static bool 소총구매여부 = false;
+
+    public static bool 몽둥이구매여부 = false;
+    public static bool 단검구매여부 = false;
+    public static bool 도끼구매여부 = false;
+
 
 
     //
@@ -87,18 +105,6 @@ public class DataBaseManager : MonoBehaviour
     public static int 연기술 = 0;
     public static int 운동신경 = 0;
 
-
-    //총알
-    public static int 보유리볼버탄약 = 6;
-    public static int 보유소총탄약 = 6;
-    public static int 보유권총탄약 = 6;
-    public static int 보유샷건탄약 = 6;
-
-    public static int 화염병보유수 = 0;
-    public static int 리볼버장탄수 = 0;
-    public static int 소총장탄수 = 0;
-    public static int 샷건장탄수 = 0;
-    public static int 소형권총장탄수 = 0;
 
 
     public static bool 메뉴창켜짐 = false;
