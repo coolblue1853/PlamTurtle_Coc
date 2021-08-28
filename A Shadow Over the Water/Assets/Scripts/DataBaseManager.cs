@@ -106,6 +106,9 @@ public class DataBaseManager : MonoBehaviour
     public static int 운동신경 = 0;
 
 
+    public static bool 대화창켜짐 = false;
+
+
 
     public static bool 메뉴창켜짐 = false;
 

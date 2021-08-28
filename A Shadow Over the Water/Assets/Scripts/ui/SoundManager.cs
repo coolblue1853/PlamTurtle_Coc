@@ -8,7 +8,7 @@ public class SoundManager : MonoBehaviour
     public Slider bgm볼륨;
     public AudioSource mainBgm;
 
-
+    public AudioClip 찰칵소리효과음;
     public Slider sfx볼륨;
     public AudioSource effectBgm;
 
@@ -19,6 +19,14 @@ public class SoundManager : MonoBehaviour
 
     public AudioClip 문열고닫기효과음;
     public AudioClip 놑크효과음;
+
+    public AudioClip 기계돌아가는소리효과음;
+
+
+    public void 기계돌아가는효과음함수()
+    {
+        효과음창.PlayOneShot(기계돌아가는소리효과음);
+    }
     public void 문열고닫기함수()
     {
         //효과음창.Play();
@@ -32,7 +40,11 @@ public class SoundManager : MonoBehaviour
         효과음창.PlayOneShot(놑크효과음);
     }
 
+    public void 찰칵효과음함수()
+    {
+        효과음창.PlayOneShot(찰칵소리효과음);
 
+    }
     void 효과음관리()
     {
 

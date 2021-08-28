@@ -39,7 +39,6 @@ public class battleSoundManager : MonoBehaviour
     public AudioClip 소총조준효과음;
 
     public AudioClip 찰칵소리효과음;
-    public AudioClip 기계돌아가는소리효과음;
 
 
     public void 찰칵효과음함수()
@@ -47,6 +46,7 @@ public class battleSoundManager : MonoBehaviour
         효과음창.PlayOneShot(찰칵소리효과음);
 
     }
+    public AudioClip 기계돌아가는소리효과음;
 
 
     public void 기계돌아가는효과음함수()

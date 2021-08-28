@@ -138,6 +138,8 @@ public class DialogManager_D1사무소 : MonoBehaviour
         DataBaseManager.스킵활성화 = true;
         DataBaseManager.텍스트딜레이 = 0.00000000000001f;
         StartCoroutine(스킵());
+
+
     }
 
     public void 스킵스탑온()
@@ -167,7 +169,12 @@ public class DialogManager_D1사무소 : MonoBehaviour
         selectionUIManager.엘라심리학선택지끄기();
         선택지선택시외부에서페이지넘기기t();
         yield return new WaitForSeconds(0.001f);
-        if (선택지등장 == false)
+        if(go_dialogBar.activeSelf == false)
+        {
+            스킵스탑온();
+            DataBaseManager.스킵활성화 = false;
+        }
+        else if (선택지등장 == false)
         {
             StartCoroutine(스킵());
         }
@@ -264,7 +271,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
 
     void EndDialog()
     {
-
+        DataBaseManager.대화창켜짐 = false;
 
         PlayerChar.transform.GetComponent<Mins>().다이얼로그다운();
         대화창일러.SetActive(false);
@@ -282,6 +289,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
 
     public void ShowDialog(Dialog[] P_dialogs)
     {
+        DataBaseManager.대화창켜짐 = true;
         PlayerChar.transform.GetComponent<Mins>().다이얼로그온();
         대화창일러.SetActive(true);
         isDialog = true;

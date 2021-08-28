@@ -10,7 +10,7 @@ public class Mins : MonoBehaviour
 	float ChInRommSize = 0.8249288f;
 	//float ChSize = 0.5055861f;
 
-
+	public InterctionController_D1사무소 인터렉션컨트롤러;
 	bool isAttack = false;
 	bool isAttack2 = false;
 	public bool isGrounded = true;
@@ -88,9 +88,10 @@ public class Mins : MonoBehaviour
 	public bool 신문상호작용가능여부 = false;
 	public GameObject 신문white1;
 	public GameObject 신문white2;
+	public GameObject 신문white3;
 	public int 신문whiteNum = 1;
-
-
+	public Text 사물기능판정텍스트;
+	public GameObject 사물기능판정창;
 	private void OnTriggerExit2D(Collider2D collision)
 	{
 		// 탐정 사무소 접촉물
@@ -111,19 +112,28 @@ public class Mins : MonoBehaviour
 		}
 	}
 
+	//기물반응
+
 	public void 상호작용체커()
 	{
 		if (신문whiteNum == 1)
 		{
 			신문white1.SetActive(true);
 			신문white2.SetActive(false);
+			신문white3.SetActive(false);
 		}
 		else if (신문whiteNum == 2)
 		{
 			신문white1.SetActive(false);
 			신문white2.SetActive(true);
+			신문white3.SetActive(false);
 		}
-
+		else if (신문whiteNum == 3)
+		{
+			신문white1.SetActive(false);
+			신문white2.SetActive(false);
+			신문white3.SetActive(true);
+		}
 		//켜질수 있는가?
 		if (신문상호작용가능여부 == true && 신문상호작용.activeSelf== false)
 		{
@@ -149,42 +159,65 @@ public class Mins : MonoBehaviour
 				}
 				else if (신문whiteNum == 2)
 				{
+					신문whiteNum = 3;
+
+				}
+				else if (신문whiteNum == 3)
+				{
 					신문whiteNum = 1;
 
 				}
 			}
 			if (Input.GetKeyDown(KeyCode.W))
-			{
-				if (신문whiteNum == 2)
+			{         
+				if (신문whiteNum == 1)
+				{
+					신문whiteNum = 3;
+
+				}
+				else if (신문whiteNum == 2)
 				{
 					신문whiteNum = 1;
 
 				}
-				else if (신문whiteNum == 1)
+
+				else if (신문whiteNum == 3)
 				{
 					신문whiteNum = 2;
 
 				}
 			}
-			if (Input.GetKeyDown(KeyCode.Z))
-			{
-				
-				if (신문whiteNum == 1)
+
+            if (DataBaseManager.대화창켜짐 == false)
+            {
+				if (Input.GetKeyDown(KeyCode.Z))
 				{
 
-					신문상호작용.SetActive(false);
-					DataBaseManager.연출중움직임제한 = false;
-					// 살펴보기 함수 발동
-				}
-				else if (신문whiteNum == 2)
-				{
+					if (신문whiteNum == 1)
+					{
 
-					신문상호작용.SetActive(false);
-					DataBaseManager.연출중움직임제한 = false;
-					// 기능발동 함수 발동
-				}
+						신문상호작용.SetActive(false);
+						DataBaseManager.연출중움직임제한 = false;
+						인터렉션컨트롤러.신문살펴보기대화();
+					}
+					else if (신문whiteNum == 2)
+					{
 
+						신문상호작용.SetActive(false);
+						DataBaseManager.연출중움직임제한 = false;
+						사물기능판정창.SetActive(true);
+						사물기능판정텍스트.text = "신문에 대하여 <정보조사> 기능을 사용합니다.\n 현재 해당기능 수치는 "+DataBaseManager.정보조사  +" 입니다.";
+					}
+					else if (신문whiteNum == 3)//그만두기
+					{
+
+						신문상호작용.SetActive(false);
+						DataBaseManager.연출중움직임제한 = false;
+
+					}
+				}
 			}
+
 
 
 

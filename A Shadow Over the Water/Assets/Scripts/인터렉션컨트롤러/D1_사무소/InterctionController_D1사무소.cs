@@ -12,6 +12,9 @@ public class InterctionController_D1사무소 : MonoBehaviour
     public GameObject 의뢰자앉은후;
     public GameObject 의뢰자나간후;
 
+    public GameObject 신문살펴보기;
+
+
     public GameObject 선택지1성공;
     public GameObject 선택지1실패;
 
@@ -90,6 +93,18 @@ public class InterctionController_D1사무소 : MonoBehaviour
             theDM.isDialogON = true;
 
             theDM.ShowDialog(의뢰자나간후.transform.GetComponent<interactionEvent>().GetDialogs());
+
+        }
+    }
+
+    public void 신문살펴보기대화()
+    {
+
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+
+            theDM.ShowDialog(신문살펴보기.transform.GetComponent<interactionEvent>().GetDialogs());
 
         }
     }
