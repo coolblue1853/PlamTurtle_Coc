@@ -61,6 +61,7 @@ public class BillowUIManager : MonoBehaviour
     {
         if(대화창활성화여부.activeSelf== false)
         {
+            DataBaseManager.옵션창여부 = true;
             정보창.SetActive(true);
             itemMenuNum = 1;
         }
@@ -165,6 +166,7 @@ public class BillowUIManager : MonoBehaviour
     {
         if (대화창활성화여부.activeSelf == false)
         {
+            DataBaseManager.옵션창여부 = true;
             상태스탯창.SetActive(true);
             보유장비.SetActive(false);
             보유기술.SetActive(false);
@@ -193,6 +195,7 @@ public class BillowUIManager : MonoBehaviour
     }
     public void 상태창off()
     {
+        DataBaseManager.옵션창여부 = false;
         상태창켜짐 = false;
         Time.timeScale = 1;
         상태창s.SetActive(false);
@@ -297,10 +300,22 @@ public class BillowUIManager : MonoBehaviour
 
 
     }
+    public 사건정보창 사건정보초기화;
+    public 인물정보창 인물정보창초기화;
+    public 장소정보창 장소정보창초기화;
+
+
     public void 정보창켜기()
     {
         if (대화창활성화여부.activeSelf == false)
         {
+
+            사건정보초기화.사건정보초기화();
+            인물정보창초기화.인물정보초기화();
+            장소정보창초기화.장소정보창초기화();
+
+
+            DataBaseManager.옵션창여부 = true;
             Time.timeScale = 0;
             정보창켜짐 = true;
             정보창.SetActive(true);
@@ -308,8 +323,10 @@ public class BillowUIManager : MonoBehaviour
     }
     public void 정보창끄기()
     {
+
         Time.timeScale = 1;
         정보창켜짐 = false;
+        DataBaseManager.옵션창여부 = false;
         정보창.SetActive(false);
     }
 
@@ -319,6 +336,14 @@ public class BillowUIManager : MonoBehaviour
         사건창.SetActive(false);
         장소창.SetActive(false);
     }
+    
+
+
+
+
+
+
+
 
     public void 사건창켜기()
     {

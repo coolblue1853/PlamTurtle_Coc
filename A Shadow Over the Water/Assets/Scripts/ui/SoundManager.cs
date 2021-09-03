@@ -14,6 +14,10 @@ public class SoundManager : MonoBehaviour
 
     public AudioClip 달리기효과음;
     public AudioSource 효과음창;
+    public AudioSource 효과음창_sec;
+
+
+
 
     bool 달리기효과음켜짐 = false;
 
@@ -25,24 +29,24 @@ public class SoundManager : MonoBehaviour
 
     public void 기계돌아가는효과음함수()
     {
-        효과음창.PlayOneShot(기계돌아가는소리효과음);
+        효과음창_sec.PlayOneShot(기계돌아가는소리효과음);
     }
     public void 문열고닫기함수()
     {
         //효과음창.Play();
 
-        효과음창.PlayOneShot(문열고닫기효과음);
+        효과음창_sec.PlayOneShot(문열고닫기효과음);
     }
     public void 노크효과음효과음함수()
     {
         //효과음창.Play();
 
-        효과음창.PlayOneShot(놑크효과음);
+        효과음창_sec.PlayOneShot(놑크효과음);
     }
 
     public void 찰칵효과음함수()
     {
-        효과음창.PlayOneShot(찰칵소리효과음);
+        효과음창_sec.PlayOneShot(찰칵소리효과음);
 
     }
     void 효과음관리()
@@ -56,14 +60,17 @@ public class SoundManager : MonoBehaviour
 
             효과음창.PlayOneShot(달리기효과음);
         }
-        else if (주인공움직임.GetFloat("walk") == 0)
+        else if (주인공움직임.GetFloat("walk") == 0 )
         {
             효과음창.clip = null;
             달리기효과음켜짐 = false;
-            if(DataBaseManager.연출중움직임제한 == false)
+
+            효과음창.Stop();
+            if (DataBaseManager.연출중움직임제한 == false )
             {
-                효과음창.Stop();
+
             }
+
 
         }
     }

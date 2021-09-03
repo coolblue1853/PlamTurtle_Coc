@@ -16,6 +16,7 @@ public class settingManager : MonoBehaviour
     {
         if (대화창활성화여부.activeSelf == false)
         {
+            DataBaseManager.옵션창여부 = true;
             지도창.SetActive(true);
             하부창.SetActive(true);
             상부창.SetActive(false);
@@ -23,6 +24,7 @@ public class settingManager : MonoBehaviour
     }
     public void 지도끄기()
     {
+        DataBaseManager.옵션창여부 = false;
         지도창.SetActive(false);
         하부창.SetActive(false);
         상부창.SetActive(false);
@@ -45,6 +47,7 @@ public class settingManager : MonoBehaviour
     public GameObject 설정창;
     public void 옵션창켜기()
     {
+        DataBaseManager.옵션창여부 = true;
         Time.timeScale = 0;
             옵션창.SetActive(true);
 
@@ -52,6 +55,7 @@ public class settingManager : MonoBehaviour
     }
     public void 설정창켜기()
     {
+        DataBaseManager.옵션창여부 = true;
         옵션창.SetActive(false);
         설정창.SetActive(true);
     }
@@ -62,6 +66,7 @@ public class settingManager : MonoBehaviour
     }
     public void 설정창끄기()
     {
+        DataBaseManager.옵션창여부 = false;
         Time.timeScale = 1;
         옵션창.SetActive(false);
         설정창.SetActive(false);

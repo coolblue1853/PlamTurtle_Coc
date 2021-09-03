@@ -4,6 +4,37 @@ using UnityEngine;
 using UnityEngine.UI;
 public class DataBaseManager : MonoBehaviour
 {
+    //정보 알리미 관련 
+    public static bool 정보창알리미 = false;
+    public static bool 사건창알리미 = false;
+    public static bool 인물창알리미 = false;
+    public static bool 장소창알리미 = false;
+
+    public static bool 노아알리미 = false;
+    public static bool 멜리사알리미 = false;
+    public static bool 엘라알리미 = false;
+    public static bool 에이든알리미 = false;
+
+    public static bool 악몽알리미 = false;
+    public static bool 행성대직렬알리미 = false;
+    public static bool 편집증알리미 = false;
+    public static bool 불면증알리미 = false;
+
+    public static bool 탐정사무소알리미 = false;
+    public static bool 병원알리미 = false;
+    public static bool 신문사알리미 = false;
+    public static bool 의뢰자의집알리미 = false;
+    public static bool 아캄역알리미 = false;
+
+
+    public static bool 옵션창여부 = false;
+    public static bool 판정창여부 = false;
+    //기능판정관련.(사물,기물,인물반응)
+
+    //탐정사무소기능반응
+    public static bool 신문기능판정여부 = false;
+
+
     //총알
     public static int 보유리볼버탄약 = 0;
     public static int 보유소총탄약 = 0;
@@ -45,19 +76,6 @@ public class DataBaseManager : MonoBehaviour
     public static float 음악소리크기 = 0.5f;
     public static float 이펙트소리크기 = 0.5f;
 
-    public static bool 노아정보1=true;
-    public static bool 노아정보2=false;
-    public static bool 노아정보3=false;
-    public static bool 노아정보4=false;
-    public static bool 노아정보5=false;
-    public static bool 노아정보6=false;
-
-    public static bool 악몽정보1 = true;
-    public static bool 악몽정보2 = false;
-    public static bool 악몽정보3 = false;
-    public static bool 악몽정보4 = false;
-    public static bool 악몽정보5 = false;
-    public static bool 악몽정보6 = false;
 
     // Start is called before the first frame update
     public static int 힘;
@@ -116,6 +134,48 @@ public class DataBaseManager : MonoBehaviour
     public static bool _1일차오전심리학판정성공여부 = false;
     public static bool 선택1_3가만히있기를했는가 = false;
 
+
+    //획득정보 확인.
+    //인물정보
+    public static bool 노아정보1 = true;
+    public static bool 노아정보2 = false;
+    public static bool 노아정보3 = false;
+    public static bool 노아정보4 = false;
+    public static bool 노아정보5 = false;
+    public static bool 노아정보6 = false;
+
+    public static bool 에이든정보1 = false;
+    
+    public static bool 엘라정보1 = false;
+
+    public static bool 멜리사정보1 = false;
+
+
+
+
+
+
+    //사건정보
+    public static bool 악몽정보1 = false;
+    public static bool 악몽정보2 = false;
+    public static bool 악몽정보3 = false;
+    public static bool 악몽정보4 = false;
+    public static bool 악몽정보5 = false;
+    public static bool 악몽정보6 = false;
+
+    public static bool 행성대직렬정보1 = false;
+    public static bool 편집증정보1 = false;
+    public static bool 불면증정보1 = false;
+    
+
+
+    //장소정보
+    public static bool 탐정사무소정보1 = false;
+    public static bool 병원정보1 = false;
+    public static bool 신문사정보1 = false;
+    public static bool 의뢰자의집정보1 = false;
+    public static bool 아캄역정보1 = false;
+    
 
 
     void 매뉴창켜지면정지()

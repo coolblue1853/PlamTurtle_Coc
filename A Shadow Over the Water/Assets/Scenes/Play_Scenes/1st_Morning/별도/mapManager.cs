@@ -54,6 +54,13 @@ public class mapManager : MonoBehaviour
         DataBaseManager.이동지 = "대학";
     }
 
+
+    public void 총포상버튼()
+    {
+        이동확인텍스트.text = "<총포상>으로 이동 하시겠습니까?";
+        이동확인알람.SetActive(true);
+        DataBaseManager.이동지 = "총포상";
+    }
     public void 이동()
     {
         페이드아웃();

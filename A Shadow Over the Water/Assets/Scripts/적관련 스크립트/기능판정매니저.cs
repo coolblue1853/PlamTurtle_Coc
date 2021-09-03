@@ -7,7 +7,7 @@ public class 기능판정매니저 : MonoBehaviour
 {
 
     public SoundManager 배틀사운드매니저;
-
+    public InterctionController_D1사무소 인터렉션컨트롤러;
 
 
     public GameObject 기능판청안내창;
@@ -19,15 +19,23 @@ public class 기능판정매니저 : MonoBehaviour
 
     public void 신문기능판정()
     {
+
+
         기능판청안내창.SetActive(false);
         StartCoroutine(정보조사기능판정코루틴());
-    }
 
+    }
+    public void 신문기능판정창끄기()
+    {
+        기능판청안내창.SetActive(false);
+        DataBaseManager.연출중움직임제한 = false;
+        DataBaseManager.판정창여부 = false;
+    }
     public IEnumerator 정보조사기능판정코루틴()
     {
 
 
-
+        DataBaseManager.신문기능판정여부 = true;
 
         판정창.SetActive(true);
 
@@ -78,26 +86,28 @@ public class 기능판정매니저 : MonoBehaviour
 
         if (결과.text == "대성공")
         {
-           
-            
+
+            인터렉션컨트롤러.신문정보조사대성공();
         }
 
         if (결과.text == "보통성공")
         {
 
+            인터렉션컨트롤러.신문정보조사성공();
 
         }
         if (결과.text == "실패")
         {
 
+            인터렉션컨트롤러.신문정보조사실패();
 
         }
         if (결과.text == "대실패")
         {
 
+            인터렉션컨트롤러.신문정보조사대실패();
 
         }
-
 
 
 

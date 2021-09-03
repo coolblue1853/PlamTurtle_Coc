@@ -14,6 +14,11 @@ public class InterctionController_D1사무소 : MonoBehaviour
 
     public GameObject 신문살펴보기;
 
+    public GameObject 신문_정보조사_실패;
+    public GameObject 신문_정보조사_대실패;
+    public GameObject 신문_정보조사_성공;
+    public GameObject 신문_정보조사_대성공;
+
 
     public GameObject 선택지1성공;
     public GameObject 선택지1실패;
@@ -105,6 +110,55 @@ public class InterctionController_D1사무소 : MonoBehaviour
             theDM.isDialogON = true;
 
             theDM.ShowDialog(신문살펴보기.transform.GetComponent<interactionEvent>().GetDialogs());
+
+        }
+    }
+
+
+    public void 신문정보조사실패()
+    {
+
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+
+            theDM.ShowDialog(신문_정보조사_실패.transform.GetComponent<interactionEvent>().GetDialogs());
+
+        }
+    }
+
+    public void 신문정보조사대실패()
+    {
+
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+
+            theDM.ShowDialog(신문_정보조사_대실패.transform.GetComponent<interactionEvent>().GetDialogs());
+
+        }
+    }
+
+    public void 신문정보조사성공()
+    {
+
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+
+            theDM.ShowDialog(신문_정보조사_성공.transform.GetComponent<interactionEvent>().GetDialogs());
+
+        }
+    }
+
+    public void 신문정보조사대성공()
+    {
+
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+
+            theDM.ShowDialog(신문_정보조사_대성공.transform.GetComponent<interactionEvent>().GetDialogs());
 
         }
     }

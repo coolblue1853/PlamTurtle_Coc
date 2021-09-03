@@ -136,7 +136,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
         스킵버튼.SetActive(false);
         스킵스탑버튼.SetActive(true);
         DataBaseManager.스킵활성화 = true;
-        DataBaseManager.텍스트딜레이 = 0.00000000000001f;
+        DataBaseManager.텍스트딜레이 = 0.0000000000000000003f;
         StartCoroutine(스킵());
 
 
@@ -272,7 +272,9 @@ public class DialogManager_D1사무소 : MonoBehaviour
     void EndDialog()
     {
         DataBaseManager.대화창켜짐 = false;
+        DataBaseManager.판정창여부 = false;
 
+        DataBaseManager.연출중움직임제한 = false;
         PlayerChar.transform.GetComponent<Mins>().다이얼로그다운();
         대화창일러.SetActive(false);
         대화창일러.SetActive(false);
@@ -302,6 +304,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
     }
 
 
+    public 정보창Manager 정보창매니저;
 
     IEnumerator TypeWriter()
     {
@@ -334,10 +337,84 @@ public class DialogManager_D1사무소 : MonoBehaviour
             {
                 case 'ⓦ': t_white = true; t_yellow = false; t_red = false; t_green = false; t_blue = false; t_ignore = true; break;
 
+
                 case 'ⓨ': t_white = false; t_yellow = true; t_red = false; t_green = false; t_blue = false; t_ignore = true; break;
-                case 'ⓡ': t_white = false; t_yellow = false; t_red = true; t_green = false; t_blue = false; t_ignore = true; break;
-                case 'ⓑ': t_white = false; t_yellow = false; t_red = false; t_green = false; t_blue = true; t_ignore = true; break;
-                case 'ⓖ': t_white = false; t_yellow = false; t_red = false; t_green = true; t_blue = false; t_ignore = true; break;
+                case 'ⓡ': t_white = false; t_yellow = false; t_red = true; t_green = false; t_blue = false; t_ignore = true; 
+                    if (t_ReplaceText[i + 1] == '(')
+                    {
+                        if (t_ReplaceText[i + 2] == '●')
+                        {
+                            if (t_ReplaceText[i + 3] == '행')
+                            {
+                                DataBaseManager.행성대직렬정보1 = true;
+                                정보창매니저.행성대직렬정보추가();
+
+
+                            }
+                            if (t_ReplaceText[i + 3] == '악')
+                            {
+                                DataBaseManager.악몽정보1 = true;
+                                정보창매니저.악몽정보추가();
+                            }
+                            if (t_ReplaceText[i + 3] == '불')
+                            {
+                                DataBaseManager.불면증정보1 = true;
+                                정보창매니저.불면증정보추가();
+                            }
+                        }
+
+                    }
+                    break;
+                case 'ⓑ': t_white = false; t_yellow = false; t_red = false; t_green = false; t_blue = true; t_ignore = true;
+                    if (t_ReplaceText[i + 1] == '(')
+                    {
+                        if (t_ReplaceText[i + 2] == '●')
+                        {
+                            if (t_ReplaceText[i + 3] == '병')
+                            {
+                                DataBaseManager.병원정보1 = true;
+                                정보창매니저.병원정보추가();
+                            }
+                            if (t_ReplaceText[i + 3] == '서')
+                            {
+                                DataBaseManager.의뢰자의집정보1 = true;
+                                정보창매니저.의뢰자의집정보추가();
+                            }
+                            if (t_ReplaceText[i + 3] == '아')
+                            {
+                                DataBaseManager.아캄역정보1 = true;
+                                정보창매니저.아캄역정보추가();
+                            }
+                            if (t_ReplaceText[i + 3] == '데')
+                            {
+                                DataBaseManager.신문사정보1 = true;
+                                정보창매니저.신문사정보추가();
+                            }
+                        }
+  
+                    }
+                    break;
+                case 'ⓖ': t_white = false; t_yellow = false; t_red = false; t_green = true; t_blue = false; t_ignore = true; 
+                    
+                    if (t_ReplaceText[i + 1] == '(')
+                    {
+                        if (t_ReplaceText[i + 2] == '●')
+                        {
+                            if (t_ReplaceText[i + 3] == '엘')
+                            {
+                                DataBaseManager.엘라정보1 = true;
+                                정보창매니저.엘라정보추가();
+                            }
+                            if (t_ReplaceText[i + 3] == '에')
+                            {
+                                DataBaseManager.에이든정보1 = true;
+                                정보창매니저.에이든정보추가();
+                            }
+                        }
+
+
+                    }
+                    break;
 
 
                 case '◎':  // 연출관련
@@ -522,7 +599,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
                 case '㉦': if (t_ReplaceText[i - 1] == '※') { t_ignore = true; } break;
                 case '㉤': if (t_ReplaceText[i + -3] == '☆') { t_ignore = true; } break;
 
-
+                case '●': if (t_ReplaceText[i + -1] == '(') { t_ignore = true; } break;
 
                 //case '0': if (t_ReplaceText[i + 1] == '§') { t_ignore = true; } if (t_ReplaceText[i - 1] == '☆') { t_ignore = true; } break;
                 case '①': if (t_ReplaceText[i - 3] == '§' || t_ReplaceText[i - 1] == '☆' || t_ReplaceText[i - 1] == '★' || t_ReplaceText[i - 1] == '◎') { t_ignore = true; } break;

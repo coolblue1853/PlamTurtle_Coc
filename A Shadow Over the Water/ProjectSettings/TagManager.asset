@@ -61,6 +61,9 @@ TagManager:
   - name: 22
     uniqueID: 2619942017
     locked: 0
+  - name: 2.5
+    uniqueID: 1367401477
+    locked: 0
   - name: 3
     uniqueID: 2642513891
     locked: 0

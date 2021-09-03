@@ -12,13 +12,13 @@ public class rotate : MonoBehaviour
     IEnumerator 페이드아웃코루틴()
     {
         float 페이드카운트 = 1;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSecondsRealtime(2f);
         페이드이미지오브젝트.SetActive(true);
 
         while (페이드카운트 > 0)
         {
             페이드카운트 -= 0.01f;
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSecondsRealtime(0.01f);
             페이드이미지.color = new Color(0, 0, 0, 페이드카운트);
         }
     }
@@ -29,7 +29,11 @@ public class rotate : MonoBehaviour
         if(체커 == false)
         {
             체커 = true;
-               yield return new WaitForSeconds(7f);
+
+            yield return new WaitForSecondsRealtime(8f);
+            아침글자.SetActive(false);
+            점심글자.SetActive(true);
+            yield return new WaitForSecondsRealtime(7f);
             StartCoroutine(장면전환());
 
         }
@@ -44,11 +48,12 @@ public class rotate : MonoBehaviour
     {
 
 
+
         float 페이드카운트 = 0;
         while (페이드카운트 < 1.0f)
         {
             페이드카운트 += 0.01f;
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSecondsRealtime(0.01f);
             페이드이미지.color = new Color(0, 0, 0, 페이드카운트);
 
 
@@ -57,6 +62,10 @@ public class rotate : MonoBehaviour
         if (DataBaseManager.이동지 == "대학")
         {
             SceneManager.LoadScene("1st_Mor_Uni");
+        }
+        if (DataBaseManager.이동지 == "총포상")
+        {
+            SceneManager.LoadScene("1st_Mor_GUNSHOP");
         }
     }
 
@@ -68,6 +77,8 @@ public class rotate : MonoBehaviour
 
 
 
+    public GameObject 아침글자;
+    public GameObject 점심글자;
 
 
 
@@ -132,6 +143,8 @@ public class rotate : MonoBehaviour
     public float turnSpeed3 = 20;
     public float turnSpeed4 = 30;
 
+    public Text 날짜텍스트;
+
     bool isover = false;
     // Update is called once per frame
     void Update()
@@ -141,6 +154,7 @@ public class rotate : MonoBehaviour
 
         if (timer > waitingTime && isover == false)
         {
+
             isover = true;
             updownder = 1;
             isRing1End = false;
@@ -155,16 +169,20 @@ public class rotate : MonoBehaviour
 
         if (updownder == 0)
         {
+
             UD.SetInteger("upDowner", 0);
         }
 
         else if (updownder == 1)
         {
+
             UD.SetInteger("upDowner", 1);
         }
 
         else if (updownder == 2)
         {
+
+
             UD.SetInteger("upDowner", 2);
         }
 
@@ -174,6 +192,7 @@ public class rotate : MonoBehaviour
         }
         if (isRing2End == false)
         {
+
             StartCoroutine(시간끝이동());
             ring2.transform.Rotate(Vector3.forward, turnSpeed2 * Time.deltaTime);
         }

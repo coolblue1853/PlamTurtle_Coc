@@ -114,8 +114,18 @@ public class Mins : MonoBehaviour
 
 	//기물반응
 
+	public GameObject 신문기능판정버튼;
+
 	public void 상호작용체커()
 	{
+        if (DataBaseManager.신문기능판정여부 == true)
+        {
+			신문white2.SetActive(false);
+			신문기능판정버튼.SetActive(false);
+
+		}
+
+
 		if (신문whiteNum == 1)
 		{
 			신문white1.SetActive(true);
@@ -137,11 +147,22 @@ public class Mins : MonoBehaviour
 		//켜질수 있는가?
 		if (신문상호작용가능여부 == true && 신문상호작용.activeSelf== false)
 		{
-            if (Input.GetKeyDown(KeyCode.Z))
-            {
-				DataBaseManager.연출중움직임제한 = true;
-				신문whiteNum = 1;
-				신문상호작용.SetActive(true);
+			if(DataBaseManager.판정창여부 == false && DataBaseManager.옵션창여부 == false)
+			{
+
+				if (Input.GetKeyDown(KeyCode.Z))
+				{
+					DataBaseManager.판정창여부 = true;
+					anime.SetFloat("move", 0);
+					anime.SetFloat("walk", 0);
+					anime.SetFloat("run", 0);
+
+
+					DataBaseManager.연출중움직임제한 = true;
+					신문whiteNum = 1;
+					신문상호작용.SetActive(true);
+				}
+
 			}
 
 
@@ -149,16 +170,24 @@ public class Mins : MonoBehaviour
 		// 켜져 있는가?
 		else if( 신문상호작용.activeSelf == true)
         {
-
+			
 			if (Input.GetKeyDown(KeyCode.S))
             {
 				if(신문whiteNum== 1)
                 {
-					신문whiteNum = 2;
+					if(DataBaseManager.신문기능판정여부== false)
+                    {
+						신문whiteNum = 2;
+					}
+					else if (DataBaseManager.신문기능판정여부 == true)
+					{
+						신문whiteNum = 3;
+					}
 
 				}
 				else if (신문whiteNum == 2)
 				{
+					
 					신문whiteNum = 3;
 
 				}
@@ -183,7 +212,14 @@ public class Mins : MonoBehaviour
 
 				else if (신문whiteNum == 3)
 				{
-					신문whiteNum = 2;
+					if(DataBaseManager.신문기능판정여부 == false)
+                    {
+						신문whiteNum = 2;
+					}
+					else if (DataBaseManager.신문기능판정여부 == true)
+					{
+						신문whiteNum = 1;
+					}
 
 				}
 			}
@@ -196,35 +232,30 @@ public class Mins : MonoBehaviour
 					if (신문whiteNum == 1)
 					{
 
-						신문상호작용.SetActive(false);
-						DataBaseManager.연출중움직임제한 = false;
-						인터렉션컨트롤러.신문살펴보기대화();
+						신문살펴보기();
+
 					}
 					else if (신문whiteNum == 2)
 					{
-
-						신문상호작용.SetActive(false);
-						DataBaseManager.연출중움직임제한 = false;
-						사물기능판정창.SetActive(true);
-						사물기능판정텍스트.text = "신문에 대하여 <정보조사> 기능을 사용합니다.\n 현재 해당기능 수치는 "+DataBaseManager.정보조사  +" 입니다.";
+						신문기능판정();
 					}
 					else if (신문whiteNum == 3)//그만두기
 					{
 
-						신문상호작용.SetActive(false);
-						DataBaseManager.연출중움직임제한 = false;
-
+						신문그만두기();
 					}
 				}
 			}
 
 
 
+			
+
 
 
 			if (Input.GetKeyDown(KeyCode.Escape))
             {
-				Time.timeScale = 1;
+
 				신문상호작용.SetActive(false);
 			}
 			
@@ -232,6 +263,34 @@ public class Mins : MonoBehaviour
 
 
 	}
+
+
+
+	public void 신문살펴보기()
+    {
+		신문상호작용.SetActive(false);
+		DataBaseManager.연출중움직임제한 = false;
+		인터렉션컨트롤러.신문살펴보기대화();
+	}
+
+	public void 신문기능판정()
+	{
+
+		DataBaseManager.판정창여부 = true;
+		신문상호작용.SetActive(false);
+
+		사물기능판정창.SetActive(true);
+		사물기능판정텍스트.text = "신문에 대하여 <정보조사> 기능을 사용합니다.\n 현재 해당기능 수치는 " + DataBaseManager.정보조사 + " 입니다.";
+	}
+
+
+	public void 신문그만두기()
+	{
+		신문상호작용.SetActive(false);
+		DataBaseManager.연출중움직임제한 = false;
+		DataBaseManager.판정창여부 = false;
+	}
+
 
 
 
@@ -255,6 +314,13 @@ public class Mins : MonoBehaviour
 			runAndWalkChanger();
 			Move();
 		}
+
+
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+			DataBaseManager.정보조사 = DataBaseManager.정보조사 +1;  
+        }
+
 	}
 
     void FixedUpdate()
