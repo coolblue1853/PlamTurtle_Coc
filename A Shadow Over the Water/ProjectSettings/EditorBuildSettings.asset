@@ -11,15 +11,19 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/game_intro_Scenes/SelectMode.unity
     guid: 4344a35024953d74ebd573415adba25f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/game_intro_Scenes/SetCharacter.unity
     guid: e2db78ae19d53b349bb184f9e204bc4f
-  - enabled: 1
+  - enabled: 0
     path: "Assets/Scenes/Play_Scenes/1st_Morning/\uBCC4\uB3C4/\uB3C4\uB85C\uC804\uD22C.unity"
     guid: dd136f9864bc45d4c896dff008ea8893
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Play_Scenes/1st_Morning/1st_Mor_MyRoom.unity
     guid: e4183423d283f464a815e0c5f04b4638
+  - enabled: 1
+    path: "Assets/Scenes/Play_Scenes/1st_Morning/\uB9C8\uC774\uB8F8 \uC608\uBE44-
+      \uC815\uBCF4\uCC3D\uBCC0\uACBD\uC911.unity"
+    guid: ae2a827cc422faa47899f1e6cd2065e3
   - enabled: 0
     path: "Assets/Scenes/Play_Scenes/1st_Morning/\uC678\uBD80\uD30C\uC77C/START_OPEN.unity"
     guid: fd0f64bca1f836d4fbc18a37a0ffdc70
@@ -33,12 +37,15 @@ EditorBuildSettings:
     path: "Assets/Scenes/Play_Scenes/1st_Morning/\uC608\uBE44\uD30C\uC77C/1st_Mor_questHouse.unity"
     guid: 928d89a10e76c4b42b2df9b176ddf5a1
   - enabled: 0
+    path: "Assets/Scenes/Play_Scenes/1st_Morning/\uC774\uB3D9\uD574\uB3C4\uB418\uB294\uC9C0.unity"
+    guid: 3338d4d20a834d442b223775f5b9f5d3
+  - enabled: 0
     path: Assets/Scenes/Play_Scenes/1st_Morning/1st_Mor_river_left.unity
     guid: 8774bfd4bc4cbab4abbc1a8001710fdb
-  - enabled: 1
+  - enabled: 0
     path: "Assets/Scenes/\uC52C \uC0AC\uC774/01.unity"
     guid: 5a17029ed6ac7b641ad29bd4fc703726
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Play_Scenes/1st_Morning/1st_Mor_GUNSHOP.unity
     guid: 58f388d699a3e964f85c1a777b4e8099
   - enabled: 0

@@ -94,10 +94,16 @@ public class 정보창Manager : MonoBehaviour
     }
 
 
-
+    public GameObject 사건온;
+    public GameObject 인물온;
+    public GameObject 장소온;
 
     public void 인물창켜기()
     {
+        인물온.SetActive(true);
+        사건온.SetActive(false);
+        장소온.SetActive(false);
+
         인물창.SetActive(true);
         사건창.SetActive(false);
         장소창.SetActive(false);
@@ -105,12 +111,20 @@ public class 정보창Manager : MonoBehaviour
 
     public void 사건창켜기()
     {
+        인물온.SetActive(false);
+        사건온.SetActive(true);
+        장소온.SetActive(false);
+
         인물창.SetActive(false);
         사건창.SetActive(true);
         장소창.SetActive(false);
     }
     public void 장소창켜기()
     {
+        인물온.SetActive(false);
+        사건온.SetActive(false);
+        장소온.SetActive(true);
+
         인물창.SetActive(false);
         사건창.SetActive(false);
         장소창.SetActive(true);

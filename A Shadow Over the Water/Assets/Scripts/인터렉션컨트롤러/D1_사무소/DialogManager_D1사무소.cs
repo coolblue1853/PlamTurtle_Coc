@@ -136,7 +136,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
         스킵버튼.SetActive(false);
         스킵스탑버튼.SetActive(true);
         DataBaseManager.스킵활성화 = true;
-        DataBaseManager.텍스트딜레이 = 0.0000000000000000003f;
+        DataBaseManager.텍스트딜레이 = 0.00001f;
         StartCoroutine(스킵());
 
 
@@ -165,10 +165,10 @@ public class DialogManager_D1사무소 : MonoBehaviour
     IEnumerator 스킵()
     {
 
-        yield return new WaitForSeconds(0.001f);
+        yield return new WaitForSeconds(0.000001f);
         selectionUIManager.엘라심리학선택지끄기();
         선택지선택시외부에서페이지넘기기t();
-        yield return new WaitForSeconds(0.001f);
+        yield return new WaitForSeconds(0.000001f);
         if(go_dialogBar.activeSelf == false)
         {
             스킵스탑온();
@@ -633,7 +633,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
             }
             t_ignore = false;
 
-            yield return new WaitForSeconds(textDelay);
+            yield return new WaitForSecondsRealtime(textDelay);
         }
 
         isNext = true;

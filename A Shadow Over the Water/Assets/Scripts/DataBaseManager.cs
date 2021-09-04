@@ -136,47 +136,8 @@ public class DataBaseManager : MonoBehaviour
 
 
     //획득정보 확인.
-    //인물정보
-    public static bool 노아정보1 = true;
-    public static bool 노아정보2 = false;
-    public static bool 노아정보3 = false;
-    public static bool 노아정보4 = false;
-    public static bool 노아정보5 = false;
-    public static bool 노아정보6 = false;
 
-    public static bool 에이든정보1 = false;
-    
-    public static bool 엘라정보1 = false;
-
-    public static bool 멜리사정보1 = false;
-
-
-
-
-
-
-    //사건정보
-    public static bool 악몽정보1 = false;
-    public static bool 악몽정보2 = false;
-    public static bool 악몽정보3 = false;
-    public static bool 악몽정보4 = false;
-    public static bool 악몽정보5 = false;
-    public static bool 악몽정보6 = false;
-
-    public static bool 행성대직렬정보1 = false;
-    public static bool 편집증정보1 = false;
-    public static bool 불면증정보1 = false;
-    
-
-
-    //장소정보
-    public static bool 탐정사무소정보1 = false;
-    public static bool 병원정보1 = false;
-    public static bool 신문사정보1 = false;
-    public static bool 의뢰자의집정보1 = false;
-    public static bool 아캄역정보1 = false;
-    
-
+  
 
     void 매뉴창켜지면정지()
     {
@@ -274,4 +235,264 @@ public class DataBaseManager : MonoBehaviour
     {
 
     }
+
+    //인물정보
+
+    public static int 노아현재페이지 = 1;
+    public static int 멜리사현재페이지 = 1;
+    public static  int 엘라현재페이지 = 1;
+    public static  int 에이든현재페이지 = 1;
+    public static  int 노교수현재페이지 = 1;
+    public static  int 하수정비사무소장현재페이지 = 1;
+    public static int 경찰친구현재페이지 = 1;
+    public static int 술집친구현재페이지 = 1;
+    public static int 동료기자현재페이지 = 1;
+
+    public static int 현재획득한인물정보가지수 = 0;
+
+    public static int 노아버튼순서 = -1;
+    public static int 멜리사버튼순서 = -1;
+    public static int 엘라버튼순서 = -1;
+    public static int 에이든버튼순서 = -1;
+    public static int 노교수버튼순서 = -1;
+    public static int 경찰친구버튼순서 = -1;
+    public static int 술집친구버튼순서 = -1;
+    public static int 하수정비사무소소장버튼순서 = -1;
+    public static int 동료기자버튼순서 = -1;
+
+
+    public static bool 노아정보1 = false;
+    public static bool 노아정보2 = false;
+    public static bool 노아정보3 = false;
+    public static bool 노아정보4 = false;
+    public static bool 노아정보5 = false;
+    public static bool 노아정보6 = false;
+
+    public static bool 멜리사정보1 = false;
+    public static bool 멜리사정보2 = false;
+    public static bool 멜리사정보3 = false;
+    public static bool 멜리사정보4 = false;
+    public static bool 멜리사정보5 = false;
+    public static bool 멜리사정보6 = false;
+
+    public static bool 에이든정보1 = false;
+    public static bool 에이든정보2 = false;
+    public static bool 에이든정보3 = false;
+    public static bool 에이든정보4 = false;
+    public static bool 에이든정보5 = false;
+    public static bool 에이든정보6 = false;
+
+    public static bool 엘라정보1 = false;
+    public static bool 엘라정보2 = false;
+    public static bool 엘라정보3 = false;
+    public static bool 엘라정보4 = false;
+    public static bool 엘라정보5 = false;
+    public static bool 엘라정보6 = false;
+
+    public static bool 동료기자정보1 = false;
+    public static bool 동료기자정보2 = false;
+    public static bool 동료기자정보3 = false;
+    public static bool 동료기자정보4 = false;
+    public static bool 동료기자정보5 = false;
+    public static bool 동료기자정보6 = false;
+
+    public static bool 노교수정보1 = false;
+    public static bool 노교수정보2 = false;
+    public static bool 노교수정보3 = false;
+    public static bool 노교수정보4 = false;
+    public static bool 노교수정보5 = false;
+    public static bool 노교수정보6 = false;
+
+    public static bool 경찰친구정보1 = false;
+    public static bool 경찰친구정보2 = false;
+    public static bool 경찰친구정보3 = false;
+    public static bool 경찰친구정보4 = false;
+    public static bool 경찰친구정보5 = false;
+    public static bool 경찰친구정보6 = false;
+
+    public static bool 술집친구정보1 = false;
+    public static bool 술집친구정보2 = false;
+    public static bool 술집친구정보3 = false;
+    public static bool 술집친구정보4 = false;
+    public static bool 술집친구정보5 = false;
+    public static bool 술집친구정보6 = false;
+
+    public static bool 하수정비사무소소장정보1 = false;
+    public static bool 하수정비사무소소장정보2 = false;
+    public static bool 하수정비사무소소장정보3 = false;
+    public static bool 하수정비사무소소장정보4 = false;
+    public static bool 하수정비사무소소장정보5 = false;
+    public static bool 하수정비사무소소장정보6 = false;
+
+
+
+    //사건정보
+    public static bool 악몽정보1 = false;
+    public static bool 악몽정보2 = false;
+    public static bool 악몽정보3 = false;
+    public static bool 악몽정보4 = false;
+    public static bool 악몽정보5 = false;
+    public static bool 악몽정보6 = false;
+
+    public static bool 행성대직렬정보1 = false;
+    public static bool 행성대직렬정보2 = false;
+    public static bool 행성대직렬정보3 = false;
+    public static bool 행성대직렬정보4 = false;
+    public static bool 행성대직렬정보5 = false;
+    public static bool 행성대직렬정보6 = false;
+
+
+    public static bool 편집증정보1 = false;
+    public static bool 편집증정보2 = false;
+    public static bool 편집증정보3 = false;
+    public static bool 편집증정보4 = false;
+    public static bool 편집증정보5 = false;
+    public static bool 편집증정보6 = false;
+
+    public static bool 불면증정보1 = false;
+    public static bool 불면증정보2 = false;
+    public static bool 불면증정보3 = false;
+    public static bool 불면증정보4 = false;
+    public static bool 불면증정보5 = false;
+    public static bool 불면증정보6 = false;
+
+    public static bool 하수도괴담정보1 = false;
+    public static bool 하수도괴담정보2 = false;
+    public static bool 하수도괴담정보3 = false;
+    public static bool 하수도괴담정보4 = false;
+    public static bool 하수도괴담정보5 = false;
+    public static bool 하수도괴담정보6 = false;
+
+
+    public static bool 실종된사람들정보1 = false;
+    public static bool 실종된사람들정보2 = false;
+    public static bool 실종된사람들정보3 = false;
+    public static bool 실종된사람들정보4 = false;
+    public static bool 실종된사람들정보5 = false;
+    public static bool 실종된사람들정보6 = false;
+
+    public static bool 비릿한냄새정보1 = false;
+    public static bool 비릿한냄새정보2 = false;
+    public static bool 비릿한냄새정보3 = false;
+    public static bool 비릿한냄새정보4 = false;
+    public static bool 비릿한냄새정보5 = false;
+    public static bool 비릿한냄새정보6 = false;
+
+
+    public static bool 강의수질정보1 = false;
+    public static bool 강의수질정보2 = false;
+    public static bool 강의수질정보3 = false;
+    public static bool 강의수질정보4 = false;
+    public static bool 강의수질정보5 = false;
+    public static bool 강의수질정보6 = false;
+
+
+    public static bool 섬뜩한눈정보1 = false;
+    public static bool 섬뜩한눈정보2 = false;
+    public static bool 섬뜩한눈정보3 = false;
+    public static bool 섬뜩한눈정보4 = false;
+    public static bool 섬뜩한눈정보5 = false;
+    public static bool 섬뜩한눈정보6 = false;
+
+
+
+    public static bool 급격한교체정보1 = false;
+    public static bool 급격한교체정보2 = false;
+    public static bool 급격한교체정보3 = false;
+    public static bool 급격한교체정보4 = false;
+    public static bool 급격한교체정보5 = false;
+    public static bool 급격한교체정보6 = false;
+
+
+
+    //장소정보
+    public static bool 탐정사무소정보1 = false;
+    public static bool 탐정사무소정보2 = false;
+    public static bool 탐정사무소정보3 = false;
+    public static bool 탐정사무소정보4 = false;
+
+    public static bool 병원정보1 = false;
+    public static bool 병원정보2 = false;
+    public static bool 병원정보3 = false;
+    public static bool 병원정보4 = false;
+    public static bool 병원정보5 = false;
+    public static bool 병원정보6 = false;
+
+    public static bool 신문사정보1 = false;
+    public static bool 신문사정보2 = false;
+    public static bool 신문사정보3 = false;
+    public static bool 신문사정보4 = false;
+    public static bool 신문사정보5 = false;
+    public static bool 신문사정보6 = false;
+
+    public static bool 의뢰자의집정보1 = false;
+    public static bool 의뢰자의집정보2 = false;
+    public static bool 의뢰자의집정보3 = false;
+    public static bool 의뢰자의집정보4 = false;
+    public static bool 의뢰자의집정보5 = false;
+    public static bool 의뢰자의집정보6 = false;
+
+
+    public static bool 아캄역정보1 = false;
+    public static bool 아캄역정보2 = false;
+    public static bool 아캄역정보3 = false;
+    public static bool 아캄역정보4 = false;
+    public static bool 아캄역정보5 = false;
+
+
+
+    public static bool 식당정보1 = false;
+    public static bool 식당정보2 = false;
+    public static bool 식당정보3 = false;
+    public static bool 식당정보4 = false;
+    public static bool 식당정보5 = false;
+    public static bool 식당정보6 = false;
+    
+
+    public static bool 대학정보1 = false;
+    public static bool 대학정보2 = false;
+    public static bool 대학정보3 = false;
+    public static bool 대학정보4 = false;
+    public static bool 대학정보5 = false;
+    public static bool 대학정보6 = false;
+
+    public static bool 강가정보1 = false;
+    public static bool 강가정보2 = false;
+    public static bool 강가정보3 = false;
+    public static bool 강가정보4 = false;
+    public static bool 강가정보5 = false;
+    public static bool 강가정보6 = false;
+
+    public static bool 술집정보1 = false;
+    public static bool 술집정보2 = false;
+    public static bool 술집정보3 = false;
+    public static bool 술집정보4 = false;
+    public static bool 술집정보5 = false;
+    public static bool 술집정보6 = false;
+
+
+    public static bool 빈민가정보1 = false;
+    public static bool 빈민가정보2 = false;
+    public static bool 빈민가정보3 = false;
+    public static bool 빈민가정보4 = false;
+    public static bool 빈민가정보5 = false;
+    public static bool 빈민가정보6 = false;
+
+
+    public static bool 경찰서정보1 = false;
+    public static bool 경찰서정보2 = false;
+    public static bool 경찰서정보3 = false;
+    public static bool 경찰서정보4 = false;
+    public static bool 경찰서정보5 = false;
+    public static bool 경찰서정보6 = false;
+
+
+    public static bool 하수정비사무소정보1 = false;
+    public static bool 하수정비사무소정보2 = false;
+    public static bool 하수정비사무소정보3 = false;
+    public static bool 하수정비사무소정보4 = false;
+    public static bool 하수정비사무소정보5 = false;
+    public static bool 하수정비사무소정보6 = false;
+    
+
 }
