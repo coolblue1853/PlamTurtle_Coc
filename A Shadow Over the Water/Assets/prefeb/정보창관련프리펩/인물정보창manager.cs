@@ -15,6 +15,19 @@ public class 인물정보창manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            DataBaseManager.노아정보1 = true;
+            DataBaseManager.멜리사정보1 = true;
+            DataBaseManager.에이든정보1 = true;
+            DataBaseManager.엘라정보1 = true;
+            DataBaseManager.동료기자정보1 = true;
+            DataBaseManager.노교수정보1 = true;
+            DataBaseManager.경찰친구정보1 = true;
+            DataBaseManager.술집친구정보1 = true;
+            DataBaseManager.하수정비사무소소장정보1 = true;
+ 
+        }
         ㅁ낭라();
         if(아래버튼누름 == false)
         {
@@ -23,115 +36,6 @@ public class 인물정보창manager : MonoBehaviour
 
 
 
-            if (Input.GetKeyDown(KeyCode.F1))
-        {
-            SceneManager.LoadScene("이동해도되는지");
-        }
-
-
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            DataBaseManager.노아정보1 = true;
-            DataBaseManager.노아정보2 = true;
-            Debug.Log(DataBaseManager.현재획득한인물정보가지수);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            DataBaseManager.멜리사정보1 = true;
-            Debug.Log(DataBaseManager.현재획득한인물정보가지수);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            DataBaseManager.에이든정보1 = true;
-            Debug.Log(DataBaseManager.현재획득한인물정보가지수);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            DataBaseManager.엘라정보1 = true;
-            Debug.Log(DataBaseManager.현재획득한인물정보가지수);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            DataBaseManager.동료기자정보1 = true;
-            Debug.Log(DataBaseManager.현재획득한인물정보가지수);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha6))
-        {
-            DataBaseManager.노교수정보1 = true;
-            Debug.Log(DataBaseManager.현재획득한인물정보가지수);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha7))
-        {
-            DataBaseManager.경찰친구정보1 = true;
-            Debug.Log(DataBaseManager.현재획득한인물정보가지수);
-
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha8))
-        {
-            DataBaseManager.술집친구정보1 = true;
-            Debug.Log(DataBaseManager.현재획득한인물정보가지수);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha9))
-        {
-            DataBaseManager.하수정비사무소소장정보1 = true;
-            Debug.Log(DataBaseManager.현재획득한인물정보가지수);
-        }
-
-        if (Input.GetKeyDown(KeyCode.F2))
-        {
-
-
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.F3))
-        {
-            DataBaseManager.노아정보3 = true;
-            DataBaseManager.멜리사정보3 = true;
-            DataBaseManager.에이든정보3 = true;
-            DataBaseManager.엘라정보3 = true;
-            DataBaseManager.동료기자정보3 = true;
-            DataBaseManager.노교수정보3 = true;
-            DataBaseManager.경찰친구정보3 = true;
-            DataBaseManager.술집친구정보3 = true;
-            DataBaseManager.하수정비사무소소장정보3= true;
-        }
-        if (Input.GetKeyDown(KeyCode.F4))
-        {
-            DataBaseManager.노아정보4 = true;
-            DataBaseManager.멜리사정보4 = true;
-            DataBaseManager.에이든정보4 = true;
-            DataBaseManager.엘라정보4 = true;
-            DataBaseManager.동료기자정보4 = true;
-            DataBaseManager.노교수정보4 = true;
-            DataBaseManager.경찰친구정보4 = true;
-            DataBaseManager.술집친구정보4 = true;
-            DataBaseManager.하수정비사무소소장정보4= true;
-        }
-        if (Input.GetKeyDown(KeyCode.F5))
-        {
-            DataBaseManager.노아정보5 = true;
-            DataBaseManager.멜리사정보5 = true;
-            DataBaseManager.에이든정보5 = true;
-            DataBaseManager.엘라정보5 = true;
-            DataBaseManager.동료기자정보5 = true;
-            DataBaseManager.노교수정보5 = true;
-            DataBaseManager.경찰친구정보5 = true;
-            DataBaseManager.술집친구정보5 = true;
-            DataBaseManager.하수정비사무소소장정보5 = true;
-        }
-        if (Input.GetKeyDown(KeyCode.F6))
-        {
-            DataBaseManager.노아정보6 = true;
-            DataBaseManager.멜리사정보6 = true;
-            DataBaseManager.에이든정보6 = true;
-            DataBaseManager.엘라정보6 = true;
-            DataBaseManager.동료기자정보6 = true;
-            DataBaseManager.노교수정보6 = true;
-            DataBaseManager.경찰친구정보6 = true;
-            DataBaseManager.술집친구정보6= true;
-            DataBaseManager.하수정비사무소소장정보6 = true;
-        }
     }
 
     public GameObject 위버튼;

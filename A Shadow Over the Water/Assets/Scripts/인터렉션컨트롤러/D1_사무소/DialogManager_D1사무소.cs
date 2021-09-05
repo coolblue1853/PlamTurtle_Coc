@@ -382,7 +382,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
                             }
                             if (t_ReplaceText[i + 3] == '아')
                             {
-                                DataBaseManager.아캄역정보1 = true;
+                                DataBaseManager.아컴역정보1 = true;
                                 정보창매니저.아캄역정보추가();
                             }
                             if (t_ReplaceText[i + 3] == '데')

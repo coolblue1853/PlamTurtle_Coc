@@ -90,7 +90,7 @@ public class 장소정보창 : MonoBehaviour
     }
     void 아컴역정보업데이트문()
     {
-        if (DataBaseManager.아캄역정보1 == true)
+        if (DataBaseManager.아컴역정보1 == true)
         {
             아컴역1.SetActive(true);
         }

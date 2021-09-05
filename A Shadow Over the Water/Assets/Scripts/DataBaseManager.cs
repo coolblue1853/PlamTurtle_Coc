@@ -327,6 +327,40 @@ public class DataBaseManager : MonoBehaviour
 
 
     //사건정보
+
+    public static int 행성대직렬현재페이지 = 1;
+    public static int 악몽현재페이지 = 1;
+    public static int 편집증현재페이지 = 1;
+    public static int 불면증현재페이지 = 1;
+    public static int 하수도괴담현재페이지 = 1;
+    public static int 실종된사람들현재페이지 = 1;
+    public static int 비릿한냄새현재페이지 = 1;
+    public static int 강의수질현재페이지 = 1;
+    public static int 섬뜩한눈현재페이지 = 1;
+    public static int 하수도노동자현재페이지 = 1;
+    public static int 급격한교체현재페이지 = 1;
+    
+
+    public static int 현재획득한사건정보가지수 = 0;
+
+    public static int 행성대직렬버튼순서 = -1;
+    public static int 악몽버튼순서 = -1;
+    public static int 편집증버튼순서 = -1;
+    public static int 불면증버튼순서 = -1;
+    public static int 하수도괴담버튼순서 = -1;
+    public static int 실종된사람들버튼순서 = -1;
+    public static int 비릿한냄새버튼순서 = -1;
+    public static int 강의수질버튼순서 = -1;
+    public static int 섬뜩한눈버튼순서 = -1;
+    public static int 하수도노동자버튼순서 = -1;
+    public static int 급격한교체버튼순서 = -1;
+
+
+
+
+
+
+
     public static bool 악몽정보1 = false;
     public static bool 악몽정보2 = false;
     public static bool 악몽정보3 = false;
@@ -394,7 +428,12 @@ public class DataBaseManager : MonoBehaviour
     public static bool 섬뜩한눈정보5 = false;
     public static bool 섬뜩한눈정보6 = false;
 
-
+    public static bool 하수도노동자정보1 = false;
+    public static bool 하수도노동자정보2 = false;
+    public static bool 하수도노동자정보3 = false;
+    public static bool 하수도노동자정보4 = false;
+    public static bool 하수도노동자정보5 = false;
+    public static bool 하수도노동자정보6 = false;
 
     public static bool 급격한교체정보1 = false;
     public static bool 급격한교체정보2 = false;
@@ -406,10 +445,45 @@ public class DataBaseManager : MonoBehaviour
 
 
     //장소정보
+    public static int 탐정사무소현재페이지 = 1;
+    public static int 병원현재페이지 = 1;
+    public static int 신문사현재페이지 = 1;
+    public static int 의뢰자의집현재페이지 = 1;
+    public static int 아컴역현재페이지 = 1;
+    public static int 식당현재페이지 = 1;
+    public static int 대학현재페이지 = 1;
+    public static int 강가현재페이지 = 1;
+    public static int 술집현재페이지 = 1;
+    public static int 빈민가현재페이지 = 1;
+    public static int 경찰서현재페이지 = 1;
+    public static int 총포상현재페이지 = 1;
+    public static int 하수정비사무소현재페이지 = 1;
+
+
+    public static int 현재획득한장소정보가지수 = 0;
+
+    public static int 탐정사무소버튼순서 = -1;
+    public static int 병원버튼순서 = -1;
+    public static int 신문사버튼순서 = -1;
+    public static int 의뢰자의집버튼순서 = -1;
+    public static int 아컴역버튼순서 = -1;
+    public static int 식당버튼순서 = -1;
+    public static int 대학버튼순서 = -1;
+    public static int 강가버튼순서 = -1;
+    public static int 술집버튼순서 = -1;
+    public static int 빈민가버튼순서 = -1;
+    public static int 경찰서버튼순서 = -1;
+    public static int 총포상버튼순서 = -1;
+    public static int 하수정비사무소버튼순서 = -1;
+
+
+
     public static bool 탐정사무소정보1 = false;
     public static bool 탐정사무소정보2 = false;
     public static bool 탐정사무소정보3 = false;
     public static bool 탐정사무소정보4 = false;
+    public static bool 탐정사무소정보5 = false;
+    public static bool 탐정사무소정보6 = false;
 
     public static bool 병원정보1 = false;
     public static bool 병원정보2 = false;
@@ -433,12 +507,12 @@ public class DataBaseManager : MonoBehaviour
     public static bool 의뢰자의집정보6 = false;
 
 
-    public static bool 아캄역정보1 = false;
-    public static bool 아캄역정보2 = false;
-    public static bool 아캄역정보3 = false;
-    public static bool 아캄역정보4 = false;
-    public static bool 아캄역정보5 = false;
-
+    public static bool 아컴역정보1 = false;
+    public static bool 아컴역정보2 = false;
+    public static bool 아컴역정보3 = false;
+    public static bool 아컴역정보4 = false;
+    public static bool 아컴역정보5 = false;
+    public static bool 아컴역정보6 = false;
 
 
     public static bool 식당정보1 = false;
@@ -486,6 +560,12 @@ public class DataBaseManager : MonoBehaviour
     public static bool 경찰서정보5 = false;
     public static bool 경찰서정보6 = false;
 
+    public static bool 총포상정보1 = false;
+    public static bool 총포상정보2 = false;
+    public static bool 총포상정보3 = false;
+    public static bool 총포상정보4 = false;
+    public static bool 총포상정보5 = false;
+    public static bool 총포상정보6 = false;
 
     public static bool 하수정비사무소정보1 = false;
     public static bool 하수정비사무소정보2 = false;

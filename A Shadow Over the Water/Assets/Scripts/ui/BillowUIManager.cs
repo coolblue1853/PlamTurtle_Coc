@@ -187,7 +187,7 @@ public class BillowUIManager : MonoBehaviour
             정신력텍스트2.text = "정신력 : " + DataBaseManager.정신력.ToString();
             체략텍스트2.text = "체력 : " + DataBaseManager.체력.ToString();
             스트래스내성텍스트.text = "스트래스 내성 : " + DataBaseManager.스트레스게이지.ToString();
-            인물정보창.상태창_보유기술_반영하기();
+
             Time.timeScale = 0;
             상태창s.SetActive(true);
             상태창켜짐 = true;
@@ -300,9 +300,7 @@ public class BillowUIManager : MonoBehaviour
 
 
     }
-    public 사건정보창 사건정보초기화;
-    public 인물정보창 인물정보창초기화;
-    public 장소정보창 장소정보창초기화;
+
 
 
     public void 정보창켜기()
@@ -310,9 +308,7 @@ public class BillowUIManager : MonoBehaviour
         if (대화창활성화여부.activeSelf == false)
         {
 
-            사건정보초기화.사건정보초기화();
-            인물정보창초기화.인물정보초기화();
-            장소정보창초기화.장소정보창초기화();
+
 
 
             DataBaseManager.옵션창여부 = true;
@@ -438,299 +434,14 @@ public class BillowUIManager : MonoBehaviour
             }
 
         }
-        // 숫자 1234 로 인물창 조정.
-        if(정보창켜짐 == true)
-        {
-            if (인물창.activeSelf == true)
-            {
-                정보창스크롤속도조정(노아오브젝트, 노아렉트, 노아scrolrect);
-                정보창스크롤속도조정(멜리사오브젝트, 멜리사렉트, 멜리사scrolrect);
-                정보창스크롤속도조정(엘라오브젝트, 엘라사렉트, 엘라scrolrect);
-                정보창스크롤속도조정(에이든오브젝트, 에이든사렉트, 에이든scrolrect);
-                if (Input.GetKeyDown(KeyCode.Alpha1))
-                {
-                    번호에맞는인물창확인(1);
-                    인물사건장소스크롤랙트원위치();
 
-                }
-                if (Input.GetKeyDown(KeyCode.Alpha2))
-                {
-                    번호에맞는인물창확인(2);
-                    인물사건장소스크롤랙트원위치();
-
-
-                }
-                if (Input.GetKeyDown(KeyCode.Alpha3))
-                {
-                    번호에맞는인물창확인(3);
-                    인물사건장소스크롤랙트원위치();
-
-                }
-                if (Input.GetKeyDown(KeyCode.Alpha4))
-                {
-                    번호에맞는인물창확인(4);
-                    인물사건장소스크롤랙트원위치();
-
-                }
-
-
-            }
-            if (사건창.activeSelf == true)
-            {
-                정보창스크롤속도조정(악몽오브젝트, 악몽렉트, 악몽scrolrect);
-                정보창스크롤속도조정(행성대직렬오브젝트, 행성대직렬렉트, 행성대직렬scrolrect);
-                정보창스크롤속도조정(편집증오브젝트, 편집증렉트, 편집증scrolrect);
-                정보창스크롤속도조정(에이든오브젝트, 에이든사렉트, 에이든scrolrect);
-                if (Input.GetKeyDown(KeyCode.Alpha1))
-                {
-                    번호에맞는사건창확인(1);
-                    인물사건장소스크롤랙트원위치();
-
-                }
-                if (Input.GetKeyDown(KeyCode.Alpha2))
-                {
-                    번호에맞는사건창확인(2);
-                    인물사건장소스크롤랙트원위치();
-
-
-                }
-                if (Input.GetKeyDown(KeyCode.Alpha3))
-                {
-                    번호에맞는사건창확인(3);
-                    인물사건장소스크롤랙트원위치();
-
-                }
-                if (Input.GetKeyDown(KeyCode.Alpha4))
-                {
-                    번호에맞는사건창확인(4);
-                    인물사건장소스크롤랙트원위치();
-
-                }
-
-
-            }
-
-            if (장소창.activeSelf == true)
-            {
-                정보창스크롤속도조정(탐정사무소오브젝트, 탐정사무소렉트, 탐정사무소scrolrect);
-                정보창스크롤속도조정(아캄시병원오브젝트, 아캄시병원렉트, 아캄시병원scrolrect);
-                정보창스크롤속도조정(신문사오브젝트, 신문사렉트, 신문사scrolrect);
-                정보창스크롤속도조정(의뢰자의집오브젝트, 의뢰자의집렉트, 의뢰자의집scrolrect);
-                if (Input.GetKeyDown(KeyCode.Alpha1))
-                {
-                    번호에맞는장소창확인(1);
-                    인물사건장소스크롤랙트원위치();
-
-                }
-                if (Input.GetKeyDown(KeyCode.Alpha2))
-                {
-                    번호에맞는장소창확인(2);
-                    인물사건장소스크롤랙트원위치();
-
-
-                }
-                if (Input.GetKeyDown(KeyCode.Alpha3))
-                {
-                    번호에맞는장소창확인(3);
-                    인물사건장소스크롤랙트원위치();
-
-                }
-                if (Input.GetKeyDown(KeyCode.Alpha4))
-                {
-                    번호에맞는장소창확인(4);
-                    인물사건장소스크롤랙트원위치();
-
-                }
-
-
-            }
-        }
+     
+  
     }
 
 
     
 
-    void 번호에맞는인물창확인(int num)
-    {
-
-        if (인물창.transform.GetChild(num).name == "노아")
-        {
-            인물사건장소스크롤랙트원위치();
-            인물정보창.노아정보표기();
-        }
-        if (인물창.transform.GetChild(num).name == "멜리사")
-        {
-            인물사건장소스크롤랙트원위치();
-            인물정보창.멜리사정보표기();
-        }
-        if (인물창.transform.GetChild(num).name == "엘라트리스")
-        {
-            인물사건장소스크롤랙트원위치();
-            인물정보창.엘라트리스정보표기();
-        }
-        if (인물창.transform.GetChild(num).name == "에이든트리스")
-        {
-            인물사건장소스크롤랙트원위치();
-            인물정보창.에이든트리스정보표기();
-        }
-    }
-    void 번호에맞는사건창확인(int num)
-    {
-
-        if (사건창.transform.GetChild(num).name == "악몽")
-        {
-            인물사건장소스크롤랙트원위치();
-            사건정보창.악몽정보표기();
-        }
-        if (사건창.transform.GetChild(num).name == "행성대직렬")
-        {
-            인물사건장소스크롤랙트원위치();
-            사건정보창.행성대직렬정보표기();
-        }
-        if (사건창.transform.GetChild(num).name == "편집증")
-        {
-            인물사건장소스크롤랙트원위치();
-            사건정보창.편집증정보표기();
-        }
-        if (사건창.transform.GetChild(num).name == "불면증")
-        {
-            인물사건장소스크롤랙트원위치();
-            //인물정보창.에이든트리스정보표기();
-        }
-    }
-    void 번호에맞는장소창확인(int num)
-    {
-
-        if (장소창.transform.GetChild(num).name == "탐정사무소")
-        {
-            인물사건장소스크롤랙트원위치();
-            장소정보창.탐정사무소정보표기();
-        }
-        if (장소창.transform.GetChild(num).name == "아캄시 병원")
-        {
-            인물사건장소스크롤랙트원위치();
-            장소정보창.병원정보표기();
-        }
-        if (장소창.transform.GetChild(num).name == "데일리뉴스 신문")
-        {
-            인물사건장소스크롤랙트원위치();
-            장소정보창.데일리뉴스신문사정보표기();
-        }
-        if (장소창.transform.GetChild(num).name == "의뢰자의 집")
-        {
-            인물사건장소스크롤랙트원위치();
-            장소정보창.의뢰자의집정보표기();
-        }
-    }
-
-    void 정보창스크롤속도조정(GameObject 오브젝트, RectTransform 렉트, ScrollRect 스크롤렉트)
-    {
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-
-            if (오브젝트.activeSelf == true)
-            {          
-
-
-
-
-                스크롤속도 = 1 / 렉트.rect.height;
-
-
-                for (int i = 1; i < 7; i++)
-                {
-
-                    스크롤렉트.normalizedPosition = 스크롤렉트.normalizedPosition + new Vector2(0, -스크롤속도);
-
-                }
-
-            }
-        }
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-
-            if (오브젝트.activeSelf == true)
-            {
-                스크롤속도 = 1 / 렉트.rect.height;
-                for (int i = 1; i < 7; i++)
-                {
-
-                    스크롤렉트.normalizedPosition = 스크롤렉트.normalizedPosition + new Vector2(0, +스크롤속도);
-
-                }
-
-            }
-
-
-
-        }
-    }
-       
-    float 스크롤속도 = 0.001f;
-    void 인물사건장소스크롤랙트원위치()
-    {
-        노아scrolrect.normalizedPosition = new Vector2(0, 1);
-        멜리사scrolrect.normalizedPosition = new Vector2(0, 1);
-        엘라scrolrect.normalizedPosition =  new Vector2(0, 1);
-        에이든scrolrect.normalizedPosition =  new Vector2(0, 1);
-
-        악몽scrolrect.normalizedPosition = new Vector2(0, 1);
-        행성대직렬scrolrect.normalizedPosition = new Vector2(0, 1);
-        편집증scrolrect.normalizedPosition =  new Vector2(0, 1);
-
-        
-        탐정사무소scrolrect.normalizedPosition =  new Vector2(0, 1);
-        신문사scrolrect.normalizedPosition =  new Vector2(0, 1);
-        아캄시병원scrolrect.normalizedPosition =  new Vector2(0, 1);
-        의뢰자의집scrolrect.normalizedPosition = new Vector2(0, 1);
-        
-    }
-    //스크롤랙트, 정보창 전용
-
-    public 인물정보창 인물정보창;
-    public 사건정보창 사건정보창;
-    public 장소정보창 장소정보창;
-
-    //인물관련 오브젝트,렉트,스크롤렉트
-    public ScrollRect 노아scrolrect;
-    public GameObject 노아오브젝트;
-    public RectTransform 노아렉트;
-    public ScrollRect 멜리사scrolrect;
-    public GameObject 멜리사오브젝트;
-    public RectTransform 멜리사렉트;
-    public ScrollRect 엘라scrolrect;
-    public GameObject 엘라오브젝트;
-    public RectTransform 엘라사렉트;
-    public ScrollRect 에이든scrolrect;
-    public GameObject 에이든오브젝트;
-    public RectTransform 에이든사렉트;
-
-
-    //사건관련 오브젝트,렉트,스크롤렉트
-    public GameObject 악몽오브젝트;
-    public GameObject 행성대직렬오브젝트;
-    public GameObject 편집증오브젝트;
-    public ScrollRect 악몽scrolrect;
-    public ScrollRect 행성대직렬scrolrect;
-    public ScrollRect 편집증scrolrect;
-    public RectTransform 악몽렉트;
-    public RectTransform 행성대직렬렉트;
-    public RectTransform 편집증렉트;
-
-    //장소관련 오브젝트,렉트,스크롤렉트
-
-    public GameObject 탐정사무소오브젝트;
-    public GameObject 아캄시병원오브젝트;
-    public GameObject 신문사오브젝트;
-    public GameObject 의뢰자의집오브젝트;
-    public ScrollRect 탐정사무소scrolrect;
-    public ScrollRect 아캄시병원scrolrect;
-    public ScrollRect 신문사scrolrect;
-    public ScrollRect 의뢰자의집scrolrect;
-    public RectTransform 탐정사무소렉트;
-    public RectTransform 아캄시병원렉트;
-    public RectTransform 신문사렉트;
-    public RectTransform 의뢰자의집렉트;
 
 
     // 인벤토리에 들어갈 템들은 여기에 넣어둬야함
