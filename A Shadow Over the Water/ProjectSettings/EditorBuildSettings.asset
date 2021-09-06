@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/game_intro_Scenes/SelectMode.unity
     guid: 4344a35024953d74ebd573415adba25f
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/game_intro_Scenes/SetCharacter.unity
     guid: e2db78ae19d53b349bb184f9e204bc4f
-  - enabled: 0
+  - enabled: 1
     path: "Assets/Scenes/Play_Scenes/1st_Morning/\uBCC4\uB3C4/\uB3C4\uB85C\uC804\uD22C.unity"
     guid: dd136f9864bc45d4c896dff008ea8893
   - enabled: 0
@@ -45,7 +45,7 @@ EditorBuildSettings:
   - enabled: 0
     path: "Assets/Scenes/\uC52C \uC0AC\uC774/01.unity"
     guid: 5a17029ed6ac7b641ad29bd4fc703726
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Play_Scenes/1st_Morning/1st_Mor_GUNSHOP.unity
     guid: 58f388d699a3e964f85c1a777b4e8099
   - enabled: 0

@@ -17,18 +17,11 @@ public class 사건정보창manager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            DataBaseManager.행성대직렬정보1 = true;
-            DataBaseManager.악몽정보1 = true;
-            DataBaseManager.편집증정보1 = true;
-            DataBaseManager.불면증정보1 = true;
-            DataBaseManager.하수도괴담정보1 = true;
-            DataBaseManager.실종된사람들정보1 = true;
-            DataBaseManager.비릿한냄새정보1 = true;
-            DataBaseManager.강의수질정보1 = true;
-            DataBaseManager.섬뜩한눈정보1 = true;
-            DataBaseManager.하수도노동자정보1 = true;
-            DataBaseManager.급격한교체정보1 = true;
-
+            DataBaseManager.행성대직렬정보1 = true; 
+            DataBaseManager.행성대직렬정보2 = true;
+            DataBaseManager.행성대직렬정보3 = true;
+            DataBaseManager.행성대직렬정보4 = true;
+            DataBaseManager.행성대직렬정보5 = true;
         }
 
 

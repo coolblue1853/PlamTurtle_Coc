@@ -63,7 +63,7 @@ public class battleUiManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        확인용스탯생성();
+        //확인용스탯생성();
         체력바관리();
 
         이성감소();

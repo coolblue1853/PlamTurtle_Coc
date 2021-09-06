@@ -86,7 +86,7 @@ public class BattleManager : MonoBehaviour
 
     public void 심해인전투시작()
     {
-        확인용스탯생성();
+        //확인용스탯생성();
 
         심해인등장();
 
