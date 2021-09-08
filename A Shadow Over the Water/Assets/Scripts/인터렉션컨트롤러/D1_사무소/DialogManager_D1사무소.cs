@@ -315,7 +315,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
         string t_ReplaceText = dialogs[lineCount].contexts[contextCount];
 
 
-
+        //t_ReplaceText = t_ReplaceText.Replace(" ", " ");  //자간늘리기
         t_ReplaceText = t_ReplaceText.Replace("^", ",");
         t_ReplaceText = t_ReplaceText.Replace('@', '"');
         t_ReplaceText = t_ReplaceText.Replace("\\n", "\n");
@@ -336,8 +336,6 @@ public class DialogManager_D1사무소 : MonoBehaviour
             switch (t_ReplaceText[i])
             {
                 case 'ⓦ': t_white = true; t_yellow = false; t_red = false; t_green = false; t_blue = false; t_ignore = true; break;
-
-
                 case 'ⓨ': t_white = false; t_yellow = true; t_red = false; t_green = false; t_blue = false; t_ignore = true; break;
                 case 'ⓡ': t_white = false; t_yellow = false; t_red = true; t_green = false; t_blue = false; t_ignore = true; 
                     if (t_ReplaceText[i + 1] == '(')

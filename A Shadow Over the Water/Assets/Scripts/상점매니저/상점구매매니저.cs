@@ -272,10 +272,11 @@ public class 상점구매매니저 : MonoBehaviour
 
     }
 
-
+    public 상점튜토리얼매니저 튜토;
 
     public void 상점창끄기()
     {
+        튜토.삼번버튼();
         상점창.SetActive(false);
     }
 

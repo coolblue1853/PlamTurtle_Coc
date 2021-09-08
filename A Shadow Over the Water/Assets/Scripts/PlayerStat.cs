@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerStat : MonoBehaviour
 {
 
-
+    public setChar튜토리얼매니저 튜토리얼매니저;
 
     // Start is called before the first frame update
 
@@ -295,7 +295,7 @@ public class PlayerStat : MonoBehaviour
 
 
 
-
+        튜토리얼매니저.재생성_스킬설정();
 
     }
 
@@ -1936,6 +1936,7 @@ public class PlayerStat : MonoBehaviour
 
         if (힘스킬배분숫자 ==0 && 지능스킬배분숫자 ==0 && 민첩스킬배분숫자 == 0)
         {
+            튜토리얼매니저.마지막코루틴설정();
             게임시작버튼.SetActive(true);
         }
         else

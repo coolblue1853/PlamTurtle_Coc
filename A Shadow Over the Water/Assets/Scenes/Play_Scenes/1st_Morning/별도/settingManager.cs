@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 public class settingManager : MonoBehaviour
 {
   
@@ -47,11 +48,27 @@ public class settingManager : MonoBehaviour
     public GameObject 설정창;
     public void 옵션창켜기()
     {
-        DataBaseManager.옵션창여부 = true;
-        Time.timeScale = 0;
+        if (DataBaseManager.옵션창여부 == false)
+        {
+            DataBaseManager.옵션창여부 = true;
+            Time.timeScale = 0;
             옵션창.SetActive(true);
 
+        }
 
+
+
+
+    }
+    public void 처음으로버튼()
+    {
+        설정창끄기();
+        SceneManager.LoadScene("SetCharacter");
+    }
+    public void 게임종료버튼()
+    {
+        설정창끄기();
+        Application.Quit();
     }
     public void 설정창켜기()
     {
@@ -166,7 +183,13 @@ public class settingManager : MonoBehaviour
     void Update()
     {
 
-
+        if(DataBaseManager.옵션창여부 == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                설정창끄기();
+            }
+        }
         
         
         if (전체화면 == true)

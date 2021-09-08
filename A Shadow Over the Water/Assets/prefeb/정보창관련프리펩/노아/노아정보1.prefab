@@ -66,7 +66,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c24766d08e7474a4796ca561d27051bb, type: 3}
-    m_FontSize: 24
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -77,6 +77,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "<\uB178\uC5441>\n\uC544\uCEF4\uD0D0\uC815\uC0AC\uBB34\uC18C\uC758 \uC18C\uC7A5.
-    \uD604\uC7AC \uBA5C\uB9AC\uC0AC\uC758 \uD6C4\uACAC\uC778\uC73C\uB85C\uC368 \uBCF4\uD638\uC911\uC5D0
-    \uC788\uB2E4."
+  m_Text: 

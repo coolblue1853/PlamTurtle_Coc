@@ -47,6 +47,7 @@ public class Mins : MonoBehaviour
 
 	public Text 간단표기제목;
 	public Text 간단표기내용;
+	public 마이름튜토리얼매니저 튜토리얼매니저;
 
 
 	// /////////////////////////////////////////////// 주인공과의 접촉물 출현에 따른 반응
@@ -59,7 +60,7 @@ public class Mins : MonoBehaviour
 			신문상호작용가능여부 = true;
 			간단표기제목.text = "신문";
 			간단표기내용.text = "오늘자로 발간된 신문이다.";
-
+			튜토리얼매니저.오번버튼();
 		}
 
 		if (collision.transform.tag == "cameraCheck")

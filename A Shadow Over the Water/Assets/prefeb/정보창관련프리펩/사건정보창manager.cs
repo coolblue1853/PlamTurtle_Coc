@@ -403,7 +403,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<행성대직렬 정보1>";
             clone.transform.SetParent(행성대직렬정보컨텐츠.transform);
-
+            clone.transform.localScale = new Vector3(1, 1, 1);
 
         }
         if (DataBaseManager.행성대직렬정보2 == true && 행성대직렬정보2획득 == false)
@@ -412,7 +412,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<행성대직렬 정보2>";
             clone.transform.SetParent(행성대직렬정보컨텐츠.transform);
-
+            clone.transform.localScale = new Vector3(1, 1, 1);
 
         }
         if (DataBaseManager.행성대직렬정보3 == true && 행성대직렬정보3획득 == false)
@@ -421,7 +421,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<행성대직렬 정보3>";
             clone.transform.SetParent(행성대직렬정보컨텐츠.transform);
-
+            clone.transform.localScale = new Vector3(1, 1, 1);
 
         }
         if (DataBaseManager.행성대직렬정보4 == true && 행성대직렬정보4획득 == false)
@@ -430,7 +430,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<행성대직렬 정보4>";
             clone.transform.SetParent(행성대직렬정보컨텐츠.transform);
-
+            clone.transform.localScale = new Vector3(1, 1, 1);
 
         }
         if (DataBaseManager.행성대직렬정보5 == true && 행성대직렬정보5획득 == false)
@@ -439,7 +439,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<행성대직렬 정보5>";
             clone.transform.SetParent(행성대직렬정보컨텐츠.transform);
-
+            clone.transform.localScale = new Vector3(1, 1, 1);
 
         }
         if (DataBaseManager.행성대직렬정보6 == true && 행성대직렬정보6획득 == false)
@@ -448,7 +448,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<행성대직렬 정보6>";
             clone.transform.SetParent(행성대직렬정보컨텐츠.transform);
-
+            clone.transform.localScale = new Vector3(1, 1, 1);
 
         }
 
@@ -535,6 +535,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<악몽 정보1>";
             clone.transform.SetParent(악몽정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.악몽정보2 == true && 악몽정보2획득 == false)
         {
@@ -542,6 +543,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<악몽 정보2>";
             clone.transform.SetParent(악몽정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.악몽정보3 == true && 악몽정보3획득 == false)
         {
@@ -549,6 +551,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<악몽 정보3>";
             clone.transform.SetParent(악몽정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.악몽정보4 == true && 악몽정보4획득 == false)
         {
@@ -556,6 +559,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<악몽 정보4>";
             clone.transform.SetParent(악몽정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.악몽정보5 == true && 악몽정보5획득 == false)
         {
@@ -563,6 +567,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<악몽 정보5>";
             clone.transform.SetParent(악몽정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.악몽정보6 == true && 악몽정보6획득 == false)
         {
@@ -570,6 +575,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<악몽 정보6>";
             clone.transform.SetParent(악몽정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
 
 
@@ -658,6 +664,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<편집증 정보1>";
             clone.transform.SetParent(편집증정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.편집증정보2 == true && 편집증정보2획득 == false)
         {
@@ -665,6 +672,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<편집증 정보2>";
             clone.transform.SetParent(편집증정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.편집증정보3 == true && 편집증정보3획득 == false)
         {
@@ -672,6 +680,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<편집증 정보3>";
             clone.transform.SetParent(편집증정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.편집증정보4 == true && 편집증정보4획득 == false)
         {
@@ -679,6 +688,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<편집증 정보4>";
             clone.transform.SetParent(편집증정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.편집증정보5 == true && 편집증정보5획득 == false)
         {
@@ -686,6 +696,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<편집증 정보5>";
             clone.transform.SetParent(편집증정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.편집증정보6 == true && 편집증정보6획득 == false)
         {
@@ -693,6 +704,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<편집증 정보6>";
             clone.transform.SetParent(편집증정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
 
 
@@ -780,6 +792,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<불면증 정보1>";
             clone.transform.SetParent(불면증정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
 
 
         }
@@ -789,6 +802,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<불면증 정보2>";
             clone.transform.SetParent(불면증정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
 
 
         }
@@ -798,6 +812,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<불면증 정보3>";
             clone.transform.SetParent(불면증정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
 
 
         }
@@ -807,6 +822,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<불면증 정보4>";
             clone.transform.SetParent(불면증정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
 
 
         }
@@ -816,6 +832,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<불면증 정보5>";
             clone.transform.SetParent(불면증정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
 
 
         }
@@ -825,6 +842,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<불면증 정보6>";
             clone.transform.SetParent(불면증정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
 
 
         }
@@ -909,6 +927,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<하수도괴담 정보1>";
             clone.transform.SetParent(하수도괴담정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.하수도괴담정보2 == true && 하수도괴담정보2획득 == false)
         {
@@ -916,6 +935,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<하수도괴담 정보2>";
             clone.transform.SetParent(하수도괴담정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.하수도괴담정보3 == true && 하수도괴담정보3획득 == false)
         {
@@ -923,27 +943,31 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<하수도괴담 정보3>";
             clone.transform.SetParent(하수도괴담정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.하수도괴담정보4 == true && 하수도괴담정보4획득 == false)
         {
             하수도괴담정보4획득 = true;
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<하수도괴담 정보4>";
-            clone.transform.SetParent(하수도괴담정보컨텐츠.transform);
+            clone.transform.SetParent(하수도괴담정보컨텐츠.transform); 
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.하수도괴담정보5 == true && 하수도괴담정보5획득 == false)
         {
             하수도괴담정보5획득 = true;
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<하수도괴담 정보5>";
-            clone.transform.SetParent(하수도괴담정보컨텐츠.transform);
+            clone.transform.SetParent(하수도괴담정보컨텐츠.transform); 
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.하수도괴담정보6 == true && 하수도괴담정보6획득 == false)
         {
             하수도괴담정보6획득 = true;
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<하수도괴담 정보6>";
-            clone.transform.SetParent(하수도괴담정보컨텐츠.transform);
+            clone.transform.SetParent(하수도괴담정보컨텐츠.transform); 
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
 
 
@@ -1027,6 +1051,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<실종된사람들 정보1>";
             clone.transform.SetParent(실종된사람들정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.실종된사람들정보2 == true && 실종된사람들정보2획득 == false)
         {
@@ -1034,6 +1059,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<실종된사람들 정보2>";
             clone.transform.SetParent(실종된사람들정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.실종된사람들정보3 == true && 실종된사람들정보3획득 == false)
         {
@@ -1041,6 +1067,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<실종된사람들 정보3>";
             clone.transform.SetParent(실종된사람들정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.실종된사람들정보4 == true && 실종된사람들정보4획득 == false)
         {
@@ -1048,6 +1075,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<실종된사람들 정보4>";
             clone.transform.SetParent(실종된사람들정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.실종된사람들정보5 == true && 실종된사람들정보5획득 == false)
         {
@@ -1055,6 +1083,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<실종된사람들 정보5>";
             clone.transform.SetParent(실종된사람들정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.실종된사람들정보6 == true && 실종된사람들정보6획득 == false)
         {
@@ -1062,6 +1091,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<실종된사람들 정보6>";
             clone.transform.SetParent(실종된사람들정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
 
         정보획득량 = 실종된사람들정보컨텐츠.transform.childCount;
@@ -1144,6 +1174,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<비릿한냄새 정보1>";
             clone.transform.SetParent(비릿한냄새정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.비릿한냄새정보2 == true && 비릿한냄새정보2획득 == false)
         {
@@ -1151,6 +1182,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<비릿한냄새 정보2>";
             clone.transform.SetParent(비릿한냄새정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.비릿한냄새정보3 == true && 비릿한냄새정보3획득 == false)
         {
@@ -1158,6 +1190,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<비릿한냄새 정보3>";
             clone.transform.SetParent(비릿한냄새정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.비릿한냄새정보4 == true && 비릿한냄새정보4획득 == false)
         {
@@ -1165,6 +1198,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<비릿한냄새 정보4>";
             clone.transform.SetParent(비릿한냄새정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.비릿한냄새정보5 == true && 비릿한냄새정보5획득 == false)
         {
@@ -1172,6 +1206,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<비릿한냄새 정보5>";
             clone.transform.SetParent(비릿한냄새정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.비릿한냄새정보6 == true && 비릿한냄새정보6획득 == false)
         {
@@ -1179,6 +1214,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<비릿한냄새 정보6>";
             clone.transform.SetParent(비릿한냄새정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
 
 
@@ -1262,6 +1298,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<강의수질 정보1>";
             clone.transform.SetParent(강의수질정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.강의수질정보2 == true && 강의수질정보2획득 == false)
         {
@@ -1269,6 +1306,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<강의수질 정보2>";
             clone.transform.SetParent(강의수질정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.강의수질정보3 == true && 강의수질정보3획득 == false)
         {
@@ -1276,6 +1314,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<강의수질 정보3>";
             clone.transform.SetParent(강의수질정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.강의수질정보4 == true && 강의수질정보4획득 == false)
         {
@@ -1283,6 +1322,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<강의수질 정보4>";
             clone.transform.SetParent(강의수질정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.강의수질정보5 == true && 강의수질정보5획득 == false)
         {
@@ -1290,6 +1330,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<강의수질 정보5>";
             clone.transform.SetParent(강의수질정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.강의수질정보6 == true && 강의수질정보6획득 == false)
         {
@@ -1297,6 +1338,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<강의수질 정보6>";
             clone.transform.SetParent(강의수질정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
 
 
@@ -1382,6 +1424,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<섬뜩한눈 정보1>";
             clone.transform.SetParent(섬뜩한눈정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.섬뜩한눈정보2 == true && 섬뜩한눈정보2획득 == false)
         {
@@ -1389,6 +1432,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<섬뜩한눈 정보2>";
             clone.transform.SetParent(섬뜩한눈정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.섬뜩한눈정보3 == true && 섬뜩한눈정보3획득 == false)
         {
@@ -1396,6 +1440,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<섬뜩한눈 정보3>";
             clone.transform.SetParent(섬뜩한눈정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.섬뜩한눈정보4 == true && 섬뜩한눈정보4획득 == false)
         {
@@ -1403,6 +1448,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<섬뜩한눈 정보4>";
             clone.transform.SetParent(섬뜩한눈정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.섬뜩한눈정보5 == true && 섬뜩한눈정보5획득 == false)
         {
@@ -1410,6 +1456,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<섬뜩한눈 정보5>";
             clone.transform.SetParent(섬뜩한눈정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.섬뜩한눈정보6 == true && 섬뜩한눈정보6획득 == false)
         {
@@ -1417,7 +1464,9 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<섬뜩한눈 정보6>";
             clone.transform.SetParent(섬뜩한눈정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
+
 
         정보획득량 = 섬뜩한눈정보컨텐츠.transform.childCount;
         초기화함수(섬뜩한눈정보컨텐츠);
@@ -1499,6 +1548,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<하수도노동자 정보1>";
             clone.transform.SetParent(하수도노동자정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.하수도노동자정보2 == true && 하수도노동자정보2획득 == false)
         {
@@ -1506,6 +1556,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<하수도노동자 정보2>";
             clone.transform.SetParent(하수도노동자정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.하수도노동자정보3 == true && 하수도노동자정보3획득 == false)
         {
@@ -1513,6 +1564,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<하수도노동자 정보3>";
             clone.transform.SetParent(하수도노동자정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.하수도노동자정보4 == true && 하수도노동자정보4획득 == false)
         {
@@ -1520,6 +1572,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<하수도노동자 정보4>";
             clone.transform.SetParent(하수도노동자정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.하수도노동자정보5 == true && 하수도노동자정보5획득 == false)
         {
@@ -1527,6 +1580,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<하수도노동자 정보5>";
             clone.transform.SetParent(하수도노동자정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.하수도노동자정보6 == true && 하수도노동자정보6획득 == false)
         {
@@ -1534,6 +1588,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<하수도노동자 정보6>";
             clone.transform.SetParent(하수도노동자정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
 
         정보획득량 = 하수도노동자정보컨텐츠.transform.childCount;
@@ -1616,6 +1671,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<급격한교체 정보1>";
             clone.transform.SetParent(급격한교체정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.급격한교체정보2 == true && 급격한교체정보2획득 == false)
         {
@@ -1623,6 +1679,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<급격한교체 정보2>";
             clone.transform.SetParent(급격한교체정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.급격한교체정보3 == true && 급격한교체정보3획득 == false)
         {
@@ -1630,6 +1687,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<급격한교체 정보3>";
             clone.transform.SetParent(급격한교체정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.급격한교체정보4 == true && 급격한교체정보4획득 == false)
         {
@@ -1637,6 +1695,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<급격한교체 정보4>";
             clone.transform.SetParent(급격한교체정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.급격한교체정보5 == true && 급격한교체정보5획득 == false)
         {
@@ -1644,6 +1703,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<급격한교체 정보5>";
             clone.transform.SetParent(급격한교체정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
         if (DataBaseManager.급격한교체정보6 == true && 급격한교체정보6획득 == false)
         {
@@ -1651,6 +1711,7 @@ public class 사건정보창manager : MonoBehaviour
             var clone = Instantiate(정보프리팹);
             clone.GetComponent<Text>().text = "<급격한교체 정보6>";
             clone.transform.SetParent(급격한교체정보컨텐츠.transform);
+            clone.transform.localScale = new Vector3(1, 1, 1);
         }
 
 

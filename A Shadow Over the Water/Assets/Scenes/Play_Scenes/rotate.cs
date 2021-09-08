@@ -30,10 +30,10 @@ public class rotate : MonoBehaviour
         {
             체커 = true;
 
-            yield return new WaitForSecondsRealtime(8f);
+            yield return new WaitForSecondsRealtime(3f);
             아침글자.SetActive(false);
             점심글자.SetActive(true);
-            yield return new WaitForSecondsRealtime(7f);
+            yield return new WaitForSecondsRealtime(4f);
             StartCoroutine(장면전환());
 
         }

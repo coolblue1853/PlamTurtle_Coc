@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class 아침사무소연출 : MonoBehaviour
 {    //연출시 못움직이게하는
-
+    public 마이름튜토리얼매니저 튜토리얼매니저;
+    public GameObject 대화창;
     public Mins 주인공;
     public GameObject 주인공캐릭터오브젝트;
     public SpriteRenderer 주인공캐릭터스프라이트랜더러;
@@ -120,7 +121,7 @@ public class 아침사무소연출 : MonoBehaviour
         DataBaseManager.연출중움직임제한 = false;
 
     }
-
+    bool 연출마무리 = false;
     public void 연출끝()
     {
         주인공의자신문무.SetActive(false);
@@ -128,6 +129,10 @@ public class 아침사무소연출 : MonoBehaviour
 
         신문콜라이더없음.SetActive(false);
         신문콜라이더있음.SetActive(true);
+
+
+        연출마무리 = true;
+
     }
 
 
@@ -160,6 +165,10 @@ public class 아침사무소연출 : MonoBehaviour
             의뢰인나감();
         }
 
+        if(연출마무리 == true && 대화창.activeSelf == false)
+        {
+            튜토리얼매니저.이번버튼();
+        }
 
 
     }

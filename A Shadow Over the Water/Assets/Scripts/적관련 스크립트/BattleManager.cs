@@ -6768,6 +6768,7 @@ public class BattleManager : MonoBehaviour
     void Start()
     {
 
+
         시작시총알미리장전();
 
 
@@ -6785,9 +6786,16 @@ public class BattleManager : MonoBehaviour
     public GameObject 적플로팅위치;
     public GameObject 내플로팅위치;
 
+    bool ones = false;
     void Update()
     {
+        if ((심해인1.체력 <= 0 || DataBaseManager.현재체력 == 0) && ones == false)
+        {
+            ones = true;
+            StartCoroutine(페이드아웃코루틴());
+        }
 
+        
 
         누적데미지_심해인1.text = "누적 : " + (심해인1.전체체력 - 심해인1.체력);
         누적데미지_심해인2.text = "누적 : " + (심해인2.전체체력 - 심해인2.체력);
@@ -6809,6 +6817,31 @@ public class BattleManager : MonoBehaviour
         현재가누구턴인지확인();
     }
 
+    public GameObject 페이드이미지오브젝트;
+    public Image 페이드이미지;
+
+    IEnumerator 페이드아웃코루틴()
+    {
+        yield return new WaitForSeconds(3f);
+        float 페이드카운트 = 0;
+        페이드이미지오브젝트.SetActive(true);
+
+        while (페이드카운트 < 1)
+        {
+            페이드카운트 += 0.01f;
+            yield return new WaitForSeconds(0.01f);
+            페이드이미지.color = new Color(0, 0, 0, 페이드카운트);
+        }
+        메인으로버튼.SetActive(true);
+
+    }
+
+    public GameObject 메인으로버튼;
+
+    public void 메인으로버튼함수()
+    {
+        SceneManager.LoadScene("SetCharacter");
+    }
 
     public IEnumerator 룰렉동작시키기()
     {
