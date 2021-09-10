@@ -11,6 +11,8 @@ public class battleSoundManager : MonoBehaviour
 
     public Slider sfx볼륨;
     public AudioSource effectBgm;
+
+    public AudioSource 오디오소스_기어;
     public AudioClip 근접공격효과음;
     public void 근접공격효과음함수()
     {
@@ -51,11 +53,14 @@ public class battleSoundManager : MonoBehaviour
 
     public void 기계돌아가는효과음함수()
     {
-        효과음창.PlayOneShot(기계돌아가는소리효과음);
+        오디오소스_기어.Play();
     }
+
+
+
     public void 효과음멈춤()
     {
-        효과음창.Stop();
+        오디오소스_기어.Stop();
     }
 
 
@@ -147,6 +152,7 @@ public class battleSoundManager : MonoBehaviour
     {
         mainBgm.volume = DataBaseManager.음악소리크기;
         effectBgm.volume = DataBaseManager.이펙트소리크기;
+        오디오소스_기어.volume = DataBaseManager.이펙트소리크기;
     }
 
     public void 슬라이드bgm관리()
@@ -160,6 +166,7 @@ public class battleSoundManager : MonoBehaviour
 
         DataBaseManager.이펙트소리크기 = sfx볼륨.value;
 
+
     }
 
     private void Awake()
@@ -171,6 +178,7 @@ public class battleSoundManager : MonoBehaviour
     {
         bgm볼륨.value = DataBaseManager.음악소리크기;
         sfx볼륨.value = DataBaseManager.이펙트소리크기;
+
     }
 
     // Update is called once per frame

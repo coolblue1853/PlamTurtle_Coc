@@ -78,10 +78,20 @@ public class DialogManager_D1사무소 : MonoBehaviour
           
         텍스트체커();
 
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            if(z키로넘기기여부2 == true)
+            {
+                z키로넘기기여부 = true;
+            }
 
+            z키로넘기기여부2 = true;
+        }
 
 
     }
+
+    bool z키로넘기기여부2= true;
 
     void 텍스트체커()
     {
@@ -98,8 +108,11 @@ public class DialogManager_D1사무소 : MonoBehaviour
         {
             if (isNext)
             {
+
                 if (Input.GetKeyDown(KeyCode.Z) && isSelectButton == false)
                 {
+                    z키로넘기기여부2 = false;
+                    z키로넘기기여부 = false;
                     isNext = false;
                     txt_Dialog.text = "";
                     if (++contextCount < dialogs[lineCount].contexts.Length)
@@ -306,6 +319,18 @@ public class DialogManager_D1사무소 : MonoBehaviour
 
     public 정보창Manager 정보창매니저;
 
+
+
+    public void TypeWriter_강제()
+    {
+        SettingUI(true);
+        string t_ReplaceText = dialogs[lineCount].contexts[contextCount];
+        t_ReplaceText = t_ReplaceText.Replace("^", ",");
+        txt_Dialog.text = t_ReplaceText;
+        isNext = true;
+    }
+
+    bool z키로넘기기여부;
     IEnumerator TypeWriter()
     {
         SettingUI(true);
@@ -631,10 +656,16 @@ public class DialogManager_D1사무소 : MonoBehaviour
             }
             t_ignore = false;
 
-            yield return new WaitForSecondsRealtime(textDelay);
+
+            if(z키로넘기기여부 == false)
+            {
+                yield return new WaitForSecondsRealtime(textDelay);
+            }
+
         }
 
         isNext = true;
+        yield return null;
 
     }
     void SettingUI(bool P_flag)

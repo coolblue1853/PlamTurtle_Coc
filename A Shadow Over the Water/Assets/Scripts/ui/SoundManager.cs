@@ -16,8 +16,18 @@ public class SoundManager : MonoBehaviour
     public AudioSource 효과음창;
     public AudioSource 효과음창_sec;
 
+    public AudioSource 오디오소스_기어;
+    public void 기계돌아가는효과음함수()
+    {
+        오디오소스_기어.Play();
+    }
 
 
+
+    public void 효과음멈춤()
+    {
+        오디오소스_기어.Stop();
+    }
 
     bool 달리기효과음켜짐 = false;
 
@@ -27,10 +37,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip 기계돌아가는소리효과음;
 
 
-    public void 기계돌아가는효과음함수()
-    {
-        효과음창_sec.PlayOneShot(기계돌아가는소리효과음);
-    }
+
     public void 문열고닫기함수()
     {
         //효과음창.Play();
@@ -79,6 +86,7 @@ public class SoundManager : MonoBehaviour
     {
         mainBgm.volume = DataBaseManager.음악소리크기;
         effectBgm.volume = DataBaseManager.이펙트소리크기;
+        오디오소스_기어.volume = DataBaseManager.이펙트소리크기;
     }
 
     public void 슬라이드bgm관리()

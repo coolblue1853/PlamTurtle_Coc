@@ -16,6 +16,15 @@ public class 기능판정매니저 : MonoBehaviour
     public Text 사용기능;
     public Text 결과;
 
+    private void Update()
+    {
+        if (룰렛활성여부 == true && Input.GetMouseButtonDown(0))
+        {
+            전투클릭여부 = true;
+            배틀사운드매니저.효과음멈춤();
+        }
+    }
+
 
     public void 신문기능판정()
     {
@@ -47,7 +56,13 @@ public class 기능판정매니저 : MonoBehaviour
 
         StartCoroutine(룰렛작동());
 
-        yield return new WaitForSeconds(6f);
+        //yield return new WaitForSeconds(6f);
+       
+
+    }
+
+    IEnumerator 정보조사_1일차신문()
+    {
         배틀사운드매니저.찰칵효과음함수();
 
 
@@ -74,8 +89,8 @@ public class 기능판정매니저 : MonoBehaviour
             결과.text = "대실패";
 
         }
-       
-       
+
+
         yield return new WaitForSeconds(2f);
 
         판정창.SetActive(false);
@@ -110,7 +125,6 @@ public class 기능판정매니저 : MonoBehaviour
         }
 
 
-
     }
 
 
@@ -119,8 +133,6 @@ public class 기능판정매니저 : MonoBehaviour
 
 
 
-
-    
 
 
     public IEnumerator 룰렉동작시키기()
@@ -172,7 +184,8 @@ public class 기능판정매니저 : MonoBehaviour
 
 
 
-
+    bool 전투클릭여부;
+    bool 룰렛활성여부;
 
     public IEnumerator 룰렛끄기()
     {
@@ -182,121 +195,10 @@ public class 기능판정매니저 : MonoBehaviour
 
     public IEnumerator 룰렛작동()
     {
-
         배틀사운드매니저.기계돌아가는효과음함수();
-        for (int i = 0; i < 10; i++)
+        while (전투클릭여부 == false)
         {
-
-            랜덤일의자리 = Random.Range(0, 10);
-
-            일의자리.text = 랜덤일의자리.ToString();
-
-            yield return new WaitForSeconds(0.1f);
-
-        }
-        for (int i = 0; i < 20; i++)
-        {
-
-            랜덤일의자리 = Random.Range(1, 10);
-
-
-            랜덤십의몸통위치 = Random.Range(1, 10);
-
-
-            if (랜덤십의몸통위치 == 1)
-            {
-                //십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 1f, 십의자리몸통.transform.position.y - 0.5f);
-                //십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 1, 십의자리몸통.transform.position.y);
-                yield return new WaitForSeconds(0.025f);
-                //십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 1f, 십의자리몸통.transform.position.y + 0.5f);
-                //십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 1, 십의자리몸통.transform.position.y);
-            }
-            if (랜덤십의몸통위치 == 2)
-            {
-                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 0.5f, 일의자리몸통.transform.position.y - 0.5f);
-                //십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 1, 십의자리몸통.transform.position.y);
-                yield return new WaitForSeconds(0.025f);
-               //십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 1, 십의자리몸통.transform.position.y);
-                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 0.5f, 일의자리몸통.transform.position.y + 0.5f);
-
-            }
-            if (랜덤십의몸통위치 == 3)
-            {
-                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 0.5f, 일의자리몸통.transform.position.y + 0.5f);
-                //십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x, 십의자리몸통.transform.position.y - 1);
-                yield return new WaitForSeconds(0.025f);
-                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 0.5f, 일의자리몸통.transform.position.y - 0.5f);
-               // 십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x, 십의자리몸통.transform.position.y + 1);
-            }
-            if (랜덤십의몸통위치 == 4)
-            {
-                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 1, 일의자리몸통.transform.position.y - 0.5f);
-               // 십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x, 십의자리몸통.transform.position.y + 1);
-                yield return new WaitForSeconds(0.025f);
-                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 1, 일의자리몸통.transform.position.y + 0.5f);
-                //십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x, 십의자리몸통.transform.position.y - 1);
-            }
-            if (랜덤십의몸통위치 == 5)
-            {//
-               // 십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 1, 십의자리몸통.transform.position.y + 0.5f);
-                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 1, 일의자리몸통.transform.position.y + 0.5f);
-                yield return new WaitForSeconds(0.025f);
-                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 1, 일의자리몸통.transform.position.y - 0.5f);
-               // 십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 1, 십의자리몸통.transform.position.y - 0.5f);
-            }
-            if (랜덤십의몸통위치 == 6)
-            {
-               // 십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 1, 십의자리몸통.transform.position.y - 0.5f);
-                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x, 일의자리몸통.transform.position.y + 1);
-                yield return new WaitForSeconds(0.025f);
-                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x, 일의자리몸통.transform.position.y - 1);
-                //십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 1, 십의자리몸통.transform.position.y + 0.5f);
-            }
-            if (랜덤십의몸통위치 == 7)
-            {
-                //십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 0.5f, 십의자리몸통.transform.position.y + 0.5f);
-                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x, 일의자리몸통.transform.position.y - 1);
-                yield return new WaitForSeconds(0.025f);
-                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x, 일의자리몸통.transform.position.y + 1);
-               // 십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 0.5f, 십의자리몸통.transform.position.y - 0.5f);
-            }
-            if (랜덤십의몸통위치 == 8)
-            {
-               // 십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 0.5f, 십의자리몸통.transform.position.y - 0.5f);
-                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 1, 일의자리몸통.transform.position.y);
-                yield return new WaitForSeconds(0.025f);
-                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 1, 일의자리몸통.transform.position.y);
-             //   십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 0.5f, 십의자리몸통.transform.position.y + 0.5f);
-            }
-            if (랜덤십의몸통위치 == 9)
-            {
-                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 1, 일의자리몸통.transform.position.y);
-                //십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 1f, 십의자리몸통.transform.position.y - 0.5f);
-                yield return new WaitForSeconds(0.025f);
-                일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 1, 일의자리몸통.transform.position.y);
-                //십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 1f, 십의자리몸통.transform.position.y + 0.5f);
-            }
-
-
-
-
-
-
-
-
-           // 십의자리.text = 랜덤십의자리.ToString();
-            일의자리.text = 랜덤일의자리.ToString();
-
-
-
-
-
-
-            yield return new WaitForSeconds(0.025f);
-
-        }
-        for (int i = 0; i < 40; i++)
-        {
+            룰렛활성여부 = true;
             //랜덤십의자리 = Random.Range(0, 10);
             랜덤일의자리 = Random.Range(0, 10);
             랜덤십의몸통위치 = Random.Range(1, 10);
@@ -304,7 +206,7 @@ public class 기능판정매니저 : MonoBehaviour
             if (랜덤십의몸통위치 == 1)
             {
                 //십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 2f, 십의자리몸통.transform.position.y - 1f);
-               // 십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 2, 십의자리몸통.transform.position.y);
+                // 십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 2, 십의자리몸통.transform.position.y);
                 yield return new WaitForSeconds(0.005f);
                 //십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 2f, 십의자리몸통.transform.position.y + 1f);
                 //십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 2, 십의자리몸통.transform.position.y);
@@ -314,7 +216,7 @@ public class 기능판정매니저 : MonoBehaviour
                 일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 1f, 일의자리몸통.transform.position.y - 1f);
                 //십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 2, 십의자리몸통.transform.position.y);
                 yield return new WaitForSeconds(0.005f);
-               // 십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 2, 십의자리몸통.transform.position.y);
+                // 십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 2, 십의자리몸통.transform.position.y);
                 일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 1f, 일의자리몸통.transform.position.y + 1f);
 
             }
@@ -329,26 +231,26 @@ public class 기능판정매니저 : MonoBehaviour
             if (랜덤십의몸통위치 == 4)
             {
                 일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 2, 일의자리몸통.transform.position.y - 1);
-               // 십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x, 십의자리몸통.transform.position.y + 2);
+                // 십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x, 십의자리몸통.transform.position.y + 2);
                 yield return new WaitForSeconds(0.005f);
                 일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 2, 일의자리몸통.transform.position.y + 1);
                 //십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x, 십의자리몸통.transform.position.y - 2);
             }
             if (랜덤십의몸통위치 == 5)
             {
-               // 십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 2, 십의자리몸통.transform.position.y + 1);
+                // 십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 2, 십의자리몸통.transform.position.y + 1);
                 일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 2, 일의자리몸통.transform.position.y + 1);
                 yield return new WaitForSeconds(0.005f);
                 일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 2, 일의자리몸통.transform.position.y - 1);
-               // 십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 2, 십의자리몸통.transform.position.y - 1);
+                // 십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 2, 십의자리몸통.transform.position.y - 1);
             }
             if (랜덤십의몸통위치 == 6)
             {
-               // 십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 2, 십의자리몸통.transform.position.y - 1);
+                // 십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 2, 십의자리몸통.transform.position.y - 1);
                 일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x, 일의자리몸통.transform.position.y + 2);
                 yield return new WaitForSeconds(0.005f);
                 일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x, 일의자리몸통.transform.position.y - 2);
-               // 십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 2, 십의자리몸통.transform.position.y + 1);
+                // 십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 2, 십의자리몸통.transform.position.y + 1);
             }
             if (랜덤십의몸통위치 == 7)
             {
@@ -382,6 +284,7 @@ public class 기능판정매니저 : MonoBehaviour
             yield return new WaitForSeconds(0.005f);
 
         }
+
 
 
 
@@ -577,6 +480,11 @@ public class 기능판정매니저 : MonoBehaviour
         }
 
         yield return new WaitForSeconds(2f);
+
+
+
+        // 나중에 기능판정 늘어냐면 여기 수정해줘야됨
+        StartCoroutine(정보조사_1일차신문());
     }
 
 
