@@ -177,11 +177,12 @@ public class DialogManager_D1사무소 : MonoBehaviour
 
     IEnumerator 스킵()
     {
+        z키로넘기기여부 = false;
 
-        yield return new WaitForSeconds(0.000001f);
+        yield return new WaitForSeconds(0.00000001f);
         selectionUIManager.엘라심리학선택지끄기();
         선택지선택시외부에서페이지넘기기t();
-        yield return new WaitForSeconds(0.000001f);
+        yield return new WaitForSeconds(0.00000001f);
         if(go_dialogBar.activeSelf == false)
         {
             스킵스탑온();

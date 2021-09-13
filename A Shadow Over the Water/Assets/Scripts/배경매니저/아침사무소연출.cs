@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class 아침사무소연출 : MonoBehaviour
 {    //연출시 못움직이게하는
-    public 마이름튜토리얼매니저 튜토리얼매니저;
+    //public 마이름튜토리얼매니저 튜토리얼매니저;
     public GameObject 대화창;
     public Mins 주인공;
     public GameObject 주인공캐릭터오브젝트;
@@ -167,7 +167,7 @@ public class 아침사무소연출 : MonoBehaviour
 
         if(연출마무리 == true && 대화창.activeSelf == false)
         {
-            튜토리얼매니저.이번버튼();
+            //튜토리얼매니저.이번버튼();
         }
 
 

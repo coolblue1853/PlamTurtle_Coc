@@ -480,14 +480,14 @@ public class setCharNext : MonoBehaviour
 
 
 
-    public setChar튜토리얼매니저 튜토리얼매니저;
+    //public setChar튜토리얼매니저 튜토리얼매니저;
 
 
     public void 능력치이후로()
     {
         능력치.SetActive(false);
         스킬.SetActive(true);
-        튜토리얼매니저.스킬설정설정();
+       // 튜토리얼매니저.스킬설정설정();
     }
 
     public void 스킬이전으로()

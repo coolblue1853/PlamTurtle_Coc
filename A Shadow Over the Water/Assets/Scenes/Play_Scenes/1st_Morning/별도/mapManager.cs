@@ -13,7 +13,7 @@ public class mapManager : MonoBehaviour
         if(DataBaseManager.시간대 == 2)
         {
             DataBaseManager.시간대 = 3;
-            SceneManager.LoadScene("01");
+            SceneManager.LoadScene("02_예비");
         }
 
     }

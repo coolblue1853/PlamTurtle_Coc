@@ -6,7 +6,16 @@ using UnityEngine.SceneManagement;
 public class PlayerStat : MonoBehaviour
 {
 
-    public setChar튜토리얼매니저 튜토리얼매니저;
+
+    public void 완전자동생성()
+    {
+        OnclickSetStat();
+        힘기술랜덤배분();
+        지능기술랜덤배분();
+        민첩기술랜덤배분();
+        SceneManager.LoadScene("마이룸 예비- 정보창변경중");
+    }
+    //public setChar튜토리얼매니저 튜토리얼매니저;
 
     // Start is called before the first frame update
 
@@ -295,7 +304,7 @@ public class PlayerStat : MonoBehaviour
 
 
 
-        튜토리얼매니저.재생성_스킬설정();
+        //튜토리얼매니저.재생성_스킬설정();
 
     }
 
@@ -1432,7 +1441,7 @@ public class PlayerStat : MonoBehaviour
                 민첩스킬배분숫자 = 민첩스킬배분숫자 - 1;
                 민첩스킬배분치txt.text = 민첩스킬배분숫자.ToString();
                 DataBaseManager.구르기 = DataBaseManager.구르기 + 1;
-                구르기게이지txt.text = "구르기 : " + DataBaseManager.구르기.ToString();
+                구르기게이지txt.text = "회피 : " + DataBaseManager.구르기.ToString();
                 GameObject.Instantiate(게이지오브젝트).transform.parent = 구르기게이지.transform;
             }
 
@@ -1447,7 +1456,7 @@ public class PlayerStat : MonoBehaviour
             민첩스킬배분숫자 = 민첩스킬배분숫자 + 1;
             민첩스킬배분치txt.text = 민첩스킬배분숫자.ToString();
             DataBaseManager.구르기 = DataBaseManager.구르기 - 1;
-            구르기게이지txt.text = "구르기 : " + DataBaseManager.구르기.ToString();
+            구르기게이지txt.text = "회피 : " + DataBaseManager.구르기.ToString();
             Transform[] 구르기차일드 = 구르기게이지.GetComponentsInChildren<Transform>(true);
             if (구르기차일드 != null)
             {
@@ -1466,7 +1475,7 @@ public class PlayerStat : MonoBehaviour
         민첩스킬배분숫자 = 민첩스킬배분숫자 + DataBaseManager.구르기;
         민첩스킬배분치txt.text = 민첩스킬배분숫자.ToString();
         DataBaseManager.구르기 = 0;
-        구르기게이지txt.text = "구르기 : " + DataBaseManager.구르기.ToString();
+        구르기게이지txt.text = "회피 : " + DataBaseManager.구르기.ToString();
         Transform[] 구르기차일드 = 구르기게이지.GetComponentsInChildren<Transform>(true);
         if (구르기차일드 != null)
         {
@@ -1936,7 +1945,7 @@ public class PlayerStat : MonoBehaviour
 
         if (힘스킬배분숫자 ==0 && 지능스킬배분숫자 ==0 && 민첩스킬배분숫자 == 0)
         {
-            튜토리얼매니저.마지막코루틴설정();
+            //튜토리얼매니저.마지막코루틴설정();
             게임시작버튼.SetActive(true);
         }
         else

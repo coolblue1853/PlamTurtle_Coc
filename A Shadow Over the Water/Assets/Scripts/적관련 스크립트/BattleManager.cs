@@ -477,9 +477,9 @@ public class BattleManager : MonoBehaviour
     public GameObject 화살표모음;
     public void 내턴()
     {
-        적가이드일.SetActive(true);
-        적가이드이.SetActive(true);
-        적가이드삼.SetActive(true);
+        적가이드일.SetActive(false);
+        //적가이드이.SetActive(true);
+        //적가이드삼.SetActive(true);
         whiteBox.SetActive(true);
         공격_도주_눈썰미_재장전.SetActive(true);
         내턴인가 = true;
@@ -611,6 +611,8 @@ public class BattleManager : MonoBehaviour
 
     public void 내턴_공격뒤로가기()
     {
+        적선택차례 = false;
+        StartCoroutine(장막생성());
         대상이름.text = "";
         대상설명.text = "";
         whiteBox.SetActive(true);
@@ -621,10 +623,12 @@ public class BattleManager : MonoBehaviour
         총기류아이템창.SetActive(false);
         단검류아이템창.SetActive(false);
         투척류아이템창.SetActive(false);
-
     }
+
     public void 내턴_격투뒤로가기()
     {
+        적선택차례 = false;
+        StartCoroutine(장막생성());
         대상이름.text = "";
         대상설명.text = "";
         기술명 = null;
@@ -643,6 +647,8 @@ public class BattleManager : MonoBehaviour
     }
     public void 내턴_템선택창뒤로가기()
     {
+        적선택차례 = false;
+        StartCoroutine(장막생성());
         대상이름.text = "";
         대상설명.text = "";
         공격_도주_눈썰미_재장전.SetActive(false);
@@ -666,6 +672,7 @@ public class BattleManager : MonoBehaviour
     }
     public void 내턴_공격류적선뒤로가기()
     {
+        StartCoroutine(장막생성());
         대상이름.text = "";
         대상설명.text = "";
         whiteBox.SetActive(true);
@@ -680,20 +687,42 @@ public class BattleManager : MonoBehaviour
         적화살표1.SetActive(false);
 
     }
+
+
+    public GameObject 버튼막기장막;
+
+    
+
+
+    //추후 변경가능성 있음.
+    IEnumerator 장막생성()
+    {
+        버튼막기장막.SetActive(true);
+        yield return new WaitForSeconds(0.3f);
+        버튼막기장막.SetActive(false);
+
+         
+    }
+
+
     public void 내턴_공격버튼()
     {
+        StartCoroutine(장막생성());
         공격_도주_눈썰미_재장전.SetActive(false);
+        근접뒤로가기.SetActive(false);
+        적선택가리개.SetActive(false);
+        적화살표1.SetActive(false);
+
 
         격투_투척_단검_사격.SetActive(true);
         공격뒤로가기.SetActive(true);
 
-        근접뒤로가기.SetActive(false);
-        적선택가리개.SetActive(false);
 
-        적화살표1.SetActive(false);
     }
+
     public void 내턴_재장전버튼()
     {
+        StartCoroutine(장막생성());
         기술명 = "재장전";
         공격_도주_눈썰미_재장전.SetActive(false);
         공격뒤로가기.SetActive(true);
@@ -705,8 +734,12 @@ public class BattleManager : MonoBehaviour
         rednum = 1;
     }
 
+
     public void 내턴_격투버튼()
     {
+
+        StartCoroutine(장막생성());
+
         기술명 = "근접격투";
         격투_투척_단검_사격.SetActive(false);
         공격뒤로가기.SetActive(false);
@@ -723,6 +756,7 @@ public class BattleManager : MonoBehaviour
     
     public void 내턴_사격버튼()
     {
+        StartCoroutine(장막생성());
         기술명 = "사격술";
         공격_도주_눈썰미_재장전.SetActive(false);
         격투_투척_단검_사격.SetActive(false);
@@ -737,6 +771,7 @@ public class BattleManager : MonoBehaviour
     }
     public void 내턴_도검버튼()
     {
+        StartCoroutine(장막생성());
         기술명 = "단검술";
         공격_도주_눈썰미_재장전.SetActive(false);
         격투_투척_단검_사격.SetActive(false);
@@ -752,6 +787,7 @@ public class BattleManager : MonoBehaviour
 
     public void 내턴_투척버튼()
     {
+        StartCoroutine(장막생성());
         기술명 = "투척술";
         공격_도주_눈썰미_재장전.SetActive(false);
         격투_투척_단검_사격.SetActive(false);
@@ -1287,6 +1323,14 @@ public class BattleManager : MonoBehaviour
 
     IEnumerator 소총장전코루틴()
     {
+        공격아이템칸뒤로가기.SetActive(false);
+        공격적선택뒤로가기.SetActive(false);
+        근접뒤로가기.SetActive(false);
+        공격뒤로가기.SetActive(false);
+        단검류아이템창.SetActive(false);
+        총기류아이템창.SetActive(false);
+        투척류아이템창.SetActive(false);
+        도구선택창.SetActive(false);
         플레이어대기.SetActive(false);
         소총장전이미지.SetActive(true);
         yield return new WaitForSeconds(4f);
@@ -1298,6 +1342,14 @@ public class BattleManager : MonoBehaviour
 
     IEnumerator 샷건장전코루틴()
     {
+        공격아이템칸뒤로가기.SetActive(false);
+        공격적선택뒤로가기.SetActive(false);
+        근접뒤로가기.SetActive(false);
+        공격뒤로가기.SetActive(false);
+        단검류아이템창.SetActive(false);
+        총기류아이템창.SetActive(false);
+        투척류아이템창.SetActive(false);
+        도구선택창.SetActive(false);
         플레이어대기.SetActive(false);
         샷건장전이미지.SetActive(true);
         yield return new WaitForSeconds(4f);
@@ -1308,6 +1360,14 @@ public class BattleManager : MonoBehaviour
     }
     IEnumerator 데린저장전코루틴()
     {
+        공격아이템칸뒤로가기.SetActive(false);
+        공격적선택뒤로가기.SetActive(false);
+        근접뒤로가기.SetActive(false);
+        공격뒤로가기.SetActive(false);
+        단검류아이템창.SetActive(false);
+        총기류아이템창.SetActive(false);
+        투척류아이템창.SetActive(false);
+        도구선택창.SetActive(false);
         플레이어대기.SetActive(false);
         데린저장전이미지.SetActive(true);
         yield return new WaitForSeconds(4f);
@@ -1318,6 +1378,14 @@ public class BattleManager : MonoBehaviour
     }
     IEnumerator 리볼버장전코루틴()
     {
+        공격아이템칸뒤로가기.SetActive(false);
+        공격적선택뒤로가기.SetActive(false);
+        근접뒤로가기.SetActive(false);
+        공격뒤로가기.SetActive(false);
+        단검류아이템창.SetActive(false);
+        총기류아이템창.SetActive(false);
+        투척류아이템창.SetActive(false);
+        도구선택창.SetActive(false);
         플레이어대기.SetActive(false);
         리볼버장전이미지.SetActive(true);
         yield return new WaitForSeconds(4f);
@@ -1878,9 +1946,7 @@ public class BattleManager : MonoBehaviour
         장탄수부족메시지.SetActive(false);
         리볼버정보창아웃();
         공격_도주_눈썰미_재장전.SetActive(false);
-        공격적선택뒤로가기.SetActive(false);
-        근접뒤로가기.SetActive(false);
-        공격뒤로가기.SetActive(false);
+
         도구선택창.SetActive(false);
 
         적선택가리개.SetActive(false);
@@ -1891,6 +1957,9 @@ public class BattleManager : MonoBehaviour
 
         기술명 = "";
         공격아이템칸뒤로가기.SetActive(false);
+        공격적선택뒤로가기.SetActive(false);
+        근접뒤로가기.SetActive(false);
+        공격뒤로가기.SetActive(false);
         노아제목.text = "------";
         적제목.text = "------";
         노아기술.text = "------";
@@ -6830,19 +6899,26 @@ public class BattleManager : MonoBehaviour
     bool ones = false;
     void Update()
     {
-        if(룰렛활성여부 == true && Input.GetMouseButtonDown(0))
+        if (룰렛활성여부 == true && Input.GetMouseButtonDown(0))
         {
             전투클릭여부 = true;
         }
+        if (적선택차례 == true)
+        {
+            적가이드일.SetActive(true);
+        }
+        else
+        {
+            적가이드일.SetActive(false);
+        }
 
 
-        /*
         if ((심해인1.체력 <= 0 || DataBaseManager.현재체력 == 0) && ones == false)
         {
             ones = true;
             StartCoroutine(페이드아웃코루틴());
         }
-        */
+
         
 
         누적데미지_심해인1.text = "누적 : " + (심해인1.전체체력 - 심해인1.체력);
@@ -6853,12 +6929,6 @@ public class BattleManager : MonoBehaviour
 
 
         내턴기본white관리();
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            DataBaseManager.던지기 = DataBaseManager.던지기 + 1;
-            DataBaseManager.화염병보유수 = DataBaseManager.화염병보유수 + 1;
-            DataBaseManager.보유리볼버탄약 = DataBaseManager.보유리볼버탄약 +6;
-        }
 
 
 
@@ -6966,119 +7036,7 @@ public class BattleManager : MonoBehaviour
         전투클릭여부 = false;
         배틀사운드매니저.기계돌아가는효과음함수();
 
-        /*
-               for (int i = 0; i < 10; i++)
-               {
-
-                   랜덤일의자리 = Random.Range(0, 10);
-
-                   일의자리.text = 랜덤일의자리.ToString();
-
-                   yield return new WaitForSeconds(0.1f);
-
-               }
-               for (int i = 0; i < 20; i++)
-               {
-
-                   랜덤일의자리 = Random.Range(1, 10);
-
-
-                   랜덤십의몸통위치 = Random.Range(1, 10);
-
-
-                   if (랜덤십의몸통위치 == 1)
-                   {
-                       십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 1f, 십의자리몸통.transform.position.y - 0.5f);
-                       십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 1, 십의자리몸통.transform.position.y);
-                       yield return new WaitForSeconds(0.025f);
-                       십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 1f, 십의자리몸통.transform.position.y + 0.5f);
-                       십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 1, 십의자리몸통.transform.position.y);
-                   }
-                   if (랜덤십의몸통위치 == 2)
-                   {
-                       일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 0.5f, 일의자리몸통.transform.position.y - 0.5f);
-                       십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 1, 십의자리몸통.transform.position.y);
-                       yield return new WaitForSeconds(0.025f);
-                       십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 1, 십의자리몸통.transform.position.y);
-                       일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 0.5f, 일의자리몸통.transform.position.y + 0.5f);
-
-                   }
-                   if (랜덤십의몸통위치 == 3)
-                   {
-                       일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 0.5f, 일의자리몸통.transform.position.y + 0.5f);
-                       십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x, 십의자리몸통.transform.position.y - 1);
-                       yield return new WaitForSeconds(0.025f);
-                       일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 0.5f, 일의자리몸통.transform.position.y - 0.5f);
-                       십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x, 십의자리몸통.transform.position.y + 1);
-                   }
-                   if (랜덤십의몸통위치 == 4)
-                   {
-                       일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 1, 일의자리몸통.transform.position.y - 0.5f);
-                       십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x, 십의자리몸통.transform.position.y + 1);
-                       yield return new WaitForSeconds(0.025f);
-                       일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 1, 일의자리몸통.transform.position.y + 0.5f);
-                       십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x, 십의자리몸통.transform.position.y - 1);
-                   }
-                   if (랜덤십의몸통위치 == 5)
-                   {
-                       십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 1, 십의자리몸통.transform.position.y + 0.5f);
-                       일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 1, 일의자리몸통.transform.position.y + 0.5f);
-                       yield return new WaitForSeconds(0.025f);
-                       일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 1, 일의자리몸통.transform.position.y - 0.5f);
-                       십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 1, 십의자리몸통.transform.position.y - 0.5f);
-                   }
-                   if (랜덤십의몸통위치 == 6)
-                   {
-                       십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 1, 십의자리몸통.transform.position.y - 0.5f);
-                       일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x, 일의자리몸통.transform.position.y + 1);
-                       yield return new WaitForSeconds(0.025f);
-                       일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x, 일의자리몸통.transform.position.y - 1);
-                       십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 1, 십의자리몸통.transform.position.y + 0.5f);
-                   }
-                   if (랜덤십의몸통위치 == 7)
-                   {
-                       십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 0.5f, 십의자리몸통.transform.position.y + 0.5f);
-                       일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x, 일의자리몸통.transform.position.y - 1);
-                       yield return new WaitForSeconds(0.025f);
-                       일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x, 일의자리몸통.transform.position.y + 1);
-                       십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 0.5f, 십의자리몸통.transform.position.y - 0.5f);
-                   }
-                   if (랜덤십의몸통위치 == 8)
-                   {
-                       십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 0.5f, 십의자리몸통.transform.position.y - 0.5f);
-                       일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 1, 일의자리몸통.transform.position.y);
-                       yield return new WaitForSeconds(0.025f);
-                       일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 1, 일의자리몸통.transform.position.y);
-                       십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 0.5f, 십의자리몸통.transform.position.y + 0.5f);
-                   }
-                   if (랜덤십의몸통위치 == 9)
-                   {
-                       일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x + 1, 일의자리몸통.transform.position.y);
-                       십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x + 1f, 십의자리몸통.transform.position.y - 0.5f);
-                       yield return new WaitForSeconds(0.025f);
-                       일의자리몸통.transform.position = new Vector2(일의자리몸통.transform.position.x - 1, 일의자리몸통.transform.position.y);
-                       십의자리몸통.transform.position = new Vector2(십의자리몸통.transform.position.x - 1f, 십의자리몸통.transform.position.y + 0.5f);
-                   }
-
-
-
-
-
-
-
-
-                   십의자리.text = 랜덤십의자리.ToString();
-                   일의자리.text = 랜덤일의자리.ToString();
-
-
-
-
-
-
-                   yield return new WaitForSeconds(0.025f);
-
-               }
-               */
+       
         while (전투클릭여부 == false)
         {
             룰렛활성여부 = true;
