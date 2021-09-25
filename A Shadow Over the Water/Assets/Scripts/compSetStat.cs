@@ -13,7 +13,7 @@ public class compSetStat : MonoBehaviour
 
     public void 버튼클릭()
     {
-        SceneManager.LoadScene("마이룸 예비- 정보창변경중");
+        SceneManager.LoadScene("1st_Mor_GUNSHOP");
         //SceneManager.LoadScene("1st_Mor_GUNSHOP");
     }
 

@@ -737,6 +737,9 @@ public class BattleManager : MonoBehaviour
 
     public void 내턴_격투버튼()
     {
+        적가이드일.SetActive(true);
+        적가이드이.SetActive(true);
+        적가이드삼.SetActive(true);
 
         StartCoroutine(장막생성());
 
@@ -829,6 +832,8 @@ public class BattleManager : MonoBehaviour
 
     }
 
+    float waitingTime = 1f;
+
     IEnumerator 도주확인클릭시발동()
     {
         대상이름.text = "";
@@ -837,12 +842,12 @@ public class BattleManager : MonoBehaviour
         노아제목.text = "노아 : 도주";
         적제목.text = "??? : 붙잡기";
             
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(waitingTime);
 
         노아기술.text = "민첩 : " + DataBaseManager.민첩;
         적기술.text = "민첩 : " + 심해인1.민첩;
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(waitingTime);
 
         StartCoroutine(룰렛작동());
         StartCoroutine(적룰렛작동());
@@ -935,9 +940,11 @@ public class BattleManager : MonoBehaviour
             //씬 이동 여기에 넣기. 도주 성공
         }
 
- 
 
-        yield return new WaitForSeconds(2f);
+
+        판정창끌까요 = false;
+        판정창끌수있나 = true;
+        yield return new WaitForSeconds(closeTime);
 
         판정창.SetActive(false);
 
@@ -1033,6 +1040,9 @@ public class BattleManager : MonoBehaviour
         {
             if (DataBaseManager.리볼버장탄수 != 0)
             {
+                적가이드일.SetActive(true);
+                적가이드이.SetActive(true);
+                적가이드삼.SetActive(true);
                 배틀사운드매니저.리볼버조준효과음함수();
                 화살표모음.SetActive(true);
                 단검류아이템창.SetActive(false);
@@ -1114,6 +1124,9 @@ public class BattleManager : MonoBehaviour
 
             if (DataBaseManager.소형권총장탄수 != 0)
             {
+                적가이드일.SetActive(true);
+                적가이드이.SetActive(true);
+                적가이드삼.SetActive(true);
                 배틀사운드매니저.데린저조준효과음함수();
                 데맂너조준이미지교체();
                 화살표모음.SetActive(true);
@@ -1178,6 +1191,9 @@ public class BattleManager : MonoBehaviour
         {
             if (DataBaseManager.샷건장탄수 != 0)
             {
+                적가이드일.SetActive(true);
+                적가이드이.SetActive(true);
+                적가이드삼.SetActive(true);
                 배틀사운드매니저.샷건조준효과음함수();
                 샷건조준이미지교체();
                 화살표모음.SetActive(true);
@@ -1259,6 +1275,9 @@ public class BattleManager : MonoBehaviour
         {
             if (DataBaseManager.소총장탄수 != 0)
             {
+                적가이드일.SetActive(true);
+                적가이드이.SetActive(true);
+                적가이드삼.SetActive(true);
                 배틀사운드매니저.소총조준효과음함수();
                 소총조준이미지교체();
                 화살표모음.SetActive(true);
@@ -1333,7 +1352,7 @@ public class BattleManager : MonoBehaviour
         도구선택창.SetActive(false);
         플레이어대기.SetActive(false);
         소총장전이미지.SetActive(true);
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         플레이어대기.SetActive(true);
         소총장전이미지.SetActive(false);
         턴시작 = false;
@@ -1352,7 +1371,7 @@ public class BattleManager : MonoBehaviour
         도구선택창.SetActive(false);
         플레이어대기.SetActive(false);
         샷건장전이미지.SetActive(true);
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         플레이어대기.SetActive(true);
         샷건장전이미지.SetActive(false);
         턴시작 = false;
@@ -1370,7 +1389,7 @@ public class BattleManager : MonoBehaviour
         도구선택창.SetActive(false);
         플레이어대기.SetActive(false);
         데린저장전이미지.SetActive(true);
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         플레이어대기.SetActive(true);
         데린저장전이미지.SetActive(false);
         턴시작 = false;
@@ -1388,7 +1407,7 @@ public class BattleManager : MonoBehaviour
         도구선택창.SetActive(false);
         플레이어대기.SetActive(false);
         리볼버장전이미지.SetActive(true);
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         플레이어대기.SetActive(true);
         리볼버장전이미지.SetActive(false);
         턴시작 = false;
@@ -1431,6 +1450,9 @@ public class BattleManager : MonoBehaviour
 
     public void 단검선택()
     {
+        적가이드일.SetActive(true);
+        적가이드이.SetActive(true);
+        적가이드삼.SetActive(true);
         단검조준이미지교체();
         화살표모음.SetActive(true);
         도구선택창.SetActive(false);
@@ -1449,6 +1471,9 @@ public class BattleManager : MonoBehaviour
 
     public void 손도끼선택()
     {
+        적가이드일.SetActive(true);
+        적가이드이.SetActive(true);
+        적가이드삼.SetActive(true);
         도끼조준이미지교체();
         화살표모음.SetActive(true);
         도구선택창.SetActive(false);
@@ -1467,6 +1492,9 @@ public class BattleManager : MonoBehaviour
 
     public void 몽둥이선택()
     {
+        적가이드일.SetActive(true);
+        적가이드이.SetActive(true);
+        적가이드삼.SetActive(true);
         몽둥이조준이미지교체();
         화살표모음.SetActive(true);
         도구선택창.SetActive(false);
@@ -1503,6 +1531,9 @@ public class BattleManager : MonoBehaviour
     }
     public void 돌선택()
     {
+        적가이드일.SetActive(true);
+        적가이드이.SetActive(true);
+        적가이드삼.SetActive(true);
         돌조준이미지교체();
         화살표모음.SetActive(true);
         도구선택창.SetActive(false);
@@ -1939,6 +1970,9 @@ public class BattleManager : MonoBehaviour
 
     public void 턴시작시초기화()
     {
+        적가이드일.SetActive(false);
+        적가이드이.SetActive(false);
+        적가이드삼.SetActive(false);
         십의자리.text = "0";
         일의자리.text = "0";
         적십의자리.text = "0";
@@ -1970,6 +2004,9 @@ public class BattleManager : MonoBehaviour
         whiteNum = 1;
         내턴인가 = false;
         내턴기본 = false;
+        판정창끌까요 = false;
+        판정창끌수있나 = false;
+
     }
 
 
@@ -2193,13 +2230,75 @@ public class BattleManager : MonoBehaviour
     public GameObject 적데린저피격이미지;
     public GameObject 적리볼버피격이미지;
 
+    float closeTime = 4f;
+    bool 판정창끌까요 = false;
+    bool 판정창끌수있나 = false;
+
+
+    void 판정창끄기()
+    {
+
+        if(판정창끌까요 == true && 판정창끌수있나 == true)
+        {
+            StopAllCoroutines();
+            판정창끌까요 = false;
+            판정창끌수있나 = false;
+            판정창.SetActive(false);
+
+            if (기술명 == "근접격투" && 심해인1.체력 > ((double)심해인1.전체체력 / 2f) && 노아제목.text == "노아 : 공격")
+            {
+                StartCoroutine(적1근접_반격결과());
+            }
+            else if (기술명 == "근접격투" && 심해인1.체력 <= ((double)심해인1.전체체력 / 2f) && 노아제목.text == "노아 : 공격")
+            {
+                StartCoroutine(적1근접_회피결과());
+            }
+            else if (기술명 == "사격술" && 심해인1.체력 > ((double)심해인1.전체체력 / 2f) && 노아제목.text == "노아 : 공격")
+            {
+                StartCoroutine(적1사격_반격결과());
+            }
+            else if (기술명 == "사격술" && 심해인1.체력 <= ((double)심해인1.전체체력 / 2f) && 노아제목.text == "노아 : 공격")
+            {
+                StartCoroutine(적1사격_회피결과());
+            }
+            else if (기술명 == "단검술" && 심해인1.체력 > ((double)심해인1.전체체력 / 2f) && 노아제목.text == "노아 : 공격")
+            {
+                StartCoroutine(적1단검_반격결과());
+            }
+            else if (기술명 == "단검술" && 심해인1.체력 <= ((double)심해인1.전체체력 / 2f) && 노아제목.text == "노아 : 공격")
+            {
+                StartCoroutine(적1단검_회피결과());
+            }
+            else if (기술명 == "투척술" && 심해인1.체력 > ((double)심해인1.전체체력 / 2f) && 노아제목.text == "노아 : 공격")
+            {
+                StartCoroutine(적1투척_반격결과());
+            }
+            else if (기술명 == "투척술" && 심해인1.체력 <= ((double)심해인1.전체체력 / 2f) && 노아제목.text == "노아 : 공격")
+            {
+                StartCoroutine(적1투척_회피결과());
+            }
+            else if ( 노아제목.text == "노아 : 반격")
+            {
+                StartCoroutine(공격반응적1_반격결과());
+            }
+            else if (노아제목.text == "노아 : 회피")
+            {
+                StartCoroutine(공격반응적1_회피결과());
+            }
+
+        }
+
+    }
+
+
+
+
+
+    // 이 아래는 판정창 전부분 코루틴 _ 적1
+
    IEnumerator 적1근접_반격()
     {
         배틀사운드매니저.찰칵효과음함수();
-
-
-
-
 
         if (출력기능값 <= DataBaseManager.맨손격투)
         {
@@ -2242,7 +2341,7 @@ public class BattleManager : MonoBehaviour
             적기결과.text = "대실패";
 
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(waitingTime);
 
         배틀사운드매니저.찰칵효과음함수();
         if ((노아결과.text == "대성공"))
@@ -2273,8 +2372,9 @@ public class BattleManager : MonoBehaviour
         {
             결과.text = "적 판정승";
         }
-
-        yield return new WaitForSeconds(2f);
+        판정창끌까요 = false;
+        판정창끌수있나 = true;
+        yield return new WaitForSeconds(closeTime);
 
         판정창.SetActive(false);
 
@@ -2453,7 +2553,7 @@ public class BattleManager : MonoBehaviour
             적기결과.text = "대실패";
 
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(waitingTime);
         배틀사운드매니저.찰칵효과음함수();
         //노아 불리판정
         if ((노아결과.text == "대성공") && (적기결과.text == "보통성공" || (노아결과.text == "대성공") && (적기결과.text == "실패") || (노아결과.text == "대성공") && (적기결과.text == "대실패")))
@@ -2489,8 +2589,9 @@ public class BattleManager : MonoBehaviour
         {
             결과.text = "적 판정승";
         }
-
-        yield return new WaitForSeconds(2f);
+        판정창끌까요 = false;
+        판정창끌수있나 = true;
+        yield return new WaitForSeconds(waitingTime);
 
         판정창.SetActive(false);
 
@@ -2580,7 +2681,7 @@ public class BattleManager : MonoBehaviour
             적기결과.text = "대실패";
 
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(waitingTime);
 
         배틀사운드매니저.찰칵효과음함수();
         if ((노아결과.text == "대성공"))
@@ -2612,8 +2713,9 @@ public class BattleManager : MonoBehaviour
             결과.text = "적 판정승";
         }
 
-
-        yield return new WaitForSeconds(2f);
+        판정창끌까요 = false;
+        판정창끌수있나 = true;
+        yield return new WaitForSeconds(closeTime);
 
         판정창.SetActive(false);
 
@@ -2818,7 +2920,7 @@ public class BattleManager : MonoBehaviour
             적기결과.text = "대실패";
 
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(waitingTime);
         배틀사운드매니저.찰칵효과음함수();
         //노아 불리판정
         if ((노아결과.text == "대성공") && (적기결과.text == "보통성공" || (노아결과.text == "대성공") && (적기결과.text == "실패") || (노아결과.text == "대성공") && (적기결과.text == "대실패")))
@@ -2854,9 +2956,10 @@ public class BattleManager : MonoBehaviour
         {
             결과.text = "적 판정승";
         }
+        판정창끌까요 = false;
+        판정창끌수있나 = true;
 
-
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(closeTime);
 
         판정창.SetActive(false);
 
@@ -3063,7 +3166,7 @@ public class BattleManager : MonoBehaviour
             적기결과.text = "대실패";
 
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(waitingTime);
 
         배틀사운드매니저.찰칵효과음함수();
         if ((노아결과.text == "대성공"))
@@ -3095,11 +3198,15 @@ public class BattleManager : MonoBehaviour
             결과.text = "적 판정승";
         }
 
-
-        yield return new WaitForSeconds(2f);
+        판정창끌까요 = false;
+        판정창끌수있나 = true;
+        yield return new WaitForSeconds(closeTime);
 
         판정창.SetActive(false);
 
+        플레이어단검조준.SetActive(false);
+        플레이어몽둥이조준.SetActive(false);
+        플레이어도끼조준.SetActive(false);
 
         if (결과.text == "노아 판정승")
         {
@@ -3195,6 +3302,9 @@ public class BattleManager : MonoBehaviour
         {
             if (근력대미지 == 1)
             {
+                플레이어단검조준.SetActive(false);
+                플레이어몽둥이조준.SetActive(false);
+                플레이어도끼조준.SetActive(false);
                 배틀사운드매니저.근접공격효과음함수();
                 BattleUiManager.체력감소();
                 var clone = Instantiate(우측플로팅텍스트, 내플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
@@ -3203,7 +3313,10 @@ public class BattleManager : MonoBehaviour
 
                 DataBaseManager.카메라왼쪽워킹온오프 = true;
 
-                플레이어대기.SetActive(false);
+
+
+
+
                 노아피격이미지.SetActive(true);
 
                 적대기이미지.SetActive(false);
@@ -3221,6 +3334,9 @@ public class BattleManager : MonoBehaviour
 
             else if (근력대미지 == 2)
             {
+                플레이어단검조준.SetActive(false);
+                플레이어몽둥이조준.SetActive(false);
+                플레이어도끼조준.SetActive(false);
                 배틀사운드매니저.근접공격효과음함수();
                 BattleUiManager.체력감소();
                 BattleUiManager.체력감소();
@@ -3230,7 +3346,8 @@ public class BattleManager : MonoBehaviour
 
                 DataBaseManager.카메라왼쪽워킹온오프 = true;
 
-                플레이어대기.SetActive(false);
+
+
                 노아피격이미지.SetActive(true);
 
                 적대기이미지.SetActive(false);
@@ -3247,6 +3364,9 @@ public class BattleManager : MonoBehaviour
             }
             else if (근력대미지 == 3)
             {
+                플레이어단검조준.SetActive(false);
+                플레이어몽둥이조준.SetActive(false);
+                플레이어도끼조준.SetActive(false);
                 배틀사운드매니저.근접공격효과음함수();
                 BattleUiManager.체력감소();
                 BattleUiManager.체력감소();
@@ -3257,7 +3377,9 @@ public class BattleManager : MonoBehaviour
 
                 DataBaseManager.카메라왼쪽워킹온오프 = true;
 
-                플레이어대기.SetActive(false);
+
+
+
                 노아피격이미지.SetActive(true);
 
                 적대기이미지.SetActive(false);
@@ -3336,7 +3458,7 @@ public class BattleManager : MonoBehaviour
             적기결과.text = "대실패";
 
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(waitingTime);
         배틀사운드매니저.찰칵효과음함수();
         //노아 불리판정
         if ((노아결과.text == "대성공") && (적기결과.text == "보통성공" || (노아결과.text == "대성공") && (적기결과.text == "실패") || (노아결과.text == "대성공") && (적기결과.text == "대실패")))
@@ -3372,9 +3494,10 @@ public class BattleManager : MonoBehaviour
         {
             결과.text = "적 판정승";
         }
+        판정창끌까요 = false;
+        판정창끌수있나 = true;
 
-
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(closeTime);
 
         판정창.SetActive(false);
 
@@ -3532,7 +3655,7 @@ public class BattleManager : MonoBehaviour
             적기결과.text = "대실패";
 
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(waitingTime);
 
         배틀사운드매니저.찰칵효과음함수();
         if ((노아결과.text == "대성공"))
@@ -3563,8 +3686,9 @@ public class BattleManager : MonoBehaviour
         {
             결과.text = "적 판정승";
         }
-
-        yield return new WaitForSeconds(2f);
+        판정창끌까요 = false;
+        판정창끌수있나 = true;
+        yield return new WaitForSeconds(closeTime);
 
         판정창.SetActive(false);
 
@@ -3701,7 +3825,7 @@ public class BattleManager : MonoBehaviour
             적기결과.text = "대실패";
 
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(waitingTime);
         배틀사운드매니저.찰칵효과음함수();
         //노아 불리판정
         if ((노아결과.text == "대성공") && (적기결과.text == "보통성공" || (노아결과.text == "대성공") && (적기결과.text == "실패") || (노아결과.text == "대성공") && (적기결과.text == "대실패")))
@@ -3737,8 +3861,9 @@ public class BattleManager : MonoBehaviour
         {
             결과.text = "적 판정승";
         }
-
-        yield return new WaitForSeconds(2f);
+        판정창끌까요 = false;
+        판정창끌수있나 = true;
+        yield return new WaitForSeconds(closeTime);
 
         판정창.SetActive(false);
 
@@ -3819,11 +3944,960 @@ public class BattleManager : MonoBehaviour
         현재턴수 = 현재턴수 + 1;
     }
 
+    //이 아래는 판정창 이후 코루틴 _ 적1
+
+   IEnumerator 적1근접_반격결과()
+    {
+       
+
+
+
+
+
+        if (결과.text == "노아 판정승")
+        {
+            배틀사운드매니저.근접공격효과음함수();
+            Debug.Log(심해인1.체력);
+            Debug.Log(근력대미지);
+            심해인1.체력 = 심해인1.체력 - 근력대미지;
+            Debug.Log(심해인1.체력);
+
+
+
+            var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+            clone.GetComponent<플로팅택스트>().Text.text = 근력대미지.ToString();
+            clone.transform.SetParent(ui창.transform);
+
+            DataBaseManager.카메라워킹온오프 = true;
+
+            플레이어대기.SetActive(false);
+            근접공격.SetActive(true);
+
+            적대기이미지.SetActive(false);
+            적피격이미지.SetActive(true);
+
+            yield return new WaitForSeconds(3f);
+
+            플레이어대기.SetActive(true);
+            근접공격.SetActive(false);
+
+            적대기이미지.SetActive(true);
+            적피격이미지.SetActive(false);
+
+        }
+
+        if (결과.text == "적 판정승")
+        {
+            if (근력대미지 == 1)
+            {
+                배틀사운드매니저.근접공격효과음함수();
+                BattleUiManager.체력감소();
+                var clone = Instantiate(우측플로팅텍스트, 내플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+                clone.GetComponent<플로팅텍스트좌측>().Text.text = 1.ToString();
+                clone.transform.SetParent(ui창.transform);
+
+                DataBaseManager.카메라왼쪽워킹온오프 = true;
+
+                플레이어대기.SetActive(false);
+                노아피격이미지.SetActive(true);
+
+                적대기이미지.SetActive(false);
+                적공격이미지.SetActive(true);
+
+                yield return new WaitForSeconds(3f);
+
+                플레이어대기.SetActive(true);
+                노아피격이미지.SetActive(false);
+
+                적대기이미지.SetActive(true);
+                적공격이미지.SetActive(false);
+
+            }
+
+            else if (근력대미지 == 2)
+            {
+                배틀사운드매니저.근접공격효과음함수();
+                BattleUiManager.체력감소();
+                BattleUiManager.체력감소();
+                var clone = Instantiate(우측플로팅텍스트, 내플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+                clone.GetComponent<플로팅텍스트좌측>().Text.text = 2.ToString();
+                clone.transform.SetParent(ui창.transform);
+
+                DataBaseManager.카메라왼쪽워킹온오프 = true;
+
+                플레이어대기.SetActive(false);
+                노아피격이미지.SetActive(true);
+
+                적대기이미지.SetActive(false);
+                적공격이미지.SetActive(true);
+
+                yield return new WaitForSeconds(3f);
+
+                플레이어대기.SetActive(true);
+                노아피격이미지.SetActive(false);
+
+                적대기이미지.SetActive(true);
+                적공격이미지.SetActive(false);
+
+            }
+            else if (근력대미지 == 3)
+            {
+                배틀사운드매니저.근접공격효과음함수();
+                BattleUiManager.체력감소();
+                BattleUiManager.체력감소();
+                BattleUiManager.체력감소();
+                var clone = Instantiate(우측플로팅텍스트, 내플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+                clone.GetComponent<플로팅텍스트좌측>().Text.text = 3.ToString();
+                clone.transform.SetParent(ui창.transform);
+
+                DataBaseManager.카메라왼쪽워킹온오프 = true;
+
+                플레이어대기.SetActive(false);
+                노아피격이미지.SetActive(true);
+
+                적대기이미지.SetActive(false);
+                적공격이미지.SetActive(true);
+
+                yield return new WaitForSeconds(3f);
+
+                플레이어대기.SetActive(true);
+                노아피격이미지.SetActive(false);
+
+                적대기이미지.SetActive(true);
+                적공격이미지.SetActive(false);
+            }
+        }
+
+
+
+
+        턴시작 = false;
+        현재턴수 = 현재턴수 + 1;
+    }
+    IEnumerator 적1근접_회피결과()
+    {
+       
+
+
+        if (결과.text == "노아 판정승")
+        {
+            배틀사운드매니저.근접공격효과음함수();
+            Debug.Log(심해인1.체력);
+            Debug.Log(근력대미지);
+            심해인1.체력 = 심해인1.체력 - 근력대미지;
+            Debug.Log(심해인1.체력);
+
+            var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+            clone.GetComponent<플로팅택스트>().Text.text = 근력대미지.ToString();
+            clone.transform.SetParent(ui창.transform);
+
+            DataBaseManager.카메라워킹온오프 = true;
+
+            플레이어대기.SetActive(false);
+            근접공격.SetActive(true);
+
+            적대기이미지.SetActive(false);
+            적피격이미지.SetActive(true);
+
+            yield return new WaitForSeconds(3f);
+
+            플레이어대기.SetActive(true);
+            근접공격.SetActive(false);
+
+            적대기이미지.SetActive(true);
+            적피격이미지.SetActive(false);
+        }
+
+
+
+        턴시작 = false;
+        현재턴수 = 현재턴수 + 1;
+    }
+    IEnumerator 적1사격_반격결과()
+    {
+       
+
+
+
+        if (선택된무기 == "리볼버")
+        {
+            DataBaseManager.리볼버장탄수 = DataBaseManager.리볼버장탄수 - 1;
+            if (결과.text == "노아 판정승")
+            {
+                배틀사운드매니저.리볼버발포효과음함수();
+                Debug.Log(심해인1.체력);
+                Debug.Log(리볼버대미지);
+                심해인1.체력 = 심해인1.체력 - 리볼버대미지;
+                Debug.Log(심해인1.체력);
+
+                var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+                clone.GetComponent<플로팅택스트>().Text.text = 리볼버대미지.ToString();
+                clone.transform.SetParent(ui창.transform);
+
+                DataBaseManager.카메라워킹온오프 = true;
+
+                플레이어리볼버조준.SetActive(false);
+                노아리볼버공격이미지.SetActive(true);
+
+                적대기이미지.SetActive(false);
+                적리볼버피격이미지.SetActive(true);
+
+                yield return new WaitForSeconds(3f);
+
+                플레이어대기.SetActive(true);
+                노아리볼버공격이미지.SetActive(false);
+
+                적대기이미지.SetActive(true);
+                적리볼버피격이미지.SetActive(false);
+            }
+
+        }
+
+        else if (선택된무기 == "소형권총")
+        {
+            DataBaseManager.소형권총장탄수 = DataBaseManager.소형권총장탄수 - 1;
+            if (결과.text == "노아 판정승")
+            {
+                배틀사운드매니저.데린저발포효과음함수();
+                Debug.Log(심해인1.체력);
+                Debug.Log(소형권총대미지);
+                심해인1.체력 = 심해인1.체력 - 소형권총대미지;
+                Debug.Log(심해인1.체력);
+
+
+                var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+                clone.GetComponent<플로팅택스트>().Text.text = 소형권총대미지.ToString();
+                clone.transform.SetParent(ui창.transform);
+
+                DataBaseManager.카메라워킹온오프 = true;
+
+                플레이어데린저조준.SetActive(false);
+                노아데린저공격이미지.SetActive(true);
+
+                적대기이미지.SetActive(false);
+                적데린저피격이미지.SetActive(true);
+
+                yield return new WaitForSeconds(3f);
+
+                플레이어대기.SetActive(true);
+                노아데린저공격이미지.SetActive(false);
+
+                적대기이미지.SetActive(true);
+                적데린저피격이미지.SetActive(false);
+            }
+
+        }
+        else if (선택된무기 == "소총")
+        {
+            DataBaseManager.소총장탄수 = DataBaseManager.소총장탄수 - 1;
+            if (결과.text == "노아 판정승")
+            {
+                배틀사운드매니저.소총발포효과음함수();
+                Debug.Log(심해인1.체력);
+                Debug.Log(소총대미지);
+                심해인1.체력 = 심해인1.체력 - 소총대미지;
+                Debug.Log(심해인1.체력);
+
+
+
+                var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+                clone.GetComponent<플로팅택스트>().Text.text = 소총대미지.ToString();
+                clone.transform.SetParent(ui창.transform);
+
+                DataBaseManager.카메라워킹온오프 = true;
+
+                플레이어소총조준.SetActive(false);
+                노아소총공격이미지.SetActive(true);
+
+                적대기이미지.SetActive(false);
+                적소총피격이미지.SetActive(true);
+
+                yield return new WaitForSeconds(3f);
+
+                플레이어대기.SetActive(true);
+                노아소총공격이미지.SetActive(false);
+
+                적대기이미지.SetActive(true);
+                적소총피격이미지.SetActive(false);
+            }
+
+        }
+        else if (선택된무기 == "샷건")
+        {
+            DataBaseManager.샷건장탄수 = DataBaseManager.샷건장탄수 - 1;
+            if (결과.text == "노아 판정승")
+            {
+                배틀사운드매니저.샷건발포효과음함수();
+                Debug.Log(심해인1.체력);
+                Debug.Log(샷건대미지);
+                심해인1.체력 = 심해인1.체력 - 샷건대미지;
+                Debug.Log(심해인1.체력);
+
+                var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+                clone.GetComponent<플로팅택스트>().Text.text = 샷건대미지.ToString();
+                clone.transform.SetParent(ui창.transform);
+
+                DataBaseManager.카메라워킹온오프 = true;
+
+                플레이어샷건조준.SetActive(false);
+                노아샷건공격이미지.SetActive(true);
+
+                적대기이미지.SetActive(false);
+                적샷건피격이미지.SetActive(true);
+
+                yield return new WaitForSeconds(3f);
+
+                플레이어대기.SetActive(true);
+                노아샷건공격이미지.SetActive(false);
+
+                적대기이미지.SetActive(true);
+                적샷건피격이미지.SetActive(false);
+            }
+
+        }
+        플레이어리볼버조준.SetActive(false);
+        플레이어데린저조준.SetActive(false);
+        플레이어소총조준.SetActive(false);
+        플레이어샷건조준.SetActive(false);
+        플레이어대기.SetActive(true);
+
+
+
+        턴시작 = false;
+        현재턴수 = 현재턴수 + 1;
+    }
+    IEnumerator 적1사격_회피결과()
+    {
+   
+
+
+
+
+
+        if (선택된무기 == "리볼버")
+        {
+            DataBaseManager.리볼버장탄수 = DataBaseManager.리볼버장탄수 - 1;
+            if (결과.text == "노아 판정승")
+            {
+                배틀사운드매니저.리볼버발포효과음함수();
+                Debug.Log(심해인1.체력);
+                Debug.Log(리볼버대미지);
+                심해인1.체력 = 심해인1.체력 - 리볼버대미지;
+                Debug.Log(심해인1.체력);
+
+                var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+                clone.GetComponent<플로팅택스트>().Text.text = 리볼버대미지.ToString();
+                clone.transform.SetParent(ui창.transform);
+
+                DataBaseManager.카메라워킹온오프 = true;
+
+                플레이어리볼버조준.SetActive(false);
+                노아리볼버공격이미지.SetActive(true);
+
+                적대기이미지.SetActive(false);
+                적피격이미지.SetActive(true);
+
+                yield return new WaitForSeconds(3f);
+
+                플레이어대기.SetActive(true);
+                노아리볼버공격이미지.SetActive(false);
+
+                적대기이미지.SetActive(true);
+                적피격이미지.SetActive(false);
+            }
+
+        }
+
+        else if (선택된무기 == "소형권총")
+        {
+            DataBaseManager.소형권총장탄수 = DataBaseManager.소형권총장탄수 - 1;
+            if (결과.text == "노아 판정승")
+            {
+                배틀사운드매니저.데린저발포효과음함수();
+                Debug.Log(심해인1.체력);
+                Debug.Log(소형권총대미지);
+                심해인1.체력 = 심해인1.체력 - 소형권총대미지;
+                Debug.Log(심해인1.체력);
+
+
+                var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+                clone.GetComponent<플로팅택스트>().Text.text = 소형권총대미지.ToString();
+                clone.transform.SetParent(ui창.transform);
+
+                DataBaseManager.카메라워킹온오프 = true;
+
+                플레이어데린저조준.SetActive(false);
+                노아데린저공격이미지.SetActive(true);
+
+                적대기이미지.SetActive(false);
+                적피격이미지.SetActive(true);
+
+                yield return new WaitForSeconds(3f);
+
+                플레이어대기.SetActive(true);
+                노아데린저공격이미지.SetActive(false);
+
+                적대기이미지.SetActive(true);
+                적피격이미지.SetActive(false);
+            }
+
+        }
+        else if (선택된무기 == "소총")
+        {
+            DataBaseManager.소총장탄수 = DataBaseManager.소총장탄수 - 1;
+            if (결과.text == "노아 판정승")
+            {
+                배틀사운드매니저.소총발포효과음함수();
+                Debug.Log(심해인1.체력);
+                Debug.Log(소총대미지);
+                심해인1.체력 = 심해인1.체력 - 소총대미지;
+                Debug.Log(심해인1.체력);
+
+
+
+                var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+                clone.GetComponent<플로팅택스트>().Text.text = 소총대미지.ToString();
+                clone.transform.SetParent(ui창.transform);
+
+                DataBaseManager.카메라워킹온오프 = true;
+
+                플레이어소총조준.SetActive(false);
+                노아소총공격이미지.SetActive(true);
+
+                적대기이미지.SetActive(false);
+                적피격이미지.SetActive(true);
+
+                yield return new WaitForSeconds(3f);
+
+                플레이어대기.SetActive(true);
+                노아소총공격이미지.SetActive(false);
+
+                적대기이미지.SetActive(true);
+                적피격이미지.SetActive(false);
+            }
+
+        }
+        else if (선택된무기 == "샷건")
+        {
+            DataBaseManager.샷건장탄수 = DataBaseManager.샷건장탄수 - 1;
+            if (결과.text == "노아 판정승")
+            {
+                배틀사운드매니저.샷건발포효과음함수();
+                Debug.Log(심해인1.체력);
+                Debug.Log(샷건대미지);
+                심해인1.체력 = 심해인1.체력 - 샷건대미지;
+                Debug.Log(심해인1.체력);
+
+                var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+                clone.GetComponent<플로팅택스트>().Text.text = 샷건대미지.ToString();
+                clone.transform.SetParent(ui창.transform);
+
+                DataBaseManager.카메라워킹온오프 = true;
+
+                플레이어샷건조준.SetActive(false);
+                노아샷건공격이미지.SetActive(true);
+
+                적대기이미지.SetActive(false);
+                적피격이미지.SetActive(true);
+
+                yield return new WaitForSeconds(3f);
+
+                플레이어대기.SetActive(true);
+                노아샷건공격이미지.SetActive(false);
+
+                적대기이미지.SetActive(true);
+                적피격이미지.SetActive(false);
+            }
+
+        }
+
+
+        플레이어리볼버조준.SetActive(false);
+        플레이어데린저조준.SetActive(false);
+        플레이어소총조준.SetActive(false);
+        플레이어샷건조준.SetActive(false);
+        플레이어대기.SetActive(true);
+
+
+        턴시작 = false;
+        현재턴수 = 현재턴수 + 1;
+    }
+    IEnumerator 적1단검_반격결과()
+    {
+       
+
+
+        if (결과.text == "노아 판정승")
+        {
+            if (선택된무기 == "단검")
+            {
+
+                Debug.Log(심해인1.체력);
+                Debug.Log(단검대미지);
+                심해인1.체력 = 심해인1.체력 - 단검대미지;
+                Debug.Log(심해인1.체력);
+
+                var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+                clone.GetComponent<플로팅택스트>().Text.text = 단검대미지.ToString();
+                clone.transform.SetParent(ui창.transform);
+
+                DataBaseManager.카메라워킹온오프 = true;
+
+                플레이어단검조준.SetActive(false);
+                노아단검공격이미지.SetActive(true);
+
+                적대기이미지.SetActive(false);
+                적피격이미지.SetActive(true);
+
+                yield return new WaitForSeconds(3f);
+
+                플레이어대기.SetActive(true);
+                노아단검공격이미지.SetActive(false);
+
+                적대기이미지.SetActive(true);
+                적피격이미지.SetActive(false);
+            }
+
+            else if (선택된무기 == "손도끼")
+            {
+
+                Debug.Log(심해인1.체력);
+                Debug.Log(손도끼대미지);
+                심해인1.체력 = 심해인1.체력 - 손도끼대미지;
+                Debug.Log(심해인1.체력);
+
+                var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+                clone.GetComponent<플로팅택스트>().Text.text = 손도끼대미지.ToString();
+                clone.transform.SetParent(ui창.transform);
+
+                DataBaseManager.카메라워킹온오프 = true;
+
+                플레이어도끼조준.SetActive(false);
+                노아도끼공격이미지.SetActive(true);
+
+                적대기이미지.SetActive(false);
+                적피격이미지.SetActive(true);
+
+                yield return new WaitForSeconds(3f);
+
+                플레이어대기.SetActive(true);
+                노아도끼공격이미지.SetActive(false);
+
+                적대기이미지.SetActive(true);
+                적피격이미지.SetActive(false);
+
+            }
+            else if (선택된무기 == "몽둥이")
+            {
+
+                Debug.Log(심해인1.체력);
+                Debug.Log(몽둥이대미지);
+                심해인1.체력 = 심해인1.체력 - 몽둥이대미지;
+                Debug.Log(심해인1.체력);
+
+                var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+                clone.GetComponent<플로팅택스트>().Text.text = 몽둥이대미지.ToString();
+                clone.transform.SetParent(ui창.transform);
+
+                DataBaseManager.카메라워킹온오프 = true;
+
+                플레이어몽둥이조준.SetActive(false);
+                노아몽둥이공격이미지.SetActive(true);
+
+                적대기이미지.SetActive(false);
+                적피격이미지.SetActive(true);
+
+                yield return new WaitForSeconds(3f);
+
+                플레이어대기.SetActive(true);
+                노아몽둥이공격이미지.SetActive(false);
+
+                적대기이미지.SetActive(true);
+                적피격이미지.SetActive(false);
+            }
+        }
+
+        if (결과.text == "적 판정승")
+        {
+            if (근력대미지 == 1)
+            {
+                배틀사운드매니저.근접공격효과음함수();
+                BattleUiManager.체력감소();
+                var clone = Instantiate(우측플로팅텍스트, 내플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+                clone.GetComponent<플로팅텍스트좌측>().Text.text = 1.ToString();
+                clone.transform.SetParent(ui창.transform);
+
+                DataBaseManager.카메라왼쪽워킹온오프 = true;
+                플레이어단검조준.SetActive(false);
+                플레이어몽둥이조준.SetActive(false);
+                플레이어도끼조준.SetActive(false);
+                플레이어대기.SetActive(false);
+                노아피격이미지.SetActive(true);
+
+                적대기이미지.SetActive(false);
+                적공격이미지.SetActive(true);
+
+                yield return new WaitForSeconds(3f);
+
+                플레이어대기.SetActive(true);
+                노아피격이미지.SetActive(false);
+
+                적대기이미지.SetActive(true);
+                적공격이미지.SetActive(false);
+
+            }
+
+            else if (근력대미지 == 2)
+            {
+                배틀사운드매니저.근접공격효과음함수();
+                BattleUiManager.체력감소();
+                BattleUiManager.체력감소();
+                var clone = Instantiate(우측플로팅텍스트, 내플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+                clone.GetComponent<플로팅텍스트좌측>().Text.text = 2.ToString();
+                clone.transform.SetParent(ui창.transform);
+
+                DataBaseManager.카메라왼쪽워킹온오프 = true;
+                플레이어단검조준.SetActive(false);
+                플레이어몽둥이조준.SetActive(false);
+                플레이어도끼조준.SetActive(false);
+                플레이어대기.SetActive(false);
+                노아피격이미지.SetActive(true);
+
+                적대기이미지.SetActive(false);
+                적공격이미지.SetActive(true);
+
+                yield return new WaitForSeconds(3f);
+
+                플레이어대기.SetActive(true);
+                노아피격이미지.SetActive(false);
+
+                적대기이미지.SetActive(true);
+                적공격이미지.SetActive(false);
+
+            }
+            else if (근력대미지 == 3)
+            {
+                배틀사운드매니저.근접공격효과음함수();
+                BattleUiManager.체력감소();
+                BattleUiManager.체력감소();
+                BattleUiManager.체력감소();
+                var clone = Instantiate(우측플로팅텍스트, 내플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+                clone.GetComponent<플로팅텍스트좌측>().Text.text = 3.ToString();
+                clone.transform.SetParent(ui창.transform);
+
+                DataBaseManager.카메라왼쪽워킹온오프 = true;
+                플레이어단검조준.SetActive(false);
+                플레이어몽둥이조준.SetActive(false);
+                플레이어도끼조준.SetActive(false);
+                플레이어대기.SetActive(false);
+                노아피격이미지.SetActive(true);
+
+                적대기이미지.SetActive(false);
+                적공격이미지.SetActive(true);
+
+                yield return new WaitForSeconds(3f);
+
+                플레이어대기.SetActive(true);
+                노아피격이미지.SetActive(false);
+
+                적대기이미지.SetActive(true);
+                적공격이미지.SetActive(false);
+            }
+        }
+
+
+        플레이어도끼조준.SetActive(false);
+        플레이어단검조준.SetActive(false);
+        플레이어몽둥이조준.SetActive(false);
+
+        플레이어대기.SetActive(true);
+
+
+
+        턴시작 = false;
+        현재턴수 = 현재턴수 + 1;
+    }
+    IEnumerator 적1단검_회피결과()
+    {
+        
+
+
+
+        if (결과.text == "노아 판정승")
+        {
+            if (선택된무기 == "단검")
+            {
+
+                Debug.Log(심해인1.체력);
+                Debug.Log(단검대미지);
+                심해인1.체력 = 심해인1.체력 - 단검대미지;
+                Debug.Log(심해인1.체력);
+
+                var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+                clone.GetComponent<플로팅택스트>().Text.text = 단검대미지.ToString();
+                clone.transform.SetParent(ui창.transform);
+
+                DataBaseManager.카메라워킹온오프 = true;
+
+                플레이어단검조준.SetActive(false);
+                노아단검공격이미지.SetActive(true);
+
+                적대기이미지.SetActive(false);
+                적피격이미지.SetActive(true);
+
+                yield return new WaitForSeconds(3f);
+
+                플레이어대기.SetActive(true);
+                노아단검공격이미지.SetActive(false);
+
+                적대기이미지.SetActive(true);
+                적피격이미지.SetActive(false);
+            }
+
+            else if (선택된무기 == "손도끼")
+            {
+
+                Debug.Log(심해인1.체력);
+                Debug.Log(손도끼대미지);
+                심해인1.체력 = 심해인1.체력 - 손도끼대미지;
+                Debug.Log(심해인1.체력);
+
+                var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+                clone.GetComponent<플로팅택스트>().Text.text = 손도끼대미지.ToString();
+                clone.transform.SetParent(ui창.transform);
+
+                DataBaseManager.카메라워킹온오프 = true;
+
+                플레이어도끼조준.SetActive(false);
+                노아도끼공격이미지.SetActive(true);
+
+                적대기이미지.SetActive(false);
+                적피격이미지.SetActive(true);
+
+                yield return new WaitForSeconds(3f);
+
+                플레이어대기.SetActive(true);
+                노아도끼공격이미지.SetActive(false);
+
+                적대기이미지.SetActive(true);
+                적피격이미지.SetActive(false);
+
+            }
+            else if (선택된무기 == "몽둥이")
+            {
+
+                Debug.Log(심해인1.체력);
+                Debug.Log(몽둥이대미지);
+                심해인1.체력 = 심해인1.체력 - 몽둥이대미지;
+                Debug.Log(심해인1.체력);
+
+                var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+                clone.GetComponent<플로팅택스트>().Text.text = 몽둥이대미지.ToString();
+                clone.transform.SetParent(ui창.transform);
+
+                DataBaseManager.카메라워킹온오프 = true;
+
+                플레이어몽둥이조준.SetActive(false);
+                노아몽둥이공격이미지.SetActive(true);
+
+                적대기이미지.SetActive(false);
+                적피격이미지.SetActive(true);
+
+                yield return new WaitForSeconds(3f);
+
+                플레이어대기.SetActive(true);
+                노아몽둥이공격이미지.SetActive(false);
+
+                적대기이미지.SetActive(true);
+                적피격이미지.SetActive(false);
+            }
+        }
+
+
+        플레이어도끼조준.SetActive(false);
+        플레이어단검조준.SetActive(false);
+        플레이어몽둥이조준.SetActive(false);
+
+        플레이어대기.SetActive(true);
+
+        턴시작 = false;
+        현재턴수 = 현재턴수 + 1;
+    }
+
+    IEnumerator 적1투척_반격결과()
+    {
+       
+
+
+
+
+        if (선택된무기 == "돌")
+        {
+
+            if (결과.text == "노아 판정승")
+            {
+                Debug.Log(심해인1.체력);
+                Debug.Log(돌대미지);
+                심해인1.체력 = 심해인1.체력 - 돌대미지;
+                Debug.Log(심해인1.체력);
+
+
+                var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+                clone.GetComponent<플로팅택스트>().Text.text = 돌대미지.ToString();
+                clone.transform.SetParent(ui창.transform);
+
+                DataBaseManager.카메라워킹온오프 = true;
+
+                플레이어돌조준이미지.SetActive(false);
+                노아투척후이미지.SetActive(true);
+
+                적대기이미지.SetActive(false);
+                적피격이미지.SetActive(true);
+
+                yield return new WaitForSeconds(3f);
+
+                플레이어대기.SetActive(true);
+                노아투척후이미지.SetActive(false);
+
+                적대기이미지.SetActive(true);
+                적피격이미지.SetActive(false);
+            }
+
+        }
+
+        else if (선택된무기 == "화염병")
+        {
+            DataBaseManager.화염병보유수 = DataBaseManager.화염병보유수 - 1;
+            if (결과.text == "노아 판정승")
+            {
+                Debug.Log(심해인1.체력);
+                Debug.Log(화염병대미지);
+                심해인1.체력 = 심해인1.체력 - 화염병대미지;
+                Debug.Log(심해인1.체력);
+
+                var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+                clone.GetComponent<플로팅택스트>().Text.text = 화염병대미지.ToString();
+                clone.transform.SetParent(ui창.transform);
+
+                DataBaseManager.카메라워킹온오프 = true;
+
+                플레이어화염병조준이미지.SetActive(false);
+                노아투척후이미지.SetActive(true);
+
+                적대기이미지.SetActive(false);
+                적피격이미지.SetActive(true);
+
+                yield return new WaitForSeconds(3f);
+
+                플레이어대기.SetActive(true);
+                노아투척후이미지.SetActive(false);
+
+                적대기이미지.SetActive(true);
+                적피격이미지.SetActive(false);
+            }
+
+        }
+
+
+
+        플레이어돌조준이미지.SetActive(false);
+        플레이어화염병조준이미지.SetActive(false);
+
+
+        플레이어대기.SetActive(true);
+
+
+        턴시작 = false;
+        현재턴수 = 현재턴수 + 1;
+    }
+    IEnumerator 적1투척_회피결과()
+    {
+        
+
+        if (선택된무기 == "돌")
+        {
+
+            if (결과.text == "노아 판정승")
+            {
+                Debug.Log(심해인1.체력);
+                Debug.Log(돌대미지);
+                심해인1.체력 = 심해인1.체력 - 돌대미지;
+                Debug.Log(심해인1.체력);
+
+
+                var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+                clone.GetComponent<플로팅택스트>().Text.text = 돌대미지.ToString();
+                clone.transform.SetParent(ui창.transform);
+
+                DataBaseManager.카메라워킹온오프 = true;
+
+                플레이어돌조준이미지.SetActive(false);
+                노아투척후이미지.SetActive(true);
+
+                적대기이미지.SetActive(false);
+                적피격이미지.SetActive(true);
+
+                yield return new WaitForSeconds(3f);
+
+                플레이어대기.SetActive(true);
+                노아투척후이미지.SetActive(false);
+
+                적대기이미지.SetActive(true);
+                적피격이미지.SetActive(false);
+            }
+
+        }
+
+        else if (선택된무기 == "화염병")
+        {
+            DataBaseManager.화염병보유수 = DataBaseManager.화염병보유수 - 1;
+            if (결과.text == "노아 판정승")
+            {
+                Debug.Log(심해인1.체력);
+                Debug.Log(화염병대미지);
+                심해인1.체력 = 심해인1.체력 - 화염병대미지;
+                Debug.Log(심해인1.체력);
+
+                var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+                clone.GetComponent<플로팅택스트>().Text.text = 화염병대미지.ToString();
+                clone.transform.SetParent(ui창.transform);
+
+                DataBaseManager.카메라워킹온오프 = true;
+
+                플레이어화염병조준이미지.SetActive(false);
+                노아투척후이미지.SetActive(true);
+
+                적대기이미지.SetActive(false);
+                적피격이미지.SetActive(true);
+
+                yield return new WaitForSeconds(3f);
+
+                플레이어대기.SetActive(true);
+                노아투척후이미지.SetActive(false);
+
+                적대기이미지.SetActive(true);
+                적피격이미지.SetActive(false);
+            }
+
+        }
+
+        플레이어돌조준이미지.SetActive(false);
+        플레이어화염병조준이미지.SetActive(false);
+
+
+        플레이어대기.SetActive(true);
+
+        턴시작 = false;
+        현재턴수 = 현재턴수 + 1;
+    }
 
 
 
     public IEnumerator 적클릭1()
     {
+        적가이드일.SetActive(false);
+        적가이드이.SetActive(false);
+        적가이드삼.SetActive(false);
         대상이름.text = "";
         대상설명.text = "";
 
@@ -3855,12 +4929,12 @@ public class BattleManager : MonoBehaviour
             노아제목.text = "노아 : 공격";
             적제목.text = "??? : 반격";
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
             배틀사운드매니저.찰칵효과음함수();
             노아기술.text = "근접격투 : " + DataBaseManager.맨손격투;
             적기술.text = "근접격투 : " + 심해인1.심해인맨손격투;
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             StartCoroutine(룰렛작동());
             StartCoroutine(적룰렛작동());
@@ -3874,12 +4948,12 @@ public class BattleManager : MonoBehaviour
             노아제목.text = "노아 : 공격";
             적제목.text = "??? : 회피";
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
             배틀사운드매니저.찰칵효과음함수();
             노아기술.text = "근접격투 : " + DataBaseManager.맨손격투;
             적기술.text = "회피 : " + 심해인1.심해인회피;
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             StartCoroutine(룰렛작동());
             StartCoroutine(적룰렛작동());
@@ -3887,18 +4961,18 @@ public class BattleManager : MonoBehaviour
             
         }
 
-        if (기술명 == "사격술" && 심해인1.체력 > ((double)심해인1.전체체력 / 2f))
+        else if (기술명 == "사격술" && 심해인1.체력 > ((double)심해인1.전체체력 / 2f))
         {
             
             노아제목.text = "노아 : 공격";
             적제목.text = "??? : 반격";
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
             배틀사운드매니저.찰칵효과음함수();
             노아기술.text = "사격술 : " + DataBaseManager.사격술;
             적기술.text = "근접격투 : " + 심해인1.심해인맨손격투;
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             StartCoroutine(룰렛작동());
             StartCoroutine(적룰렛작동());
@@ -3913,12 +4987,12 @@ public class BattleManager : MonoBehaviour
             노아제목.text = "노아 : 공격";
             적제목.text = "??? : 회피";
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
             배틀사운드매니저.찰칵효과음함수();
             노아기술.text = "사격술 : " + DataBaseManager.사격술;
             적기술.text = "회피 : " + 심해인1.심해인회피;
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             StartCoroutine(룰렛작동());
             StartCoroutine(적룰렛작동());
@@ -3927,18 +5001,18 @@ public class BattleManager : MonoBehaviour
         }
 
 
-        if (기술명 == "단검술" && 심해인1.체력 > ((double)심해인1.전체체력 / 2f))
+        else if (기술명 == "단검술" && 심해인1.체력 > ((double)심해인1.전체체력 / 2f))
         {
 
             노아제목.text = "노아 : 공격";
             적제목.text = "??? : 반격";
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
             배틀사운드매니저.찰칵효과음함수();
             노아기술.text = "단검술 : " + DataBaseManager.검술;
             적기술.text = "근접격투 : " + 심해인1.심해인맨손격투;
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             StartCoroutine(룰렛작동());
             StartCoroutine(적룰렛작동());
@@ -3953,12 +5027,12 @@ public class BattleManager : MonoBehaviour
             노아제목.text = "노아 : 공격";
             적제목.text = "??? : 회피";
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
             배틀사운드매니저.찰칵효과음함수();
             노아기술.text = "사격술 : " + DataBaseManager.검술;
             적기술.text = "회피 : " + 심해인1.심해인회피;
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             StartCoroutine(룰렛작동());
             StartCoroutine(적룰렛작동());
@@ -3966,18 +5040,18 @@ public class BattleManager : MonoBehaviour
       
         }
 
-        if (기술명 == "투척술" && 심해인1.체력 > ((double)심해인1.전체체력 / 2f))
+        else if (기술명 == "투척술" && 심해인1.체력 > ((double)심해인1.전체체력 / 2f))
         {
 
             노아제목.text = "노아 : 공격";
             적제목.text = "??? : 반격";
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
             배틀사운드매니저.찰칵효과음함수();
             노아기술.text = "던지기 : " + DataBaseManager.던지기;
             적기술.text = "근접격투 : " + 심해인1.심해인맨손격투;
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             StartCoroutine(룰렛작동());
             StartCoroutine(적룰렛작동());
@@ -3992,12 +5066,12 @@ public class BattleManager : MonoBehaviour
             노아제목.text = "노아 : 공격";
             적제목.text = "??? : 회피";
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
             배틀사운드매니저.찰칵효과음함수();
             노아기술.text = "던지기 : " + DataBaseManager.던지기;
             적기술.text = "회피 : " + 심해인1.심해인회피;
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             StartCoroutine(룰렛작동());
             StartCoroutine(적룰렛작동());
@@ -4040,12 +5114,12 @@ public class BattleManager : MonoBehaviour
             노아제목.text = "노아 : 공격";
             적제목.text = "??? : 반격";
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             노아기술.text = "근접격투 : " + DataBaseManager.맨손격투;
             적기술.text = "근접격투 : " + 심해인2.심해인맨손격투;
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             StartCoroutine(룰렛작동());
             StartCoroutine(적룰렛작동());
@@ -4099,7 +5173,7 @@ public class BattleManager : MonoBehaviour
                 적기결과.text = "대실패";
 
             }
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
 
             if ((노아결과.text == "대성공"))
@@ -4160,8 +5234,9 @@ public class BattleManager : MonoBehaviour
                     BattleUiManager.체력감소();
                 }
             }
-
-            yield return new WaitForSeconds(2f);
+            판정창끌까요 = false;
+            판정창끌수있나 = true;
+            yield return new WaitForSeconds(closeTime);
 
             판정창.SetActive(false);
 
@@ -4176,12 +5251,12 @@ public class BattleManager : MonoBehaviour
             노아제목.text = "노아 : 공격";
             적제목.text = "??? : 회피";
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             노아기술.text = "근접격투 : " + DataBaseManager.맨손격투;
             적기술.text = "회피 : " + 심해인2.심해인회피;
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             StartCoroutine(룰렛작동());
             StartCoroutine(적룰렛작동());
@@ -4235,7 +5310,7 @@ public class BattleManager : MonoBehaviour
                 적기결과.text = "대실패";
 
             }
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             //노아 불리판정
             if ((노아결과.text == "대성공") && (적기결과.text == "보통성공" || (노아결과.text == "대성공") && (적기결과.text == "실패") || (노아결과.text == "대성공") && (적기결과.text == "대실패")))
@@ -4282,7 +5357,9 @@ public class BattleManager : MonoBehaviour
                 심해인2.체력 = 심해인2.체력 - 근력대미지;
                 Debug.Log(심해인2.체력);
             }
-            yield return new WaitForSeconds(2f);
+            판정창끌까요 = false;
+            판정창끌수있나 = true;
+            yield return new WaitForSeconds(closeTime);
 
             판정창.SetActive(false);
 
@@ -4297,12 +5374,12 @@ public class BattleManager : MonoBehaviour
             노아제목.text = "노아 : 공격";
             적제목.text = "??? : 반격";
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             노아기술.text = "사격술 : " + DataBaseManager.사격술;
             적기술.text = "근접격투 : " + 심해인2.심해인맨손격투;
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             StartCoroutine(룰렛작동());
             StartCoroutine(적룰렛작동());
@@ -4356,7 +5433,7 @@ public class BattleManager : MonoBehaviour
                 적기결과.text = "대실패";
 
             }
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
 
             if ((노아결과.text == "대성공"))
@@ -4437,8 +5514,9 @@ public class BattleManager : MonoBehaviour
                 }
 
             }
-
-            yield return new WaitForSeconds(2f);
+            판정창끌까요 = false;
+            판정창끌수있나 = true;
+            yield return new WaitForSeconds(closeTime);
 
             판정창.SetActive(false);
 
@@ -4454,12 +5532,12 @@ public class BattleManager : MonoBehaviour
             노아제목.text = "노아 : 공격";
             적제목.text = "??? : 회피";
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             노아기술.text = "사격술 : " + DataBaseManager.사격술;
             적기술.text = "회피 : " + 심해인2.심해인회피;
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             StartCoroutine(룰렛작동());
             StartCoroutine(적룰렛작동());
@@ -4513,7 +5591,7 @@ public class BattleManager : MonoBehaviour
                 적기결과.text = "대실패";
 
             }
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             //노아 불리판정
             if ((노아결과.text == "대성공") && (적기결과.text == "보통성공" || (노아결과.text == "대성공") && (적기결과.text == "실패") || (노아결과.text == "대성공") && (적기결과.text == "대실패")))
@@ -4600,7 +5678,9 @@ public class BattleManager : MonoBehaviour
                 }
 
             }
-            yield return new WaitForSeconds(2f);
+            판정창끌까요 = false;
+            판정창끌수있나 = true;
+            yield return new WaitForSeconds(closeTime);
 
             판정창.SetActive(false);
 
@@ -4616,12 +5696,12 @@ public class BattleManager : MonoBehaviour
             노아제목.text = "노아 : 공격";
             적제목.text = "??? : 반격";
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             노아기술.text = "단검술 : " + DataBaseManager.검술;
             적기술.text = "근접격투 : " + 심해인2.심해인맨손격투;
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             StartCoroutine(룰렛작동());
             StartCoroutine(적룰렛작동());
@@ -4675,7 +5755,7 @@ public class BattleManager : MonoBehaviour
                 적기결과.text = "대실패";
 
             }
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
 
             if ((노아결과.text == "대성공"))
@@ -4762,8 +5842,9 @@ public class BattleManager : MonoBehaviour
             }
 
 
-
-            yield return new WaitForSeconds(2f);
+            판정창끌까요 = false;
+            판정창끌수있나 = true;
+            yield return new WaitForSeconds(closeTime);
 
             판정창.SetActive(false);
 
@@ -4779,12 +5860,12 @@ public class BattleManager : MonoBehaviour
             노아제목.text = "노아 : 공격";
             적제목.text = "??? : 회피";
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             노아기술.text = "사격술 : " + DataBaseManager.검술;
             적기술.text = "회피 : " + 심해인2.심해인회피;
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             StartCoroutine(룰렛작동());
             StartCoroutine(적룰렛작동());
@@ -4838,7 +5919,7 @@ public class BattleManager : MonoBehaviour
                 적기결과.text = "대실패";
 
             }
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             //노아 불리판정
             if ((노아결과.text == "대성공") && (적기결과.text == "보통성공" || (노아결과.text == "대성공") && (적기결과.text == "실패") || (노아결과.text == "대성공") && (적기결과.text == "대실패")))
@@ -4909,8 +5990,9 @@ public class BattleManager : MonoBehaviour
 
                 }
             }
-
-            yield return new WaitForSeconds(2f);
+            판정창끌까요 = false;
+            판정창끌수있나 = true;
+            yield return new WaitForSeconds(closeTime);
 
             판정창.SetActive(false);
 
@@ -4924,12 +6006,12 @@ public class BattleManager : MonoBehaviour
             노아제목.text = "노아 : 공격";
             적제목.text = "??? : 반격";
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             노아기술.text = "던지기 : " + DataBaseManager.던지기;
             적기술.text = "근접격투 : " + 심해인2.심해인맨손격투;
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             StartCoroutine(룰렛작동());
             StartCoroutine(적룰렛작동());
@@ -4983,7 +6065,7 @@ public class BattleManager : MonoBehaviour
                 적기결과.text = "대실패";
 
             }
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
 
             if ((노아결과.text == "대성공"))
@@ -5041,8 +6123,9 @@ public class BattleManager : MonoBehaviour
 
             }
 
-
-            yield return new WaitForSeconds(2f);
+            판정창끌까요 = false;
+            판정창끌수있나 = true;
+            yield return new WaitForSeconds(closeTime);
 
             판정창.SetActive(false);
 
@@ -5058,7 +6141,7 @@ public class BattleManager : MonoBehaviour
             노아제목.text = "노아 : 공격";
             적제목.text = "??? : 회피";
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             노아기술.text = "던지기 : " + DataBaseManager.던지기;
             적기술.text = "회피 : " + 심해인2.심해인회피;
@@ -5117,7 +6200,7 @@ public class BattleManager : MonoBehaviour
                 적기결과.text = "대실패";
 
             }
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             //노아 불리판정
             if ((노아결과.text == "대성공") && (적기결과.text == "보통성공" || (노아결과.text == "대성공") && (적기결과.text == "실패") || (노아결과.text == "대성공") && (적기결과.text == "대실패")))
@@ -5180,8 +6263,9 @@ public class BattleManager : MonoBehaviour
                 }
 
             }
-
-            yield return new WaitForSeconds(2f);
+            판정창끌까요 = false;
+            판정창끌수있나 = true;
+            yield return new WaitForSeconds(closeTime);
 
             판정창.SetActive(false);
 
@@ -5226,12 +6310,12 @@ public class BattleManager : MonoBehaviour
             노아제목.text = "노아 : 공격";
             적제목.text = "??? : 반격";
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             노아기술.text = "근접격투 : " + DataBaseManager.맨손격투;
             적기술.text = "근접격투 : " + 심해인3.심해인맨손격투;
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             StartCoroutine(룰렛작동());
             StartCoroutine(적룰렛작동());
@@ -5346,8 +6430,9 @@ public class BattleManager : MonoBehaviour
                     BattleUiManager.체력감소();
                 }
             }
-
-            yield return new WaitForSeconds(2f);
+            판정창끌까요 = false;
+            판정창끌수있나 = true;
+            yield return new WaitForSeconds(closeTime);
 
             판정창.SetActive(false);
 
@@ -5468,7 +6553,9 @@ public class BattleManager : MonoBehaviour
                 심해인3.체력 = 심해인3.체력 - 근력대미지;
                 Debug.Log(심해인3.체력);
             }
-            yield return new WaitForSeconds(2f);
+            판정창끌까요 = false;
+            판정창끌수있나 = true;
+            yield return new WaitForSeconds(closeTime);
 
             판정창.SetActive(false);
 
@@ -5623,8 +6710,9 @@ public class BattleManager : MonoBehaviour
                 }
 
             }
-
-            yield return new WaitForSeconds(2f);
+            판정창끌까요 = false;
+            판정창끌수있나 = true;
+            yield return new WaitForSeconds(closeTime);
 
             판정창.SetActive(false);
 
@@ -5786,7 +6874,9 @@ public class BattleManager : MonoBehaviour
                 }
 
             }
-            yield return new WaitForSeconds(2f);
+            판정창끌까요 = false;
+            판정창끌수있나 = true;
+            yield return new WaitForSeconds(closeTime);
 
             판정창.SetActive(false);
 
@@ -5948,8 +7038,9 @@ public class BattleManager : MonoBehaviour
             }
 
 
-
-            yield return new WaitForSeconds(2f);
+            판정창끌까요 = false;
+            판정창끌수있나 = true;
+            yield return new WaitForSeconds(closeTime);
 
             판정창.SetActive(false);
 
@@ -6095,8 +7186,9 @@ public class BattleManager : MonoBehaviour
 
                 }
             }
-
-            yield return new WaitForSeconds(2f);
+            판정창끌까요 = false;
+            판정창끌수있나 = true;
+            yield return new WaitForSeconds(closeTime);
 
             판정창.SetActive(false);
 
@@ -6226,9 +7318,10 @@ public class BattleManager : MonoBehaviour
                 }
 
             }
+            판정창끌까요 = false;
+            판정창끌수있나 = true;
 
-
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(closeTime);
 
             판정창.SetActive(false);
 
@@ -6366,8 +7459,9 @@ public class BattleManager : MonoBehaviour
                 }
 
             }
-
-            yield return new WaitForSeconds(2f);
+            판정창끌까요 = false;
+            판정창끌수있나 = true;
+            yield return new WaitForSeconds(closeTime);
 
             판정창.SetActive(false);
 
@@ -6459,7 +7553,7 @@ public class BattleManager : MonoBehaviour
             적기결과.text = "대실패";
 
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(waitingTime);
         배틀사운드매니저.찰칵효과음함수();
         //노아 유리판정
         if ((노아결과.text == "대성공"))
@@ -6490,7 +7584,10 @@ public class BattleManager : MonoBehaviour
         {
             결과.text = "적 판정승";
         }
-        yield return new WaitForSeconds(2f);
+
+        판정창끌까요 = false;
+        판정창끌수있나 = true;
+        yield return new WaitForSeconds(closeTime);
         판정창.SetActive(false);
 
         if (결과.text == "적 판정승")
@@ -6633,7 +7730,7 @@ public class BattleManager : MonoBehaviour
             적기결과.text = "대실패";
 
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(waitingTime);
         배틀사운드매니저.찰칵효과음함수();
         if ((노아결과.text == "대성공") && (적기결과.text == "보통성공" || (노아결과.text == "대성공") && (적기결과.text == "실패") || (노아결과.text == "대성공") && (적기결과.text == "대실패")))
         {
@@ -6668,8 +7765,10 @@ public class BattleManager : MonoBehaviour
         {
             결과.text = "적 판정승";
         }
+        판정창끌까요 = false;
+        판정창끌수있나 = true;
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(closeTime);
         판정창.SetActive(false);
 
         if (결과.text == "적 판정승")
@@ -6789,6 +7888,232 @@ public class BattleManager : MonoBehaviour
         턴시작 = false;
         현재턴수 = 현재턴수 + 1;
     }
+
+    // 적1 반응 결과
+
+    IEnumerator 공격반응적1_회피결과()
+    {
+        배틀사운드매니저.찰칵효과음함수();
+
+
+
+
+
+
+        if (결과.text == "적 판정승")
+        {
+            if (근력대미지 == 1)
+            {
+                배틀사운드매니저.근접공격효과음함수();
+                BattleUiManager.체력감소();
+                var clone = Instantiate(우측플로팅텍스트, 내플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+                clone.GetComponent<플로팅텍스트좌측>().Text.text = 1.ToString();
+                clone.transform.SetParent(ui창.transform);
+
+                DataBaseManager.카메라왼쪽워킹온오프 = true;
+
+                플레이어대기.SetActive(false);
+                노아피격이미지.SetActive(true);
+
+                적대기이미지.SetActive(false);
+                적공격이미지.SetActive(true);
+
+                yield return new WaitForSeconds(3f);
+
+                플레이어대기.SetActive(true);
+                노아피격이미지.SetActive(false);
+
+                적대기이미지.SetActive(true);
+                적공격이미지.SetActive(false);
+
+            }
+
+            else if (근력대미지 == 2)
+            {
+                배틀사운드매니저.근접공격효과음함수();
+                BattleUiManager.체력감소();
+                BattleUiManager.체력감소();
+                var clone = Instantiate(우측플로팅텍스트, 내플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+                clone.GetComponent<플로팅텍스트좌측>().Text.text = 2.ToString();
+                clone.transform.SetParent(ui창.transform);
+
+                DataBaseManager.카메라왼쪽워킹온오프 = true;
+
+                플레이어대기.SetActive(false);
+                노아피격이미지.SetActive(true);
+
+                적대기이미지.SetActive(false);
+                적공격이미지.SetActive(true);
+
+                yield return new WaitForSeconds(3f);
+
+                플레이어대기.SetActive(true);
+                노아피격이미지.SetActive(false);
+
+                적대기이미지.SetActive(true);
+                적공격이미지.SetActive(false);
+
+            }
+            else if (근력대미지 == 3)
+            {
+                배틀사운드매니저.근접공격효과음함수();
+                BattleUiManager.체력감소();
+                BattleUiManager.체력감소();
+                BattleUiManager.체력감소();
+                var clone = Instantiate(우측플로팅텍스트, 내플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+                clone.GetComponent<플로팅텍스트좌측>().Text.text = 3.ToString();
+                clone.transform.SetParent(ui창.transform);
+
+                DataBaseManager.카메라왼쪽워킹온오프 = true;
+
+                플레이어대기.SetActive(false);
+                노아피격이미지.SetActive(true);
+
+                적대기이미지.SetActive(false);
+                적공격이미지.SetActive(true);
+
+                yield return new WaitForSeconds(3f);
+
+                플레이어대기.SetActive(true);
+                노아피격이미지.SetActive(false);
+
+                적대기이미지.SetActive(true);
+                적공격이미지.SetActive(false);
+            }
+        }
+
+
+
+
+
+        턴시작 = false;
+        현재턴수 = 현재턴수 + 1;
+    }
+    IEnumerator 공격반응적1_반격결과()
+    {
+      
+
+        if (결과.text == "적 판정승")
+        {
+            if (근력대미지 == 1)
+            {
+                배틀사운드매니저.근접공격효과음함수();
+                BattleUiManager.체력감소();
+                var clone = Instantiate(우측플로팅텍스트, 내플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+                clone.GetComponent<플로팅텍스트좌측>().Text.text = 1.ToString();
+                clone.transform.SetParent(ui창.transform);
+
+                DataBaseManager.카메라왼쪽워킹온오프 = true;
+
+                플레이어대기.SetActive(false);
+                노아피격이미지.SetActive(true);
+
+                적대기이미지.SetActive(false);
+                적공격이미지.SetActive(true);
+
+                yield return new WaitForSeconds(3f);
+
+                플레이어대기.SetActive(true);
+                노아피격이미지.SetActive(false);
+
+                적대기이미지.SetActive(true);
+                적공격이미지.SetActive(false);
+
+            }
+
+            else if (근력대미지 == 2)
+            {
+                배틀사운드매니저.근접공격효과음함수();
+                BattleUiManager.체력감소();
+                BattleUiManager.체력감소();
+                var clone = Instantiate(우측플로팅텍스트, 내플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+                clone.GetComponent<플로팅텍스트좌측>().Text.text = 2.ToString();
+                clone.transform.SetParent(ui창.transform);
+
+                DataBaseManager.카메라왼쪽워킹온오프 = true;
+
+                플레이어대기.SetActive(false);
+                노아피격이미지.SetActive(true);
+
+                적대기이미지.SetActive(false);
+                적공격이미지.SetActive(true);
+
+                yield return new WaitForSeconds(3f);
+
+                플레이어대기.SetActive(true);
+                노아피격이미지.SetActive(false);
+
+                적대기이미지.SetActive(true);
+                적공격이미지.SetActive(false);
+
+            }
+            else if (근력대미지 == 3)
+            {
+                배틀사운드매니저.근접공격효과음함수();
+                BattleUiManager.체력감소();
+                BattleUiManager.체력감소();
+                BattleUiManager.체력감소();
+                var clone = Instantiate(우측플로팅텍스트, 내플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+                clone.GetComponent<플로팅텍스트좌측>().Text.text = 3.ToString();
+                clone.transform.SetParent(ui창.transform);
+
+                DataBaseManager.카메라왼쪽워킹온오프 = true;
+
+                플레이어대기.SetActive(false);
+                노아피격이미지.SetActive(true);
+
+                적대기이미지.SetActive(false);
+                적공격이미지.SetActive(true);
+
+                yield return new WaitForSeconds(3f);
+
+                플레이어대기.SetActive(true);
+                노아피격이미지.SetActive(false);
+
+                적대기이미지.SetActive(true);
+                적공격이미지.SetActive(false);
+            }
+        }
+        if (결과.text == "노아 판정승")
+        {
+            배틀사운드매니저.근접공격효과음함수();
+            Debug.Log(심해인1.체력);
+            Debug.Log(근력대미지);
+            심해인1.체력 = 심해인1.체력 - 근력대미지;
+            Debug.Log(심해인1.체력);
+
+
+
+            var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+            clone.GetComponent<플로팅택스트>().Text.text = 근력대미지.ToString();
+            clone.transform.SetParent(ui창.transform);
+
+            DataBaseManager.카메라워킹온오프 = true;
+
+            플레이어대기.SetActive(false);
+            근접공격.SetActive(true);
+
+            적대기이미지.SetActive(false);
+            적피격이미지.SetActive(true);
+
+            yield return new WaitForSeconds(3f);
+
+            플레이어대기.SetActive(true);
+            근접공격.SetActive(false);
+
+            적대기이미지.SetActive(true);
+            적피격이미지.SetActive(false);
+
+        }
+
+
+        턴시작 = false;
+        현재턴수 = 현재턴수 + 1;
+    }
+
+
+
+
     public IEnumerator 적공격()
     {
         근력대미지 = Random.Range(1, 4);
@@ -6803,16 +8128,16 @@ public class BattleManager : MonoBehaviour
             적제목.text = "??? : 공격";
 
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
             배틀사운드매니저.찰칵효과음함수();
             노아기술.text = "구르기 : " + DataBaseManager.구르기;
             적기술.text = "근접격투 : " + 심해인1.심해인맨손격투;
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             StartCoroutine(룰렛작동());
             StartCoroutine(적룰렛작동());
-            //yield return new WaitForSeconds(6f);
+
             
 
         }
@@ -6824,16 +8149,16 @@ public class BattleManager : MonoBehaviour
 
             적제목.text = "??? : 공격";
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
             배틀사운드매니저.찰칵효과음함수();
             노아기술.text = "근접격투 : " + DataBaseManager.맨손격투;
             적기술.text = "근접격투 : " + 심해인1.심해인맨손격투;
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(waitingTime);
 
             StartCoroutine(룰렛작동());
             StartCoroutine(적룰렛작동());
-            //yield return new WaitForSeconds(6f);
+
            
 
         }
@@ -6903,22 +8228,24 @@ public class BattleManager : MonoBehaviour
         {
             전투클릭여부 = true;
         }
-        if (적선택차례 == true)
+
+        
+
+        판정창끄기();
+
+        if(판정창끌수있나 == true && Input.GetMouseButtonDown(0))
         {
-            적가이드일.SetActive(true);
-        }
-        else
-        {
-            적가이드일.SetActive(false);
+            판정창끌까요 = true;
+
         }
 
-
+        /*
         if ((심해인1.체력 <= 0 || DataBaseManager.현재체력 == 0) && ones == false)
         {
             ones = true;
             StartCoroutine(페이드아웃코루틴());
         }
-
+        */
         
 
         누적데미지_심해인1.text = "누적 : " + (심해인1.전체체력 - 심해인1.체력);
@@ -7039,6 +8366,7 @@ public class BattleManager : MonoBehaviour
        
         while (전투클릭여부 == false)
         {
+            판정창끌수있나 = false;
             룰렛활성여부 = true;
 
             랜덤십의자리 = Random.Range(0, 10);
@@ -7327,7 +8655,7 @@ public class BattleManager : MonoBehaviour
         }
 
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(waitingTime);
 
         if (노아제목.text == "노아 : 회피")
         {
@@ -7338,37 +8666,37 @@ public class BattleManager : MonoBehaviour
             StartCoroutine(공격반응적1_반격());
         }
 
-        if (기술명 == "근접격투" && 심해인1.체력 > ((double)심해인1.전체체력 / 2f))
+        else if(노아제목.text == "노아 : 공격" &&기술명 == "근접격투" && 심해인1.체력 > ((double)심해인1.전체체력 / 2f))
         {
             StartCoroutine(적1근접_반격());
         }
-        else if (기술명 == "근접격투" && 심해인1.체력 <= ((double)심해인1.전체체력 / 2f))
+        else if (노아제목.text == "노아 : 공격" && 기술명 == "근접격투" && 심해인1.체력 <= ((double)심해인1.전체체력 / 2f))
         {
             StartCoroutine(적1근접_회피());
         }
-        if (기술명 == "사격술" && 심해인1.체력 > ((double)심해인1.전체체력 / 2f))
+        else  if (노아제목.text == "노아 : 공격" && 기술명 == "사격술" && 심해인1.체력 > ((double)심해인1.전체체력 / 2f))
         {
             StartCoroutine(적1사격_반격()); 
         }
-        else if (기술명 == "사격술" && 심해인1.체력 <= ((double)심해인1.전체체력 / 2f))
+        else if (노아제목.text == "노아 : 공격" && 기술명 == "사격술" && 심해인1.체력 <= ((double)심해인1.전체체력 / 2f))
         {
             StartCoroutine(적1사격_회피());
         }
 
-        if (기술명 == "단검술" && 심해인1.체력 > ((double)심해인1.전체체력 / 2f))
+        else if (노아제목.text == "노아 : 공격" && 기술명 == "단검술" && 심해인1.체력 > ((double)심해인1.전체체력 / 2f))
         {
             StartCoroutine(적1단검_반격());
         }
-        else if (기술명 == "단검술" && 심해인1.체력 <= ((double)심해인1.전체체력 / 2f))
+        else if (노아제목.text == "노아 : 공격" && 기술명 == "단검술" && 심해인1.체력 <= ((double)심해인1.전체체력 / 2f))
         {
             StartCoroutine(적1단검_회피());
         }
 
-        if (기술명 == "투척술" && 심해인1.체력 > ((double)심해인1.전체체력 / 2f))
+        else if (노아제목.text == "노아 : 공격" && 기술명 == "투척술" && 심해인1.체력 > ((double)심해인1.전체체력 / 2f))
         {
             StartCoroutine(적1투척_반격());
         }
-        else if (기술명 == "투척술" && 심해인1.체력 <= ((double)심해인1.전체체력 / 2f))
+        else if (노아제목.text == "노아 : 공격" && 기술명 == "투척술" && 심해인1.체력 <= ((double)심해인1.전체체력 / 2f))
         {
             StartCoroutine(적1투척_회피());
         }
