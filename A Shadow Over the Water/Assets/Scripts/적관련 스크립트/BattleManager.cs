@@ -1450,6 +1450,7 @@ public class BattleManager : MonoBehaviour
 
     public void 단검선택()
     {
+        배틀사운드매니저.단검도끼대기효과음함수();
         적가이드일.SetActive(true);
         적가이드이.SetActive(true);
         적가이드삼.SetActive(true);
@@ -1471,6 +1472,7 @@ public class BattleManager : MonoBehaviour
 
     public void 손도끼선택()
     {
+        배틀사운드매니저.단검도끼대기효과음함수();
         적가이드일.SetActive(true);
         적가이드이.SetActive(true);
         적가이드삼.SetActive(true);
@@ -1555,6 +1557,9 @@ public class BattleManager : MonoBehaviour
     {
         if (DataBaseManager.화염병보유수 != 0)
         {
+            적가이드일.SetActive(true);
+            적가이드이.SetActive(true);
+            적가이드삼.SetActive(true);
             화염병조준이미지교체();
             화살표모음.SetActive(true);
             도구선택창.SetActive(false);
@@ -2222,6 +2227,10 @@ public class BattleManager : MonoBehaviour
 
     public GameObject 적대기이미지;
     public GameObject 적피격이미지;
+
+    public GameObject 적화염병피격이미지;
+    public GameObject 적돌피격이미지;
+
     public GameObject 적공격이미지;
     //무기선택버튼 관련
 
@@ -2375,7 +2384,8 @@ public class BattleManager : MonoBehaviour
         판정창끌까요 = false;
         판정창끌수있나 = true;
         yield return new WaitForSeconds(closeTime);
-
+        판정창끌까요 = false;
+        판정창끌수있나 = false;
         판정창.SetActive(false);
 
 
@@ -2592,7 +2602,8 @@ public class BattleManager : MonoBehaviour
         판정창끌까요 = false;
         판정창끌수있나 = true;
         yield return new WaitForSeconds(waitingTime);
-
+        판정창끌까요 = false;
+        판정창끌수있나 = false;
         판정창.SetActive(false);
 
 
@@ -2716,7 +2727,8 @@ public class BattleManager : MonoBehaviour
         판정창끌까요 = false;
         판정창끌수있나 = true;
         yield return new WaitForSeconds(closeTime);
-
+        판정창끌까요 = false;
+        판정창끌수있나 = false;
         판정창.SetActive(false);
 
 
@@ -2960,7 +2972,8 @@ public class BattleManager : MonoBehaviour
         판정창끌수있나 = true;
 
         yield return new WaitForSeconds(closeTime);
-
+        판정창끌까요 = false;
+        판정창끌수있나 = false;
         판정창.SetActive(false);
 
 
@@ -3201,7 +3214,8 @@ public class BattleManager : MonoBehaviour
         판정창끌까요 = false;
         판정창끌수있나 = true;
         yield return new WaitForSeconds(closeTime);
-
+        판정창끌까요 = false;
+        판정창끌수있나 = false;
         판정창.SetActive(false);
 
         플레이어단검조준.SetActive(false);
@@ -3212,7 +3226,7 @@ public class BattleManager : MonoBehaviour
         {
             if (선택된무기 == "단검")
             {
-
+                배틀사운드매니저.단검찌르기효과음함수();
                 Debug.Log(심해인1.체력);
                 Debug.Log(단검대미지);
                 심해인1.체력 = 심해인1.체력 - 단검대미지;
@@ -3241,7 +3255,7 @@ public class BattleManager : MonoBehaviour
 
             else if (선택된무기 == "손도끼")
             {
-
+                배틀사운드매니저.도끼찍기효과음함수();
                 Debug.Log(심해인1.체력);
                 Debug.Log(손도끼대미지);
                 심해인1.체력 = 심해인1.체력 - 손도끼대미지;
@@ -3270,6 +3284,7 @@ public class BattleManager : MonoBehaviour
             }
             else if (선택된무기 == "몽둥이")
             {
+                배틀사운드매니저.근접공격효과음함수();
 
                 Debug.Log(심해인1.체력);
                 Debug.Log(몽둥이대미지);
@@ -3498,7 +3513,8 @@ public class BattleManager : MonoBehaviour
         판정창끌수있나 = true;
 
         yield return new WaitForSeconds(closeTime);
-
+        판정창끌까요 = false;
+        판정창끌수있나 = false;
         판정창.SetActive(false);
 
 
@@ -3507,7 +3523,7 @@ public class BattleManager : MonoBehaviour
         {
             if (선택된무기 == "단검")
             {
-
+                배틀사운드매니저.단검찌르기효과음함수();
                 Debug.Log(심해인1.체력);
                 Debug.Log(단검대미지);
                 심해인1.체력 = 심해인1.체력 - 단검대미지;
@@ -3536,7 +3552,7 @@ public class BattleManager : MonoBehaviour
 
             else if (선택된무기 == "손도끼")
             {
-
+                배틀사운드매니저.도끼찍기효과음함수();
                 Debug.Log(심해인1.체력);
                 Debug.Log(손도끼대미지);
                 심해인1.체력 = 심해인1.체력 - 손도끼대미지;
@@ -3565,7 +3581,7 @@ public class BattleManager : MonoBehaviour
             }
             else if (선택된무기 == "몽둥이")
             {
-
+                배틀사운드매니저.근접공격효과음함수();
                 Debug.Log(심해인1.체력);
                 Debug.Log(몽둥이대미지);
                 심해인1.체력 = 심해인1.체력 - 몽둥이대미지;
@@ -3689,7 +3705,8 @@ public class BattleManager : MonoBehaviour
         판정창끌까요 = false;
         판정창끌수있나 = true;
         yield return new WaitForSeconds(closeTime);
-
+        판정창끌까요 = false;
+        판정창끌수있나 = false;
         판정창.SetActive(false);
 
 
@@ -3700,6 +3717,7 @@ public class BattleManager : MonoBehaviour
 
             if (결과.text == "노아 판정승")
             {
+                배틀사운드매니저.근접공격효과음함수();
                 Debug.Log(심해인1.체력);
                 Debug.Log(돌대미지);
                 심해인1.체력 = 심해인1.체력 - 돌대미지;
@@ -3716,7 +3734,7 @@ public class BattleManager : MonoBehaviour
                 노아투척후이미지.SetActive(true);
 
                 적대기이미지.SetActive(false);
-                적피격이미지.SetActive(true);
+                적돌피격이미지.SetActive(true);
 
                 yield return new WaitForSeconds(3f);
 
@@ -3724,16 +3742,18 @@ public class BattleManager : MonoBehaviour
                 노아투척후이미지.SetActive(false);
 
                 적대기이미지.SetActive(true);
-                적피격이미지.SetActive(false);
+                적돌피격이미지.SetActive(false);
             }
 
         }
 
         else if (선택된무기 == "화염병")
         {
+
             DataBaseManager.화염병보유수 = DataBaseManager.화염병보유수 - 1;
             if (결과.text == "노아 판정승")
             {
+                배틀사운드매니저.화염병폭발효과음함수();
                 Debug.Log(심해인1.체력);
                 Debug.Log(화염병대미지);
                 심해인1.체력 = 심해인1.체력 - 화염병대미지;
@@ -3749,7 +3769,7 @@ public class BattleManager : MonoBehaviour
                 노아투척후이미지.SetActive(true);
 
                 적대기이미지.SetActive(false);
-                적피격이미지.SetActive(true);
+                적화염병피격이미지.SetActive(true);
 
                 yield return new WaitForSeconds(3f);
 
@@ -3757,7 +3777,7 @@ public class BattleManager : MonoBehaviour
                 노아투척후이미지.SetActive(false);
 
                 적대기이미지.SetActive(true);
-                적피격이미지.SetActive(false);
+                적화염병피격이미지.SetActive(false);
             }
 
         }
@@ -3864,7 +3884,8 @@ public class BattleManager : MonoBehaviour
         판정창끌까요 = false;
         판정창끌수있나 = true;
         yield return new WaitForSeconds(closeTime);
-
+        판정창끌까요 = false;
+        판정창끌수있나 = false;
         판정창.SetActive(false);
 
         if (선택된무기 == "돌")
@@ -3872,6 +3893,7 @@ public class BattleManager : MonoBehaviour
 
             if (결과.text == "노아 판정승")
             {
+                배틀사운드매니저.근접공격효과음함수();
                 Debug.Log(심해인1.체력);
                 Debug.Log(돌대미지);
                 심해인1.체력 = 심해인1.체력 - 돌대미지;
@@ -3888,7 +3910,7 @@ public class BattleManager : MonoBehaviour
                 노아투척후이미지.SetActive(true);
 
                 적대기이미지.SetActive(false);
-                적피격이미지.SetActive(true);
+                적돌피격이미지.SetActive(true);
 
                 yield return new WaitForSeconds(3f);
 
@@ -3896,7 +3918,7 @@ public class BattleManager : MonoBehaviour
                 노아투척후이미지.SetActive(false);
 
                 적대기이미지.SetActive(true);
-                적피격이미지.SetActive(false);
+                적돌피격이미지.SetActive(false);
             }
 
         }
@@ -3906,6 +3928,7 @@ public class BattleManager : MonoBehaviour
             DataBaseManager.화염병보유수 = DataBaseManager.화염병보유수 - 1;
             if (결과.text == "노아 판정승")
             {
+                배틀사운드매니저.화염병폭발효과음함수();
                 Debug.Log(심해인1.체력);
                 Debug.Log(화염병대미지);
                 심해인1.체력 = 심해인1.체력 - 화염병대미지;
@@ -3921,7 +3944,7 @@ public class BattleManager : MonoBehaviour
                 노아투척후이미지.SetActive(true);
 
                 적대기이미지.SetActive(false);
-                적피격이미지.SetActive(true);
+                적화염병피격이미지.SetActive(true);
 
                 yield return new WaitForSeconds(3f);
 
@@ -3929,7 +3952,7 @@ public class BattleManager : MonoBehaviour
                 노아투척후이미지.SetActive(false);
 
                 적대기이미지.SetActive(true);
-                적피격이미지.SetActive(false);
+                적화염병피격이미지.SetActive(false);
             }
 
         }
@@ -4431,7 +4454,7 @@ public class BattleManager : MonoBehaviour
         {
             if (선택된무기 == "단검")
             {
-
+                배틀사운드매니저.단검찌르기효과음함수();
                 Debug.Log(심해인1.체력);
                 Debug.Log(단검대미지);
                 심해인1.체력 = 심해인1.체력 - 단검대미지;
@@ -4460,7 +4483,7 @@ public class BattleManager : MonoBehaviour
 
             else if (선택된무기 == "손도끼")
             {
-
+                배틀사운드매니저.도끼찍기효과음함수();
                 Debug.Log(심해인1.체력);
                 Debug.Log(손도끼대미지);
                 심해인1.체력 = 심해인1.체력 - 손도끼대미지;
@@ -4489,7 +4512,7 @@ public class BattleManager : MonoBehaviour
             }
             else if (선택된무기 == "몽둥이")
             {
-
+                배틀사운드매니저.근접공격효과음함수();
                 Debug.Log(심해인1.체력);
                 Debug.Log(몽둥이대미지);
                 심해인1.체력 = 심해인1.체력 - 몽둥이대미지;
@@ -4627,7 +4650,7 @@ public class BattleManager : MonoBehaviour
         {
             if (선택된무기 == "단검")
             {
-
+                배틀사운드매니저.단검찌르기효과음함수();
                 Debug.Log(심해인1.체력);
                 Debug.Log(단검대미지);
                 심해인1.체력 = 심해인1.체력 - 단검대미지;
@@ -4656,7 +4679,7 @@ public class BattleManager : MonoBehaviour
 
             else if (선택된무기 == "손도끼")
             {
-
+                배틀사운드매니저.도끼찍기효과음함수();
                 Debug.Log(심해인1.체력);
                 Debug.Log(손도끼대미지);
                 심해인1.체력 = 심해인1.체력 - 손도끼대미지;
@@ -4685,7 +4708,7 @@ public class BattleManager : MonoBehaviour
             }
             else if (선택된무기 == "몽둥이")
             {
-
+                배틀사운드매니저.근접공격효과음함수();
                 Debug.Log(심해인1.체력);
                 Debug.Log(몽둥이대미지);
                 심해인1.체력 = 심해인1.체력 - 몽둥이대미지;
@@ -4736,6 +4759,7 @@ public class BattleManager : MonoBehaviour
 
             if (결과.text == "노아 판정승")
             {
+                배틀사운드매니저.근접공격효과음함수();
                 Debug.Log(심해인1.체력);
                 Debug.Log(돌대미지);
                 심해인1.체력 = 심해인1.체력 - 돌대미지;
@@ -4752,7 +4776,7 @@ public class BattleManager : MonoBehaviour
                 노아투척후이미지.SetActive(true);
 
                 적대기이미지.SetActive(false);
-                적피격이미지.SetActive(true);
+                적돌피격이미지.SetActive(true);
 
                 yield return new WaitForSeconds(3f);
 
@@ -4760,7 +4784,7 @@ public class BattleManager : MonoBehaviour
                 노아투척후이미지.SetActive(false);
 
                 적대기이미지.SetActive(true);
-                적피격이미지.SetActive(false);
+                적돌피격이미지.SetActive(false);
             }
 
         }
@@ -4770,6 +4794,7 @@ public class BattleManager : MonoBehaviour
             DataBaseManager.화염병보유수 = DataBaseManager.화염병보유수 - 1;
             if (결과.text == "노아 판정승")
             {
+                배틀사운드매니저.화염병폭발효과음함수();
                 Debug.Log(심해인1.체력);
                 Debug.Log(화염병대미지);
                 심해인1.체력 = 심해인1.체력 - 화염병대미지;
@@ -4785,7 +4810,7 @@ public class BattleManager : MonoBehaviour
                 노아투척후이미지.SetActive(true);
 
                 적대기이미지.SetActive(false);
-                적피격이미지.SetActive(true);
+                적화염병피격이미지.SetActive(true);
 
                 yield return new WaitForSeconds(3f);
 
@@ -4793,7 +4818,7 @@ public class BattleManager : MonoBehaviour
                 노아투척후이미지.SetActive(false);
 
                 적대기이미지.SetActive(true);
-                적피격이미지.SetActive(false);
+                적화염병피격이미지.SetActive(false);
             }
 
         }
@@ -4819,6 +4844,7 @@ public class BattleManager : MonoBehaviour
 
             if (결과.text == "노아 판정승")
             {
+                배틀사운드매니저.근접공격효과음함수();
                 Debug.Log(심해인1.체력);
                 Debug.Log(돌대미지);
                 심해인1.체력 = 심해인1.체력 - 돌대미지;
@@ -4835,7 +4861,7 @@ public class BattleManager : MonoBehaviour
                 노아투척후이미지.SetActive(true);
 
                 적대기이미지.SetActive(false);
-                적피격이미지.SetActive(true);
+                적돌피격이미지.SetActive(true);
 
                 yield return new WaitForSeconds(3f);
 
@@ -4843,7 +4869,7 @@ public class BattleManager : MonoBehaviour
                 노아투척후이미지.SetActive(false);
 
                 적대기이미지.SetActive(true);
-                적피격이미지.SetActive(false);
+                적돌피격이미지.SetActive(false);
             }
 
         }
@@ -4853,6 +4879,7 @@ public class BattleManager : MonoBehaviour
             DataBaseManager.화염병보유수 = DataBaseManager.화염병보유수 - 1;
             if (결과.text == "노아 판정승")
             {
+                배틀사운드매니저.화염병폭발효과음함수();
                 Debug.Log(심해인1.체력);
                 Debug.Log(화염병대미지);
                 심해인1.체력 = 심해인1.체력 - 화염병대미지;
@@ -4868,7 +4895,7 @@ public class BattleManager : MonoBehaviour
                 노아투척후이미지.SetActive(true);
 
                 적대기이미지.SetActive(false);
-                적피격이미지.SetActive(true);
+                적화염병피격이미지.SetActive(true);
 
                 yield return new WaitForSeconds(3f);
 
@@ -4876,7 +4903,7 @@ public class BattleManager : MonoBehaviour
                 노아투척후이미지.SetActive(false);
 
                 적대기이미지.SetActive(true);
-                적피격이미지.SetActive(false);
+                적화염병피격이미지.SetActive(false);
             }
 
         }

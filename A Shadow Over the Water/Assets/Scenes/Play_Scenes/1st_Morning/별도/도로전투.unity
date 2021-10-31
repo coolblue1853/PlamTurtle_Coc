@@ -6204,6 +6204,14 @@ MonoBehaviour:
     type: 3}
   "\uC18C\uCD1D\uC870\uC900\uD6A8\uACFC\uC74C": {fileID: 8300000, guid: 89d7018b996367f488960ae47ce08898,
     type: 3}
+  "\uB2E8\uAC80\uB3C4\uB07C\uB300\uAE30\uD6A8\uACFC\uC74C": {fileID: 8300000, guid: 3248627ea5f476b4886ef96082527d50,
+    type: 3}
+  "\uB2E8\uAC80\uCC0C\uB974\uAE30\uD6A8\uACFC\uC74C": {fileID: 8300000, guid: 37eee3d489e96a74b988c8d1504b63ab,
+    type: 3}
+  "\uB3C4\uB07C\uCC0D\uAE30\uD6A8\uACFC\uC74C": {fileID: 8300000, guid: 299a840ee9f9ffd49b1fcfcf1f62c8af,
+    type: 3}
+  "\uD654\uC5FC\uBCD1\uD3ED\uBC1C\uD6A8\uACFC\uC74C": {fileID: 8300000, guid: 88a0891385f0c2a4c9408ee2039161f9,
+    type: 3}
   "\uCC30\uCE75\uC18C\uB9AC\uD6A8\uACFC\uC74C": {fileID: 8300000, guid: 41e1c0b14dfe3e24da45f3eca2fdd34e,
     type: 3}
   "\uAE30\uACC4\uB3CC\uC544\uAC00\uB294\uC18C\uB9AC\uD6A8\uACFC\uC74C": {fileID: 8300000,
@@ -25366,7 +25374,7 @@ SpriteRenderer:
   m_SortingLayerID: 1225274111
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 25f357da6b49ff74fa1e2769c595d69a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 132bf5eed2ac4bd448537a1e123cc97b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -27229,6 +27237,16 @@ PrefabInstance:
       propertyPath: "\uBC84\uD2BC\uB9C9\uAE30\uC7A5\uB9C9"
       value: 
       objectReference: {fileID: 577812055}
+    - target: {fileID: 1306659945082388411, guid: 64db10306909d564bb37019b8b56f570,
+        type: 3}
+      propertyPath: "\uC801\uD654\uC5FC\uBCD1\uD53C\uACA9\uC774\uBBF8\uC9C0"
+      value: 
+      objectReference: {fileID: 2066454434}
+    - target: {fileID: 1306659945082388411, guid: 64db10306909d564bb37019b8b56f570,
+        type: 3}
+      propertyPath: "\uC801\uB3CC\uD53C\uACA9\uC774\uBBF8\uC9C0"
+      value: 
+      objectReference: {fileID: 2057298215}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64db10306909d564bb37019b8b56f570, type: 3}
 --- !u!1001 &2384198158457931912

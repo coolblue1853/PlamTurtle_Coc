@@ -40,6 +40,11 @@ public class battleSoundManager : MonoBehaviour
     public AudioClip 소총발포효과음;
     public AudioClip 소총조준효과음;
 
+    public AudioClip 단검도끼대기효과음;
+    public AudioClip 단검찌르기효과음;
+    public AudioClip 도끼찍기효과음;
+    public AudioClip 화염병폭발효과음;
+
     public AudioClip 찰칵소리효과음;
 
 
@@ -148,12 +153,36 @@ public class battleSoundManager : MonoBehaviour
     {
         효과음창.PlayOneShot(샷건조준효과음);
     }
+
+
+    public void 단검도끼대기효과음함수()
+    {
+        효과음창.PlayOneShot(단검도끼대기효과음);
+    }
+    public void 단검찌르기효과음함수()
+    {
+        효과음창.PlayOneShot(단검찌르기효과음);
+    }
+    public void 도끼찍기효과음함수()
+    {
+        효과음창.PlayOneShot(도끼찍기효과음);
+    }
+
+    public void 화염병폭발효과음함수()
+    {
+        효과음창.PlayOneShot(화염병폭발효과음);
+    }
+
+
+
     void bgm소리설정()
     {
         mainBgm.volume = DataBaseManager.음악소리크기;
         effectBgm.volume = DataBaseManager.이펙트소리크기;
         오디오소스_기어.volume = DataBaseManager.이펙트소리크기;
     }
+
+
 
     public void 슬라이드bgm관리()
     {
