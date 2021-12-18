@@ -13,7 +13,7 @@ public class compSetStat : MonoBehaviour
 
     public void 버튼클릭()
     {
-        SceneManager.LoadScene("1st_Mor_GUNSHOP");
+        SceneManager.LoadScene("1st_Mor_MyROOM");
         //SceneManager.LoadScene("1st_Mor_GUNSHOP");
     }
 
@@ -24,7 +24,7 @@ public class compSetStat : MonoBehaviour
 
     public void 임시()
     {
-        SceneManager.LoadScene("1st_Mor_MyRoom 2");
+        SceneManager.LoadScene("1st_Mor_MyRoom");
     }
     // Update is called once per frame
     void Update()

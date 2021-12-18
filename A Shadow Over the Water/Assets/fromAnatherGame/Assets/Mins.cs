@@ -317,31 +317,9 @@ public class Mins : MonoBehaviour
 		}
 
 
-        if (Input.GetKeyDown(KeyCode.Alpha0))
-        {
-			DataBaseManager.정보조사 = DataBaseManager.정보조사 +1;  
-        }
+
 
 	}
-
-    void FixedUpdate()
-	{
-
-
-
-
-
-
-		if (isEllaON)
-		{
-			if (Input.GetKeyDown(KeyCode.Space))
-			{
-				Ella.checkObject();
-			}
-		}
-
-	}
-
 
 
 	public void 다이얼로그온()

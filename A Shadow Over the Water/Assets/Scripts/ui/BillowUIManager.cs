@@ -31,8 +31,8 @@ public class BillowUIManager : MonoBehaviour
     public float 최초이성;
     public float 단위이성;
     
-    public GameObject 스트레스게이지;
-    RectTransform 스트레스게이지사이즈;
+    //public GameObject 스트레스게이지;
+   // RectTransform 스트레스게이지사이즈;
 
     public bool isItemMenuOn = false;
 
@@ -43,7 +43,7 @@ public class BillowUIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        스트레스게이지사이즈 = 스트레스게이지.GetComponent<RectTransform>();
+       // 스트레스게이지사이즈 = 스트레스게이지.GetComponent<RectTransform>();
         상태창켜짐 = false;
         정보창켜짐 = false;
         반영체력 = 1;
@@ -73,10 +73,9 @@ public class BillowUIManager : MonoBehaviour
     void Update()
     {
         인벤토리체커();
-        확인용스탯생성();
+
         체력바관리();
-        체력감소();
-        이성감소();
+
         메뉴창();
         메뉴창업데이터();
         아이템설명업데이터();
@@ -2513,33 +2512,30 @@ public class BillowUIManager : MonoBehaviour
 
     void 스트레스게이지관리()
     {
-        스트레스게이지사이즈.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 246.315f - ((9 - DataBaseManager.스트레스게이지) * 20f));
+        //스트레스게이지사이즈.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 246.315f - ((9 - DataBaseManager.스트레스게이지) * 20f));
     }
 
-    void 체력감소()
+    public void 체력감소()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            DataBaseManager.현재체력 -= 1;
 
-            반영체력 = 반영체력 - 단위체력;
+        DataBaseManager.현재체력 -= 1;
 
-            체력바.fillAmount = 반영체력;
+        반영체력 = 반영체력 - 단위체력;
 
-        }
+        체력바.fillAmount = 반영체력;
+
+
     }
-    void 이성감소()
+    public void 이성감소()
     {
-        if (Input.GetKeyDown(KeyCode.Question))
-        {
-            DataBaseManager.현재정신력 -= 1;
 
-            반영이성 = 반영이성 - 단위이성;
+        DataBaseManager.현재정신력 -= 1;
 
-            이성바.color = new Color(1, 1, 1, 반영이성);
+        반영이성 = 반영이성 - 단위이성;
+
+        이성바.color = new Color(1, 1, 1, 반영이성);
 
 
-        }
     }
 
     void 체력바관리()
@@ -2562,7 +2558,7 @@ public class BillowUIManager : MonoBehaviour
   
 
 
-    
+    /*
     //나중에 지워줘야됨
     void 확인용스탯생성()
     {
@@ -2702,7 +2698,7 @@ public class BillowUIManager : MonoBehaviour
 
 
     }
-
+    */
 
     public void 마우스인벤토리정보창1()
     {

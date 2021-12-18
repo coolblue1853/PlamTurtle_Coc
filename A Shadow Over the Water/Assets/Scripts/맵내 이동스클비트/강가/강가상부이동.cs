@@ -101,7 +101,7 @@ public class 강가상부이동 : MonoBehaviour
 
 
         플레이어바디.transform.position = new Vector2(-26.97f, -4.84f);
-        카메라바디.transform.position = new Vector3(-25.42f, -5.42f, -341.134f);
+        카메라바디.transform.position = new Vector3(-24.42f, -5.42f, -341.134f);
 
 
 
