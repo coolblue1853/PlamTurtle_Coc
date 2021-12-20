@@ -13,7 +13,7 @@ public class compSetStat : MonoBehaviour
 
     public void 버튼클릭()
     {
-        SceneManager.LoadScene("1st_Mor_MyROOM");
+        SceneManager.LoadScene("1st_Mor_Bar");
         //SceneManager.LoadScene("1st_Mor_GUNSHOP");
     }
 
