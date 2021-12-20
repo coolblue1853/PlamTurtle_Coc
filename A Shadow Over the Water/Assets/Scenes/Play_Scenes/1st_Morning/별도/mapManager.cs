@@ -12,7 +12,11 @@ public class mapManager : MonoBehaviour
     {
 
         DataBaseManager.시간대 += 1;
-        SceneManager.LoadScene("02_예비");
+        if(DataBaseManager.시간대 == 2)
+        {
+            SceneManager.LoadScene("02_예비");
+        }
+
 
 
     }
@@ -52,7 +56,48 @@ public class mapManager : MonoBehaviour
         이동확인알람.SetActive(true);
         DataBaseManager.이동지 = "대학";
     }
-
+    public void 경찰서버튼()
+    {
+        이동확인텍스트.text = "<경찰서>으로 이동 하시겠습니까?";
+        이동확인알람.SetActive(true);
+        DataBaseManager.이동지 = "경찰서";
+    }
+    public void 빈민가버튼()
+    {
+        이동확인텍스트.text = "<빈민가>으로 이동 하시겠습니까?";
+        이동확인알람.SetActive(true);
+        DataBaseManager.이동지 = "빈민가";
+    }
+    public void 강가버튼()
+    {
+        이동확인텍스트.text = "<강가>으로 이동 하시겠습니까?";
+        이동확인알람.SetActive(true);
+        DataBaseManager.이동지 = "강가";
+    }
+    public void 의뢰자버튼()
+    {
+        이동확인텍스트.text = "<의뢰자의집>으로 이동 하시겠습니까?";
+        이동확인알람.SetActive(true);
+        DataBaseManager.이동지 = "의뢰자의집";
+    }
+    public void 신문사버튼()
+    {
+        이동확인텍스트.text = "<신문사>으로 이동 하시겠습니까?";
+        이동확인알람.SetActive(true);
+        DataBaseManager.이동지 = "신문사";
+    }
+    public void 술집버튼()
+    {
+        이동확인텍스트.text = "<술집>으로 이동 하시겠습니까?";
+        이동확인알람.SetActive(true);
+        DataBaseManager.이동지 = "술집";
+    }
+    public void 병원버튼()
+    {
+        이동확인텍스트.text = "<병원>으로 이동 하시겠습니까?";
+        이동확인알람.SetActive(true);
+        DataBaseManager.이동지 = "병원";
+    }
 
     public void 총포상버튼()
     {

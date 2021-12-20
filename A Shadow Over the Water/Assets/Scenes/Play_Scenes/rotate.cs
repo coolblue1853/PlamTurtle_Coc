@@ -58,15 +58,48 @@ public class rotate : MonoBehaviour
 
 
         }
-
-        if (DataBaseManager.이동지 == "대학")
+        if (DataBaseManager.이동지 == "빈민가")
+        {
+            SceneManager.LoadScene("1st_Mor_Slum");
+        }
+        else if (DataBaseManager.이동지 == "대학")
         {
             SceneManager.LoadScene("1st_Mor_Uni");
         }
-        if (DataBaseManager.이동지 == "총포상")
+        else if (DataBaseManager.이동지 == "총포상")
         {
             SceneManager.LoadScene("1st_Mor_GUNSHOP");
         }
+
+        else if (DataBaseManager.이동지 == "경찰서")
+        {
+            SceneManager.LoadScene("1st_Mor_Police");
+        }
+
+        else if (DataBaseManager.이동지 == "강가")
+        {
+            SceneManager.LoadScene("1st_Mor_river");
+        }
+
+        else if (DataBaseManager.이동지 == "의뢰자의집")
+        {
+            SceneManager.LoadScene("1st_Mor_questHouse");
+        }
+
+        else if (DataBaseManager.이동지 == "신문사")
+        {
+            SceneManager.LoadScene("1st_Mor_NewsPaper");
+        }
+
+        else if (DataBaseManager.이동지 == "술집")
+        {
+            SceneManager.LoadScene("1st_Mor_Bar");
+        }
+        else if (DataBaseManager.이동지 == "병원")
+        {
+            SceneManager.LoadScene("1st_Mor_Hospital");
+        }
+
     }
 
 

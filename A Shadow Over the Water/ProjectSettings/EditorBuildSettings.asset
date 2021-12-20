@@ -22,7 +22,7 @@ EditorBuildSettings:
     path: "Assets/Scenes/Play_Scenes/1st_Morning/\uC774\uB3D9\uD574\uB3C4\uB418\uB294\uC9C0.unity"
     guid: 3338d4d20a834d442b223775f5b9f5d3
   - enabled: 0
-    path: "Assets/Scenes/\uC52C \uC0AC\uC774/01.unity"
+    path: "Assets/Scenes/\uC52C \uC0AC\uC774/\uC0AD\uC81C\uD3F4\uB354/01.unity"
     guid: 5a17029ed6ac7b641ad29bd4fc703726
   - enabled: 1
     path: "Assets/Scenes/Play_Scenes/1st_Morning/\uBCC4\uB3C4/1st_Mor_GUNSHOP-\uC774\uC804.unity"
@@ -33,6 +33,24 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Play_Scenes/1st_Morning/1st_Mor_MyROOM.unity
     guid: 15a7a1064342c2b4399b1077a17a89ba
+  - enabled: 1
+    path: Assets/Scenes/Play_Scenes/1st_Morning/1st_Mor_Hospital.unity
+    guid: 872609ddf5c3f964394ec47d85e30baf
+  - enabled: 1
+    path: Assets/Scenes/Play_Scenes/1st_Morning/1st_Mor_NewsPaper.unity
+    guid: 2601ec8084c83cc48b541ffadd3bb1c1
+  - enabled: 1
+    path: Assets/Scenes/Play_Scenes/1st_Morning/1st_Mor_Police.unity
+    guid: b79c88f797bd30848ae9ded9b4eaa379
+  - enabled: 1
+    path: Assets/Scenes/Play_Scenes/1st_Morning/1st_Mor_river.unity
+    guid: 2abbc2dd235310e498de86f6053de186
+  - enabled: 1
+    path: Assets/Scenes/Play_Scenes/1st_Morning/1st_Mor_Slum.unity
+    guid: ee6e7cb2e2d573e458be89ca185443cd
+  - enabled: 1
+    path: Assets/Scenes/Play_Scenes/1st_Morning/1st_Mor_Uni.unity
+    guid: 929ab61fc250c3c4297b5f42ac400659
   - enabled: 1
     path: Assets/Scenes/Play_Scenes/1st_Morning/1st_Mor_Bar.unity
     guid: 4f3619c0bc81753458c39fd8cfa70ba9
