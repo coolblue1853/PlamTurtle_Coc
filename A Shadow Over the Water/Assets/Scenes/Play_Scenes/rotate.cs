@@ -9,6 +9,19 @@ public class rotate : MonoBehaviour
     public GameObject 페이드이미지오브젝트;
     public Image 페이드이미지;
     public Image 페이드이미지2;
+
+
+    IEnumerator 원판회전()
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        isover = true;
+        updownder = 1;
+        isRing1End = false;
+        isRing2End = false;
+        isRing3End = false;
+        isRing4End = false;
+        촉수체커 = true;
+    }
     IEnumerator 페이드아웃코루틴()
     {
         float 페이드카운트 = 1;
@@ -21,6 +34,9 @@ public class rotate : MonoBehaviour
             yield return new WaitForSecondsRealtime(0.01f);
             페이드이미지.color = new Color(0, 0, 0, 페이드카운트);
         }
+
+        yield return new WaitForSecondsRealtime(2f);
+        StartCoroutine(원판회전());
     }
 
     bool 체커 = false;
@@ -30,7 +46,7 @@ public class rotate : MonoBehaviour
         {
             체커 = true;
 
-            yield return new WaitForSecondsRealtime(3f);
+
             아침글자.SetActive(false);
             점심글자.SetActive(true);
             yield return new WaitForSecondsRealtime(4f);
@@ -134,11 +150,18 @@ public class rotate : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(페이드아웃코루틴());
+        넘 = 0;
+
+        isRing1End = false;
+        isRing2End = false;
+        isRing3End = false;
+        isRing4End = false;
         timer = 0.0f;
         waitingTime = 7;
         넘 = 0;
         촉수체커 = false;
+        StartCoroutine(페이드아웃코루틴());
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -161,6 +184,7 @@ public class rotate : MonoBehaviour
             {
                 넘 = 3;
                 Ten.SetInteger("Ten", 넘);
+                StartCoroutine(시간끝이동());
             }
         }
         if (collision.tag == "ring4")
@@ -182,7 +206,7 @@ public class rotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        /*
         timer += Time.deltaTime;
 
         if (timer > waitingTime && isover == false)
@@ -198,7 +222,7 @@ public class rotate : MonoBehaviour
 
 
         }
-
+        */
 
         if (updownder == 0)
         {
@@ -225,8 +249,6 @@ public class rotate : MonoBehaviour
         }
         if (isRing2End == false)
         {
-
-            StartCoroutine(시간끝이동());
             ring2.transform.Rotate(Vector3.forward, turnSpeed2 * Time.deltaTime);
         }
         if (isRing3End == false)

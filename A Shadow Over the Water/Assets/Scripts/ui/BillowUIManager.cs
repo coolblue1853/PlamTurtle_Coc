@@ -8,7 +8,8 @@ public class BillowUIManager : MonoBehaviour
     public GameObject 대화창활성화여부;
     public Image 체력바;
     public Image 이성바;
-
+    public Text 일자텍스트;
+    public Text 요일텍스트;
 
     public Text 체력텍스트;
     public Text 정신력텍스트;
@@ -38,12 +39,41 @@ public class BillowUIManager : MonoBehaviour
 
 
 
+    public void 우상단일자업데이터()
+    {
+        if (DataBaseManager.시간대 == 1)
+        {
+            일자텍스트.text = "7월 11일 (월)";
+            요일텍스트.text = "1일차 아침";
+        }
+        else if (DataBaseManager.시간대 == 2)
+        {
+            일자텍스트.text = "7월 11일 (월)";
+            요일텍스트.text = "1일차 점심";
+        }
+        else if (DataBaseManager.시간대 == 3)
+        {
+            일자텍스트.text = "7월 11일 (월)";
+            요일텍스트.text = "1일차 저녁";
+        }
+        else if (DataBaseManager.시간대 == 4)
+        {
+            일자텍스트.text = "7월 11일 (월)";
+            요일텍스트.text = "1일차 밤";
+        }
+        else if (DataBaseManager.시간대 == 5)
+        {
+
+        }
+
+    }
 
 
     // Start is called before the first frame update
     void Start()
     {
-       // 스트레스게이지사이즈 = 스트레스게이지.GetComponent<RectTransform>();
+        우상단일자업데이터();
+        // 스트레스게이지사이즈 = 스트레스게이지.GetComponent<RectTransform>();
         상태창켜짐 = false;
         정보창켜짐 = false;
         반영체력 = 1;

@@ -8,6 +8,7 @@ public class mapManager : MonoBehaviour
     public GameObject 페이드이미지오브젝트;
     public Image 페이드이미지;
 
+
     public void 시간이동으로씬전환()
     {
 
@@ -16,9 +17,18 @@ public class mapManager : MonoBehaviour
         {
             SceneManager.LoadScene("02_예비");
         }
-
-
-
+        else if (DataBaseManager.시간대 == 3)
+        {
+            SceneManager.LoadScene("03_예비");
+        }
+        else if (DataBaseManager.시간대 == 4)
+        {
+            SceneManager.LoadScene("04_예비");
+        }
+        else if (DataBaseManager.시간대 == 5)
+        {
+            SceneManager.LoadScene("05_예비");
+        }
     }
 
     public void 페이드아웃()
@@ -121,7 +131,9 @@ public class mapManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
+
+
     }
 
     // Update is called once per frame
