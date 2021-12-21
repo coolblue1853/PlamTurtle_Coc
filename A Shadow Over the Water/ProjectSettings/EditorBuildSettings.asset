@@ -40,6 +40,9 @@ EditorBuildSettings:
     path: "Assets/Scenes/\uC52C \uC0AC\uC774/03_\uC608\uBE44.unity"
     guid: d454a58689090c94eb525dbabc7cd7ec
   - enabled: 1
+    path: "Assets/Scenes/Play_Scenes/1st_Morning/1st_Mor_MyROOM_1\uC77C\uCC28\uC885\uB8CC.unity"
+    guid: 8421e3405e4cefb45af49834a5d95aaa
+  - enabled: 1
     path: "Assets/Scenes/\uC52C \uC0AC\uC774/04_\uC608\uBE44.unity"
     guid: 21443c0de7a628849bd90286058e2932
   - enabled: 1

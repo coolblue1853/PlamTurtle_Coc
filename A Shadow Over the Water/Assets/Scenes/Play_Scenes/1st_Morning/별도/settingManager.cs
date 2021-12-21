@@ -6,7 +6,128 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 public class settingManager : MonoBehaviour
 {
-  
+
+    public GameObject 의뢰자의집;
+    public GameObject 총포상;
+    public GameObject 탐정사무소;
+    public GameObject 병원;
+    public GameObject 경찰서;
+    public GameObject 신문사;
+    public GameObject 강가;
+    public GameObject 대학교;
+    public GameObject 술집;
+    public GameObject 빈민가;
+    public void 지도버튼모두켜기()
+    {
+        의뢰자의집.SetActive(true);
+        총포상.SetActive(true);
+        탐정사무소.SetActive(true);
+        병원.SetActive(true);
+        경찰서.SetActive(true);
+        신문사.SetActive(true);
+        강가.SetActive(true);
+        대학교.SetActive(true);
+        술집.SetActive(true);
+        빈민가.SetActive(true);
+    }
+    public void 지도버튼모두끄기()
+    {
+        의뢰자의집.SetActive(false);
+        총포상.SetActive(false);
+        탐정사무소.SetActive(false);
+        병원.SetActive(false);
+        경찰서.SetActive(false);
+        신문사.SetActive(false);
+        강가.SetActive(false);
+        대학교.SetActive(false);
+        술집.SetActive(false);
+        빈민가.SetActive(false);
+    }
+    public void 지도업데이터()  // 장소에 따라, 시간에 따라 갈수있는곳 없는곳을 지정해주는 지도업데이터
+    {
+        
+
+        if (SceneManager.GetActiveScene().name == "1st_Mor_Slum")
+        {
+            지도버튼모두켜기();
+            술집.SetActive(false);
+            빈민가.SetActive(false);
+        }
+
+        if (SceneManager.GetActiveScene().name == "1st_Mor_MyROOM")
+        {
+            지도버튼모두켜기();
+            술집.SetActive(false);
+            탐정사무소.SetActive(false);
+
+            if (DataBaseManager.시간대 % 4 == 0)
+            {
+                지도켜기버튼.SetActive(false);
+
+            }
+        }
+        else if (SceneManager.GetActiveScene().name == "1st_Mor_Uni")
+        {
+            지도버튼모두켜기();
+            술집.SetActive(false);
+            대학교.SetActive(false);
+        }
+
+        else if (SceneManager.GetActiveScene().name == "1st_Mor_GUNSHOP")
+        {
+            지도버튼모두켜기();
+            술집.SetActive(false);
+            총포상.SetActive(false);
+        }
+
+        else if(SceneManager.GetActiveScene().name == "1st_Mor_Police")
+        {
+            지도버튼모두켜기();
+            술집.SetActive(false);
+            경찰서.SetActive(false);
+        }
+        else if(SceneManager.GetActiveScene().name == "1st_Mor_river")
+        {
+            지도버튼모두켜기();
+            술집.SetActive(false);
+            강가.SetActive(false);
+        }
+        else if(SceneManager.GetActiveScene().name == "1st_Mor_questHouse")
+        {
+            지도버튼모두켜기();
+            술집.SetActive(false);
+            의뢰자의집.SetActive(false);
+        }
+        else if(SceneManager.GetActiveScene().name == "1st_Mor_NewsPaper")
+        {
+            지도버튼모두켜기();
+            술집.SetActive(false);
+            신문사.SetActive(false);
+        }
+        else if(SceneManager.GetActiveScene().name == "1st_Mor_Bar")
+        {
+            지도버튼모두켜기();
+            술집.SetActive(false);
+            술집.SetActive(false);
+        }
+        else if(SceneManager.GetActiveScene().name == "1st_Mor_Hospital")
+        {
+            지도버튼모두켜기();
+            술집.SetActive(false);
+            병원.SetActive(false);
+        }
+
+        if(DataBaseManager.시간대 %4 == 3)
+        {
+            지도버튼모두끄기();
+            강가.SetActive(true);
+            술집.SetActive(true);
+            탐정사무소.SetActive(true);
+        }
+
+    }
+    public GameObject 지도켜기버튼;
+    public GameObject 일과종료버튼;
 
 
     public GameObject 지도창;
@@ -15,6 +136,7 @@ public class settingManager : MonoBehaviour
     public GameObject 대화창활성화여부;
     public void 지도켜기()
     {
+        지도업데이터();
         if (대화창활성화여부.activeSelf == false)
         {
             DataBaseManager.옵션창여부 = true;
@@ -173,7 +295,8 @@ public class settingManager : MonoBehaviour
 
     void Start()
     {
-        
+
+
     }
 
     public GameObject 전체레드;

@@ -7320,6 +7320,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7cccfb2b7208d54e97c46873788948b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  "\uC758\uB8B0\uC790\uC758\uC9D1": {fileID: 0}
+  "\uCD1D\uD3EC\uC0C1": {fileID: 0}
+  "\uD0D0\uC815\uC0AC\uBB34\uC18C": {fileID: 0}
+  "\uBCD1\uC6D0": {fileID: 0}
+  "\uACBD\uCC30\uC11C": {fileID: 0}
+  "\uC2E0\uBB38\uC0AC": {fileID: 0}
+  "\uAC15\uAC00": {fileID: 0}
+  "\uB300\uD559\uAD50": {fileID: 0}
+  "\uC220\uC9D1": {fileID: 0}
+  "\uBE48\uBBFC\uAC00": {fileID: 0}
+  "\uC9C0\uB3C4\uCF1C\uAE30\uBC84\uD2BC": {fileID: 0}
+  "\uC77C\uACFC\uC885\uB8CC\uBC84\uD2BC": {fileID: 0}
   "\uC9C0\uB3C4\uCC3D": {fileID: 1332030900}
   "\uD558\uBD80\uCC3D": {fileID: 911419195}
   "\uC0C1\uBD80\uCC3D": {fileID: 197217884}
@@ -7365,7 +7377,7 @@ PrefabInstance:
     - target: {fileID: 1500668246032889376, guid: d2d006d52582cb64d9d1e6a93ce54533,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -36.43
+      value: -35.56
       objectReference: {fileID: 0}
     - target: {fileID: 1500668246032889376, guid: d2d006d52582cb64d9d1e6a93ce54533,
         type: 3}
@@ -7593,7 +7605,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1565010586}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -32.43, y: -5.6, z: -341.13403}
+  m_LocalPosition: {x: -32.77, y: -5.6, z: -341.13403}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7613,7 +7625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 992125331}
   moveSpeed: 3
-  isCheckEnd: 0
+  isCheckEnd: 1
 --- !u!61 &1565010591
 BoxCollider2D:
   m_ObjectHideFlags: 0

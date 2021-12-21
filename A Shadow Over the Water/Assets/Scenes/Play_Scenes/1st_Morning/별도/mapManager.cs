@@ -12,22 +12,25 @@ public class mapManager : MonoBehaviour
     public void 시간이동으로씬전환()
     {
 
-        DataBaseManager.시간대 += 1;
-        if(DataBaseManager.시간대 == 2)
+
+        if(DataBaseManager.시간대 == 1)
         {
+            DataBaseManager.시간대 += 1;
             SceneManager.LoadScene("02_예비");
+        }
+        else if (DataBaseManager.시간대 == 2)
+        {
+            DataBaseManager.시간대 += 1;
+            SceneManager.LoadScene("03_예비");
         }
         else if (DataBaseManager.시간대 == 3)
         {
-            SceneManager.LoadScene("03_예비");
+            DataBaseManager.시간대 += 1;
+            SceneManager.LoadScene("04_예비");
         }
         else if (DataBaseManager.시간대 == 4)
         {
-            SceneManager.LoadScene("04_예비");
-        }
-        else if (DataBaseManager.시간대 == 5)
-        {
-            SceneManager.LoadScene("05_예비");
+            SceneManager.LoadScene("1st_Mor_MyROOM_1일차종료");
         }
     }
 
@@ -59,6 +62,13 @@ public class mapManager : MonoBehaviour
     public GameObject 이동확인알람;
     public Text 이동확인텍스트;
 
+
+    public void 탐정사무소버튼()
+    {
+        이동확인텍스트.text = "<탐정사무소>으로 이동 하시겠습니까?";
+        이동확인알람.SetActive(true);
+        DataBaseManager.이동지 = "탐정사무소";
+    }
 
     public void 대학버튼()
     {
@@ -127,6 +137,8 @@ public class mapManager : MonoBehaviour
         DataBaseManager.이동지 = "";
     }
 
+
+   
 
     // Start is called before the first frame update
     void Start()

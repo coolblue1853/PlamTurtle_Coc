@@ -74,6 +74,10 @@ public class rotate : MonoBehaviour
 
 
         }
+        if (DataBaseManager.이동지 == "탐정사무소")
+        {
+            SceneManager.LoadScene("1st_Mor_MyROOM");
+        }
         if (DataBaseManager.이동지 == "빈민가")
         {
             SceneManager.LoadScene("1st_Mor_Slum");
