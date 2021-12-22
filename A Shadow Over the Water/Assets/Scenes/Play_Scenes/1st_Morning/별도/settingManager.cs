@@ -137,7 +137,7 @@ public class settingManager : MonoBehaviour
     public void 지도켜기()
     {
         지도업데이터();
-        if (대화창활성화여부.activeSelf == false)
+        if (대화창활성화여부.activeSelf == false && DataBaseManager.연출진행중 == false)
         {
             DataBaseManager.옵션창여부 = true;
             지도창.SetActive(true);

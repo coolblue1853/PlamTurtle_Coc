@@ -604,10 +604,10 @@ public class 인물정보창manager : MonoBehaviour
         if (DataBaseManager.에이든정보1 == true && 에이든정보1획득 == false)
         {
             에이든정보1획득 = true;
-            var clone = Instantiate(정보프리팹);
-            clone.GetComponent<Text>().text = "<에이든 정보1>";
+            var clone = Instantiate(정보프리팹); 
+            clone.GetComponent<Text>().text = "<size=20><에이든 트리스 - 1></size> \n의뢰자 <color =#0026A9>(엘라 트리스)</color>의 남편.\n그의 직업은 기자로 최근 악몽에 시달리기 시작하며 이상해지기 시작했다고 한다. \n밤마다 악몽에 깨어나는 듯 하며 원인은 불명이라고.";
             clone.transform.SetParent(에이든정보컨텐츠.transform);
-            clone.transform.localScale = new Vector3(1, 1, 1);
+            clone.transform.localScale = new Vector3(1, 1, 1);  
 
         }
 

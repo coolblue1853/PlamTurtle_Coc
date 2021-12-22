@@ -89,7 +89,7 @@ public class BillowUIManager : MonoBehaviour
 
     public void 상태창켜기()
     {
-        if(대화창활성화여부.activeSelf== false)
+        if(대화창활성화여부.activeSelf== false && DataBaseManager.연출진행중 == false)
         {
             DataBaseManager.옵션창여부 = true;
             정보창.SetActive(true);
@@ -193,7 +193,7 @@ public class BillowUIManager : MonoBehaviour
     public bool 상태창켜짐 = false;
     public void 상태창on()
     {
-        if (대화창활성화여부.activeSelf == false)
+        if (대화창활성화여부.activeSelf == false && DataBaseManager.연출진행중 == false)
         {
             DataBaseManager.옵션창여부 = true;
             상태스탯창.SetActive(true);
@@ -334,7 +334,7 @@ public class BillowUIManager : MonoBehaviour
 
     public void 정보창켜기()
     {
-        if (대화창활성화여부.activeSelf == false)
+        if (대화창활성화여부.activeSelf == false && DataBaseManager.연출진행중 == false)
         {
 
 
@@ -399,7 +399,7 @@ public class BillowUIManager : MonoBehaviour
             }
         }
 
-        else if (상태창s.activeSelf == true && 상태창켜짐 == true)
+        else if ((상태창s.activeSelf == true && 상태창켜짐 == true ) && DataBaseManager.연출진행중 == false)
         {
             if (Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.Escape))
             {

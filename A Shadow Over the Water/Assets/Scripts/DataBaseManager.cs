@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class DataBaseManager : MonoBehaviour
 {
+    public static bool 연출진행중 = false;
     //정보 알리미 관련 
     public static bool 정보창알리미 = false;
     public static bool 사건창알리미 = false;

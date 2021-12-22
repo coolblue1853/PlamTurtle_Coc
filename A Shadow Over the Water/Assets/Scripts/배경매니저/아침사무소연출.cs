@@ -132,7 +132,7 @@ public class 아침사무소연출 : MonoBehaviour
 
 
         연출마무리 = true;
-
+        DataBaseManager.연출진행중 = false;
     }
 
 
@@ -149,6 +149,7 @@ public class 아침사무소연출 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DataBaseManager.연출진행중 = true;
         투명.a = 0;
         원래컬러 = 주인공캐릭터스프라이트랜더러.color;
         주인공캐릭터스프라이트랜더러.color = 투명;

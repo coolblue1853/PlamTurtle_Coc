@@ -177,7 +177,8 @@ public class DialogManager_D1사무소 : MonoBehaviour
 
     IEnumerator 스킵()
     {
-        z키로넘기기여부 = false;
+        z키로넘기기여부 = true;   //이 부분을 true로 두면  스킵이 엄청 빨라지고 false로 두면 적당해짐
+        z키로넘기기여부2 = true;
 
         yield return new WaitForSeconds(0.00000001f);
         selectionUIManager.엘라심리학선택지끄기();
