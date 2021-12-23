@@ -401,7 +401,7 @@ public class 사건정보창manager : MonoBehaviour
         {
             행성대직렬정보1획득 = true;
             var clone = Instantiate(정보프리팹);
-            clone.GetComponent<Text>().text = "<행성대직렬 정보1>";
+            clone.GetComponent<Text>().text = " <size=17>< 행성대직렬 신문기사 ></size> \n1921년 7월 14일 새벽에 지구를 포함한 5개의 행성이 일렬로 늘어서는 천문현상이 일어난다고 신문기사에 쓰여있었다.\n 대다수의 과학자들은 이것을 단순천문현상이라고 발표하였지만 일부 과학자나 예언가들은 이것을 종말의 징조로보고있는듯 하다. ";
             clone.transform.SetParent(행성대직렬정보컨텐츠.transform);
             clone.transform.localScale = new Vector3(1, 1, 1);
 
@@ -533,7 +533,7 @@ public class 사건정보창manager : MonoBehaviour
         {
             악몽정보1획득 = true;
             var clone = Instantiate(정보프리팹);
-            clone.GetComponent<Text>().text = "<악몽 정보1>";
+            clone.GetComponent<Text>().text = " <size=20>< 에이든의 악몽 ></size> \n의뢰자 <color=#0026A9>(엘라 트리스)</color>의 남편인 <color=#0026A9>(에이든 트리스)</color>가 겪고 있는 악몽은 생각보다 심각한 것인 듯 하다.\n갑자기 편집증이 생겨날 정도의 악몽이라면 정신적으로 상당히 내몰려있는 것일지도 모른다. ";
             clone.transform.SetParent(악몽정보컨텐츠.transform);
             clone.transform.localScale = new Vector3(1, 1, 1);
         }

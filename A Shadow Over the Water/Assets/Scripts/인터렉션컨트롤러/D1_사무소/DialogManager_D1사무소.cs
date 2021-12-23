@@ -78,7 +78,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
           
         텍스트체커();
 
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             if(z키로넘기기여부2 == true)
             {
@@ -109,7 +109,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
             if (isNext)
             {
 
-                if (Input.GetKeyDown(KeyCode.Z) && isSelectButton == false)
+                if (Input.GetKeyDown(KeyCode.E) && isSelectButton == false)
                 {
                     z키로넘기기여부2 = false;
                     z키로넘기기여부 = false;
@@ -180,10 +180,10 @@ public class DialogManager_D1사무소 : MonoBehaviour
         z키로넘기기여부 = true;   //이 부분을 true로 두면  스킵이 엄청 빨라지고 false로 두면 적당해짐
         z키로넘기기여부2 = true;
 
-        yield return new WaitForSeconds(0.00000001f);
+        yield return new WaitForSeconds(0.03f);
         selectionUIManager.엘라심리학선택지끄기();
         선택지선택시외부에서페이지넘기기t();
-        yield return new WaitForSeconds(0.00000001f);
+        yield return new WaitForSeconds(0.03f);
         if(go_dialogBar.activeSelf == false)
         {
             스킵스탑온();

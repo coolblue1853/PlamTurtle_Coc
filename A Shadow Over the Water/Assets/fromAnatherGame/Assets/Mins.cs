@@ -151,7 +151,7 @@ public class Mins : MonoBehaviour
 			if(DataBaseManager.판정창여부 == false && DataBaseManager.옵션창여부 == false)
 			{
 
-				if (Input.GetKeyDown(KeyCode.Z))
+				if (Input.GetKeyDown(KeyCode.E))
 				{
 					DataBaseManager.판정창여부 = true;
 					anime.SetFloat("move", 0);
@@ -227,7 +227,7 @@ public class Mins : MonoBehaviour
 
             if (DataBaseManager.대화창켜짐 == false)
             {
-				if (Input.GetKeyDown(KeyCode.Z))
+				if (Input.GetKeyDown(KeyCode.E))
 				{
 
 					if (신문whiteNum == 1)
@@ -339,7 +339,7 @@ public class Mins : MonoBehaviour
 		{
 			anime.SetFloat("move", 1);
 
-			if (Input.GetKey(KeyCode.Z))
+			if (Input.GetKey(KeyCode.E))
 			{
 				anime.SetFloat("run", 1);
 				anime.SetFloat("walk", 0);

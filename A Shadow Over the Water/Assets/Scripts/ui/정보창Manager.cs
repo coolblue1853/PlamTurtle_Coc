@@ -24,7 +24,7 @@ public class 정보창Manager : MonoBehaviour
     {
         DataBaseManager.행성대직렬알리미 = true;
         var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
-        clone.GetComponent<정보플로팅>().Text.text = "<color=#B30000>(행성대직렬) </color>정보 획득".ToString();
+        clone.GetComponent<정보플로팅>().Text.text = "<color=#B30000>(행성대직렬 신문기사) </color>정보 획득".ToString();
         clone.transform.SetParent(ui창.transform);
         clone.transform.localScale = new Vector3(1, 1, 1);
     }
@@ -41,7 +41,7 @@ public class 정보창Manager : MonoBehaviour
     {
         DataBaseManager.악몽알리미 = true;
         var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
-        clone.GetComponent<정보플로팅>().Text.text = "<color=#B30000>(악몽) </color>정보 획득".ToString();
+        clone.GetComponent<정보플로팅>().Text.text = "<color=#B30000>(에이든의 악몽) </color>정보 획득".ToString();
         clone.transform.SetParent(ui창.transform);
         clone.transform.localScale = new Vector3(1, 1, 1);
     }
@@ -68,7 +68,7 @@ public class 정보창Manager : MonoBehaviour
     {
         DataBaseManager.병원알리미 = true;
         var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
-        clone.GetComponent<정보플로팅>().Text.text = "<color=#0026A9>(병원) </color>정보 획득".ToString();
+        clone.GetComponent<정보플로팅>().Text.text = "<color=#0026A9>(병원과 의뢰자) </color>정보 획득".ToString();
         clone.transform.SetParent(ui창.transform);
         clone.transform.localScale = new Vector3(1, 1, 1);
     }
@@ -92,7 +92,7 @@ public class 정보창Manager : MonoBehaviour
     {
         DataBaseManager.의뢰자의집알리미 = true;
         var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
-        clone.GetComponent<정보플로팅>().Text.text = "<color=#0026A9>(데일리뉴스 신문사) </color>정보 획득".ToString();
+        clone.GetComponent<정보플로팅>().Text.text = "<color=#0026A9>(남편의 직장) </color>정보 획득".ToString();
         clone.transform.SetParent(ui창.transform);
         clone.transform.localScale = new Vector3(1, 1, 1);
     }

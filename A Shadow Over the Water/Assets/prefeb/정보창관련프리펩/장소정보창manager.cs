@@ -686,7 +686,7 @@ public class 장소정보창manager : MonoBehaviour
         {
             병원정보1획득 = true;
             var clone = Instantiate(정보프리팹);
-            clone.GetComponent<Text>().text = "<병원 정보1>";
+            clone.GetComponent<Text>().text = " <size=20>< 의뢰자와 병원 ></size> \n의뢰자 <color=#0026A9>(엘라 트리스)</color>는 <color=#0026A9>(에이든 트리스)</color>와 함께 병원에 찾아가 봤지만 별다른 이상이 없었다고 한다.\n혹시 직접 찾아가보면 더 정보를 모을수 있을지도.";
             clone.transform.SetParent(병원정보컨텐츠.transform);
             clone.transform.localScale = new Vector3(1, 1, 1);
         }
@@ -815,7 +815,7 @@ public class 장소정보창manager : MonoBehaviour
         {
             신문사정보1획득 = true;
             var clone = Instantiate(정보프리팹);
-            clone.GetComponent<Text>().text = "<신문사 정보1>";
+            clone.GetComponent<Text>().text = " <size=17>< 남편의 직장 ></size> \n의뢰자 <color=#0026A9>(엘라 트리스)</color>의 남편 <color=#0026A9>(에이든 트리스)</color>가 일하는 신문사라고 한다.\n 그에 대한 정보를 좀 더 모을 수 있을지도.";
             clone.transform.SetParent(신문사정보컨텐츠.transform);
             clone.transform.localScale = new Vector3(1, 1, 1);
         }
@@ -942,7 +942,7 @@ public class 장소정보창manager : MonoBehaviour
         {
             의뢰자의집정보1획득 = true;
             var clone = Instantiate(정보프리팹);
-            clone.GetComponent<Text>().text = "<의뢰자의집 정보1>";
+            clone.GetComponent<Text>().text = " <size=20>< 의뢰자의 집주소 ></size> \n의뢰자 <color=#0026A9>(엘라 트리스)</color>의 집 주소. 이곳에 가면 그의 남편 <color=#0026A9>(에이든 트리스)</color>를 직접 만나 볼 수 있을 것이다. ";
             clone.transform.SetParent(의뢰자의집정보컨텐츠.transform);
             clone.transform.localScale = new Vector3(1, 1, 1);
 

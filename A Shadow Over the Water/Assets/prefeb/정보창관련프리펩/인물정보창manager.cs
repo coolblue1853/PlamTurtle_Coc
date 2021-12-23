@@ -605,7 +605,7 @@ public class 인물정보창manager : MonoBehaviour
         {
             에이든정보1획득 = true;
             var clone = Instantiate(정보프리팹); 
-            clone.GetComponent<Text>().text = "<size=20><에이든 트리스 - 1></size> \n의뢰자 <color =#0026A9>(엘라 트리스)</color>의 남편.\n그의 직업은 기자로 최근 악몽에 시달리기 시작하며 이상해지기 시작했다고 한다. \n밤마다 악몽에 깨어나는 듯 하며 원인은 불명이라고.";
+            clone.GetComponent<Text>().text = "<size=20><에이든 트리스 - 1></size> \n의뢰자 <color=#0026A9>(엘라 트리스)</color>의 남편.\n그의 직업은 기자로 최근 악몽에 시달리기 시작하며 이상해지기 시작했다고 한다. \n밤마다 악몽에 깨어나는 듯 하며 원인은 불명이라고.";
             clone.transform.SetParent(에이든정보컨텐츠.transform);
             clone.transform.localScale = new Vector3(1, 1, 1);  
 
@@ -741,7 +741,7 @@ public class 인물정보창manager : MonoBehaviour
         {
             엘라정보1획득 = true;
             var clone = Instantiate(정보프리팹);
-            clone.GetComponent<Text>().text = "<엘라 정보1>";
+            clone.GetComponent<Text>().text = " <size=20>< 엘라 트리스 - 1 ></size> \n1921년 7월 11일 오전에 찾아온 의뢰자.\n그녀는 기자인 자신의 남편의 문제에 대해 의뢰를 상담하러 왔었다.\n그 뒤에 수상한 배후가 있는지 조사해 달라는 듯 하다.";
             clone.transform.SetParent(엘라정보컨텐츠.transform);
 
             clone.transform.localScale = new Vector3(1, 1, 1);
