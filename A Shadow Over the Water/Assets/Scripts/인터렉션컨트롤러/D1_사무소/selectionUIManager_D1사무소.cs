@@ -104,7 +104,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
         첫번째_선택지_직접타기버튼.SetActive(false);
        첫번째_선택지_가만히버튼.SetActive(false);
         dialogManager.onButtonSetterF();
-        interctionController.선1커피타줘();;
+        //interctionController.선1커피타줘();;
 
     }
     public void 선1직접타기()
@@ -114,7 +114,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
         첫번째_선택지_직접타기버튼.SetActive(false);
         첫번째_선택지_가만히버튼.SetActive(false);
         dialogManager.onButtonSetterF();
-        interctionController.선1커피직접타기();
+        //interctionController.선1커피직접타기();
     }
 
     public void 선1가만히있기누름()
@@ -125,14 +125,14 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
         첫번째_선택지_직접타기버튼.SetActive(false);
         첫번째_선택지_가만히버튼.SetActive(false);
         dialogManager.onButtonSetterF();
-        interctionController.선1가만히있기();
+        //interctionController.선1가만히있기();
     }
 
     public void 선1이후출력()
     {
 
 
-        interctionController.선1이후연결();
+        //interctionController.선1이후연결();
     }
 
 
@@ -160,7 +160,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
         두번째_선택지_2.SetActive(false);
         두번째_선택지_3.SetActive(false);
         dialogManager.onButtonSetterF();
-        interctionController.선2_1(); ;
+        //interctionController.선2_1(); ;
 
     }
     public void 선2_2누름()
@@ -170,7 +170,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
         두번째_선택지_2.SetActive(false);
         두번째_선택지_3.SetActive(false);
         dialogManager.onButtonSetterF();
-        interctionController.선2_2();
+        //interctionController.선2_2();
     }
 
     public void 선2_3누름()
@@ -180,7 +180,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
         두번째_선택지_2.SetActive(false);
         두번째_선택지_3.SetActive(false);
         dialogManager.onButtonSetterF();
-        interctionController.선2_3();
+        //interctionController.선2_3();
     }
 
 
@@ -201,7 +201,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
         세번째_선택지_거절.SetActive(false);
         세번째_선택지_수락.SetActive(false);
         dialogManager.onButtonSetterF();
-        interctionController.선3_의뢰거절(); ;
+        //interctionController.선3_의뢰거절(); ;
 
     }
     public void 선3_수락누름()
@@ -210,7 +210,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
         세번째_선택지_거절.SetActive(false);
         세번째_선택지_수락.SetActive(false);
         dialogManager.onButtonSetterF();
-        interctionController.선3_의뢰수락();
+        //interctionController.선3_의뢰수락();
     }
 
 
@@ -318,7 +318,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
         {
             Debug.Log("실패");
             dialogManager.선택지선택시외부에서페이지넘기기();
-            interctionController.선택지1성공출력대사();
+            //interctionController.선택지1성공출력대사();
             //첫번째_선택지_버튼.SetActive(false);
             dialogManager.onButtonSetterF();
 
@@ -329,7 +329,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
             Debug.Log("성공");
             DataBaseManager._1일차오전심리학판정성공여부 = true;
             dialogManager.선택지선택시외부에서페이지넘기기();
-            interctionController.선택지1실패출력대사();
+            //interctionController.선택지1실패출력대사();
             //첫번째_선택지_버튼.SetActive(false);
             dialogManager.onButtonSetterF();
 

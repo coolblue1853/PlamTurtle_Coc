@@ -73,13 +73,7 @@ public class Mins : MonoBehaviour
 
 
 
-		if (collision.transform.tag == "Ella")
-		{
 
-			isEllaON = true;
-
-
-		}
 
 
 
@@ -104,13 +98,7 @@ public class Mins : MonoBehaviour
 			간단표기내용.text = "";
 		}
 
-		if (collision.transform.tag == "Ella")
-		{
 
-			isEllaON = false;
-
-
-		}
 	}
 
 	//기물반응

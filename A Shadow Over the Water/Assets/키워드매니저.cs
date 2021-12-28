@@ -183,6 +183,7 @@ public class 키워드매니저 : MonoBehaviour
     //사건
     bool 행성대직렬리스트추가여부 = false;
     bool 악몽리스트추가여부 = false;
+    bool 불면증리스트추가여부 = false;
     //장소
     bool 병원추가여부 = false;
     bool 의뢰자의집추가여부 = false;
@@ -228,7 +229,14 @@ public class 키워드매니저 : MonoBehaviour
                 상위사건키워드리스트.Add("악몽");
             }
         }
-
+        if (불면증리스트추가여부 == false)
+        {
+            if (DataBaseManager.불면증정보1 == true || DataBaseManager.불면증정보2 == true || DataBaseManager.불면증정보3 == true || DataBaseManager.불면증정보4 == true || DataBaseManager.불면증정보5 == true || DataBaseManager.불면증정보6 == true)
+            {
+                불면증리스트추가여부 = true;
+                상위사건키워드리스트.Add("불면증");
+            }
+        }
 
 
         //장소
@@ -294,9 +302,14 @@ public class 키워드매니저 : MonoBehaviour
     int 악몽키워드개수 = 0;
     int 악몽키워드넘버 = 0;
 
+    List<string> 불면증리스트 = new List<string>();//string들어가야하고
+    int 불면증키워드개수 = 0;
+    int 불면증키워드넘버 = 0;
+
     //사건
     bool 행성대직렬정보1추가여부 = false;
     bool 악몽정보1추가여부 = false;
+    bool 불면증정보1추가여부 = false;
 
     // ------------------------------- 인물하위
     List<string> 에이든리스트 = new List<string>();//string들어가야하고
@@ -333,7 +346,8 @@ public class 키워드매니저 : MonoBehaviour
 
         행성대직렬키워드개수 = 행성대직렬리스트.Count-1;
         악몽키워드개수 = 악몽리스트.Count - 1;
-       
+        불면증키워드개수 = 불면증리스트.Count - 1;
+
         엘라키워드개수 = 엘라리스트.Count - 1;
         에이든키워드개수 = 에이든리스트.Count - 1;
 
@@ -369,6 +383,17 @@ public class 키워드매니저 : MonoBehaviour
             악몽리스트.Add("에이든의 악몽");
         }
 
+        // 불면증
+        else if (DataBaseManager.키워드상위 == "불면증" && 불면증키워드개수 >= 0)
+        {
+            DataBaseManager.키워드하위 = 불면증리스트[불면증키워드넘버];
+        }
+
+        if (DataBaseManager.불면증정보1 == true && 불면증정보1추가여부 == false)
+        {
+            불면증정보1추가여부 = true;
+            불면증리스트.Add("불면증 유행");
+        }
 
 
 

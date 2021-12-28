@@ -68,7 +68,6 @@ public class 기능판정매니저 : MonoBehaviour
 
 
 
-
         if (출력기능값 <= DataBaseManager.정보조사)
         {
             결과.text = "보통성공";

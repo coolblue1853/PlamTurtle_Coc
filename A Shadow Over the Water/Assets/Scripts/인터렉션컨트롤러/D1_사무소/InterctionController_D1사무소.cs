@@ -19,7 +19,24 @@ public class InterctionController_D1사무소 : MonoBehaviour
     public GameObject 신문_정보조사_성공;
     public GameObject 신문_정보조사_대성공;
 
+    //멜리사 대사
 
+    public GameObject 멜리사_1일차아침_최초대사;
+    public GameObject 멜리사_1일차아침_반복대사1;
+    public GameObject 멜리사_1일차아침_반복대사2;
+    public GameObject 멜리사_1일차아침_반복대사3;
+
+    public GameObject 멜리사_1일차아침_불면증;
+    public GameObject 멜리사_1일차아침_행성대직렬;
+    public GameObject 멜리사_1일차아침_악몽;
+    public GameObject 멜리사_1일차아침_에이든;
+    public GameObject 멜리사_1일차아침_엘라;
+    public GameObject 멜리사_1일차아침_병원;
+    public GameObject 멜리사_1일차아침_신문사;
+    public GameObject 멜리사_1일차아침_의뢰자의집;
+
+
+    /*
     public GameObject 선택지1성공;
     public GameObject 선택지1실패;
 
@@ -41,7 +58,7 @@ public class InterctionController_D1사무소 : MonoBehaviour
 
     public GameObject 선1이후;
 
-
+    */
 
 
     //1 심리학판정 성공
@@ -162,178 +179,146 @@ public class InterctionController_D1사무소 : MonoBehaviour
 
         }
     }
-    // ////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-    public void 선1커피타줘()
-    {
-
-        if (theDM.isDialogON == false)
-        {
-            theDM.isDialogON = true;
- 
-            theDM.ShowDialog(선택1커피줘.transform.GetComponent<interactionEvent>().GetDialogs());
-
-        }
-    }
-
-    public void 선1커피직접타기()
+    // //////////////////////////////////////////////// 멜리사 상호작용
+    public void 멜리사1일차아침최초대화()
     {
 
         if (theDM.isDialogON == false)
         {
             theDM.isDialogON = true;
 
-            theDM.ShowDialog(선택1직접타기.transform.GetComponent<interactionEvent>().GetDialogs());
+            theDM.ShowDialog(멜리사_1일차아침_최초대사.transform.GetComponent<interactionEvent>().GetDialogs());
 
         }
     }
-
-    public void 선1가만히있기()
+    public void 멜리사기본대화1()
     {
 
         if (theDM.isDialogON == false)
         {
             theDM.isDialogON = true;
 
-            theDM.ShowDialog(선택1가만히있기.transform.GetComponent<interactionEvent>().GetDialogs());
+            theDM.ShowDialog(멜리사_1일차아침_반복대사1.transform.GetComponent<interactionEvent>().GetDialogs());
 
         }
     }
 
-    public void 선1이후연결()
+    public void 멜리사기본대화2()
     {
 
         if (theDM.isDialogON == false)
         {
             theDM.isDialogON = true;
 
-            theDM.ShowDialog(선1이후.transform.GetComponent<interactionEvent>().GetDialogs());
+            theDM.ShowDialog(멜리사_1일차아침_반복대사2.transform.GetComponent<interactionEvent>().GetDialogs());
 
         }
     }
 
-
-
-
-    // 2번째 선택지
-    public void 선2_1()
+    public void 멜리사기본대화3()
     {
 
         if (theDM.isDialogON == false)
         {
             theDM.isDialogON = true;
 
-            theDM.ShowDialog(선택2_1오브젝트.transform.GetComponent<interactionEvent>().GetDialogs());
+            theDM.ShowDialog(멜리사_1일차아침_반복대사3.transform.GetComponent<interactionEvent>().GetDialogs());
 
         }
     }
 
-    public void 선2_2()
+
+    // 멜리사 키워드 대화
+
+    public void 멜리사_행성대직렬_키워드()
     {
 
         if (theDM.isDialogON == false)
         {
             theDM.isDialogON = true;
 
-            theDM.ShowDialog(선택2_2오브젝트.transform.GetComponent<interactionEvent>().GetDialogs());
+            theDM.ShowDialog(멜리사_1일차아침_행성대직렬.transform.GetComponent<interactionEvent>().GetDialogs());
 
         }
     }
 
-    public void 선2_3()
+    public void 멜리사_악몽_키워드()
     {
 
         if (theDM.isDialogON == false)
         {
             theDM.isDialogON = true;
 
-            theDM.ShowDialog(선택2_3오브젝트.transform.GetComponent<interactionEvent>().GetDialogs());
+            theDM.ShowDialog(멜리사_1일차아침_악몽.transform.GetComponent<interactionEvent>().GetDialogs());
 
         }
     }
-
-
-
-    //의뢰 수락 OR 거절
-
-
-    public void 선3_의뢰거절()
+    public void 멜리사_불면증_키워드()
     {
-        if (DataBaseManager.선택1_3가만히있기를했는가 == true)
+
+        if (theDM.isDialogON == false)
         {
-            if (theDM.isDialogON == false)
-            {
-                theDM.isDialogON = true;
+            theDM.isDialogON = true;
 
-                theDM.ShowDialog(선택3_거절_선택1에1선택.transform.GetComponent<interactionEvent>().GetDialogs());
+            theDM.ShowDialog(멜리사_1일차아침_불면증.transform.GetComponent<interactionEvent>().GetDialogs());
 
-            }
         }
-        else if (DataBaseManager._1일차오전심리학판정성공여부 == true)
-        {
-            if (theDM.isDialogON == false)
-            {
-                theDM.isDialogON = true;
-
-                theDM.ShowDialog(선택3_거절_심리O.transform.GetComponent<interactionEvent>().GetDialogs());
-
-            }
-        }
-        else
-        {
-            if (theDM.isDialogON == false)
-            {
-                theDM.isDialogON = true;
-
-                theDM.ShowDialog(선택3_거절_심리X.transform.GetComponent<interactionEvent>().GetDialogs());
-
-            }
-        }
-
-
-
     }
-
-    public void 선3_의뢰수락()
+    public void 멜리사_에이든_키워드()
     {
-        if (DataBaseManager.선택1_3가만히있기를했는가 == true)
+
+        if (theDM.isDialogON == false)
         {
-            if (theDM.isDialogON == false)
-            {
-                theDM.isDialogON = true;
+            theDM.isDialogON = true;
 
-                theDM.ShowDialog(선택3_수락_선택1에1선택.transform.GetComponent<interactionEvent>().GetDialogs());
+            theDM.ShowDialog(멜리사_1일차아침_에이든.transform.GetComponent<interactionEvent>().GetDialogs());
 
-            }
         }
-        else
-        {
-            if (theDM.isDialogON == false)
-            {
-                theDM.isDialogON = true;
-
-                theDM.ShowDialog(선택3_수락.transform.GetComponent<interactionEvent>().GetDialogs());
-
-            }
-        }
-
-
     }
+    public void 멜리사_엘라_키워드()
+    {
 
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
 
+            theDM.ShowDialog(멜리사_1일차아침_엘라.transform.GetComponent<interactionEvent>().GetDialogs());
 
+        }
+    }
+    public void 멜리사_병원_키워드()
+    {
 
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
 
+            theDM.ShowDialog(멜리사_1일차아침_병원.transform.GetComponent<interactionEvent>().GetDialogs());
 
+        }
+    }
+    public void 멜리사_신문사_키워드()
+    {
 
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+
+            theDM.ShowDialog(멜리사_1일차아침_신문사.transform.GetComponent<interactionEvent>().GetDialogs());
+
+        }
+    }
+    public void 멜리사_의뢰자의집_키워드()
+    {
+
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+
+            theDM.ShowDialog(멜리사_1일차아침_의뢰자의집.transform.GetComponent<interactionEvent>().GetDialogs());
+
+        }
+    }
 
 
 
@@ -384,26 +369,6 @@ public class InterctionController_D1사무소 : MonoBehaviour
     }
 
 
-    public void 선택지1성공출력대사()
-    {
-
-        if (theDM.isDialogON == false)
-        {
-            theDM.isDialogON = true;
-            theDM.ShowDialog(선택지1성공.transform.GetComponent<interactionEvent>().GetDialogs());
-
-        }
-    }
-    public void 선택지1실패출력대사()
-    {
-
-        if (theDM.isDialogON == false)
-        {
-            theDM.isDialogON = true;
-            theDM.ShowDialog(선택지1실패.transform.GetComponent<interactionEvent>().GetDialogs());
-
-        }
-    }
 
 
 

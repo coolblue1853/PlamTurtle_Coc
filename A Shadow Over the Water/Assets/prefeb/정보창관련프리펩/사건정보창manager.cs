@@ -790,7 +790,7 @@ public class 사건정보창manager : MonoBehaviour
         {
             불면증정보1획득 = true;
             var clone = Instantiate(정보프리팹);
-            clone.GetComponent<Text>().text = "<불면증 정보1>";
+            clone.GetComponent<Text>().text = " <size=20>< 불면증 유행 ></size> \n최근들어 아컴시에서 원인 불명의<color=#B30000>(불면증)</color>이 유행중이라고 한다.";
             clone.transform.SetParent(불면증정보컨텐츠.transform);
             clone.transform.localScale = new Vector3(1, 1, 1);
 
