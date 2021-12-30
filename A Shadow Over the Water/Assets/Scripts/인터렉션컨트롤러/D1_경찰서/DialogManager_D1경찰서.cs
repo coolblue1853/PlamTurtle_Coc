@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 
 using WindowsInput;
-public class DialogManager_D1사무소 : MonoBehaviour
+public class DialogManager_D1경찰서 : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject 대화창일러;
@@ -19,6 +19,8 @@ public class DialogManager_D1사무소 : MonoBehaviour
     public GameObject 노아표정7;
     public GameObject 노아표정8;
     public GameObject 노아표정9;
+    /*
+
     public GameObject 노아표정10;
     public GameObject 노아표정11;
     public GameObject 노아표정12;
@@ -34,12 +36,12 @@ public class DialogManager_D1사무소 : MonoBehaviour
     public GameObject 노아표정22;
     public GameObject 노아표정23;
     public GameObject 노아표정24;
-
+    */
     // ⓦ 이건 색깔  , 쉼표는 ' 로  \n으로 해서 작성하면 됨 엑셀
 
     public GameObject PlayerChar;
 
-    public selectionUIManager_D1사무소 selectionUIManager;
+    public selectionUIManager_D1경찰서 selectionUIManager;
     public bool isDialogON = false;
     [SerializeField] GameObject go_dialogBar;
     [SerializeField] GameObject go_dialogNameBar;
@@ -372,19 +374,19 @@ public class DialogManager_D1사무소 : MonoBehaviour
                             if (t_ReplaceText[i + 3] == '행')
                             {
                                 DataBaseManager.행성대직렬정보1 = true;
-                                정보창매니저.행성대직렬정보추가();
+                                //정보창매니저.행성대직렬정보추가();
 
 
                             }
                             if (t_ReplaceText[i + 3] == '악')
                             {
                                 DataBaseManager.악몽정보1 = true;
-                                정보창매니저.악몽정보추가();
+                                //정보창매니저.악몽정보추가();
                             }
                             if (t_ReplaceText[i + 3] == '불')
                             {
                                 DataBaseManager.불면증정보1 = true;
-                                정보창매니저.불면증정보추가();
+                                //정보창매니저.불면증정보추가();
                             }
                         }
 
@@ -398,22 +400,22 @@ public class DialogManager_D1사무소 : MonoBehaviour
                             if (t_ReplaceText[i + 3] == '병')
                             {
                                 DataBaseManager.병원정보1 = true;
-                                정보창매니저.병원정보추가();
+                                //정보창매니저.병원정보추가();
                             }
                             if (t_ReplaceText[i + 3] == '서')
                             {
                                 DataBaseManager.의뢰자의집정보1 = true;
-                                정보창매니저.의뢰자의집정보추가();
+                                //정보창매니저.의뢰자의집정보추가();
                             }
                             if (t_ReplaceText[i + 3] == '아')
                             {
                                 DataBaseManager.아컴역정보1 = true;
-                                정보창매니저.아캄역정보추가();
+                                //정보창매니저.아캄역정보추가();
                             }
                             if (t_ReplaceText[i + 3] == '데')
                             {
                                 DataBaseManager.신문사정보1 = true;
-                                정보창매니저.신문사정보추가();
+                                //정보창매니저.신문사정보추가();
                             }
                         }
   
@@ -505,7 +507,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
                         스킵버튼.SetActive(false);
                         스킵스탑버튼.SetActive(false);
                         t_ignore = true;
-                        selectionUIManager.선택지출력1(); // 1번선택지.
+                        //selectionUIManager.선택지출력1(); // 1번선택지.
                         isSelectButton = true;
 
                         break;
@@ -518,7 +520,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
                         스킵스탑버튼.SetActive(false);
                         선택지등장 = true;
                         t_ignore = true;
-                        selectionUIManager.선택지출력2(); // 2번선택지.
+                       // selectionUIManager.선택지출력2(); // 2번선택지.
                         isSelectButton = true;
 
                         break;
@@ -530,7 +532,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
                         스킵스탑버튼.SetActive(false);
                         선택지등장 = true;
                         t_ignore = true;
-                        selectionUIManager.선택지출력3(); // 2번선택지.
+                       // selectionUIManager.선택지출력3(); // 2번선택지.
                         isSelectButton = true;
 
                         break;
@@ -598,6 +600,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
                     if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '⑦' && t_ReplaceText[i + 4] == '§') { theSpriteManager.노아일러스트7(); };
                     if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '⑧' && t_ReplaceText[i + 4] == '§') { theSpriteManager.노아일러스트8(); };
                     if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '⑨' && t_ReplaceText[i + 4] == '§') { theSpriteManager.노아일러스트9(); };
+
                     /*
                     if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '⑩' && t_ReplaceText[i + 4] == '§') { theSpriteManager.노아일러스트10(); };
                     if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '⑩' && t_ReplaceText[i + 4] == '①' && t_ReplaceText[i + 5] == '§') { theSpriteManager.노아일러스트11(); };
@@ -615,7 +618,6 @@ public class DialogManager_D1사무소 : MonoBehaviour
                     if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '⑫' && t_ReplaceText[i + 4] == '③' && t_ReplaceText[i + 5] == '§') { theSpriteManager.노아일러스트23(); };
                     if (t_ReplaceText[i + 1] == '㉡' && t_ReplaceText[i + 2] == '㉧' && t_ReplaceText[i + 3] == '⑫' && t_ReplaceText[i + 4] == '④' && t_ReplaceText[i + 5] == '§') { theSpriteManager.노아일러스트24(); }; t_ignore = true; break; // 표정변경.
                     */
-
                     if (t_ReplaceText[i + 1] == '엘' && t_ReplaceText[i + 2] == '라' && t_ReplaceText[i + 3] == '1' && t_ReplaceText[i + 4] == '§') { theSpriteManager.엘라일러스트1(); }; t_ignore = true; break; // 표정변경.
 
                 //㉠ ㉡ ㉢ ㉣ ㉤ ㉥ ㉦ ㉧ ㉨ ㉩ ㉪ ㉫ ㉬ ㉭

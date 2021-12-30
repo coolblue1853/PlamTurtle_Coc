@@ -21,6 +21,7 @@ public class SpriteManager : MonoBehaviour
     public GameObject 노아표정7;
     public GameObject 노아표정8;
     public GameObject 노아표정9;
+    /*
     public GameObject 노아표정10;
     public GameObject 노아표정11;
     public GameObject 노아표정12;
@@ -36,7 +37,7 @@ public class SpriteManager : MonoBehaviour
     public GameObject 노아표정22;
     public GameObject 노아표정23;
     public GameObject 노아표정24;
-
+    */
 
 
     public GameObject 엘라1;
@@ -132,6 +133,8 @@ public class SpriteManager : MonoBehaviour
         일러스트송출(노아표정9);
     }
 
+
+    /*
     public void 노아일러스트10()
     {
 
@@ -220,7 +223,7 @@ public class SpriteManager : MonoBehaviour
 
         일러스트송출(노아표정24);
     }
-
+    */
 
 
 
@@ -261,6 +264,7 @@ public class SpriteManager : MonoBehaviour
         노아표정7.SetActive(false);
         노아표정8.SetActive(false);
         노아표정9.SetActive(false);
+        /*
         노아표정10.SetActive(false);
         노아표정11.SetActive(false);
         노아표정12.SetActive(false);
@@ -276,6 +280,7 @@ public class SpriteManager : MonoBehaviour
         노아표정22.SetActive(false);
         노아표정23.SetActive(false);
         노아표정24.SetActive(false);
+        */
     }
 
     void 일러스트송출(GameObject 대상)
