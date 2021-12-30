@@ -361,10 +361,26 @@ public class BillowUIManager : MonoBehaviour
         사건창.SetActive(false);
         장소창.SetActive(false);
     }
-    
 
+    public GameObject 키워드버튼;
+    public GameObject 스트레스버튼;
+    public GameObject 키워드창;
+    public GameObject 스트레스창;
 
-
+    public void 키워드창켜기()
+    {
+        키워드창.SetActive(true);
+        스트레스창.SetActive(false);
+        키워드버튼.SetActive(false);
+        스트레스버튼.SetActive(true);
+    }
+    public void 스트레스창켜기()
+    {
+        키워드창.SetActive(false);
+        스트레스창.SetActive(true);
+        키워드버튼.SetActive(true);
+        스트레스버튼.SetActive(false);
+    }
 
 
 

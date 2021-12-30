@@ -90,7 +90,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
 
 
     }
-
+    public GameObject 기능판정대화창;
     bool z키로넘기기여부2= true;
 
     void 텍스트체커()
@@ -109,7 +109,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
             if (isNext)
             {
 
-                if (Input.GetKeyDown(KeyCode.E) && isSelectButton == false)
+                if (Input.GetKeyDown(KeyCode.E) && isSelectButton == false )
                 {
                     z키로넘기기여부2 = false;
                     z키로넘기기여부 = false;
@@ -124,6 +124,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
                         contextCount = 0;
                         if (++lineCount < dialogs.Length)
                         {
+                            selectionUIManager.대화중기능판정버튼제거();
                             StartCoroutine(TypeWriter());
                         }
 
@@ -138,6 +139,13 @@ public class DialogManager_D1사무소 : MonoBehaviour
             }
         }
     }
+
+
+
+
+    public GameObject 엘라심리학선택지버튼;
+
+
 
 
     public bool 선택지등장 = false;
