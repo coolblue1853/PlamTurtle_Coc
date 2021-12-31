@@ -376,7 +376,7 @@ public class BillowUIManager : MonoBehaviour
     }
     public void 스트레스창켜기()
     {
-        키워드창.SetActive(false);
+        키워드창.SetActive(true);
         스트레스창.SetActive(true);
         키워드버튼.SetActive(true);
         스트레스버튼.SetActive(false);

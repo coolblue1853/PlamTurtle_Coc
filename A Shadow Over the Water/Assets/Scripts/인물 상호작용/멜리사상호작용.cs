@@ -78,7 +78,7 @@ public class 멜리사상호작용 : MonoBehaviour
 		int 숫자 = Random.Range(1, 4);
 
 
-		if(SceneManager.GetActiveScene().name == "1st_Mor_MyROOM" && 최초대화여부_1일차아침 == false)
+		if( 최초대화여부_1일차아침 == false)
         {
 			최초대화여부_1일차아침 = true;
 			인터렉션컨트롤러.멜리사1일차아침최초대화();

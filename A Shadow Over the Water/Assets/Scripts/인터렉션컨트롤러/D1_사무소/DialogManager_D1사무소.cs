@@ -297,7 +297,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
         DataBaseManager.대화창켜짐 = false;
         DataBaseManager.판정창여부 = false;
 
-        DataBaseManager.연출중움직임제한 = false;
+        //DataBaseManager.연출중움직임제한 = false;
         PlayerChar.transform.GetComponent<Mins>().다이얼로그다운();
         대화창일러.SetActive(false);
         대화창일러.SetActive(false);
