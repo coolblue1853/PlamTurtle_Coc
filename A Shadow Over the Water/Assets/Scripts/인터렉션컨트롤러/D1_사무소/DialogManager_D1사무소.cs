@@ -154,11 +154,15 @@ public class DialogManager_D1사무소 : MonoBehaviour
     public GameObject 스킵스탑버튼;
     public void 스킵온()
     {
-        스킵버튼.SetActive(false);
-        스킵스탑버튼.SetActive(true);
-        DataBaseManager.스킵활성화 = true;
-        DataBaseManager.텍스트딜레이 = 0.00001f;
-        StartCoroutine(스킵());
+        if(isSelectButton == false)
+        {
+            스킵버튼.SetActive(false);
+            스킵스탑버튼.SetActive(true);
+            DataBaseManager.스킵활성화 = true;
+            DataBaseManager.텍스트딜레이 = 0.00001f;
+            StartCoroutine(스킵());
+        }
+
 
 
     }

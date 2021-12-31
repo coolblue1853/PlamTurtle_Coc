@@ -245,6 +245,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
 
     public void 엘라심리학선택지예()
     {
+        DataBaseManager.대화중기능판정 = true;
         엘라심리학선택지버튼.SetActive(false);
         엘라심리학실시여부 = true;
         기능사용안하고넘기기 = true;          //요거는  단발성 메시지에서 사용하면 바로 넘겨짐
@@ -360,7 +361,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
 
         }
 
-
+        DataBaseManager.대화중기능판정 = false;
     }
     /*
     public IEnumerator 심리학기능사용선택지()

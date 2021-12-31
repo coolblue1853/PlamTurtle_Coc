@@ -130,7 +130,7 @@ public class 아침사무소연출 : MonoBehaviour
         신문콜라이더없음.SetActive(false);
         신문콜라이더있음.SetActive(true);
 
-
+        DataBaseManager.연출중움직임제한 = false;
         연출마무리 = true;
         DataBaseManager.연출진행중 = false;
     }

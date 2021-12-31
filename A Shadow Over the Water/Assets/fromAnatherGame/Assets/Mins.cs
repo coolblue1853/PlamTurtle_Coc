@@ -298,7 +298,7 @@ public class Mins : MonoBehaviour
     private void Update()
 	{
 		상호작용체커();
-		if (isDialogONing == false && DataBaseManager.연출중움직임제한 == false)
+		if (DataBaseManager.대화창켜짐 == false && DataBaseManager.연출중움직임제한 == false)
 		{
 			runAndWalkChanger();
 			Move();

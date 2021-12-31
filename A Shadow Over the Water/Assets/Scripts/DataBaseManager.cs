@@ -8,7 +8,7 @@ public class DataBaseManager : MonoBehaviour
     public static string 키워드상위 = "";
     public static string 키워드하위 = "";
 
-
+    public static bool 대화중기능판정 = false;
     public static bool 연출진행중 = false;
     //정보 알리미 관련 
     public static bool 정보창알리미 = false;
