@@ -58,7 +58,7 @@ public class 경찰관1상호작용 : MonoBehaviour
 					플레이어애니메이션.SetFloat("run", 0);
 
 
-					DataBaseManager.연출중움직임제한 = true;
+					DataBaseManager.대화창켜짐 = true;
 
 					상호작용판.SetActive(true);
 				}
@@ -73,7 +73,7 @@ public class 경찰관1상호작용 : MonoBehaviour
 	public void 멜리사대화()
     {
 		상호작용판.SetActive(false);
-		DataBaseManager.연출중움직임제한 = true;
+		DataBaseManager.대화창켜짐 = true;
 
 		int 숫자 = Random.Range(1, 4);
 
@@ -150,7 +150,7 @@ public class 경찰관1상호작용 : MonoBehaviour
 	public void 그만두기()
     {
 		상호작용판.SetActive(false);
-		DataBaseManager.연출중움직임제한 = false;
+		DataBaseManager.대화창켜짐 = false;
 		DataBaseManager.판정창여부 = false;
 	}
 

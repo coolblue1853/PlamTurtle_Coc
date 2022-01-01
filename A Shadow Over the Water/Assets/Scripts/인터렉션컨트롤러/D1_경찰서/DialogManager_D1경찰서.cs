@@ -92,7 +92,7 @@ public class DialogManager_D1경찰서 : MonoBehaviour
 
 
     }
-
+    public GameObject 기능판정대화창;
     bool z키로넘기기여부2= true;
 
     void 텍스트체커()
@@ -126,6 +126,7 @@ public class DialogManager_D1경찰서 : MonoBehaviour
                         contextCount = 0;
                         if (++lineCount < dialogs.Length)
                         {
+                            selectionUIManager.대화중기능판정버튼제거();
                             StartCoroutine(TypeWriter());
                         }
 
@@ -140,7 +141,7 @@ public class DialogManager_D1경찰서 : MonoBehaviour
             }
         }
     }
-
+    public GameObject 경찰관심리학선택지버튼;
 
     public bool 선택지등장 = false;
 
@@ -148,13 +149,15 @@ public class DialogManager_D1경찰서 : MonoBehaviour
     public GameObject 스킵스탑버튼;
     public void 스킵온()
     {
-        스킵버튼.SetActive(false);
-        스킵스탑버튼.SetActive(true);
-        DataBaseManager.스킵활성화 = true;
-        DataBaseManager.텍스트딜레이 = 0.00001f;
-        StartCoroutine(스킵());
+        if (isSelectButton == false)
+        {
+            스킵버튼.SetActive(false);
+            스킵스탑버튼.SetActive(true);
+            DataBaseManager.스킵활성화 = true;
+            DataBaseManager.텍스트딜레이 = 0.00001f;
+            StartCoroutine(스킵());
 
-
+        }
     }
 
     public void 스킵스탑온()
@@ -291,7 +294,7 @@ public class DialogManager_D1경찰서 : MonoBehaviour
         DataBaseManager.대화창켜짐 = false;
         DataBaseManager.판정창여부 = false;
 
-        DataBaseManager.연출중움직임제한 = false;
+        //DataBaseManager.연출중움직임제한 = false;
         PlayerChar.transform.GetComponent<Mins>().다이얼로그다운();
         대화창일러.SetActive(false);
         대화창일러.SetActive(false);

@@ -292,11 +292,18 @@ public class Mins : MonoBehaviour
 		trans = gameObject.GetComponent<Transform>();
 		rigid = gameObject.GetComponent<Rigidbody2D>();
 		anime = gameObject.GetComponent<Animator>();
+
+
 	}
 
     // Update is called once per frame
     private void Update()
 	{
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			Debug.Log("대화창켜짐"+DataBaseManager.대화창켜짐);
+			Debug.Log("연출중" + DataBaseManager.연출중움직임제한);
+		}
 		상호작용체커();
 		if (DataBaseManager.대화창켜짐 == false && DataBaseManager.연출중움직임제한 == false)
 		{
