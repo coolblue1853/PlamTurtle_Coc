@@ -15,14 +15,6 @@ public class 사건정보창manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            DataBaseManager.행성대직렬정보1 = true; 
-            DataBaseManager.행성대직렬정보2 = true;
-            DataBaseManager.행성대직렬정보3 = true;
-            DataBaseManager.행성대직렬정보4 = true;
-            DataBaseManager.행성대직렬정보5 = true;
-        }
 
 
 
@@ -1049,7 +1041,7 @@ public class 사건정보창manager : MonoBehaviour
         {
             실종된사람들정보1획득 = true;
             var clone = Instantiate(정보프리팹);
-            clone.GetComponent<Text>().text = "<실종된사람들 정보1>";
+            clone.GetComponent<Text>().text = " <size=17>< 연속 실종 사건 ></size> \n경찰서의 <color=#1A6800>(알버트)</color>가 말해주기를 현재 한달 전부터 아컴시에서 남자 3명 여자 2명이 실종되는 사건이 발생했다고 한다.\n 빈민층이 아닌 일반인들이 연속 적으로 실종되었다는 점과 서내에서 입단속을 시키고 있다는 것이 의심점이다. ";
             clone.transform.SetParent(실종된사람들정보컨텐츠.transform);
             clone.transform.localScale = new Vector3(1, 1, 1);
         }

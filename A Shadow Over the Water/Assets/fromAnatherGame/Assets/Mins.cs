@@ -147,7 +147,7 @@ public class Mins : MonoBehaviour
 					anime.SetFloat("run", 0);
 
 
-					DataBaseManager.연출중움직임제한 = true;
+					DataBaseManager.대화창켜짐 = true;
 					신문whiteNum = 1;
 					신문상호작용.SetActive(true);
 				}
@@ -275,6 +275,7 @@ public class Mins : MonoBehaviour
 
 	public void 신문그만두기()
 	{
+		DataBaseManager.대화창켜짐 = false;
 		신문상호작용.SetActive(false);
 		DataBaseManager.연출중움직임제한 = false;
 		DataBaseManager.판정창여부 = false;
@@ -305,7 +306,7 @@ public class Mins : MonoBehaviour
 			Debug.Log("연출중" + DataBaseManager.연출중움직임제한);
 		}
 		상호작용체커();
-		if (DataBaseManager.대화창켜짐 == false && DataBaseManager.연출중움직임제한 == false)
+		if (DataBaseManager.대화창켜짐 == false && DataBaseManager.연출중움직임제한 == false && DataBaseManager.판정창여부 == false )
 		{
 			runAndWalkChanger();
 			Move();

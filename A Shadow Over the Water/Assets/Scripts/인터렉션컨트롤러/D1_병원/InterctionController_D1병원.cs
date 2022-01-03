@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InterctionController_D1경찰서 : MonoBehaviour
+public class InterctionController_D1병원 : MonoBehaviour
 {
 
 
@@ -35,8 +35,8 @@ public class InterctionController_D1경찰서 : MonoBehaviour
 
     // Start is called before the first frame update
 
-    public DialogManager_D1경찰서 theDM;
-    public DialogManager_D1경찰서 기능판정DM;
+    public DialogManager_D1병원 theDM;
+    public DialogManager_D1병원 기능판정DM;
 
 
     // Update is called once per frame

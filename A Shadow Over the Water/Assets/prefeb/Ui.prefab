@@ -21134,8 +21134,6 @@ GameObject:
   - component: {fileID: 758500591}
   - component: {fileID: 758500590}
   - component: {fileID: 1548278141}
-  - component: {fileID: 8810031596395651}
-  - component: {fileID: 673931277950621048}
   m_Layer: 5
   m_Name: "\uC635\uC158\uCC3D"
   m_TagString: Untagged
@@ -21207,72 +21205,6 @@ MonoBehaviour:
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!114 &1548278141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758500588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7cccfb2b7208d54e97c46873788948b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  "\uC758\uB8B0\uC790\uC758\uC9D1": {fileID: 0}
-  "\uCD1D\uD3EC\uC0C1": {fileID: 0}
-  "\uD0D0\uC815\uC0AC\uBB34\uC18C": {fileID: 0}
-  "\uBCD1\uC6D0": {fileID: 0}
-  "\uACBD\uCC30\uC11C": {fileID: 0}
-  "\uC2E0\uBB38\uC0AC": {fileID: 0}
-  "\uAC15\uAC00": {fileID: 0}
-  "\uB300\uD559\uAD50": {fileID: 0}
-  "\uC220\uC9D1": {fileID: 0}
-  "\uBE48\uBBFC\uAC00": {fileID: 0}
-  "\uC9C0\uB3C4\uCF1C\uAE30\uBC84\uD2BC": {fileID: 0}
-  "\uC77C\uACFC\uC885\uB8CC\uBC84\uD2BC": {fileID: 0}
-  "\uC9C0\uB3C4\uCC3D": {fileID: 1773175731}
-  "\uD558\uBD80\uCC3D": {fileID: 1445280475}
-  "\uC0C1\uBD80\uCC3D": {fileID: 400528033}
-  "\uB300\uD654\uCC3D\uD65C\uC131\uD654\uC5EC\uBD80": {fileID: 0}
-  "\uC635\uC158\uCC3D": {fileID: 758500588}
-  "\uC124\uC815\uCC3D": {fileID: 1801240131}
-  "\uD574\uC0C1\uB3C4": {fileID: 288579949}
-  "\uC804\uCCB4\uB808\uB4DC": {fileID: 1696069231}
-  "\uCC3D\uB808\uB4DC": {fileID: 978250310}
---- !u!114 &8810031596395651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758500588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7cccfb2b7208d54e97c46873788948b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  "\uC758\uB8B0\uC790\uC758\uC9D1": {fileID: 0}
-  "\uCD1D\uD3EC\uC0C1": {fileID: 0}
-  "\uD0D0\uC815\uC0AC\uBB34\uC18C": {fileID: 0}
-  "\uBCD1\uC6D0": {fileID: 0}
-  "\uACBD\uCC30\uC11C": {fileID: 0}
-  "\uC2E0\uBB38\uC0AC": {fileID: 0}
-  "\uAC15\uAC00": {fileID: 0}
-  "\uB300\uD559\uAD50": {fileID: 0}
-  "\uC220\uC9D1": {fileID: 0}
-  "\uBE48\uBBFC\uAC00": {fileID: 0}
-  "\uC9C0\uB3C4\uCF1C\uAE30\uBC84\uD2BC": {fileID: 0}
-  "\uC77C\uACFC\uC885\uB8CC\uBC84\uD2BC": {fileID: 0}
-  "\uC9C0\uB3C4\uCC3D": {fileID: 1773175731}
-  "\uD558\uBD80\uCC3D": {fileID: 1445280475}
-  "\uC0C1\uBD80\uCC3D": {fileID: 400528033}
-  "\uB300\uD654\uCC3D\uD65C\uC131\uD654\uC5EC\uBD80": {fileID: 0}
-  "\uC635\uC158\uCC3D": {fileID: 758500588}
-  "\uC124\uC815\uCC3D": {fileID: 1801240131}
-  "\uD574\uC0C1\uB3C4": {fileID: 288579949}
-  "\uC804\uCCB4\uB808\uB4DC": {fileID: 1696069231}
-  "\uCC3D\uB808\uB4DC": {fileID: 978250310}
---- !u!114 &673931277950621048
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -34509,7 +34441,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 673931277950621048}
+      - m_Target: {fileID: 0}
         m_MethodName: "\uCC98\uC74C\uC73C\uB85C\uBC84\uD2BC"
         m_Mode: 1
         m_Arguments:
@@ -60115,7 +60047,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 673931277950621048}
+      - m_Target: {fileID: 0}
         m_MethodName: "\uAC8C\uC784\uC885\uB8CC\uBC84\uD2BC"
         m_Mode: 1
         m_Arguments:
@@ -63063,7 +62995,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8810031596395651}
+      - m_Target: {fileID: 0}
         m_MethodName: "\uAC8C\uC784\uC885\uB8CC\uBC84\uD2BC"
         m_Mode: 1
         m_Arguments:

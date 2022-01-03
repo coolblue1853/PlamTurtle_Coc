@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class selectionUIManager_D1경찰서 : MonoBehaviour
+public class selectionUIManager_D1병원 : MonoBehaviour
 {
-    public DialogManager_D1경찰서 theDM;
+    public DialogManager_D1병원 theDM;
     public SoundManager 배틀사운드매니저;
-    public DialogManager_D1경찰서 dialogManager;
+    public DialogManager_D1병원 dialogManager;
     public GameObject 첫번째_선택지_커피타줘버튼;
     public GameObject 첫번째_선택지_직접타기버튼;
     public GameObject 첫번째_선택지_가만히버튼;
@@ -26,7 +26,7 @@ public class selectionUIManager_D1경찰서 : MonoBehaviour
     public GameObject 엘라심리학선택지버튼;
     public Text 엘라심리학선택지텍스트;
     public Text 판정결과;
-    public InterctionController_D1경찰서 interctionController;
+    public InterctionController_D1병원 interctionController;
     public rollet 룰렛머신;
 
     public Text 십의자리;

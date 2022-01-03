@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 
 using WindowsInput;
-public class DialogManager_D1경찰서 : MonoBehaviour
+public class DialogManager_D1병원 : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject 대화창일러;
@@ -41,7 +41,7 @@ public class DialogManager_D1경찰서 : MonoBehaviour
 
     public GameObject PlayerChar;
 
-    public selectionUIManager_D1경찰서 selectionUIManager;
+    public selectionUIManager_D1병원 selectionUIManager;
     public bool isDialogON = false;
     [SerializeField] GameObject go_dialogBar;
     [SerializeField] GameObject go_dialogNameBar;

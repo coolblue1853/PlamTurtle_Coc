@@ -11,7 +11,7 @@ public class 키워드매니저 : MonoBehaviour
     public GameObject 대화창활성화여부;
     public void 주제오른쪽이동()
     {
-        if (대화창활성화여부.activeSelf == false && DataBaseManager.연출진행중 == false)
+        if (DataBaseManager.대화창켜짐 == false  && DataBaseManager.연출진행중 == false)
         {
             if (DataBaseManager.키워드주제 == "사건")
             {
@@ -33,7 +33,7 @@ public class 키워드매니저 : MonoBehaviour
     }
     public void 주제왼쪽이동()
     {
-        if (대화창활성화여부.activeSelf == false && DataBaseManager.연출진행중 == false)
+        if (DataBaseManager.대화창켜짐 == false && DataBaseManager.연출진행중 == false)
         {
             if (DataBaseManager.키워드주제 == "사건")
             {
@@ -61,7 +61,7 @@ public class 키워드매니저 : MonoBehaviour
         if (DataBaseManager.키워드주제 == "사건")
         {
 
-            if (대화창활성화여부.activeSelf == false && DataBaseManager.연출진행중 == false)
+            if (DataBaseManager.대화창켜짐 == false && DataBaseManager.연출진행중 == false)
             {
                 현재사건상위키워드넘버 += 1;
                 if (상위사건키워드개수 < 현재사건상위키워드넘버)
@@ -79,7 +79,7 @@ public class 키워드매니저 : MonoBehaviour
         else if (DataBaseManager.키워드주제 == "장소")
         {
 
-            if (대화창활성화여부.activeSelf == false && DataBaseManager.연출진행중 == false)
+            if (DataBaseManager.대화창켜짐 == false && DataBaseManager.연출진행중 == false)
             {
                 현재장소상위키워드넘버 += 1;
                 if (상위장소키워드개수 < 현재장소상위키워드넘버)
@@ -96,7 +96,7 @@ public class 키워드매니저 : MonoBehaviour
         else if (DataBaseManager.키워드주제 == "인물")
         {
 
-            if (대화창활성화여부.activeSelf == false && DataBaseManager.연출진행중 == false)
+            if (DataBaseManager.대화창켜짐 == false && DataBaseManager.연출진행중 == false)
             {
                 현재인물상위키워드넘버 += 1;
                 if (상위인물키워드개수 < 현재인물상위키워드넘버)
@@ -116,7 +116,7 @@ public class 키워드매니저 : MonoBehaviour
         if (DataBaseManager.키워드주제 == "사건")
         {
 
-            if (대화창활성화여부.activeSelf == false && DataBaseManager.연출진행중 == false)
+            if (DataBaseManager.대화창켜짐 == false && DataBaseManager.연출진행중 == false)
             {
                 현재사건상위키워드넘버 -= 1;
                 if (0 > 현재사건상위키워드넘버)
@@ -134,7 +134,7 @@ public class 키워드매니저 : MonoBehaviour
         else if (DataBaseManager.키워드주제 == "장소")
         {
 
-            if (대화창활성화여부.activeSelf == false && DataBaseManager.연출진행중 == false)
+            if (DataBaseManager.대화창켜짐 == false && DataBaseManager.연출진행중 == false)
             {
                 현재장소상위키워드넘버 -= 1;
                 if (0 > 현재장소상위키워드넘버)
@@ -152,7 +152,7 @@ public class 키워드매니저 : MonoBehaviour
         else if (DataBaseManager.키워드주제 == "인물")
         {
 
-            if (대화창활성화여부.activeSelf == false && DataBaseManager.연출진행중 == false)
+            if (DataBaseManager.대화창켜짐 == false && DataBaseManager.연출진행중 == false)
             {
                 현재인물상위키워드넘버 -= 1;
                 if (0 > 현재인물상위키워드넘버)
@@ -490,6 +490,12 @@ public class 키워드매니저 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("판정창"+DataBaseManager.판정창여부);
+            Debug.Log("옵션창" + DataBaseManager.옵션창여부);
+        }
+
         하위키워드업데이터();
         키워드업데이터();
     }

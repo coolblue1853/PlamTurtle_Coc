@@ -45,6 +45,21 @@ public class 정보창Manager : MonoBehaviour
         clone.transform.SetParent(ui창.transform);
         clone.transform.localScale = new Vector3(1, 1, 1);
     }
+
+    public void 실종사건추가()
+    {
+
+        DataBaseManager.실종사건알리미 = true;
+        var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+        clone.GetComponent<정보플로팅>().Text.text = "<color=#B30000>(연속 실종 사건) </color>정보 획득".ToString();
+        clone.transform.SetParent(ui창.transform);
+        clone.transform.localScale = new Vector3(1, 1, 1);
+    }
+
+
+
+
+
     //인물
     public void 엘라정보추가()
     {

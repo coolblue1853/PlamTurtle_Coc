@@ -18,8 +18,8 @@ public class 경찰관1상호작용 : MonoBehaviour
 		if (collision.name == "Player")
 		{
 			멜리사상호작용가능여부 = true;
-			간단표기제목.text = "멜리사";
-			간단표기내용.text = "내 업무보조를 담당해 주고 있다.";
+			간단표기제목.text = "경찰관A";
+			간단표기내용.text = "평소 탐정들을 탐탁치 않게 생각하는 경관이다.";
 
 		}
 

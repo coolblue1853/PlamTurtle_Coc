@@ -398,6 +398,7 @@ public class DialogManager_D1사무소 : MonoBehaviour
                                 DataBaseManager.불면증정보1 = true;
                                 정보창매니저.불면증정보추가();
                             }
+
                         }
 
                     }

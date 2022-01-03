@@ -25,6 +25,7 @@ public class DataBaseManager : MonoBehaviour
     public static bool 행성대직렬알리미 = false;
     public static bool 편집증알리미 = false;
     public static bool 불면증알리미 = false;
+    public static bool 실종사건알리미 = false;
 
     public static bool 탐정사무소알리미 = false;
     public static bool 병원알리미 = false;

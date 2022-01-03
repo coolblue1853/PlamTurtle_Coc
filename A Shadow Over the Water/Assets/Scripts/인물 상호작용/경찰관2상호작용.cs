@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-public class 멜리사상호작용 : MonoBehaviour
+public class 경찰관2상호작용 : MonoBehaviour
 {
 	public Text 간단표기제목;
 	public Text 간단표기내용;
 
 	public GameObject 상호작용판;
-	public InterctionController_D1사무소 인터렉션컨트롤러;
+	public InterctionController_D1경찰서 인터렉션컨트롤러;
 	public Animator 플레이어애니메이션;
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
@@ -18,9 +18,8 @@ public class 멜리사상호작용 : MonoBehaviour
 		if (collision.name == "Player")
 		{
 			멜리사상호작용가능여부 = true;
-			간단표기제목.text = "멜리사";
-			간단표기내용.text = "내 업무보조를 담당해 주고 있다.";
-
+			간단표기제목.text = "경찰관B";
+			간단표기내용.text = "서류정리 담당인 경관.";
 		}
 
 
@@ -58,7 +57,7 @@ public class 멜리사상호작용 : MonoBehaviour
 					플레이어애니메이션.SetFloat("run", 0);
 
 
-					//DataBaseManager.연출중움직임제한 = true;
+					DataBaseManager.대화창켜짐 = true;
 
 					상호작용판.SetActive(true);
 				}
@@ -73,30 +72,30 @@ public class 멜리사상호작용 : MonoBehaviour
 	public void 멜리사대화()
     {
 		상호작용판.SetActive(false);
-		DataBaseManager.연출중움직임제한 = false;
+		DataBaseManager.대화창켜짐 = true;
 
 		int 숫자 = Random.Range(1, 4);
 
 
-		if( 최초대화여부_1일차아침 == false)
+		if(최초대화여부_1일차아침 == false)
         {
 			최초대화여부_1일차아침 = true;
-			인터렉션컨트롤러.멜리사1일차아침최초대화();
+			인터렉션컨트롤러.경찰관2_1일차낮_최초대화();
 
 		}
         else
         {
 			if (숫자 == 1)
 			{
-				인터렉션컨트롤러.멜리사기본대화1();
+				인터렉션컨트롤러.경찰관2_1일차낮_반복대화1();
 			}
 			else if (숫자 == 2)
 			{
-				인터렉션컨트롤러.멜리사기본대화2();
+				인터렉션컨트롤러.경찰관2_1일차낮_반복대화2();
 			}
 			else if (숫자 == 3)
 			{
-				인터렉션컨트롤러.멜리사기본대화3();
+				인터렉션컨트롤러.경찰관2_1일차낮_반복대화3();
 			}
 		}
 
@@ -108,7 +107,7 @@ public class 멜리사상호작용 : MonoBehaviour
     {
 
     }
-
+	/*
 	public void 멜리사키워드()
 	{
 		상호작용판.SetActive(false);
@@ -146,11 +145,11 @@ public class 멜리사상호작용 : MonoBehaviour
 			인터렉션컨트롤러.멜리사_의뢰자의집_키워드();
 		}
 	}
-
+	*/
 	public void 그만두기()
     {
 		상호작용판.SetActive(false);
-		DataBaseManager.연출중움직임제한 = false;
+		DataBaseManager.대화창켜짐 = false;
 		DataBaseManager.판정창여부 = false;
 	}
 

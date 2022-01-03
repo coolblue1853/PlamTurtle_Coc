@@ -11,9 +11,10 @@ public class mapManager : MonoBehaviour
 
     public void 시간이동으로씬전환()
     {
+        DataBaseManager.판정창여부 = false;
+        DataBaseManager.옵션창여부 = false;
 
-
-        if(DataBaseManager.시간대 == 1)
+        if (DataBaseManager.시간대 == 1)
         {
             DataBaseManager.시간대 += 1;
             SceneManager.LoadScene("02_예비");
