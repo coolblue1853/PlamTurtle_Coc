@@ -13,7 +13,7 @@ public class PlayerStat : MonoBehaviour
         힘기술랜덤배분();
         지능기술랜덤배분();
         민첩기술랜덤배분();
-        SceneManager.LoadScene("마이룸 예비- 정보창변경중");
+        SceneManager.LoadScene("1st_Mor_MyRoom");
     }
     //public setChar튜토리얼매니저 튜토리얼매니저;
 

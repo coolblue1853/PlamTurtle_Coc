@@ -2,284 +2,253 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class selectionUIManager_D1병원 : MonoBehaviour
+using UnityEngine.SceneManagement;
+public class 에이든상호작용 : MonoBehaviour
 {
-    public DialogManager_D1병원 theDM;
-    public SoundManager 배틀사운드매니저;
-    public DialogManager_D1병원 dialogManager;
-    public GameObject 첫번째_선택지_커피타줘버튼;
-    public GameObject 첫번째_선택지_직접타기버튼;
-    public GameObject 첫번째_선택지_가만히버튼;
-
-    public GameObject 두번째_선택지_1;
-    public GameObject 두번째_선택지_2;
-    public GameObject 두번째_선택지_3;
-
-    public GameObject 세번째_선택지_거절;
-    public GameObject 세번째_선택지_수락;
+	public SoundManager 배틀사운드매니저;
 
 
+	public GameObject 기능판청안내창;
 
-    bool 엘라심리학실시여부 = false;
+	public GameObject 판정창;
+	public Text 사용기능;
+	public Text 결과;
+	public Text 간단표기제목;
+	public Text 간단표기내용;
+
+    public GameObject 의학버튼;
+    public GameObject 정신분석버튼;
+
+	public GameObject 상호작용판;
+	public InterctionController_D1의뢰자의집 인터렉션컨트롤러;
+	public Animator 플레이어애니메이션;
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		// 탐정 사무소 접촉물
+
+		if (collision.name == "Player")
+		{
+			멜리사상호작용가능여부 = true;
+			간단표기제목.text = "에이든";
+			간단표기내용.text = "의뢰자의 남편이자 의뢰 대상자.";
+		}
 
 
-    public GameObject 엘라심리학선택지버튼;
-    public Text 엘라심리학선택지텍스트;
-    public Text 판정결과;
-    public InterctionController_D1병원 interctionController;
-    public rollet 룰렛머신;
 
-    public Text 십의자리;
-    public Text 일의자리;
+	}
 
-    public GameObject 십의자리몸통;
-    public GameObject 일의자리몸통;
-    public GameObject 룰렛머신온오프;
+	private void OnTriggerExit2D(Collider2D collision)
+	{
+		// 탐정 사무소 접촉물
+		if (collision.name == "Player" )
+		{
+			멜리사상호작용가능여부 = false;
+			간단표기제목.text = "";
+			간단표기내용.text = "";
+		}
 
-    int 랜덤십의자리;
-    int 랜덤일의자리;
 
-    int 랜덤십의몸통위치;
-    public static int 출력기능값;
+	}
 
-    public void 대화중기능판정버튼제거()
+	bool 멜리사상호작용가능여부 = false;
+	public GameObject 대화창;
+	public void 상호작용체커()
     {
-        //엘라심리학선택지버튼.SetActive(false);
-    }
-    bool 기능사용안하고넘기기 = false;
-    int 일번선택지합쳐지는파트 = 0;
-    int 출력기능수치;
-
-    public void 일번선택지넘기기()
-    {
-        일번선택지합쳐지는파트 = 1;
-    }
-
-    void Update()
-    {
-        if (룰렛활성여부 == true && Input.GetMouseButtonDown(0))
+		if(멜리사상호작용가능여부 == true && 상호작용판.activeSelf == false && 대화창.activeSelf == false)
         {
-            전투클릭여부 = true;
-            배틀사운드매니저.효과음멈춤();
-        }
+
+			if (DataBaseManager.판정창여부 == false && DataBaseManager.옵션창여부 == false)
+			{
+				
+				if (Input.GetKeyDown(KeyCode.E))
+				{
+					DataBaseManager.판정창여부 = true;
+					플레이어애니메이션.SetFloat("move", 0);
+					플레이어애니메이션.SetFloat("walk", 0);
+					플레이어애니메이션.SetFloat("run", 0);
 
 
-        if (일번선택지합쳐지는파트 == 1 && Input.GetKeyDown(KeyCode.Z))
+					//DataBaseManager.대화창켜짐 = true;
+
+					상호작용판.SetActive(true);
+				}
+
+			}
+		}
+
+
+    }
+
+	bool 최초대화여부_1일차아침 = false;
+	public void 멜리사대화()
+    {
+		상호작용판.SetActive(false);
+		DataBaseManager.대화창켜짐 = true;
+
+		int 숫자 = Random.Range(1, 3);
+
+
+		if(최초대화여부_1일차아침== false)
         {
-            일번선택지합쳐지는파트 = 2;
-            dialogManager.선택지선택시외부에서페이지넘기기();
-            dialogManager.onButtonSetterF();
-            선1이후출력();
-        }
-    }
+			최초대화여부_1일차아침 = true;
+			인터렉션컨트롤러.에이든_1일차낮_최초대화();
 
-
-    public void 기능사용안하고넘기기외부()
-    {
-        기능사용안하고넘기기 = false;
-        엘라심리학선택지버튼.SetActive(false);
-    }
-
-
-    public void 선택지출력1()
-    {
-
-        첫번째_선택지_커피타줘버튼.SetActive(true);
-        첫번째_선택지_직접타기버튼.SetActive(true);
-        첫번째_선택지_가만히버튼.SetActive(true);
-
-    }
-
-
-    public void 선1커피타줘누름()
-    {
-        dialogManager.선택지선택시외부에서페이지넘기기();
-        첫번째_선택지_커피타줘버튼.SetActive(false);
-        첫번째_선택지_직접타기버튼.SetActive(false);
-        첫번째_선택지_가만히버튼.SetActive(false);
-        dialogManager.onButtonSetterF();
-        //interctionController.선1커피타줘();;
-
-    }
-    public void 선1직접타기()
-    {
-        dialogManager.선택지선택시외부에서페이지넘기기();
-        첫번째_선택지_커피타줘버튼.SetActive(false);
-        첫번째_선택지_직접타기버튼.SetActive(false);
-        첫번째_선택지_가만히버튼.SetActive(false);
-        dialogManager.onButtonSetterF();
-        //interctionController.선1커피직접타기();
-    }
-
-    public void 선1가만히있기누름()
-    {
-        DataBaseManager.선택1_3가만히있기를했는가 = true;
-        dialogManager.선택지선택시외부에서페이지넘기기();
-        첫번째_선택지_커피타줘버튼.SetActive(false);
-        첫번째_선택지_직접타기버튼.SetActive(false);
-        첫번째_선택지_가만히버튼.SetActive(false);
-        dialogManager.onButtonSetterF();
-        //interctionController.선1가만히있기();
-    }
-
-    public void 선1이후출력()
-    {
-
-
-        //interctionController.선1이후연결();
-    }
-
-
-
-    // 선택지 2번
-    public void 선택지출력2()
-    {
-
-        두번째_선택지_1.SetActive(true);
-        두번째_선택지_2.SetActive(true);
-
-        if (DataBaseManager.선택1_3가만히있기를했는가 == true)
+		}
+        else
         {
-            두번째_선택지_3.SetActive(true);
-        }
+			if (숫자 == 1)
+			{
+				인터렉션컨트롤러.에이든_1일차낮_반복대화1();
+			}
+			else if (숫자 == 2)
+			{
+				인터렉션컨트롤러.에이든_1일차낮_반복대화2();
+			}
+
+		}
 
 
-    }
 
 
-    public void 선2_1누름()
+	}
+
+	public GameObject 에이든기능판정배경;
+
+	public void 에이든기능판정()
     {
-        dialogManager.선택지선택시외부에서페이지넘기기();
-        두번째_선택지_1.SetActive(false);
-        두번째_선택지_2.SetActive(false);
-        두번째_선택지_3.SetActive(false);
-        dialogManager.onButtonSetterF();
-        //interctionController.선2_1(); ;
+		에이든기능판정배경.SetActive(true);
+	}
+	public void 에이든이전버튼()
+	{
+		에이든기능판정배경.SetActive(false);
+	}
+	public void 에이든의학버튼()
+	{
+		DataBaseManager.판정창여부 = true;
+		에이든기능판정배경.SetActive(false);
+		상호작용판.SetActive(false);
 
-    }
-    public void 선2_2누름()
+		의학기능판정창.SetActive(true);
+		의학기능판정텍스트.text = "에이든에 대하여 <의학지식> 기능을 사용합니다.\n 현재 해당기능 수치는 " + DataBaseManager.의학지식 + " 입니다.";
+
+	}
+
+	public void 에이든의학아니오()
+	{		DataBaseManager.연출중움직임제한 = false;
+		DataBaseManager.판정창여부 = false;
+		DataBaseManager.대화창켜짐 = false;
+		의학기능판정창.SetActive(false);
+	}
+
+    public void 에이든정신분석버튼()
     {
-        dialogManager.선택지선택시외부에서페이지넘기기();
-        두번째_선택지_1.SetActive(false);
-        두번째_선택지_2.SetActive(false);
-        두번째_선택지_3.SetActive(false);
-        dialogManager.onButtonSetterF();
-        //interctionController.선2_2();
-    }
-
-    public void 선2_3누름()
-    {
-        dialogManager.선택지선택시외부에서페이지넘기기();
-        두번째_선택지_1.SetActive(false);
-        두번째_선택지_2.SetActive(false);
-        두번째_선택지_3.SetActive(false);
-        dialogManager.onButtonSetterF();
-        //interctionController.선2_3();
-    }
-
-
-    // 선택지 3번
-
-    public void 선택지출력3()
-    {
-
-        세번째_선택지_거절.SetActive(true);
-        세번째_선택지_수락.SetActive(true);
-
-    }
-
-
-    public void 선3_거절누름()
-    {
-        dialogManager.선택지선택시외부에서페이지넘기기();
-        세번째_선택지_거절.SetActive(false);
-        세번째_선택지_수락.SetActive(false);
-        dialogManager.onButtonSetterF();
-        //interctionController.선3_의뢰거절(); ;
-
-    }
-    public void 선3_수락누름()
-    {
-        dialogManager.선택지선택시외부에서페이지넘기기();
-        세번째_선택지_거절.SetActive(false);
-        세번째_선택지_수락.SetActive(false);
-        dialogManager.onButtonSetterF();
-        //interctionController.선3_의뢰수락();
-    }
-
-
-
-
-
-
-
-    //기능판단
-
-
-    public void 엘라심리학선택지출력()
-    {
-        StartCoroutine(지연자());
-        if (엘라심리학실시여부 == false)
-        {
-            엘라심리학선택지버튼.SetActive(true);
-        }
-
-
-
-    }
-    IEnumerator 지연자()
-    {
-        yield return new WaitForSecondsRealtime(0.001f);
-        기능사용안하고넘기기 = true;
-    }
-    public void 엘라심리학선택지끄기()
-    {
-
-        //엘라심리학선택지버튼.SetActive(false);
-
-    }
-
-
-
-    public void 엘라심리학선택지예()
-    {
-        DataBaseManager.대화중기능판정 = true;
-        엘라심리학선택지버튼.SetActive(false);
-        엘라심리학실시여부 = true;
-        기능사용안하고넘기기 = true;          //요거는  단발성 메시지에서 사용하면 바로 넘겨짐
-        theDM.isSelectButton = true;
-
-        엘라기능판정창.SetActive(false);
-        StartCoroutine(심리학기능판정코루틴());
-    }
-    public void 엘라심리학선택지아니오()
-    {
-        theDM.isSelectButton = false;
-        DataBaseManager.판정창여부 = false;
-        엘라기능판정창.SetActive(false);
-    }
-    public GameObject 엘라기능판정창;
-    public Text 엘라기능판정텍스트;
-    public void 엘라심리학기능판정창안내()
-    {
-        theDM.isSelectButton = true;
         DataBaseManager.판정창여부 = true;
+        에이든기능판정배경.SetActive(false);
+        상호작용판.SetActive(false);
 
-        엘라기능판정창.SetActive(true);
-        엘라기능판정텍스트.text = "알버트에 대하여 <심리판단> 기능을 사용합니다.\n 현재 해당기능 수치는 " + DataBaseManager.심리판단 + " 입니다.";
+        정신분석기능판정안내창.SetActive(true);
+        정신분석기능판정텍스트.text = "에이든에 대하여 <정신감정> 기능을 사용합니다.\n 현재 해당기능 수치는 " + DataBaseManager.정신감정 + " 입니다.";
+
     }
-    public Text 사용기능;
-    public IEnumerator 심리학기능판정코루틴()
+
+    public void 에이든정신분석아니오()
+    {
+        DataBaseManager.연출중움직임제한 = false;
+        DataBaseManager.판정창여부 = false;
+        DataBaseManager.대화창켜짐 = false;
+        정신분석기능판정안내창.SetActive(false);
+    }
+    public GameObject 의학기능판정창;
+	public Text 의학기능판정텍스트;
+
+
+
+
+
+	public void 에이든키워드()
+	{
+		상호작용판.SetActive(false);
+		DataBaseManager.연출중움직임제한 = false;
+
+		// 최초획득
+
+		if (DataBaseManager.키워드하위 == "에이든의 악몽")
+		{
+			인터렉션컨트롤러.에이든_1일차낮_키워드악몽대화();
+		}
+
+        else
+        {
+			인터렉션컨트롤러.에이든_1일차낮_반복대화1();
+
+		}
+	}
+
+	public void 그만두기()
+    {
+		상호작용판.SetActive(false);
+		DataBaseManager.대화창켜짐 = false;
+		DataBaseManager.판정창여부 = false;
+	}
+
+
+		// Start is called before the first frame update
+		void Start()
     {
 
 
-        DataBaseManager.신문기능판정여부 = true;
 
-        룰렛머신온오프.SetActive(true);
+    }
+
+	// Update is called once per frame
+	void Update()
+    {
+		상호작용체커();
+		if (룰렛활성여부 == true && Input.GetMouseButtonDown(0))
+		{
+			전투클릭여부 = true;
+			배틀사운드매니저.효과음멈춤();
+		}
+
+        if(DataBaseManager.에이든의학판정여부 == false)
+        {
+            의학버튼.SetActive(true);
+        }
+        else
+        {
+            의학버튼.SetActive(false);
+        }
+        if (DataBaseManager.에이든정신분석판정여부 == false)
+        {
+            정신분석버튼.SetActive(true);
+        }
+        else
+        {
+            정신분석버튼.SetActive(false);
+        }
+    }
+
+    public void 의학기능판정()
+    {
 
 
-        사용기능.text = "정보조사" + DataBaseManager.정보조사;
-        //배틀사운드매니저.찰칵효과음함수();
+        기능판청안내창.SetActive(false);
+        StartCoroutine(의학기능판정코루틴());
+
+    }
+    public IEnumerator 의학기능판정코루틴()
+    {
+        일의자리.text = "0";
+        결과.text = "----";
+        룰렛활성여부 = false;
+        전투클릭여부 = false;
+        DataBaseManager.에이든의학판정여부 = true;
+
+        판정창.SetActive(true);
+
+
+        사용기능.text = "의학지식" + DataBaseManager.의학지식;
+        배틀사운드매니저.찰칵효과음함수();
 
         yield return new WaitForSeconds(2f);
 
@@ -289,170 +258,235 @@ public class selectionUIManager_D1병원 : MonoBehaviour
 
 
     }
-    IEnumerator 심리판단_1일차알버트()
+
+    IEnumerator 의학기능_1일차에이든()
     {
         배틀사운드매니저.찰칵효과음함수();
 
 
 
 
-        if (출력기능값 <= DataBaseManager.심리판단)
+        if (출력기능값 <= DataBaseManager.의학지식)
         {
-            판정결과.text = "보통성공";
+            결과.text = "보통성공";
 
         }
-        if (출력기능값 > DataBaseManager.심리판단)
+        if (출력기능값 > DataBaseManager.의학지식)
         {
-            판정결과.text = "실패";
+            결과.text = "실패";
 
         }
-        if (출력기능값 <= ((double)DataBaseManager.심리판단 / 3f) && (double)DataBaseManager.심리판단 >= 3f)
+        if (출력기능값 <= ((double)DataBaseManager.의학지식 / 3f) && (double)DataBaseManager.의학지식 >= 3f)
         {
-            판정결과.text = "대성공";
+            결과.text = "대성공";
 
         }
         if (출력기능값 == 10)
         {
-            판정결과.text = "대실패";
+            결과.text = "대실패";
 
         }
 
 
         yield return new WaitForSeconds(2f);
 
-        룰렛머신온오프.SetActive(false);
+        판정창.SetActive(false);
 
 
 
 
 
-        if (판정결과.text == "대성공")
+        if (결과.text == "대성공")
         {
 
-            //interctionController.알버트심리학대성공출력대사();
-            엘라심리학선택지버튼.SetActive(false);
-            dialogManager.onButtonSetterF();
+            인터렉션컨트롤러.에이든_1일차낮_의학기능대화();
         }
 
-        if (판정결과.text == "보통성공")
+        if (결과.text == "보통성공")
         {
 
-            //interctionController.알버트심리학성공출력대사();
-            엘라심리학선택지버튼.SetActive(false);
-            dialogManager.onButtonSetterF();
+            인터렉션컨트롤러.에이든_1일차낮_의학기능대화();
 
         }
-        if (판정결과.text == "실패")
+        if (결과.text == "실패")
         {
 
-            //interctionController.알버트심리학실패출력대사();
-            엘라심리학선택지버튼.SetActive(false);
-            dialogManager.onButtonSetterF();
+            인터렉션컨트롤러.에이든_1일차낮_의학기능실패대화();
 
         }
-        if (판정결과.text == "대실패")
+        if (결과.text == "대실패")
         {
 
-            //interctionController.알버트심리학대실패출력대사();
-            엘라심리학선택지버튼.SetActive(false);
-            dialogManager.onButtonSetterF();
+            인터렉션컨트롤러.에이든_1일차낮_의학기능실패대화();
 
         }
 
-        DataBaseManager.대화중기능판정 = false;
+
     }
-    /*
-    public IEnumerator 심리학기능사용선택지()
+
+
+
+
+    public Text 정신분석기능판정텍스트;
+    public GameObject 정신분석기능판정안내창;
+    public void 정신분석기능판정()
     {
-        기능사용안하고넘기기 = false;
+
+
+        정신분석기능판정안내창.SetActive(false);
+        StartCoroutine(정신분석기능판정코루틴());
+
+    }
+    public IEnumerator 정신분석기능판정코루틴()
+    {
+        룰렛활성여부 = false;
+        전투클릭여부 = false;
+        결과.text = "----";
+        일의자리.text = "0";
+        DataBaseManager.에이든정신분석판정여부 = true;
+
+        판정창.SetActive(true);
+
+
+        사용기능.text = "정신감정" + DataBaseManager.정신감정;
+        배틀사운드매니저.찰칵효과음함수();
+
+        yield return new WaitForSeconds(2f);
+
+        StartCoroutine(룰렛작동());
+
+        //yield return new WaitForSeconds(6f);
+
+
+    }
+
+    IEnumerator 정신분석기능_1일차에이든()
+    {
+        배틀사운드매니저.찰칵효과음함수();
+
+
+
+
+        if (출력기능값 <= DataBaseManager.정신감정)
+        {
+            결과.text = "보통성공";
+
+        }
+        if (출력기능값 > DataBaseManager.정신감정)
+        {
+            결과.text = "실패";
+
+        }
+        if (출력기능값 <= ((double)DataBaseManager.정신감정 / 3f) && (double)DataBaseManager.정신감정 >= 3f)
+        {
+            결과.text = "대성공";
+
+        }
+        if (출력기능값 == 10)
+        {
+            결과.text = "대실패";
+
+        }
+
+
+        yield return new WaitForSeconds(2f);
+
+        판정창.SetActive(false);
+
+
+
+
+
+        if (결과.text == "대성공")
+        {
+
+            인터렉션컨트롤러.에이든_1일차낮_정신분석대화();
+        }
+
+        if (결과.text == "보통성공")
+        {
+
+            인터렉션컨트롤러.에이든_1일차낮_정신분석대화();
+
+        }
+        if (결과.text == "실패")
+        {
+
+            인터렉션컨트롤러.에이든_1일차낮_정신분석실패대화();
+
+        }
+        if (결과.text == "대실패")
+        {
+
+            인터렉션컨트롤러.에이든_1일차낮_정신분석실패대화();
+
+        }
+
+
+    }
+
+
+
+
+
+    public IEnumerator 룰렉동작시키기()
+    {
+
         룰렛머신온오프.SetActive(true);
         yield return StartCoroutine(룰렛작동());
-
-        //StartCoroutine(룰렛끄기());
         룰렛머신온오프.SetActive(false);
-        Debug.Log("룰렛값은 : " + 출력기능값);
-
-
-        if (DataBaseManager.심리판단 >= 출력기능값)
-        {
-            Debug.Log("실패");
-           // dialogManager.선택지선택시외부에서페이지넘기기();
-            interctionController.엘라심리학성공출력대사();
-            엘라심리학선택지버튼.SetActive(false);
-            dialogManager.onButtonSetterF();
-
-        }
-
-        if (DataBaseManager.심리판단 < 출력기능값)
-        {
-            Debug.Log("성공");
-
-           // dialogManager.선택지선택시외부에서페이지넘기기();
-            interctionController.엘라심리학실패출력대사();
-            엘라심리학선택지버튼.SetActive(false);
-            dialogManager.onButtonSetterF();
-
-        }
-
-
-        yield return null;
-    }
-    */
-
-
-
-
-    public void 선택치선택출력1()
-    {
-        StartCoroutine(선택지선택1());
-
-
     }
 
-    public IEnumerator 선택지선택1()
-    {
-
-        Debug.Log("현재 근력 수치 : " + DataBaseManager.힘);
-
-        룰렛머신온오프.SetActive(true);
-        yield return StartCoroutine(룰렛작동());
-
-        //StartCoroutine(룰렛끄기());
-        룰렛머신온오프.SetActive(false);
-        Debug.Log("룰렛값은 : " + 출력기능값);
 
 
-        if (DataBaseManager.힘 >= 출력기능값)
-        {
-            Debug.Log("실패");
-            dialogManager.선택지선택시외부에서페이지넘기기();
-            //interctionController.선택지1성공출력대사();
-            //첫번째_선택지_버튼.SetActive(false);
-            dialogManager.onButtonSetterF();
-
-        }
-
-        if (DataBaseManager.힘 < 출력기능값)
-        {
-            Debug.Log("성공");
-            DataBaseManager._1일차오전심리학판정성공여부 = true;
-            dialogManager.선택지선택시외부에서페이지넘기기();
-            //interctionController.선택지1실패출력대사();
-            //첫번째_선택지_버튼.SetActive(false);
-            dialogManager.onButtonSetterF();
-
-        }
 
 
-        yield return null;
 
-    }
+
+
+
+
+
+
+
+
+
+    // 기능관련 룰렛
+    public rollet 룰렛머신;
+
+    // public Text 십의자리;
+    public Text 일의자리;
+
+    //public GameObject 십의자리몸통;
+    public GameObject 일의자리몸통;
+    public GameObject 룰렛머신온오프;
+
+
+
+
+
+
+    //int 랜덤십의자리;
+    int 랜덤일의자리;
+
+
+    int 랜덤십의몸통위치;
+
+    public static float 출력기능값;
+
+
+
+
+
+    bool 전투클릭여부;
+    bool 룰렛활성여부;
 
     public IEnumerator 룰렛끄기()
     {
         yield return new WaitForSeconds(2f);
         룰렛머신온오프.SetActive(false);
     }
+
     public IEnumerator 룰렛작동()
     {
         배틀사운드매니저.기계돌아가는효과음함수();
@@ -742,21 +776,14 @@ public class selectionUIManager_D1병원 : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
 
-
-        // 나중에 기능판정 늘어냐면 여기 수정해줘야됨
-        StartCoroutine(심리판단_1일차알버트());
-    }
-
-    bool 전투클릭여부;
-    bool 룰렛활성여부;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
+        if(사용기능.text == "의학지식" + DataBaseManager.의학지식)
+        {
+            StartCoroutine(의학기능_1일차에이든());
+        }
+        else if (사용기능.text == "정신감정" + DataBaseManager.정신감정)
+        {
+            StartCoroutine(정신분석기능_1일차에이든());
+        }
 
     }
-
-    // Update is called once per frame
-
 }

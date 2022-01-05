@@ -605,7 +605,7 @@ public class 인물정보창manager : MonoBehaviour
         {
             에이든정보1획득 = true;
             var clone = Instantiate(정보프리팹); 
-            clone.GetComponent<Text>().text = "<size=20><에이든 트리스 - 1></size> \n의뢰자 <color=#0026A9>(엘라 트리스)</color>의 남편.\n그의 직업은 기자로 최근 악몽에 시달리기 시작하며 이상해지기 시작했다고 한다. \n밤마다 악몽에 깨어나는 듯 하며 원인은 불명이라고.";
+            clone.GetComponent<Text>().text = "<size=20>< 에이든 트리스 ></size> \n의뢰자 <color=#0026A9>(엘라 트리스)</color>의 남편.\n그의 직업은 기자로 최근 악몽에 시달리기 시작하며 이상해지기 시작했다고 한다. \n밤마다 악몽에 깨어나는 듯 하며 원인은 불명이라고.";
             clone.transform.SetParent(에이든정보컨텐츠.transform);
             clone.transform.localScale = new Vector3(1, 1, 1);  
 
@@ -616,7 +616,7 @@ public class 인물정보창manager : MonoBehaviour
         {
             에이든정보2획득 = true;
             var clone = Instantiate(정보프리팹);
-            clone.GetComponent<Text>().text = "<에이든 정보2>";
+            clone.GetComponent<Text>().text = clone.GetComponent<Text>().text = "<size=20>< 에이든의 상태 ></size> \n<color=#0026A9>(에이든 트리스)</color>의 상태는 예상보다 심각하다.\n혼잣말을 주절거리며 말을 걸어도 반응을 하지 않는다. \n어쩌면 다른 주제로 말을 걸어보면 반응할지도.";
             clone.transform.SetParent(에이든정보컨텐츠.transform);
             clone.transform.localScale = new Vector3(1, 1, 1);
         }
@@ -625,7 +625,7 @@ public class 인물정보창manager : MonoBehaviour
         {
             에이든정보3획득 = true;
             var clone = Instantiate(정보프리팹);
-            clone.GetComponent<Text>().text = "<에이든 정보3>";
+            clone.GetComponent<Text>().text = "<size=20>< 에이든의 발언 ></size> \n그가 말하길 현재 아컴시의 거물들이 자리를 떠났다고 한다. \n마피아는 이 사건의 핵심이 아닌것 같다. \n마지막의 도망가도 의미가 없을 거라는 말이 걸린다.";
             clone.transform.SetParent(에이든정보컨텐츠.transform);
             clone.transform.localScale = new Vector3(1, 1, 1);
         }

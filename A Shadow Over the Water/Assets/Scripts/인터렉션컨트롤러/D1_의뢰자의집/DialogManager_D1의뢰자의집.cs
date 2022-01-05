@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 
 using WindowsInput;
-public class DialogManager_D1병원 : MonoBehaviour
+public class DialogManager_D1의뢰자의집 : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject 대화창일러;
@@ -41,7 +41,7 @@ public class DialogManager_D1병원 : MonoBehaviour
 
     public GameObject PlayerChar;
 
-    public selectionUIManager_D1병원 selectionUIManager;
+    public selectionUIManager_D1의뢰자의집 selectionUIManager;
     public bool isDialogON = false;
     [SerializeField] GameObject go_dialogBar;
     [SerializeField] GameObject go_dialogNameBar;
@@ -388,42 +388,27 @@ public class DialogManager_D1병원 : MonoBehaviour
                     {
                         if (t_ReplaceText[i + 2] == '●')
                         {
-                            if (t_ReplaceText[i + 3] == '행')
+                            if (t_ReplaceText[i + 3] == '하')
                             {
-                                DataBaseManager.행성대직렬정보1 = true;
-                                //정보창매니저.행성대직렬정보추가();
+                                DataBaseManager.하수도괴담정보1 = true;
+                                정보창매니저.하수도의괴담추가();
 
 
                             }
                             if (t_ReplaceText[i + 3] == '악')
                             {
-                                DataBaseManager.악몽정보1 = true;
-                                //정보창매니저.악몽정보추가();
+                                DataBaseManager.악몽정보2 = true;
+                                정보창매니저.악몽정보추가2();
                             }
                             if (t_ReplaceText[i + 3] == '불')
                             {
-                                DataBaseManager.불면증정보2 = true;
-                                정보창매니저.불면증정보추가2();
-
-                            }
-                            if (t_ReplaceText[i + 3] == '실')
-                            {
-                                DataBaseManager.실종된사람들정보1 = true;
-                                정보창매니저.실종사건추가();
+                                DataBaseManager.불면증정보3 = true;
+                                정보창매니저.불면증정보추가3();
                             }
                             if (t_ReplaceText[i + 3] == '편')
                             {
-                                DataBaseManager.편집증정보1 = true;
-                                정보창매니저.편집증정보추가();
-                            }
-                            if (t_ReplaceText[i + 3] == '2')
-                            {
-                                if(t_ReplaceText[i + 4] == '불')
-                                {
-                                    DataBaseManager.불면증정보1 = true;
-                                    정보창매니저.불면증정보추가();
-                                }
-
+                                DataBaseManager.편집증정보2 = true;
+                                정보창매니저.편집증정보추가2();
                             }
                         }
 
@@ -471,12 +456,22 @@ public class DialogManager_D1병원 : MonoBehaviour
                             }
                             if (t_ReplaceText[i + 3] == '에')
                             {
-                                DataBaseManager.에이든정보1 = true;
-                                정보창매니저.에이든정보추가();
+                                DataBaseManager.에이든정보2 = true;
+                                정보창매니저.에이든정보추가2();
                             }
                         }
 
 
+                    }
+                    break;
+                case '◆':
+                    t_white = false; t_yellow = false; t_red = false; t_green = true; t_blue = false; t_ignore = true;
+
+                    if (t_ReplaceText[i + 1] == '●')
+                    {
+
+                        DataBaseManager.에이든정보3 = true;
+                        정보창매니저.에이든정보추가3();
                     }
                     break;
 
@@ -664,8 +659,9 @@ public class DialogManager_D1병원 : MonoBehaviour
                 case '㉦': if (t_ReplaceText[i - 1] == '※') { t_ignore = true; } break;
                 case '㉤': if (t_ReplaceText[i + -3] == '☆') { t_ignore = true; } break;
 
-                case '●': if (t_ReplaceText[i + -1] == '(') { t_ignore = true; } break;
-                case '2': if (t_ReplaceText[i + -1] == '●') { t_ignore = true; } break;
+
+                case '●': if (t_ReplaceText[i + -1] == '◆' || t_ReplaceText[i - 1] == '(') { t_ignore = true; } break;
+
                 //case '0': if (t_ReplaceText[i + 1] == '§') { t_ignore = true; } if (t_ReplaceText[i - 1] == '☆') { t_ignore = true; } break;
                 case '①': if (t_ReplaceText[i - 3] == '§' || t_ReplaceText[i - 1] == '☆' || t_ReplaceText[i - 1] == '★' || t_ReplaceText[i - 1] == '◎') { t_ignore = true; } break;
                 case '②': if (t_ReplaceText[i - 3] == '§' || t_ReplaceText[i - 1] == '☆' || t_ReplaceText[i - 1] == '◎') { t_ignore = true; } break;

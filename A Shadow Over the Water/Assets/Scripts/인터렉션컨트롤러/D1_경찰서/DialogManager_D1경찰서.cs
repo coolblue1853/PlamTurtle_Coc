@@ -288,9 +288,24 @@ public class DialogManager_D1경찰서 : MonoBehaviour
 
 
 
+    public void DeleteChilds(GameObject 스트레스배경)
+    {
+        Transform[] childList = 스트레스배경.GetComponentsInChildren<Transform>(true);
+        if (childList != null)
+        {
+            for (int i = 2; i < childList.Length; i++)
+            {
+                if (childList[i] != transform)
+                    Destroy(childList[i].gameObject);
+            }
+        }
 
+    }
+
+    public GameObject 정보플로팅위치;
     void EndDialog()
     {
+        DeleteChilds(정보플로팅위치);
         DataBaseManager.대화창켜짐 = false;
         DataBaseManager.판정창여부 = false;
 

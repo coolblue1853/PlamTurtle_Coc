@@ -10025,6 +10025,11 @@ PrefabInstance:
       propertyPath: "\uC815\uBCF4\uCC3D\uB9E4\uB2C8\uC800"
       value: 
       objectReference: {fileID: 1171804514}
+    - target: {fileID: 8633431335255334033, guid: be81517cd2d7b8f49aead72f03aa8b60,
+        type: 3}
+      propertyPath: "\uC815\uBCF4\uD50C\uB85C\uD305\uC704\uCE58"
+      value: 
+      objectReference: {fileID: 8478417496771377711}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be81517cd2d7b8f49aead72f03aa8b60, type: 3}
 --- !u!1001 &4059157585793210891
@@ -11166,6 +11171,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 992125334}
+    - target: {fileID: 820566700, guid: 0e5a0df3c113fd145b69cc656f6b9c41, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: "\uD558\uC704\uC624\uB978\uCABD\uC774\uB3D9"
+      objectReference: {fileID: 0}
     - target: {fileID: 826775087, guid: 0e5a0df3c113fd145b69cc656f6b9c41, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -11389,6 +11398,12 @@ PrefabInstance:
       objectReference: {fileID: 783647371}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e5a0df3c113fd145b69cc656f6b9c41, type: 3}
+--- !u!1 &8478417496771377711 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1549198352, guid: 0e5a0df3c113fd145b69cc656f6b9c41,
+    type: 3}
+  m_PrefabInstance: {fileID: 8478417496771377710}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8478417496771377712 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 557275622, guid: 0e5a0df3c113fd145b69cc656f6b9c41,

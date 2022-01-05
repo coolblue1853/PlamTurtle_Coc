@@ -168,6 +168,139 @@ public class 키워드매니저 : MonoBehaviour
 
         }
     }
+
+
+
+
+
+
+    public void 하위오른쪽이동()
+    {
+
+
+        if (DataBaseManager.키워드상위 == "불면증")
+        {
+            if (DataBaseManager.대화창켜짐 == false && DataBaseManager.연출진행중 == false)
+            {
+                if (불면증키워드개수 <= 불면증키워드넘버)
+                {
+                    불면증키워드넘버 = 0;
+                }
+                else
+                {
+                    불면증키워드넘버 += 1;
+                }
+            }
+        }
+        if (DataBaseManager.키워드상위 == "악몽")
+        {
+            if (DataBaseManager.대화창켜짐 == false && DataBaseManager.연출진행중 == false)
+            {
+                if (악몽키워드개수 <= 악몽키워드넘버)
+                {
+                    악몽키워드넘버 = 0;
+                }
+                else
+                {
+                    악몽키워드넘버 += 1;
+                }
+            }
+        }
+        if (DataBaseManager.키워드상위 == "편집증")
+        {
+            if (DataBaseManager.대화창켜짐 == false && DataBaseManager.연출진행중 == false)
+            {
+                if (편집증키워드개수 <= 편집증키워드넘버)
+                {
+                    편집증키워드넘버 = 0;
+                }
+                else
+                {
+                    편집증키워드넘버 += 1;
+                }
+            }
+        }
+
+        if (DataBaseManager.키워드상위 == "에이든 트리스")
+        {
+            if (DataBaseManager.대화창켜짐 == false && DataBaseManager.연출진행중 == false)
+            {
+                if (에이든키워드개수 <= 에이든키워드넘버)
+                {
+                    에이든키워드넘버 = 0;
+                }
+                else
+                {
+                    에이든키워드넘버 += 1;
+                }
+            }
+        }
+    }
+    public void 하위왼쪽이동()
+    {
+        if (DataBaseManager.키워드상위 == "불면증")
+        {
+            if (DataBaseManager.대화창켜짐 == false && DataBaseManager.연출진행중 == false)
+            {
+                if ( 불면증키워드넘버<=0)
+                {
+                    불면증키워드넘버 = 불면증키워드개수;
+                }
+                else
+                {
+                    불면증키워드넘버 -= 1;
+                }   
+
+            }
+        }
+        if (DataBaseManager.키워드상위 == "악몽")
+        {
+            if (DataBaseManager.대화창켜짐 == false && DataBaseManager.연출진행중 == false)
+            {
+                if (악몽키워드넘버 <= 0)
+                {
+                    악몽키워드넘버 = 악몽키워드개수;
+                }
+                else
+                {
+                    악몽키워드넘버 -= 1;
+                }
+
+            }
+        }
+        if (DataBaseManager.키워드상위 == "편집증")
+        {
+            if (DataBaseManager.대화창켜짐 == false && DataBaseManager.연출진행중 == false)
+            {
+                if (편집증키워드넘버 <= 0)
+                {
+                    편집증키워드넘버 = 편집증키워드개수;
+                }
+                else
+                {
+                    편집증키워드넘버 -= 1;
+                }
+
+            }
+        }
+        if (DataBaseManager.키워드상위 == "에이든 트리스")
+        {
+            if (DataBaseManager.대화창켜짐 == false && DataBaseManager.연출진행중 == false)
+            {
+                if (에이든키워드넘버 <= 0)
+                {
+                    에이든키워드넘버 = 에이든키워드개수;
+                }
+                else
+                {
+                    에이든키워드넘버 -= 1;
+                }
+
+            }
+        }
+    }
+
+
     List<string> 상위사건키워드리스트 = new List<string>();//string들어가야하고
      int 상위사건키워드개수 = 0;
      int 현재사건상위키워드넘버 = 0;
@@ -184,6 +317,9 @@ public class 키워드매니저 : MonoBehaviour
     bool 행성대직렬리스트추가여부 = false;
     bool 악몽리스트추가여부 = false;
     bool 불면증리스트추가여부 = false;
+    bool 편집증리스트추가여부 = false;
+    bool 실종사건리스트추가여부 = false;
+    bool 하수도괴담리스트추가여부 = false;
     //장소
     bool 병원추가여부 = false;
     bool 의뢰자의집추가여부 = false;
@@ -237,8 +373,30 @@ public class 키워드매니저 : MonoBehaviour
                 상위사건키워드리스트.Add("불면증");
             }
         }
-
-
+        if (편집증리스트추가여부 == false)
+        {
+            if (DataBaseManager.편집증정보1 == true || DataBaseManager.편집증정보2 == true || DataBaseManager.편집증정보3 == true || DataBaseManager.편집증정보4 == true || DataBaseManager.편집증정보5 == true || DataBaseManager.편집증정보6 == true)
+            {
+                편집증리스트추가여부 = true;
+                상위사건키워드리스트.Add("편집증");
+            }
+        }
+        if (실종사건리스트추가여부 == false)
+        {
+            if (DataBaseManager.실종된사람들정보1 == true || DataBaseManager.실종된사람들정보2 == true || DataBaseManager.실종된사람들정보3 == true || DataBaseManager.실종된사람들정보4 == true || DataBaseManager.실종된사람들정보5 == true || DataBaseManager.실종된사람들정보6 == true)
+            {
+                실종사건리스트추가여부 = true;
+                상위사건키워드리스트.Add("실종 사건");
+            }
+        }
+        if (하수도괴담리스트추가여부 == false)
+        {
+            if (DataBaseManager.하수도괴담정보1 == true || DataBaseManager.하수도괴담정보2 == true || DataBaseManager.하수도괴담정보3 == true || DataBaseManager.하수도괴담정보4 == true || DataBaseManager.하수도괴담정보5 == true || DataBaseManager.하수도괴담정보6 == true)
+            {
+                하수도괴담리스트추가여부 = true;
+                상위사건키워드리스트.Add("하수도의 괴담");
+            }
+        }
         //장소
         if (병원추가여부 == false)
         {
@@ -303,14 +461,31 @@ public class 키워드매니저 : MonoBehaviour
     int 악몽키워드넘버 = 0;
 
     List<string> 불면증리스트 = new List<string>();//string들어가야하고
-    int 불면증키워드개수 = 0;
+    int 불면증키워드개수;
     int 불면증키워드넘버 = 0;
 
+    List<string> 편집증리스트 = new List<string>();//string들어가야하고
+    int 편집증키워드개수;
+    int 편집증키워드넘버 = 0;
+
+    List<string> 실종사건리스트 = new List<string>();//string들어가야하고
+    int 실종사건키워드개수 = 0;
+    int 실종사건키워드넘버 = 0;
+
+    List<string> 하수도괴담리스트 = new List<string>();//string들어가야하고
+    int 하수도괴담키워드개수 = 0;
+    int 하수도괴담키워드넘버 = 0;
     //사건
     bool 행성대직렬정보1추가여부 = false;
     bool 악몽정보1추가여부 = false;
+    bool 악몽정보2추가여부 = false;
     bool 불면증정보1추가여부 = false;
-
+    bool 불면증정보2추가여부 = false;
+    bool 불면증정보3추가여부 = false;
+    bool 편집증정보1추가여부 = false;
+    bool 편집증정보2추가여부 = false;
+    bool 실종사건정보1추가여부 = false;
+    bool 하수도괴담정보1추가여부 = false;
     // ------------------------------- 인물하위
     List<string> 에이든리스트 = new List<string>();//string들어가야하고
     int 에이든키워드개수 = 0;
@@ -322,6 +497,8 @@ public class 키워드매니저 : MonoBehaviour
 
     //사건
     bool 에이든정보1추가여부 = false;
+    bool 에이든정보2추가여부 = false;
+    bool 에이든정보3추가여부 = false;
     bool 엘라정보1추가여부 = false;
 
 
@@ -347,6 +524,9 @@ public class 키워드매니저 : MonoBehaviour
         행성대직렬키워드개수 = 행성대직렬리스트.Count-1;
         악몽키워드개수 = 악몽리스트.Count - 1;
         불면증키워드개수 = 불면증리스트.Count - 1;
+        편집증키워드개수 = 편집증리스트.Count - 1;
+        실종사건키워드개수 = 실종사건리스트.Count - 1;
+        하수도괴담키워드개수 = 하수도괴담리스트.Count - 1;
 
         엘라키워드개수 = 엘라리스트.Count - 1;
         에이든키워드개수 = 에이든리스트.Count - 1;
@@ -383,6 +563,13 @@ public class 키워드매니저 : MonoBehaviour
             악몽리스트.Add("에이든의 악몽");
         }
 
+        if (DataBaseManager.악몽정보2 == true && 악몽정보2추가여부 == false)
+        {
+            악몽정보2추가여부 = true;
+            악몽리스트.Add("악몽의 내용");
+        }
+
+
         // 불면증
         else if (DataBaseManager.키워드상위 == "불면증" && 불면증키워드개수 >= 0)
         {
@@ -394,9 +581,55 @@ public class 키워드매니저 : MonoBehaviour
             불면증정보1추가여부 = true;
             불면증리스트.Add("불면증 유행");
         }
+        if (DataBaseManager.불면증정보2 == true && 불면증정보2추가여부 == false)
+        {
+            불면증정보2추가여부 = true;
+            불면증리스트.Add("병원의 불면증 환자");
+        }
+        if (DataBaseManager.불면증정보3 == true && 불면증정보3추가여부 == false)
+        {
+            불면증정보3추가여부 = true;
+            불면증리스트.Add("불면증의 원인");
+        }
+        // 편집증
+        else if (DataBaseManager.키워드상위 == "편집증" && 편집증키워드개수 >= 0)
+        {
+            DataBaseManager.키워드하위 = 편집증리스트[편집증키워드넘버];
+        }
 
+        if (DataBaseManager.편집증정보1 == true && 편집증정보1추가여부 == false)
+        {
+            편집증정보1추가여부 = true;
+            편집증리스트.Add("편집증 유행");
+        }
+        if (DataBaseManager.편집증정보2 == true && 편집증정보2추가여부 == false)
+        {
+            편집증정보2추가여부 = true;
+            편집증리스트.Add("편집증의 원인");
+        }
+        // 실종사건
+        else if (DataBaseManager.키워드상위 == "실종 사건" && 실종사건키워드개수 >= 0)
+        {
+            DataBaseManager.키워드하위 = 실종사건리스트[실종사건키워드넘버];
+        }
 
+        if (DataBaseManager.실종된사람들정보1 == true && 실종사건정보1추가여부 == false)
+        {
+            실종사건정보1추가여부 = true;
+            실종사건리스트.Add("연속 실종 사건");
+        }
 
+        // 하수도괴담.
+        else if (DataBaseManager.키워드상위 == "하수도의 괴담" && 하수도괴담키워드개수 >= 0)
+        {
+            DataBaseManager.키워드하위 = 하수도괴담리스트[하수도괴담키워드넘버];
+        }
+
+        if (DataBaseManager.하수도괴담정보1 == true && 하수도괴담정보1추가여부 == false)
+        {
+            하수도괴담정보1추가여부 = true;
+            하수도괴담리스트.Add("에이든이 취재하던 것");
+        }
         // 인물
 
         // 에이든
@@ -409,8 +642,16 @@ public class 키워드매니저 : MonoBehaviour
             에이든정보1추가여부 = true;
             에이든리스트.Add("에이든 트리스");
         }
-
-
+        if (DataBaseManager.에이든정보2 == true && 에이든정보2추가여부 == false)
+        {
+            에이든정보2추가여부 = true;
+            에이든리스트.Add("에이든의 상태");
+        }
+        if (DataBaseManager.에이든정보3 == true && 에이든정보3추가여부 == false)
+        {
+            에이든정보3추가여부 = true;
+            에이든리스트.Add("에이든의 발언");
+        }
         // 엘라
         if (DataBaseManager.키워드상위 == "엘라 트리스" && 엘라키워드개수 >= 0)
         {
@@ -490,11 +731,7 @@ public class 키워드매니저 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("판정창"+DataBaseManager.판정창여부);
-            Debug.Log("옵션창" + DataBaseManager.옵션창여부);
-        }
+
 
         하위키워드업데이터();
         키워드업데이터();

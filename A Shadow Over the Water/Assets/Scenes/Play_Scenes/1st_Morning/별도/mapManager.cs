@@ -11,6 +11,15 @@ public class mapManager : MonoBehaviour
 
     public void 시간이동으로씬전환()
     {
+
+        //기능판정 추가되면 여기에 추가해 주어야함. 장면이동시 다시 판정가능하도록
+        DataBaseManager.에이든의학판정여부 = false;
+        DataBaseManager.신문기능판정여부 = false;
+        DataBaseManager.에이든정신분석판정여부 = false;
+
+
+
+
         DataBaseManager.판정창여부 = false;
         DataBaseManager.옵션창여부 = false;
 

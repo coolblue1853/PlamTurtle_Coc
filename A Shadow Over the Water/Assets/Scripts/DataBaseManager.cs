@@ -8,6 +8,12 @@ public class DataBaseManager : MonoBehaviour
     public static string 키워드상위 = "";
     public static string 키워드하위 = "";
 
+    public static bool 에이든의학판정여부 = false;
+    public static bool 에이든정신분석판정여부 = false;
+    public static bool 에이든1일차최초대화완료여부 = false;
+
+    public static bool 최초의뢰인집 = false;
+
     public static bool 대화중기능판정 = false;
     public static bool 연출진행중 = false;
     //정보 알리미 관련 

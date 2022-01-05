@@ -295,12 +295,27 @@ public class DialogManager_D1사무소 : MonoBehaviour
 
 
 
+    public void DeleteChilds(GameObject 스트레스배경)
+    {
+        Transform[] childList = 스트레스배경.GetComponentsInChildren<Transform>(true);
+        if (childList != null)
+        {
+            for (int i = 2; i < childList.Length; i++)
+            {
+                if (childList[i] != transform)
+                    Destroy(childList[i].gameObject);
+            }
+        }
 
+    }
+
+    public GameObject 정보플로팅위치;
     void EndDialog()
     {
+        DeleteChilds(정보플로팅위치);
         DataBaseManager.대화창켜짐 = false;
         DataBaseManager.판정창여부 = false;
-
+        selectionUIManager.대화중기능판정버튼제거();
         //DataBaseManager.연출중움직임제한 = false;
         PlayerChar.transform.GetComponent<Mins>().다이얼로그다운();
         대화창일러.SetActive(false);

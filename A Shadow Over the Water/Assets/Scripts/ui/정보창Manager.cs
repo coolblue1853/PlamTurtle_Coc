@@ -32,11 +32,26 @@ public class 정보창Manager : MonoBehaviour
     {
         DataBaseManager.불면증알리미 = true;
         var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
-        clone.GetComponent<정보플로팅>().Text.text = "<color=#B30000>(불면증) </color>정보 획득".ToString();
+        clone.GetComponent<정보플로팅>().Text.text = "<color=#B30000>(불면증 유행) </color>정보 획득".ToString();
         clone.transform.SetParent(ui창.transform);
         clone.transform.localScale = new Vector3(1, 1, 1);
     }
-
+    public void 불면증정보추가2()
+    {
+        DataBaseManager.불면증알리미 = true;
+        var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+        clone.GetComponent<정보플로팅>().Text.text = "<color=#B30000>(병원의 불면증 환자) </color>정보 획득".ToString();
+        clone.transform.SetParent(ui창.transform);
+        clone.transform.localScale = new Vector3(1, 1, 1);
+    }
+    public void 불면증정보추가3()
+    {
+        DataBaseManager.불면증알리미 = true;
+        var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+        clone.GetComponent<정보플로팅>().Text.text = "<color=#B30000>(불면증의 원인) </color>정보 획득".ToString();
+        clone.transform.SetParent(ui창.transform);
+        clone.transform.localScale = new Vector3(1, 1, 1);
+    }
     public void 악몽정보추가()
     {
         DataBaseManager.악몽알리미 = true;
@@ -45,6 +60,31 @@ public class 정보창Manager : MonoBehaviour
         clone.transform.SetParent(ui창.transform);
         clone.transform.localScale = new Vector3(1, 1, 1);
     }
+    public void 악몽정보추가2()
+    {
+        DataBaseManager.악몽알리미 = true;
+        var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+        clone.GetComponent<정보플로팅>().Text.text = "<color=#B30000>(악몽의 내용) </color>정보 획득".ToString();
+        clone.transform.SetParent(ui창.transform);
+        clone.transform.localScale = new Vector3(1, 1, 1);
+    }
+    public void 편집증정보추가()
+    {
+        DataBaseManager.편집증알리미 = true;
+        var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+        clone.GetComponent<정보플로팅>().Text.text = "<color=#B30000>(편집증 유행) </color>정보 획득".ToString();
+        clone.transform.SetParent(ui창.transform);
+        clone.transform.localScale = new Vector3(1, 1, 1);
+    }
+    public void 편집증정보추가2()
+    {
+        DataBaseManager.편집증알리미 = true;
+        var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+        clone.GetComponent<정보플로팅>().Text.text = "<color=#B30000>(편집증의 원인) </color>정보 획득".ToString();
+        clone.transform.SetParent(ui창.transform);
+        clone.transform.localScale = new Vector3(1, 1, 1);
+    }
+
 
     public void 실종사건추가()
     {
@@ -56,7 +96,15 @@ public class 정보창Manager : MonoBehaviour
         clone.transform.localScale = new Vector3(1, 1, 1);
     }
 
+    public void 하수도의괴담추가()
+    {
 
+        //DataBaseManager.실종사건알리미 = true;
+        var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+        clone.GetComponent<정보플로팅>().Text.text = "<color=#B30000>(에이든이 취재하던 것) </color>정보 획득".ToString();
+        clone.transform.SetParent(ui창.transform);
+        clone.transform.localScale = new Vector3(1, 1, 1);
+    }
 
 
 
@@ -77,7 +125,22 @@ public class 정보창Manager : MonoBehaviour
         clone.transform.SetParent(ui창.transform);
         clone.transform.localScale = new Vector3(1, 1, 1);
     }
-
+    public void 에이든정보추가2()
+    {
+        DataBaseManager.에이든알리미 = true;
+        var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+        clone.GetComponent<정보플로팅>().Text.text = "<color=#1A6800>(에이든의 상태) </color>정보 획득".ToString();
+        clone.transform.SetParent(ui창.transform);
+        clone.transform.localScale = new Vector3(1, 1, 1);
+    }
+    public void 에이든정보추가3()
+    {
+        DataBaseManager.에이든알리미 = true;
+        var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+        clone.GetComponent<정보플로팅>().Text.text = "<color=#1A6800>(에이든의 발언) </color>정보 획득".ToString();
+        clone.transform.SetParent(ui창.transform);
+        clone.transform.localScale = new Vector3(1, 1, 1);
+    }
     //장소
     public void 병원정보추가()
     {

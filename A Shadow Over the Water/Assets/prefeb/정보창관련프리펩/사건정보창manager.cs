@@ -525,7 +525,7 @@ public class 사건정보창manager : MonoBehaviour
         {
             악몽정보1획득 = true;
             var clone = Instantiate(정보프리팹);
-            clone.GetComponent<Text>().text = " <size=20>< 에이든의 악몽 ></size> \n의뢰자 <color=#0026A9>(엘라 트리스)</color>의 남편인 <color=#0026A9>(에이든 트리스)</color>가 겪고 있는 악몽은 생각보다 심각한 것인 듯 하다.\n갑자기 편집증이 생겨날 정도의 악몽이라면 정신적으로 상당히 내몰려있는 것일지도 모른다. ";
+            clone.GetComponent<Text>().text = " <size=20>< 에이든의 악몽 ></size> \n의뢰자 <color=#0026A9>(엘라 트리스)</color>의 남편인 <color=#0026A9>(에이든 트리스)</color>가 겪고 있는 <color=#B30000>(악몽)</color>은 생각보다 심각한 것인 듯 하다.\n정신적으로 상당히 내몰려있는 것일지도 모른다. ";
             clone.transform.SetParent(악몽정보컨텐츠.transform);
             clone.transform.localScale = new Vector3(1, 1, 1);
         }
@@ -533,7 +533,7 @@ public class 사건정보창manager : MonoBehaviour
         {
             악몽정보2획득 = true;
             var clone = Instantiate(정보프리팹);
-            clone.GetComponent<Text>().text = "<악몽 정보2>";
+            clone.GetComponent<Text>().text = " <size=20>< 악몽의 내용 ></size> \n<color=#0026A9>(에이든 트리스)</color>가 <color=#B30000>(악몽)</color>에 대해 묘사하길 물에 빠져 익사하는 꿈이라고 했다. \n해당 꿈이 반복적으로 나타나고 있는 듯 보이는데 이것이 <color=#B30000>(불면증)</color>의 원인이 아닐까?";
             clone.transform.SetParent(악몽정보컨텐츠.transform);
             clone.transform.localScale = new Vector3(1, 1, 1);
         }
@@ -654,7 +654,7 @@ public class 사건정보창manager : MonoBehaviour
         {
             편집증정보1획득 = true;
             var clone = Instantiate(정보프리팹);
-            clone.GetComponent<Text>().text = "<편집증 정보1>";
+            clone.GetComponent<Text>().text = " <size=20>< 편집증 유행 ></size> \n최근 아컴시에서 발생하는<color=#B30000>(불면증)</color>에 시달리는 환자들 중 일부가 <color=#B30000>(편집증)</color> 증상 또한 보인다고 한다.";
             clone.transform.SetParent(편집증정보컨텐츠.transform);
             clone.transform.localScale = new Vector3(1, 1, 1);
         }
@@ -662,7 +662,7 @@ public class 사건정보창manager : MonoBehaviour
         {
             편집증정보2획득 = true;
             var clone = Instantiate(정보프리팹);
-            clone.GetComponent<Text>().text = "<편집증 정보2>";
+            clone.GetComponent<Text>().text = " <size=20>< 편집증의 원인 ></size> \n<color=#B30000>(편집증)</color>의 원인은 <color=#B30000>(불면증)</color>인 것으로 보인다.";
             clone.transform.SetParent(편집증정보컨텐츠.transform);
             clone.transform.localScale = new Vector3(1, 1, 1);
         }
@@ -792,7 +792,7 @@ public class 사건정보창manager : MonoBehaviour
         {
             불면증정보2획득 = true;
             var clone = Instantiate(정보프리팹);
-            clone.GetComponent<Text>().text = "<불면증 정보2>";
+            clone.GetComponent<Text>().text = " <size=18>< 병원의 불면증 환자 ></size> \n병원에는 <color=#B30000>(불면증)</color> 환자가 있었다. 어쩌면 그도 의뢰자의 남편인 <color=#0026A9>(에이든 트리스)</color> 과 비슷한 상태일지도 모른다.";
             clone.transform.SetParent(불면증정보컨텐츠.transform);
             clone.transform.localScale = new Vector3(1, 1, 1);
 
@@ -802,7 +802,7 @@ public class 사건정보창manager : MonoBehaviour
         {
             불면증정보3획득 = true;
             var clone = Instantiate(정보프리팹);
-            clone.GetComponent<Text>().text = "<불면증 정보3>";
+            clone.GetComponent<Text>().text = " <size=20>< 불면증의 원인 ></size> \n<color=#B30000>(불면증)</color>의 원인은 <color=#B30000>(악몽)</color>으로 보인다. \n외상후 장애라면 모를까 이렇게 갑작스레 <color=#B30000>(악몽)</color>에 의해 발생하는 <color=#B30000>(불면증)</color>은 들어본 바가 없다.";
             clone.transform.SetParent(불면증정보컨텐츠.transform);
             clone.transform.localScale = new Vector3(1, 1, 1);
 
@@ -917,7 +917,7 @@ public class 사건정보창manager : MonoBehaviour
         {
             하수도괴담정보1획득 = true;
             var clone = Instantiate(정보프리팹);
-            clone.GetComponent<Text>().text = "<하수도괴담 정보1>";
+            clone.GetComponent<Text>().text = " <size=16>< 에이든이 취재하던 것 ></size> \n그가 가장 최근에 취재하던 것은 <color=#B30000>(하수도의 이상한 괴담)</color>이라고 한다. \n 요약해보면 애완으로 기르던 악어를 누가 하수도에 버려 그곳에서 사람을 습격한다는 이야기인듯 하다.";
             clone.transform.SetParent(하수도괴담정보컨텐츠.transform);
             clone.transform.localScale = new Vector3(1, 1, 1);
         }

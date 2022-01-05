@@ -9,7 +9,7 @@ public class 안방밖으로이동 : MonoBehaviour
     public Image 이동시커튼2;
     public GameObject 이동시커튼오브;
     public GameObject 이동시커튼오브2;
-
+    public 일일차의뢰인의집연출 연출매니저;
     public Mins Player;
 
 
@@ -35,6 +35,11 @@ public class 안방밖으로이동 : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.W))
             {
+                if(DataBaseManager.에이든1일차최초대화완료여부 == true)
+                {
+                    연출매니저.안방나가는연출();
+                }
+
                 우측이동안내.SetActive(false);
                 StartCoroutine(우좌이동());
             }

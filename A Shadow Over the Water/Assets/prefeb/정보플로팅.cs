@@ -29,6 +29,7 @@ public class 정보플로팅 : MonoBehaviour
         }
 
         페이드이미지오브젝트.SetActive(false);
+        Destroy(this);
     }
 
     IEnumerator 페이드인코루틴()

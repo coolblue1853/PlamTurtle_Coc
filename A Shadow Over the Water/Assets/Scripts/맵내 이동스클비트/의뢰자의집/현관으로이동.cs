@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class 현관으로이동 : MonoBehaviour
 {
+    public Text 간단제목;
+    public Text 간단내용;
 
     public Image 이동시커튼;
     public Image 이동시커튼2;
@@ -11,7 +13,7 @@ public class 현관으로이동 : MonoBehaviour
     public GameObject 이동시커튼오브2;
 
     public Mins Player;
-
+    public 일일차의뢰인의집연출 연출매니저;
 
     public GameObject 카메라바디;
     public CameraManager 카메라;
@@ -35,6 +37,8 @@ public class 현관으로이동 : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.W)&& DataBaseManager.장면이동중 == false)
             {
+                연출매니저.최초로의뢰인의집입장();
+                연출매니저.노크소리온();
                 우측이동안내.SetActive(false);
                 StartCoroutine(우좌이동());
             }
@@ -54,6 +58,12 @@ public class 현관으로이동 : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (collision.name == "Player")
+        {
+
+            간단제목.text = "";
+            간단내용.text = "";
+        }
         if (collision.transform.tag == "Player")
         {
 
@@ -77,10 +87,15 @@ public class 현관으로이동 : MonoBehaviour
 
             우측이동인 = true;
         }
+        if (collision.name == "Player")
+        {
+
+            간단제목.text = "의뢰자의 집";
+            간단내용.text = "의뢰자가 말해준 집.";
+        }
 
     }
 
-    
 
 
 

@@ -131,9 +131,6 @@ public class 기능판정매니저 : MonoBehaviour
 
 
 
-
-
-
     public IEnumerator 룰렉동작시키기()
     {
 
