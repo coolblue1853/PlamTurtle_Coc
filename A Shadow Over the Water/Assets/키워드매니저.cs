@@ -320,6 +320,7 @@ public class 키워드매니저 : MonoBehaviour
     bool 편집증리스트추가여부 = false;
     bool 실종사건리스트추가여부 = false;
     bool 하수도괴담리스트추가여부 = false;
+    bool 비릿한냄새리스트추가여부 = false;
     //장소
     bool 병원추가여부 = false;
     bool 의뢰자의집추가여부 = false;
@@ -327,7 +328,7 @@ public class 키워드매니저 : MonoBehaviour
     //인물
     bool 에이든추가여부 = false;
     bool 엘라추가여부 = false;
-
+    bool 스탠리추가여부 = false;
 
 
 
@@ -397,6 +398,14 @@ public class 키워드매니저 : MonoBehaviour
                 상위사건키워드리스트.Add("하수도의 괴담");
             }
         }
+        if (비릿한냄새리스트추가여부 == false)
+        {
+            if (DataBaseManager.비릿한냄새정보1 == true || DataBaseManager.비릿한냄새정보2 == true || DataBaseManager.비릿한냄새정보3 == true || DataBaseManager.비릿한냄새정보4 == true || DataBaseManager.비릿한냄새정보5 == true || DataBaseManager.비릿한냄새정보6 == true)
+            {
+                비릿한냄새리스트추가여부 = true;
+                상위사건키워드리스트.Add("비릿한 냄새");
+            }
+        }
         //장소
         if (병원추가여부 == false)
         {
@@ -445,7 +454,14 @@ public class 키워드매니저 : MonoBehaviour
                 상위인물키워드리스트.Add("엘라 트리스");
             }
         }
-
+        if (스탠리추가여부 == false)
+        {
+            if (DataBaseManager.동료기자정보1 == true || DataBaseManager.동료기자정보2 == true || DataBaseManager.동료기자정보3 == true || DataBaseManager.동료기자정보4 == true || DataBaseManager.동료기자정보5 == true || DataBaseManager.동료기자정보6 == true)
+            {
+                스탠리추가여부 = true;
+                상위인물키워드리스트.Add("스탠리 큐브릭");
+            }
+        }
 
 
 
@@ -475,6 +491,11 @@ public class 키워드매니저 : MonoBehaviour
     List<string> 하수도괴담리스트 = new List<string>();//string들어가야하고
     int 하수도괴담키워드개수 = 0;
     int 하수도괴담키워드넘버 = 0;
+
+    List<string> 비릿한냄새리스트 = new List<string>();//string들어가야하고
+    int 비릿한냄새키워드개수 = 0;
+    int 비릿한냄새키워드넘버 = 0;
+
     //사건
     bool 행성대직렬정보1추가여부 = false;
     bool 악몽정보1추가여부 = false;
@@ -485,7 +506,9 @@ public class 키워드매니저 : MonoBehaviour
     bool 편집증정보1추가여부 = false;
     bool 편집증정보2추가여부 = false;
     bool 실종사건정보1추가여부 = false;
+    bool 실종사건정보2추가여부 = false;
     bool 하수도괴담정보1추가여부 = false;
+    bool 비릿한냄새정보1추가여부 = false;
     // ------------------------------- 인물하위
     List<string> 에이든리스트 = new List<string>();//string들어가야하고
     int 에이든키워드개수 = 0;
@@ -494,13 +517,16 @@ public class 키워드매니저 : MonoBehaviour
     List<string> 엘라리스트 = new List<string>();//string들어가야하고
     int 엘라키워드개수 = 0;
     int 엘라키워드넘버 = 0;
+    List<string> 스탠리리스트 = new List<string>();//string들어가야하고
+    int 스탠리키워드개수 = 0;
+    int 스탠리키워드넘버 = 0;
 
     //사건
     bool 에이든정보1추가여부 = false;
     bool 에이든정보2추가여부 = false;
     bool 에이든정보3추가여부 = false;
     bool 엘라정보1추가여부 = false;
-
+    bool 스탠리정보1추가여부 = false;
 
     // ------------------------------- 장소하위
     List<string> 병원리스트 = new List<string>();//string들어가야하고
@@ -527,9 +553,11 @@ public class 키워드매니저 : MonoBehaviour
         편집증키워드개수 = 편집증리스트.Count - 1;
         실종사건키워드개수 = 실종사건리스트.Count - 1;
         하수도괴담키워드개수 = 하수도괴담리스트.Count - 1;
+        비릿한냄새키워드개수 = 비릿한냄새리스트.Count - 1;
 
         엘라키워드개수 = 엘라리스트.Count - 1;
         에이든키워드개수 = 에이든리스트.Count - 1;
+        스탠리키워드개수 = 스탠리리스트.Count - 1;
 
         병원키워드개수 = 병원리스트.Count - 1;
         의뢰자의집키워드개수 = 의뢰자의집리스트.Count - 1;
@@ -619,6 +647,13 @@ public class 키워드매니저 : MonoBehaviour
             실종사건리스트.Add("연속 실종 사건");
         }
 
+        if (DataBaseManager.실종된사람들정보2 == true && 실종사건정보2추가여부 == false)
+        {
+            실종사건정보2추가여부 = true;
+            실종사건리스트.Add("취재 - 연속 실종");
+        }
+
+
         // 하수도괴담.
         else if (DataBaseManager.키워드상위 == "하수도의 괴담" && 하수도괴담키워드개수 >= 0)
         {
@@ -629,6 +664,18 @@ public class 키워드매니저 : MonoBehaviour
         {
             하수도괴담정보1추가여부 = true;
             하수도괴담리스트.Add("에이든이 취재하던 것");
+        }
+
+        // 비릿한냄새
+        else if (DataBaseManager.키워드상위 == "비릿한 냄새" && 비릿한냄새키워드개수 >= 0)
+        {
+            DataBaseManager.키워드하위 = 비릿한냄새리스트[비릿한냄새키워드넘버];
+        }
+
+        if (DataBaseManager.비릿한냄새정보1 == true && 비릿한냄새정보1추가여부 == false)
+        {
+            비릿한냄새정보1추가여부 = true;
+            비릿한냄새리스트.Add("비릿한 냄새 소문");
         }
         // 인물
 
@@ -663,7 +710,16 @@ public class 키워드매니저 : MonoBehaviour
             엘라리스트.Add("엘라 트리스");
         }
 
-
+        // 스탠리
+        if (DataBaseManager.키워드상위 == "스탠리 큐브릭" && 스탠리키워드개수 >= 0)
+        {
+            DataBaseManager.키워드하위 = 스탠리리스트[스탠리키워드넘버];
+        }
+        if (DataBaseManager.동료기자정보1 == true && 스탠리정보1추가여부 == false)
+        {
+            스탠리정보1추가여부 = true;
+            스탠리리스트.Add("스탠리 큐브릭");
+        }
 
 
         // 장소 

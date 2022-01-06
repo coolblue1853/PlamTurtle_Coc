@@ -1049,7 +1049,7 @@ public class 사건정보창manager : MonoBehaviour
         {
             실종된사람들정보2획득 = true;
             var clone = Instantiate(정보프리팹);
-            clone.GetComponent<Text>().text = "<실종된사람들 정보2>";
+            clone.GetComponent<Text>().text = " <size=17>< 취재 - 연속 실종 ></size> \n<color=#1A6800>(스탠리)</color>가 말하길 아컴시에 연속적인 실종 사건이 발생중이라고 한다. 단독 기사를 쓰려고 취재중이라고. ";
             clone.transform.SetParent(실종된사람들정보컨텐츠.transform);
             clone.transform.localScale = new Vector3(1, 1, 1);
         }
@@ -1164,7 +1164,7 @@ public class 사건정보창manager : MonoBehaviour
         {
             비릿한냄새정보1획득 = true;
             var clone = Instantiate(정보프리팹);
-            clone.GetComponent<Text>().text = "<비릿한냄새 정보1>";
+            clone.GetComponent<Text>().text = " <size=20>< 비릿한 냄새 소문 ></size> \n최근들어 아컴시에 (비릿한 냄세)에 관한 소문이 나돌고 있다고 한다.";
             clone.transform.SetParent(비릿한냄새정보컨텐츠.transform);
             clone.transform.localScale = new Vector3(1, 1, 1);
         }

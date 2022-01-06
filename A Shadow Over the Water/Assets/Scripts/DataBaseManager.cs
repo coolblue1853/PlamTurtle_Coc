@@ -8,6 +8,11 @@ public class DataBaseManager : MonoBehaviour
     public static string 키워드상위 = "";
     public static string 키워드하위 = "";
 
+    public static bool 스탠리언변술판정여부 = false;
+    public static bool 스탠리심리학판정여부 = false;
+    public static bool 스탠리언변술성공여부 = false;
+
+
     public static bool 에이든의학판정여부 = false;
     public static bool 에이든정신분석판정여부 = false;
     public static bool 에이든1일차최초대화완료여부 = false;

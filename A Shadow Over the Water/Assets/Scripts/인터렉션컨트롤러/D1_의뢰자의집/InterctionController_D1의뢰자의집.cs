@@ -47,10 +47,7 @@ public class InterctionController_D1의뢰자의집 : MonoBehaviour
 
     void Start()
     {
-        DataBaseManager.에이든정보1 = true;
-        DataBaseManager.악몽정보1 = true;
-        DataBaseManager.정신감정 = 9;
-        DataBaseManager.의학지식 = 9;
+
     }
     void Update()
     {

@@ -388,10 +388,10 @@ public class DialogManager_D1신문사 : MonoBehaviour
                     {
                         if (t_ReplaceText[i + 2] == '●')
                         {
-                            if (t_ReplaceText[i + 3] == '하')
+                            if (t_ReplaceText[i + 3] == '연')
                             {
-                                DataBaseManager.하수도괴담정보1 = true;
-                                정보창매니저.하수도의괴담추가();
+                                DataBaseManager.실종된사람들정보2 = true;
+                                정보창매니저.실종사건추가2();
 
 
                             }
@@ -402,13 +402,18 @@ public class DialogManager_D1신문사 : MonoBehaviour
                             }
                             if (t_ReplaceText[i + 3] == '불')
                             {
-                                DataBaseManager.불면증정보3 = true;
-                                정보창매니저.불면증정보추가3();
+                                DataBaseManager.불면증정보1 = true;
+                                정보창매니저.불면증정보추가();
                             }
                             if (t_ReplaceText[i + 3] == '편')
                             {
                                 DataBaseManager.편집증정보2 = true;
                                 정보창매니저.편집증정보추가2();
+                            }
+                            if (t_ReplaceText[i + 3] == '비')
+                            {
+                                DataBaseManager.비릿한냄새정보1 = true;
+                                정보창매니저.비릿한냄새추가1();
                             }
                         }
 
@@ -449,10 +454,10 @@ public class DialogManager_D1신문사 : MonoBehaviour
                     {
                         if (t_ReplaceText[i + 2] == '●')
                         {
-                            if (t_ReplaceText[i + 3] == '엘')
+                            if (t_ReplaceText[i + 3] == '스')
                             {
-                                DataBaseManager.엘라정보1 = true;
-                                정보창매니저.엘라정보추가();
+                                DataBaseManager.동료기자정보1 = true;
+                                정보창매니저.동료기자정보추가1();
                             }
                             if (t_ReplaceText[i + 3] == '에')
                             {

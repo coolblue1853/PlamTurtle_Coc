@@ -16,7 +16,8 @@ public class mapManager : MonoBehaviour
         DataBaseManager.에이든의학판정여부 = false;
         DataBaseManager.신문기능판정여부 = false;
         DataBaseManager.에이든정신분석판정여부 = false;
-
+        DataBaseManager.스탠리언변술판정여부 = false;
+        DataBaseManager.스탠리심리학판정여부 = false;
 
 
 

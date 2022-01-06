@@ -878,7 +878,7 @@ public class 인물정보창manager : MonoBehaviour
         {
             동료기자정보1획득 = true;
             var clone = Instantiate(정보프리팹);
-            clone.GetComponent<Text>().text = "<스탠리 정보1>";
+            clone.GetComponent<Text>().text = "<size=20>< 스탠리 큐브릭 ></size> \n<color=#0026A9>(에이든 트리스)</color>의 의 친구이자 동료. 아주 친절한 사람은 아닌듯 하다.";
             clone.transform.SetParent(동료기자정보컨텐츠.transform);
 
             clone.transform.localScale = new Vector3(1, 1, 1);

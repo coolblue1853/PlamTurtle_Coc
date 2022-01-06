@@ -95,7 +95,15 @@ public class 정보창Manager : MonoBehaviour
         clone.transform.SetParent(ui창.transform);
         clone.transform.localScale = new Vector3(1, 1, 1);
     }
+    public void 실종사건추가2()
+    {
 
+        DataBaseManager.실종사건알리미 = true;
+        var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+        clone.GetComponent<정보플로팅>().Text.text = "<color=#B30000>(취재 - 연속 실종) </color>정보 획득".ToString();
+        clone.transform.SetParent(ui창.transform);
+        clone.transform.localScale = new Vector3(1, 1, 1);
+    }
     public void 하수도의괴담추가()
     {
 
@@ -105,7 +113,15 @@ public class 정보창Manager : MonoBehaviour
         clone.transform.SetParent(ui창.transform);
         clone.transform.localScale = new Vector3(1, 1, 1);
     }
+    public void 비릿한냄새추가1()
+    {
 
+        //DataBaseManager.실종사건알리미 = true;
+        var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+        clone.GetComponent<정보플로팅>().Text.text = "<color=#B30000>(비릿한 냄새 소문) </color>정보 획득".ToString();
+        clone.transform.SetParent(ui창.transform);
+        clone.transform.localScale = new Vector3(1, 1, 1);
+    }
 
 
     //인물
@@ -141,6 +157,26 @@ public class 정보창Manager : MonoBehaviour
         clone.transform.SetParent(ui창.transform);
         clone.transform.localScale = new Vector3(1, 1, 1);
     }
+
+    //동료기자
+    public void 동료기자정보추가1()
+    {
+        DataBaseManager.에이든알리미 = true;
+        var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+        clone.GetComponent<정보플로팅>().Text.text = "<color=#1A6800>(스탠리 큐브릭) </color>정보 획득".ToString();
+        clone.transform.SetParent(ui창.transform);
+        clone.transform.localScale = new Vector3(1, 1, 1);
+    }
+
+
+
+
+
+
+
+
+
+
     //장소
     public void 병원정보추가()
     {
