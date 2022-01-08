@@ -47,7 +47,7 @@ public class 기능판정매니저 : MonoBehaviour
         DataBaseManager.신문기능판정여부 = true;
 
         판정창.SetActive(true);
-
+        결과.text = "----";
 
         사용기능.text = "정보조사" + DataBaseManager.정보조사 ;
         배틀사운드매니저.찰칵효과음함수();

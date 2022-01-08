@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class selectionUIManager_D1사무소 : MonoBehaviour
+public class selectionUIManager_D1대학교 : MonoBehaviour
 {
-    public DialogManager_D1사무소 theDM;
+    public DialogManager_D1대학교 theDM;
     public SoundManager 배틀사운드매니저;
-    public DialogManager_D1사무소 dialogManager;
+    public DialogManager_D1대학교 dialogManager;
     public GameObject 첫번째_선택지_커피타줘버튼;
     public GameObject 첫번째_선택지_직접타기버튼;
     public GameObject 첫번째_선택지_가만히버튼;
@@ -26,7 +26,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
     public GameObject 엘라심리학선택지버튼;
     public Text 엘라심리학선택지텍스트;
     public Text 판정결과;
-    public InterctionController_D1사무소 interctionController;
+    public InterctionController_D1대학교 interctionController;
     public rollet 룰렛머신;
 
     public Text 십의자리;
@@ -44,7 +44,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
 
     public void 대화중기능판정버튼제거()
     {
-        엘라심리학선택지버튼.SetActive(false);
+        //엘라심리학선택지버튼.SetActive(false);
     }
     bool 기능사용안하고넘기기 = false;
     int 일번선택지합쳐지는파트 = 0;
@@ -56,7 +56,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
     }
 
     void Update()
-    {        
+    {
         if (룰렛활성여부 == true && Input.GetMouseButtonDown(0))
         {
             전투클릭여부 = true;
@@ -64,7 +64,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
         }
 
 
-        if(일번선택지합쳐지는파트 == 1 && Input.GetKeyDown(KeyCode.Z))
+        if (일번선택지합쳐지는파트 == 1 && Input.GetKeyDown(KeyCode.Z))
         {
             일번선택지합쳐지는파트 = 2;
             dialogManager.선택지선택시외부에서페이지넘기기();
@@ -96,7 +96,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
         dialogManager.선택지선택시외부에서페이지넘기기();
         첫번째_선택지_커피타줘버튼.SetActive(false);
         첫번째_선택지_직접타기버튼.SetActive(false);
-       첫번째_선택지_가만히버튼.SetActive(false);
+        첫번째_선택지_가만히버튼.SetActive(false);
         dialogManager.onButtonSetterF();
         //interctionController.선1커피타줘();;
 
@@ -138,7 +138,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
         두번째_선택지_1.SetActive(true);
         두번째_선택지_2.SetActive(true);
 
-        if(DataBaseManager.선택1_3가만히있기를했는가 == true)
+        if (DataBaseManager.선택1_3가만히있기를했는가 == true)
         {
             두번째_선택지_3.SetActive(true);
         }
@@ -223,8 +223,8 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
         {
             엘라심리학선택지버튼.SetActive(true);
         }
-        
-        
+
+
 
     }
     IEnumerator 지연자()
@@ -235,7 +235,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
     public void 엘라심리학선택지끄기()
     {
 
-            엘라심리학선택지버튼.SetActive(false);
+        //엘라심리학선택지버튼.SetActive(false);
 
     }
 
@@ -266,19 +266,19 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
         DataBaseManager.판정창여부 = true;
 
         엘라기능판정창.SetActive(true);
-        엘라기능판정텍스트.text = "엘라에 대하여 <심리판단> 기능을 사용합니다.\n 현재 해당기능 수치는 " + DataBaseManager.심리판단 + " 입니다.";
+        엘라기능판정텍스트.text = "알버트에 대하여 <심리판단> 기능을 사용합니다.\n 현재 해당기능 수치는 " + DataBaseManager.심리판단 + " 입니다.";
     }
     public Text 사용기능;
     public IEnumerator 심리학기능판정코루틴()
     {
 
 
-  
+        DataBaseManager.신문기능판정여부 = true;
 
         룰렛머신온오프.SetActive(true);
 
-        판정결과.text = "----";
-        사용기능.text = "심리판단" + DataBaseManager.심리판단;
+
+        사용기능.text = "정보조사" + DataBaseManager.정보조사;
         //배틀사운드매니저.찰칵효과음함수();
 
         yield return new WaitForSeconds(2f);
@@ -289,7 +289,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
 
 
     }
-    IEnumerator 심리판단_1일차엘라()
+    IEnumerator 심리판단_1일차알버트()
     {
         배틀사운드매니저.찰칵효과음함수();
 
@@ -329,7 +329,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
         if (판정결과.text == "대성공")
         {
 
-            interctionController.엘라심리학성공출력대사();
+            //interctionController.알버트심리학대성공출력대사();
             엘라심리학선택지버튼.SetActive(false);
             dialogManager.onButtonSetterF();
         }
@@ -337,7 +337,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
         if (판정결과.text == "보통성공")
         {
 
-            interctionController.엘라심리학성공출력대사();
+            //interctionController.알버트심리학성공출력대사();
             엘라심리학선택지버튼.SetActive(false);
             dialogManager.onButtonSetterF();
 
@@ -345,7 +345,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
         if (판정결과.text == "실패")
         {
 
-            interctionController.엘라심리학실패출력대사();
+            //interctionController.알버트심리학실패출력대사();
             엘라심리학선택지버튼.SetActive(false);
             dialogManager.onButtonSetterF();
 
@@ -353,7 +353,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
         if (판정결과.text == "대실패")
         {
 
-            interctionController.엘라심리학실패출력대사();
+            //interctionController.알버트심리학대실패출력대사();
             엘라심리학선택지버튼.SetActive(false);
             dialogManager.onButtonSetterF();
 
@@ -450,7 +450,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
 
     public IEnumerator 룰렛끄기()
     {
-        yield return new WaitForSeconds(2f); 
+        yield return new WaitForSeconds(2f);
         룰렛머신온오프.SetActive(false);
     }
     public IEnumerator 룰렛작동()
@@ -744,7 +744,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
 
 
         // 나중에 기능판정 늘어냐면 여기 수정해줘야됨
-        StartCoroutine(심리판단_1일차엘라());
+        StartCoroutine(심리판단_1일차알버트());
     }
 
     bool 전투클릭여부;
@@ -754,7 +754,7 @@ public class selectionUIManager_D1사무소 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
