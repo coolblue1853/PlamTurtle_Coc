@@ -1288,7 +1288,7 @@ public class 사건정보창manager : MonoBehaviour
         {
             강의수질정보1획득 = true;
             var clone = Instantiate(정보프리팹);
-            clone.GetComponent<Text>().text = "<강의수질 정보1>";
+            clone.GetComponent<Text>().text = " <size=20>< 강의 특이점 ></size> \n<color=#B30000>(미스캐토닉 강의 수질)</color>의 수질에 특이사항이 생겼다고 한다.\n 무슨 특이점인지는 직접 <color=#0026A9>(노교수)</color>를 만나봐야 알 수 있을것 같다.";
             clone.transform.SetParent(강의수질정보컨텐츠.transform);
             clone.transform.localScale = new Vector3(1, 1, 1);
         }

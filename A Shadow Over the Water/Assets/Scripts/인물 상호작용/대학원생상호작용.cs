@@ -75,32 +75,36 @@ public class 대학원생상호작용 : MonoBehaviour
 		상호작용판.SetActive(false);
 		DataBaseManager.대화창켜짐 = true;
 
-		int 숫자 = Random.Range(1, 3);
+		int 숫자 = Random.Range(1, 4);
 
 
 		if(최초대화여부_1일차아침== false)
         {
 			최초대화여부_1일차아침 = true;
-			인터렉션컨트롤러.에이든_1일차낮_최초대화();
+			인터렉션컨트롤러.대학생_1일차낮_최초대화();
 
 		}
         else
         {
 			if (숫자 == 1)
 			{
-				인터렉션컨트롤러.에이든_1일차낮_반복대화1();
+				인터렉션컨트롤러.대학생_1일차낮_반복1대화();
 			}
 			else if (숫자 == 2)
 			{
-				인터렉션컨트롤러.에이든_1일차낮_반복대화2();
+				인터렉션컨트롤러.대학생_1일차낮_반복2대화();
 			}
+            else if (숫자 == 3)
+            {
+                인터렉션컨트롤러.대학생_1일차낮_반복3대화();
+            }
 
-		}
+        }
 
 
 
 
-	}
+    }
 
 
     public void 에이든키워드()
@@ -112,12 +116,15 @@ public class 대학원생상호작용 : MonoBehaviour
 
         if (DataBaseManager.키워드하위 == "에이든의 악몽")
         {
-            인터렉션컨트롤러.에이든_1일차낮_키워드악몽대화();
+            인터렉션컨트롤러.대학생_1일차낮_악몽대화();
         }
-
+        else if(DataBaseManager.키워드하위 == "불면증 유행")
+        {
+            인터렉션컨트롤러.대학생_1일차낮_불면증대화();
+        }
         else
         {
-            인터렉션컨트롤러.에이든_1일차낮_반복대화1();
+            인터렉션컨트롤러.대학생_1일차낮_그외키워드대화();
 
         }
     }
@@ -131,20 +138,20 @@ public class 대학원생상호작용 : MonoBehaviour
     void Update()
     {
         상호작용체커();
-        /*
+     
         if (룰렛활성여부 == true && Input.GetMouseButtonDown(0))
         {
             전투클릭여부 = true;
             배틀사운드매니저.효과음멈춤();
         }
-        */
-        if (DataBaseManager.에이든의학판정여부 == false)
+    
+        if (DataBaseManager.대학생관찰력판정여부 == false)
         {
-            //의학버튼.SetActive(true);
+            관찰력버튼.SetActive(true);
         }
         else
         {
-           // 의학버튼.SetActive(false);
+            관찰력버튼.SetActive(false);
         }
         if (DataBaseManager.에이든정신분석판정여부 == false)
         {
@@ -161,10 +168,10 @@ public class 대학원생상호작용 : MonoBehaviour
     void Start()
     {
 
-
-
+        DataBaseManager.악몽정보1 = true;
+        DataBaseManager.불면증정보1 = true;
     }
-    /*
+
     public SoundManager 배틀사운드매니저;
 
 
@@ -174,7 +181,7 @@ public class 대학원생상호작용 : MonoBehaviour
     public Text 사용기능;
     public Text 결과;
 
-    public GameObject 의학버튼;
+    public GameObject 관찰력버튼;
     public GameObject 정신분석버튼;
 
     public GameObject 에이든기능판정배경;
@@ -194,7 +201,7 @@ public class 대학원생상호작용 : MonoBehaviour
 		상호작용판.SetActive(false);
 
 		의학기능판정창.SetActive(true);
-		의학기능판정텍스트.text = "에이든에 대하여 <의학지식> 기능을 사용합니다.\n 현재 해당기능 수치는 " + DataBaseManager.의학지식 + " 입니다.";
+		의학기능판정텍스트.text = "대학생에 대하여 <눈썰미> 기능을 사용합니다.\n 현재 해당기능 수치는 " + DataBaseManager.눈썰미 + " 입니다.";
 
 	}
 
@@ -252,7 +259,7 @@ public class 대학원생상호작용 : MonoBehaviour
         판정창.SetActive(true);
 
 
-        사용기능.text = "의학지식" + DataBaseManager.의학지식;
+        사용기능.text = "눈썰미" + DataBaseManager.눈썰미;
         배틀사운드매니저.찰칵효과음함수();
 
         yield return new WaitForSeconds(2f);
@@ -271,17 +278,17 @@ public class 대학원생상호작용 : MonoBehaviour
 
 
 
-        if (출력기능값 <= DataBaseManager.의학지식)
+        if (출력기능값 <= DataBaseManager.눈썰미)
         {
             결과.text = "보통성공";
 
         }
-        if (출력기능값 > DataBaseManager.의학지식)
+        if (출력기능값 > DataBaseManager.눈썰미)
         {
             결과.text = "실패";
 
         }
-        if (출력기능값 <= ((double)DataBaseManager.의학지식 / 3f) && (double)DataBaseManager.의학지식 >= 3f)
+        if (출력기능값 <= ((double)DataBaseManager.눈썰미 / 3f) && (double)DataBaseManager.눈썰미 >= 3f)
         {
             결과.text = "대성공";
 
@@ -304,25 +311,25 @@ public class 대학원생상호작용 : MonoBehaviour
         if (결과.text == "대성공")
         {
 
-            인터렉션컨트롤러.에이든_1일차낮_의학기능대화();
+            인터렉션컨트롤러.대학생_1일차낮_관찰력기능대화();
         }
 
         if (결과.text == "보통성공")
         {
 
-            인터렉션컨트롤러.에이든_1일차낮_의학기능대화();
+            인터렉션컨트롤러.대학생_1일차낮_관찰력기능대화();
 
         }
         if (결과.text == "실패")
         {
 
-            인터렉션컨트롤러.에이든_1일차낮_의학기능실패대화();
+            인터렉션컨트롤러.대학생_1일차낮_실패();
 
         }
         if (결과.text == "대실패")
         {
 
-            인터렉션컨트롤러.에이든_1일차낮_의학기능실패대화();
+            인터렉션컨트롤러.대학생_1일차낮_실패();
 
         }
 
@@ -405,25 +412,25 @@ public class 대학원생상호작용 : MonoBehaviour
         if (결과.text == "대성공")
         {
 
-            인터렉션컨트롤러.에이든_1일차낮_정신분석대화();
+            //인터렉션컨트롤러.에이든_1일차낮_정신분석대화();
         }
 
         if (결과.text == "보통성공")
         {
 
-            인터렉션컨트롤러.에이든_1일차낮_정신분석대화();
+            //인터렉션컨트롤러.에이든_1일차낮_정신분석대화();
 
         }
         if (결과.text == "실패")
         {
 
-            인터렉션컨트롤러.에이든_1일차낮_정신분석실패대화();
+            //인터렉션컨트롤러.에이든_1일차낮_정신분석실패대화();
 
         }
         if (결과.text == "대실패")
         {
 
-            인터렉션컨트롤러.에이든_1일차낮_정신분석실패대화();
+           // 인터렉션컨트롤러.에이든_1일차낮_정신분석실패대화();
 
         }
 
@@ -781,7 +788,7 @@ public class 대학원생상호작용 : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
 
-        if(사용기능.text == "의학지식" + DataBaseManager.의학지식)
+        if (사용기능.text == "눈썰미" + DataBaseManager.눈썰미)
         {
             StartCoroutine(의학기능_1일차에이든());
         }
@@ -791,5 +798,5 @@ public class 대학원생상호작용 : MonoBehaviour
         }
 
     }
-    */
+    
 }

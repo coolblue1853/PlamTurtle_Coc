@@ -122,7 +122,15 @@ public class 정보창Manager : MonoBehaviour
         clone.transform.SetParent(ui창.transform);
         clone.transform.localScale = new Vector3(1, 1, 1);
     }
+    public void 미스캐토닉강의수질추가1()
+    {
 
+        //DataBaseManager.실종사건알리미 = true;
+        var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+        clone.GetComponent<정보플로팅>().Text.text = "<color=#B30000>(강의 특이점) </color>정보 획득".ToString();
+        clone.transform.SetParent(ui창.transform);
+        clone.transform.localScale = new Vector3(1, 1, 1);
+    }
 
     //인물
     public void 엘라정보추가()
@@ -167,7 +175,14 @@ public class 정보창Manager : MonoBehaviour
         clone.transform.SetParent(ui창.transform);
         clone.transform.localScale = new Vector3(1, 1, 1);
     }
-
+    public void 노교수정보추가1()
+    {
+        DataBaseManager.에이든알리미 = true;
+        var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+        clone.GetComponent<정보플로팅>().Text.text = "<color=#1A6800>(신이난 노교수) </color>정보 획득".ToString();
+        clone.transform.SetParent(ui창.transform);
+        clone.transform.localScale = new Vector3(1, 1, 1);
+    }
 
 
 
@@ -211,6 +226,14 @@ public class 정보창Manager : MonoBehaviour
         clone.transform.localScale = new Vector3(1, 1, 1);
     }
 
+    public void 강가정보추가()
+    {
+        DataBaseManager.의뢰자의집알리미 = true;
+        var clone = Instantiate(플로팅텍스트오브젝트, 적플로팅위치.transform.position, Quaternion.Euler(Vector3.zero));
+        clone.GetComponent<정보플로팅>().Text.text = "<color=#0026A9>(강과 교수) </color>정보 획득".ToString();
+        clone.transform.SetParent(ui창.transform);   
+        clone.transform.localScale = new Vector3(1, 1, 1);
+    }
     public void 정보창끄기()
     {
         DataBaseManager.옵션창여부 = false;

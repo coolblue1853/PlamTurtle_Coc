@@ -321,14 +321,17 @@ public class 키워드매니저 : MonoBehaviour
     bool 실종사건리스트추가여부 = false;
     bool 하수도괴담리스트추가여부 = false;
     bool 비릿한냄새리스트추가여부 = false;
+    bool 강의수질추가여부 = false;
     //장소
     bool 병원추가여부 = false;
     bool 의뢰자의집추가여부 = false;
     bool 신문사추가여부 = false;
+    bool 강가추가여부 = false;
     //인물
     bool 에이든추가여부 = false;
     bool 엘라추가여부 = false;
     bool 스탠리추가여부 = false;
+    bool 노교수추가여부 = false;
 
 
 
@@ -406,6 +409,14 @@ public class 키워드매니저 : MonoBehaviour
                 상위사건키워드리스트.Add("비릿한 냄새");
             }
         }
+        if (강의수질추가여부 == false)
+        {
+            if (DataBaseManager.강의수질정보1 == true || DataBaseManager.강의수질정보2 == true || DataBaseManager.강의수질정보3 == true || DataBaseManager.강의수질정보4 == true || DataBaseManager.강의수질정보5 == true || DataBaseManager.강의수질정보6 == true)
+            {
+                강의수질추가여부 = true;
+                상위사건키워드리스트.Add("미스캐토닉 강의 수질");
+            }
+        }
         //장소
         if (병원추가여부 == false)
         {
@@ -431,7 +442,14 @@ public class 키워드매니저 : MonoBehaviour
                 상위장소키워드리스트.Add("데일리뉴스 신문사");
             }
         }
-
+        if (강가추가여부 == false)
+        {
+            if (DataBaseManager.강가정보1 == true || DataBaseManager.강가정보2 == true || DataBaseManager.강가정보3 == true || DataBaseManager.강가정보4 == true || DataBaseManager.강가정보5 == true || DataBaseManager.강가정보6 == true)
+            {
+                강가추가여부 = true;
+                상위장소키워드리스트.Add("미스캐토닉 강");
+            }
+        }
 
 
 
@@ -462,7 +480,14 @@ public class 키워드매니저 : MonoBehaviour
                 상위인물키워드리스트.Add("스탠리 큐브릭");
             }
         }
-
+        if (노교수추가여부 == false)
+        {
+            if (DataBaseManager.노교수정보1 == true || DataBaseManager.노교수정보2 == true || DataBaseManager.노교수정보3 == true || DataBaseManager.노교수정보5 == true || DataBaseManager.노교수정보4 == true || DataBaseManager.노교수정보6 == true)
+            {
+                노교수추가여부 = true;
+                상위인물키워드리스트.Add("노교수");
+            }
+        }
 
 
 
@@ -496,6 +521,10 @@ public class 키워드매니저 : MonoBehaviour
     int 비릿한냄새키워드개수 = 0;
     int 비릿한냄새키워드넘버 = 0;
 
+    List<string> 강의수질리스트 = new List<string>();//string들어가야하고
+    int 강의수질키워드개수 = 0;
+    int 강의수질키워드넘버 = 0;
+
     //사건
     bool 행성대직렬정보1추가여부 = false;
     bool 악몽정보1추가여부 = false;
@@ -509,6 +538,7 @@ public class 키워드매니저 : MonoBehaviour
     bool 실종사건정보2추가여부 = false;
     bool 하수도괴담정보1추가여부 = false;
     bool 비릿한냄새정보1추가여부 = false;
+    bool 강의수질정보1추가여부 = false;
     // ------------------------------- 인물하위
     List<string> 에이든리스트 = new List<string>();//string들어가야하고
     int 에이든키워드개수 = 0;
@@ -520,14 +550,16 @@ public class 키워드매니저 : MonoBehaviour
     List<string> 스탠리리스트 = new List<string>();//string들어가야하고
     int 스탠리키워드개수 = 0;
     int 스탠리키워드넘버 = 0;
-
+    List<string> 노교수리스트 = new List<string>();//string들어가야하고
+    int 노교수키워드개수 = 0;
+    int 노교수키워드넘버 = 0;
     //사건
     bool 에이든정보1추가여부 = false;
     bool 에이든정보2추가여부 = false;
     bool 에이든정보3추가여부 = false;
     bool 엘라정보1추가여부 = false;
     bool 스탠리정보1추가여부 = false;
-
+    bool 노교수정보1추가여부 = false;
     // ------------------------------- 장소하위
     List<string> 병원리스트 = new List<string>();//string들어가야하고
     int 병원키워드개수 = 0;
@@ -540,10 +572,15 @@ public class 키워드매니저 : MonoBehaviour
     List<string> 의뢰자의집리스트 = new List<string>();//string들어가야하고
     int 의뢰자의집키워드개수 = 0;
     int 의뢰자의집키워드넘버 = 0;
+
+    List<string> 강가리스트 = new List<string>();//string들어가야하고
+    int 강가키워드개수 = 0;
+    int 강가키워드넘버 = 0;
     //사건
     bool 병원정보1추가여부 = false;
     bool 신문사정보1추가여부 = false;
     bool 의뢰자의집정보1추가여부 = false;
+    bool 강가정보1추가여부 = false;
     public void 하위키워드업데이터()
     {        
 
@@ -554,16 +591,19 @@ public class 키워드매니저 : MonoBehaviour
         실종사건키워드개수 = 실종사건리스트.Count - 1;
         하수도괴담키워드개수 = 하수도괴담리스트.Count - 1;
         비릿한냄새키워드개수 = 비릿한냄새리스트.Count - 1;
+        강의수질키워드개수 = 강의수질리스트.Count - 1;
 
         엘라키워드개수 = 엘라리스트.Count - 1;
         에이든키워드개수 = 에이든리스트.Count - 1;
         스탠리키워드개수 = 스탠리리스트.Count - 1;
+        노교수키워드개수 = 노교수리스트.Count - 1;
 
         병원키워드개수 = 병원리스트.Count - 1;
         의뢰자의집키워드개수 = 의뢰자의집리스트.Count - 1;
         신문사키워드개수 = 신문사리스트.Count - 1;
+        강가키워드개수 = 강가리스트.Count - 1;
 
-      
+
         // 사건 
 
         // 행성대직렬
@@ -677,6 +717,18 @@ public class 키워드매니저 : MonoBehaviour
             비릿한냄새정보1추가여부 = true;
             비릿한냄새리스트.Add("비릿한 냄새 소문");
         }
+
+        // 강의수질
+        else if (DataBaseManager.키워드상위 == "미스캐토닉 강의 수질" && 강의수질키워드개수 >= 0)
+        {
+            DataBaseManager.키워드하위 = 강의수질리스트[강의수질키워드넘버];
+        }
+
+        if (DataBaseManager.강의수질정보1 == true && 강의수질정보1추가여부 == false)
+        {
+            강의수질정보1추가여부 = true;
+            강의수질리스트.Add("강의 특이점");
+        }
         // 인물
 
         // 에이든
@@ -721,7 +773,16 @@ public class 키워드매니저 : MonoBehaviour
             스탠리리스트.Add("스탠리 큐브릭");
         }
 
-
+        // 노교수
+        if (DataBaseManager.키워드상위 == "노교수" && 노교수키워드개수 >= 0)
+        {
+            DataBaseManager.키워드하위 = 노교수리스트[노교수키워드넘버];
+        }
+        if (DataBaseManager.노교수정보1 == true && 노교수정보1추가여부 == false)
+        {
+            노교수정보1추가여부 = true;
+            노교수리스트.Add("신이난 노교수");
+        }
         // 장소 
 
         // 병원
@@ -760,8 +821,17 @@ public class 키워드매니저 : MonoBehaviour
             의뢰자의집정보1추가여부 = true;
             의뢰자의집리스트.Add("의뢰자의 집");
         }
-   
 
+        // 강가
+        if (DataBaseManager.키워드상위 == "미스캐토닉 강" && 강가키워드개수 >= 0)
+        {
+            DataBaseManager.키워드하위 = 강가리스트[강가키워드넘버];
+        }
+        if (DataBaseManager.강가정보1 == true && 강가정보1추가여부 == false)
+        {
+            강가정보1추가여부 = true;
+            강가리스트.Add("강과 교수");
+        }
 
     }
 

@@ -1014,7 +1014,7 @@ public class 인물정보창manager : MonoBehaviour
         {
             노교수정보1획득 = true;
             var clone = Instantiate(정보프리팹);
-            clone.GetComponent<Text>().text = "<노교수 정보1>";
+            clone.GetComponent<Text>().text = "<size=18>< 신이난 노교수 ></size> \n<color=#1A6800>(미스캐토닉 대학)</color>의 교수.\n최근에는 신이나서 <color=#B30000>(미스캐토닉 강의 수질)</color>에 대해 조사중이라고 한다.\n<color=#1A6800>(미스캐토닉 강가)</color>에 가본다면 만날 수 있을지도 모른다고 한다.";
             clone.transform.SetParent(노교수정보컨텐츠.transform);
             clone.transform.localScale = new Vector3(1, 1, 1);
 

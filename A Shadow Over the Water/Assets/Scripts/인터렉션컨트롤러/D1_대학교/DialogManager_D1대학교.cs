@@ -304,6 +304,7 @@ public class DialogManager_D1대학교 : MonoBehaviour
     public GameObject 정보플로팅위치;
     void EndDialog()
     {
+  
         DeleteChilds(정보플로팅위치);
         DataBaseManager.대화창켜짐 = false;
         DataBaseManager.판정창여부 = false;
@@ -388,10 +389,10 @@ public class DialogManager_D1대학교 : MonoBehaviour
                     {
                         if (t_ReplaceText[i + 2] == '●')
                         {
-                            if (t_ReplaceText[i + 3] == '하')
+                            if (t_ReplaceText[i + 3] == '미')
                             {
-                                DataBaseManager.하수도괴담정보1 = true;
-                                정보창매니저.하수도의괴담추가();
+                                DataBaseManager.강의수질정보1 = true;
+                                정보창매니저.미스캐토닉강의수질추가1();
 
 
                             }
@@ -419,10 +420,10 @@ public class DialogManager_D1대학교 : MonoBehaviour
                     {
                         if (t_ReplaceText[i + 2] == '●')
                         {
-                            if (t_ReplaceText[i + 3] == '병')
+                            if (t_ReplaceText[i + 3] == '강')
                             {
-                                DataBaseManager.병원정보1 = true;
-                                //정보창매니저.병원정보추가();
+                                DataBaseManager.강가정보1 = true;
+                                정보창매니저.강가정보추가();
                             }
                             if (t_ReplaceText[i + 3] == '서')
                             {
@@ -449,10 +450,10 @@ public class DialogManager_D1대학교 : MonoBehaviour
                     {
                         if (t_ReplaceText[i + 2] == '●')
                         {
-                            if (t_ReplaceText[i + 3] == '엘')
+                            if (t_ReplaceText[i + 3] == '교')
                             {
-                                DataBaseManager.엘라정보1 = true;
-                                정보창매니저.엘라정보추가();
+                                DataBaseManager.노교수정보1 = true;
+                                정보창매니저.노교수정보추가1();
                             }
                             if (t_ReplaceText[i + 3] == '에')
                             {

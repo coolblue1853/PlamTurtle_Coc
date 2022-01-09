@@ -1449,7 +1449,7 @@ public class 장소정보창manager : MonoBehaviour
         {
             강가정보1획득 = true;
             var clone = Instantiate(정보프리팹);
-            clone.GetComponent<Text>().text = "<강가 정보1>";
+            clone.GetComponent<Text>().text = " <size=20>< 강과 교수 ></size> \n아컴시 중앙에 있는 강.\n 최근들어서 <color=#B30000>(미스캐토닉 강의 수질)</color>에 특이점이 생겼다고 한다.\n 이에 대해 <color=#1A6800>(미스캐토닉 대학)</color>의 <color=#0026A9>(노교수)</color>가 조사중이라고 한다.";
             clone.transform.SetParent(강가정보컨텐츠.transform);
             clone.transform.localScale = new Vector3(1, 1, 1);
         }
