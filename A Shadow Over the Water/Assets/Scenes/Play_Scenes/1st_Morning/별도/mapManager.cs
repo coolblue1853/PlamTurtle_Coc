@@ -19,10 +19,11 @@ public class mapManager : MonoBehaviour
         DataBaseManager.스탠리언변술판정여부 = false;
         DataBaseManager.스탠리심리학판정여부 = false;
         DataBaseManager.대학생관찰력판정여부 = false;
+        DataBaseManager.하수도관찰력판정여부 = false;
+        DataBaseManager.노교수관찰력판정여부 = false;
 
 
-
-        DataBaseManager.판정창여부 = false;
+    DataBaseManager.판정창여부 = false;
         DataBaseManager.옵션창여부 = false;
 
         if (DataBaseManager.시간대 == 1)

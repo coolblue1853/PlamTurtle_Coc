@@ -8,6 +8,9 @@ public class DataBaseManager : MonoBehaviour
     public static string 키워드상위 = "";
     public static string 키워드하위 = "";
 
+    public static bool 하수도관찰력판정여부 = false;
+    public static bool 노교수관찰력판정여부 = false;
+
     public static bool 대학생관찰력판정여부 = false;
 
     public static bool 스탠리언변술판정여부 = false;

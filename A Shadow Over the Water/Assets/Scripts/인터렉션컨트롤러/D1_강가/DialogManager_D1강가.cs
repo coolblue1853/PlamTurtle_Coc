@@ -4,10 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
+
 using WindowsInput;
-public class DialogManager_D1대학교 : MonoBehaviour
+public class DialogManager_D1강가 : MonoBehaviour
 {
     // Start is called before the first frame update
+    public stressManager 스트레스매니저;
+
     public GameObject 대화창일러;
 
     public GameObject 노아표정1;
@@ -111,7 +114,7 @@ public class DialogManager_D1대학교 : MonoBehaviour
             if (isNext)
             {
 
-                if (Input.GetKeyDown(KeyCode.E) && isSelectButton == false)
+                if (Input.GetKeyDown(KeyCode.E) && isSelectButton == false && DataBaseManager.연출진행중 == false)
                 {
                     z키로넘기기여부2 = false;
                     z키로넘기기여부 = false;
@@ -389,11 +392,11 @@ public class DialogManager_D1대학교 : MonoBehaviour
                     {
                         if (t_ReplaceText[i + 2] == '●')
                         {
-                            if (t_ReplaceText[i + 3] == '미')
+                            if (t_ReplaceText[i + 3] == '눈')
                             {
-                                DataBaseManager.강의수질정보1 = true;
+                                DataBaseManager.섬뜩한눈정보1 = true;
                                 정보창매니저.미스캐토닉강의수질추가1();
-
+                                선택지등장 = true;
 
                             }
                             if (t_ReplaceText[i + 3] == '악')
@@ -590,7 +593,10 @@ public class DialogManager_D1대학교 : MonoBehaviour
 
                     }
                     break;
-
+                case '■':  //스트레스판정
+                    t_ignore = true;
+                    스트레스매니저.외부스트레스판정();
+                    break;
                 case '★':  // 검은별은 선택지이후 연결파트 표시
                     t_ignore = true;
                     if (t_ReplaceText[i + 1] == '①')

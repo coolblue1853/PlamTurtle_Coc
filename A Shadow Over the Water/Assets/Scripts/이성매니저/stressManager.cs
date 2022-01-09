@@ -102,7 +102,15 @@ public class stressManager : MonoBehaviour
     void Update()
     {
         스트레스게이지업데이터();
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (판정진행 == true)
+            {
+                StartCoroutine(스트래스판정());
+                판정진행 = false;
+            }
 
+        }
 
 
         if (룰렛활성여부 == true && Input.GetMouseButtonDown(0))
@@ -293,6 +301,13 @@ public class stressManager : MonoBehaviour
         }
         return null;
     }
+    bool 판정진행;
+    public void 외부스트레스판정()
+    {
+        판정진행 = true;
+        DataBaseManager.연출진행중 = true;
+
+    }
 
     IEnumerator 스트래스판정()
     {
@@ -306,7 +321,7 @@ public class stressManager : MonoBehaviour
         yield return new WaitForSeconds(waitingTime);
 
         StartCoroutine(룰렛작동());
-        사운드매니저.찰칵효과음함수();
+
 
 
 
@@ -372,7 +387,7 @@ public class stressManager : MonoBehaviour
 
         }
 
-
+        DataBaseManager.연출진행중 = false;
 
     }
 
@@ -403,7 +418,9 @@ public class stressManager : MonoBehaviour
             스트레스추가함수();
 
         }
+        DataBaseManager.연출진행중 = false;
         return null;
+
     }
 
     IEnumerator 지능판정()

@@ -1414,7 +1414,7 @@ public class 사건정보창manager : MonoBehaviour
         {
             섬뜩한눈정보1획득 = true;
             var clone = Instantiate(정보프리팹);
-            clone.GetComponent<Text>().text = "<섬뜩한눈 정보1>";
+            clone.GetComponent<Text>().text = " <size=17>< 하수도의 섬뜩한 눈 ></size> \n<color=#1A6800>(미스캐토닉 강)</color>의 하수도에서 정체불명의 커다란 동공을 보았다.\n 저것은 도데체 뭐지..?";
             clone.transform.SetParent(섬뜩한눈정보컨텐츠.transform);
             clone.transform.localScale = new Vector3(1, 1, 1);
         }

@@ -322,6 +322,7 @@ public class 키워드매니저 : MonoBehaviour
     bool 하수도괴담리스트추가여부 = false;
     bool 비릿한냄새리스트추가여부 = false;
     bool 강의수질추가여부 = false;
+    bool 섬뜩한눈추가여부 = false;
     //장소
     bool 병원추가여부 = false;
     bool 의뢰자의집추가여부 = false;
@@ -415,6 +416,14 @@ public class 키워드매니저 : MonoBehaviour
             {
                 강의수질추가여부 = true;
                 상위사건키워드리스트.Add("미스캐토닉 강의 수질");
+            }
+        }
+        if (섬뜩한눈추가여부 == false)
+        {
+            if (DataBaseManager.섬뜩한눈정보1 == true || DataBaseManager.섬뜩한눈정보2 == true || DataBaseManager.섬뜩한눈정보3 == true || DataBaseManager.섬뜩한눈정보4 == true || DataBaseManager.섬뜩한눈정보5 == true || DataBaseManager.섬뜩한눈정보6 == true)
+            {
+                섬뜩한눈추가여부 = true;
+                상위사건키워드리스트.Add("하수도의 섬뜩한 눈");
             }
         }
         //장소
@@ -525,6 +534,9 @@ public class 키워드매니저 : MonoBehaviour
     int 강의수질키워드개수 = 0;
     int 강의수질키워드넘버 = 0;
 
+    List<string> 섬뜩한눈리스트 = new List<string>();//string들어가야하고
+    int 섬뜩한눈키워드개수 = 0;
+    int 섬뜩한눈키워드넘버 = 0;
     //사건
     bool 행성대직렬정보1추가여부 = false;
     bool 악몽정보1추가여부 = false;
@@ -539,6 +551,7 @@ public class 키워드매니저 : MonoBehaviour
     bool 하수도괴담정보1추가여부 = false;
     bool 비릿한냄새정보1추가여부 = false;
     bool 강의수질정보1추가여부 = false;
+    bool 섬뜩한눈정보1추가여부 = false;
     // ------------------------------- 인물하위
     List<string> 에이든리스트 = new List<string>();//string들어가야하고
     int 에이든키워드개수 = 0;
@@ -592,6 +605,7 @@ public class 키워드매니저 : MonoBehaviour
         하수도괴담키워드개수 = 하수도괴담리스트.Count - 1;
         비릿한냄새키워드개수 = 비릿한냄새리스트.Count - 1;
         강의수질키워드개수 = 강의수질리스트.Count - 1;
+        섬뜩한눈키워드개수 = 섬뜩한눈리스트.Count - 1;
 
         엘라키워드개수 = 엘라리스트.Count - 1;
         에이든키워드개수 = 에이든리스트.Count - 1;
@@ -728,6 +742,18 @@ public class 키워드매니저 : MonoBehaviour
         {
             강의수질정보1추가여부 = true;
             강의수질리스트.Add("강의 특이점");
+        }
+
+        // 섬뜩한눈
+        else if (DataBaseManager.키워드상위 == "하수도의 섬뜩한 눈" && 섬뜩한눈키워드개수 >= 0)
+        {
+            DataBaseManager.키워드하위 = 섬뜩한눈리스트[섬뜩한눈키워드넘버];
+        }
+
+        if (DataBaseManager.섬뜩한눈정보1 == true && 섬뜩한눈정보1추가여부 == false)
+        {
+            섬뜩한눈정보1추가여부 = true;
+            섬뜩한눈리스트.Add("하수도의 섬뜩한 눈");
         }
         // 인물
 
