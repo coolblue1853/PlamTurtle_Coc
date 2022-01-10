@@ -390,15 +390,23 @@ public class DialogManager_D1신문사 : MonoBehaviour
                         {
                             if (t_ReplaceText[i + 3] == '연')
                             {
-                                DataBaseManager.실종된사람들정보2 = true;
-                                정보창매니저.실종사건추가2();
+                                if(DataBaseManager.실종된사람들정보2 == false)
+                                {
+                                    DataBaseManager.실종된사람들정보2 = true;
+                                    정보창매니저.실종사건추가2();
+                                }
+
 
 
                             }
-                            if (t_ReplaceText[i + 3] == '악')
+                            if (t_ReplaceText[i + 3] == '하')
                             {
-                                DataBaseManager.악몽정보2 = true;
-                                정보창매니저.악몽정보추가2();
+                                if (DataBaseManager.하수도괴담정보1 == false)
+                                {
+                                    DataBaseManager.하수도괴담정보1 = true;
+                                    정보창매니저.하수도의괴담추가();
+                                }
+
                             }
                             if (t_ReplaceText[i + 3] == '불')
                             {

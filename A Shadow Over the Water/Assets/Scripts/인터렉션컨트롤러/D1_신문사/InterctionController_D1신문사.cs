@@ -23,6 +23,15 @@ public class InterctionController_D1신문사 : MonoBehaviour
     public GameObject 스탠리_1일차_언변술실패;
     public GameObject 스탠리_1일차_심리학실패;
 
+
+
+    public GameObject 스탠리_1일차_기능이전실종1키워드;
+    public GameObject 스탠리_1일차_기능이후실종1키워드;
+    public GameObject 스탠리_1일차_비릿한냄새키워드;
+    public GameObject 스탠리_1일차_섬뜩한눈키워드;
+    public GameObject 스탠리_1일차_하수도괴담키워드;
+
+
     public DialogManager_D1신문사 theDM;
     public DialogManager_D1신문사 기능판정DM;
 
@@ -37,6 +46,76 @@ public class InterctionController_D1신문사 : MonoBehaviour
     {
 
     }
+
+
+    public void 스탠리_1일차_기능이전실종1()
+    {
+
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+
+            theDM.ShowDialog(스탠리_1일차_기능이전실종1키워드.transform.GetComponent<interactionEvent>().GetDialogs());
+
+        }
+    }
+    public void 스탠리_1일차_기능이후실종1()
+    {
+
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+
+            theDM.ShowDialog(스탠리_1일차_기능이후실종1키워드.transform.GetComponent<interactionEvent>().GetDialogs());
+
+        }
+    }
+    public void 스탠리_1일차_섬뜩한눈()
+    {
+
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+
+            theDM.ShowDialog(스탠리_1일차_섬뜩한눈키워드.transform.GetComponent<interactionEvent>().GetDialogs());
+
+        }
+    }
+    public void 스탠리_1일차_비릿한냄새()
+    {
+
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+
+            theDM.ShowDialog(스탠리_1일차_비릿한냄새키워드.transform.GetComponent<interactionEvent>().GetDialogs());
+
+        }
+    }
+    public void 스탠리_1일차_하수도괴담()
+    {
+
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+
+            theDM.ShowDialog(스탠리_1일차_하수도괴담키워드.transform.GetComponent<interactionEvent>().GetDialogs());
+
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
     public void 스탠리_1일차_최초대화()
     {
 

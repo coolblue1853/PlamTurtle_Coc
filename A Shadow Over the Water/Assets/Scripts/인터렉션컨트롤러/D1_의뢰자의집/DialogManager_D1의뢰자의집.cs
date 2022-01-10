@@ -390,8 +390,12 @@ public class DialogManager_D1의뢰자의집 : MonoBehaviour
                         {
                             if (t_ReplaceText[i + 3] == '하')
                             {
-                                DataBaseManager.하수도괴담정보1 = true;
-                                정보창매니저.하수도의괴담추가();
+                                if(DataBaseManager.하수도괴담정보1 == false)
+                                {
+                                    DataBaseManager.하수도괴담정보1 = true;
+                                    정보창매니저.하수도의괴담추가();
+                                }
+
 
 
                             }

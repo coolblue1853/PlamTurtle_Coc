@@ -116,7 +116,11 @@ public class 엘라상호작용 : MonoBehaviour
 		{
 			인터렉션컨트롤러.엘라_1일차낮_에이든1키워드대화();
 		}
-        else
+		else if (DataBaseManager.키워드하위 == "비릿한 냄새 소문")
+		{
+			인터렉션컨트롤러.엘라_1일차낮_비릿한냄새키워드대화();
+		}
+		else
         {
 			인터렉션컨트롤러.엘라_1일차낮_모르는키워드대화();
 		}
@@ -134,11 +138,11 @@ public class 엘라상호작용 : MonoBehaviour
 		void Start()
     {
 
-		
+
 	}
 
-    // Update is called once per frame
-    void Update()
+	// Update is called once per frame
+	void Update()
     {
 		상호작용체커();
 

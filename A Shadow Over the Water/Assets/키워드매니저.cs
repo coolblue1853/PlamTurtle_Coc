@@ -235,6 +235,20 @@ public class 키워드매니저 : MonoBehaviour
                 }
             }
         }
+        if (DataBaseManager.키워드상위 == "실종 사건")
+        {
+            if (DataBaseManager.대화창켜짐 == false && DataBaseManager.연출진행중 == false)
+            {
+                if (실종사건키워드개수 <= 실종사건키워드넘버)
+                {
+                    실종사건키워드넘버 = 0;
+                }
+                else
+                {
+                    실종사건키워드넘버 += 1;
+                }
+            }
+        }
     }
     public void 하위왼쪽이동()
     {
@@ -294,6 +308,21 @@ public class 키워드매니저 : MonoBehaviour
                 else
                 {
                     에이든키워드넘버 -= 1;
+                }
+
+            }
+        }
+        if (DataBaseManager.키워드상위 == "실종 사건")
+        {
+            if (DataBaseManager.대화창켜짐 == false && DataBaseManager.연출진행중 == false)
+            {
+                if (실종사건키워드넘버 <= 0)
+                {
+                    실종사건키워드넘버 = 실종사건키워드개수;
+                }
+                else
+                {
+                    실종사건키워드넘버 -= 1;
                 }
 
             }

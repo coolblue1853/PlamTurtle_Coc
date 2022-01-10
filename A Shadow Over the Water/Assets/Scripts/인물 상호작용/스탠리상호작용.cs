@@ -209,6 +209,31 @@ public class 스탠리상호작용 : MonoBehaviour
         {
             인터렉션컨트롤러.스탠리_1일차_행성대직렬키워드대화();
         }
+        else if (DataBaseManager.키워드하위 == "비릿한 냄새 소문")
+        {
+            인터렉션컨트롤러.스탠리_1일차_비릿한냄새();
+        }
+        else if (DataBaseManager.키워드하위 == "에이든이 취재하던 것")
+        {
+            인터렉션컨트롤러.스탠리_1일차_하수도괴담();
+        }
+        else if (DataBaseManager.키워드하위 == "하수도의 섬뜩한 눈")
+        {
+            인터렉션컨트롤러.스탠리_1일차_섬뜩한눈();
+        }
+        else if (DataBaseManager.키워드하위 == "연속 실종 사건" )
+        {
+            if(DataBaseManager.실종된사람들정보2==true)
+            {
+                인터렉션컨트롤러.스탠리_1일차_기능이후실종1();
+            }
+            else
+            {
+                인터렉션컨트롤러.스탠리_1일차_기능이전실종1();
+            }
+
+
+        }
         else
         {
 			인터렉션컨트롤러.스탠리_1일차_심리학실패대화();
@@ -227,8 +252,12 @@ public class 스탠리상호작용 : MonoBehaviour
 		// Start is called before the first frame update
 		void Start()
     {
-
-
+        DataBaseManager.실종된사람들정보1 = true;
+        DataBaseManager.심리판단 = 9;
+        DataBaseManager.언변술 = 9;
+        DataBaseManager.비릿한냄새정보1 = true;
+        DataBaseManager.하수도괴담정보1 = true;
+        DataBaseManager.섬뜩한눈정보1 = true;
     }
 
 	// Update is called once per frame
@@ -250,7 +279,7 @@ public class 스탠리상호작용 : MonoBehaviour
         {
             언변술버튼.SetActive(false);
         }
-        if (DataBaseManager.스탠리심리학판정여부 == false && DataBaseManager.스탠리언변술성공여부 == true)
+        if (DataBaseManager.스탠리심리학판정여부 == false && DataBaseManager.스탠리언변술성공여부 == true && DataBaseManager.실종된사람들정보2 == false)
         {
             심리학버튼.SetActive(true);
         }
@@ -291,7 +320,7 @@ public class 스탠리상호작용 : MonoBehaviour
 
 
     }
-
+    public GameObject 키워드가림막;
     IEnumerator 언변술_1일차스탠리()
     {
         배틀사운드매니저.찰칵효과음함수();
@@ -332,12 +361,14 @@ public class 스탠리상호작용 : MonoBehaviour
         if (결과.text == "대성공")
         {
             DataBaseManager.스탠리언변술성공여부 = true;
+            키워드가림막.SetActive(false);
             인터렉션컨트롤러.스탠리_1일차_기능판정언변술대화();
         }
 
         if (결과.text == "보통성공")
         {
             DataBaseManager.스탠리언변술성공여부 = true;
+            키워드가림막.SetActive(false);
             인터렉션컨트롤러.스탠리_1일차_기능판정언변술대화();
 
         }

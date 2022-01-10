@@ -14,6 +14,7 @@ public class InterctionController_D1의뢰자의집 : MonoBehaviour
     public GameObject 엘라_1일차낮_반복대사2;
     public GameObject 엘라_1일차낮_에이든1키워드;
     public GameObject 엘라_1일차낮_모르는키워드;
+    public GameObject 엘라_1일차낮_비릿한냄새키워드;
 
     public GameObject 에이든_1일차낮_최초대사;
     public GameObject 에이든_1일차낮_반복대사1;
@@ -23,6 +24,7 @@ public class InterctionController_D1의뢰자의집 : MonoBehaviour
     public GameObject 에이든_1일차낮_의학기능실패;
     public GameObject 에이든_1일차낮_정신분석기능;
     public GameObject 에이든_1일차낮_정신분석기능실패;
+    public GameObject 에이든_1일차낮_섬뜩한눈키워드;
     public GameObject 에이든최초대화후독백;
     public GameObject 에이든최초대화후엘라대화;
 
@@ -110,7 +112,17 @@ public class InterctionController_D1의뢰자의집 : MonoBehaviour
 
         }
     }
+    public void 엘라_1일차낮_비릿한냄새키워드대화()
+    {
 
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+
+            theDM.ShowDialog(엘라_1일차낮_비릿한냄새키워드.transform.GetComponent<interactionEvent>().GetDialogs());
+
+        }
+    }
     public void 에이든_1일차낮_최초대화()
     {
         DataBaseManager.에이든1일차최초대화완료여부 = true;
@@ -219,6 +231,17 @@ public class InterctionController_D1의뢰자의집 : MonoBehaviour
             theDM.isDialogON = true;
 
             theDM.ShowDialog(에이든최초대화후엘라대화.transform.GetComponent<interactionEvent>().GetDialogs());
+
+        }
+    }
+    public void 에이든섬뜩한눈키워드대화()
+    {
+
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+
+            theDM.ShowDialog(에이든_1일차낮_섬뜩한눈키워드.transform.GetComponent<interactionEvent>().GetDialogs());
 
         }
     }
