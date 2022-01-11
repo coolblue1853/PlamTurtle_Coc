@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-public class 알버트상호작용 : MonoBehaviour
+public class 알버트상호작용1 : MonoBehaviour
 {
 	public Text 간단표기제목;
 	public Text 간단표기내용;
@@ -110,56 +110,30 @@ public class 알버트상호작용 : MonoBehaviour
 		상호작용판.SetActive(false);
 		DataBaseManager.연출중움직임제한 = false;
 
-		// 최초획득
-		if (DataBaseManager.키워드하위 == "행성대직렬 신문기사")
-        {
-			인터렉션컨트롤러.알버트_행성대직렬_키워드();
-		}
-		else if (DataBaseManager.키워드하위 == "에이든의 악몽")
+		if (DataBaseManager.키워드하위 == "취재 - 연속 실종" && 최초대화여부_1일차아침 == false)
 		{
-			인터렉션컨트롤러.잘모르는키워드();
+			최초대화여부_1일차아침 = true;
+			인터렉션컨트롤러.알버트_1일차낮_대화전실종취재대화();
+		}
+
+		else if (DataBaseManager.키워드하위 == "취재 - 연속 실종" && 최초대화여부_1일차아침 == true)
+		{
+
+			인터렉션컨트롤러.알버트_1일차낮_실종취재대화();
 		}
 		else if (DataBaseManager.키워드하위 == "불면증 유행")
 		{
 			인터렉션컨트롤러.알버트_불면증_키워드();
 		}
-		else if (DataBaseManager.키워드하위 == "에이든 트리스")
-		{
-			인터렉션컨트롤러.잘모르는키워드();
+		// 최초획득
+		else if (DataBaseManager.키워드하위 == "행성대직렬 신문기사")
+        {
+			인터렉션컨트롤러.알버트_행성대직렬_키워드();
 		}
-		else if (DataBaseManager.키워드하위 == "엘라 트리스")
-		{
-			인터렉션컨트롤러.잘모르는키워드();
-		}
-		else if (DataBaseManager.키워드하위 == "병원과 의뢰자")
-		{
-			인터렉션컨트롤러.잘모르는키워드();
-		}
-		else if (DataBaseManager.키워드하위 == "남편의 직장") // 신문사
-		{
-			인터렉션컨트롤러.잘모르는키워드();
-		}
-		else if (DataBaseManager.키워드하위 == "의뢰자의 집")
-		{
-			인터렉션컨트롤러.잘모르는키워드();
-		}
-
 		//알버트한테얻는거
 		else if (DataBaseManager.키워드하위 == "연속 실종 사건")
 		{
 			인터렉션컨트롤러.알버트_실종사건_키워드();
-		}
-
-
-		if (DataBaseManager.키워드하위 == "취재 - 연속 실종" && 최초대화여부_1일차아침 == false)
-        {
-			최초대화여부_1일차아침 = true;
-			인터렉션컨트롤러.알버트_1일차낮_대화전실종취재대화();
-		}
-		else if (DataBaseManager.키워드하위 == "취재 - 연속 실종" && 최초대화여부_1일차아침 == true)
-		{
-
-			인터렉션컨트롤러.알버트_1일차낮_실종취재대화();
 		}
 		if (DataBaseManager.키워드하위 == "에이든이 취재하던 것")
 		{
@@ -173,6 +147,14 @@ public class 알버트상호작용 : MonoBehaviour
 		{
 			인터렉션컨트롤러.알버트_1일차낮_섬뜩한눈대화();
 		}
+
+        else
+        {
+			인터렉션컨트롤러.잘모르는키워드();
+		}
+
+
+
 
 	}
 
