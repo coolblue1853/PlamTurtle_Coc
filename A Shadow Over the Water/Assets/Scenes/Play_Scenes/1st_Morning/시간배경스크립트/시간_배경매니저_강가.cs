@@ -20,6 +20,7 @@ public class 시간_배경매니저_강가 : MonoBehaviour
     public Sprite 저녁이미지현관;
     public Sprite 밤이미지현관;
 
+    public GameObject 노교수오브젝트;
 
     int 시간대;
     // Start is called before the first frame update
@@ -36,7 +37,16 @@ public class 시간_배경매니저_강가 : MonoBehaviour
     {
 
 
-        if ((시간대 % 4) == 1)   //아침
+        if (DataBaseManager.시간대 == 3)
+        {
+            노교수오브젝트.SetActive(false);
+        }
+        else
+        {
+            노교수오브젝트.SetActive(true);
+        }
+
+        if ((DataBaseManager.시간대 % 4) == 1)   //아침
         {
             밖배경판.GetComponent<SpriteRenderer>().sprite = 아침이미지;
             차배경판.GetComponent<SpriteRenderer>().sprite = 아침이미지차;
@@ -44,7 +54,7 @@ public class 시간_배경매니저_강가 : MonoBehaviour
             현관배경판.GetComponent<SpriteRenderer>().sprite = 아침이미지현관;
 
         }
-        else if ((시간대 % 4) == 2)   //점심
+        else if ((DataBaseManager.시간대 % 4) == 2)   //점심
         {
             밖배경판.GetComponent<SpriteRenderer>().sprite = 점심이미지;
             차배경판.GetComponent<SpriteRenderer>().sprite = 점심이미지차;
@@ -53,7 +63,7 @@ public class 시간_배경매니저_강가 : MonoBehaviour
 
 
         }
-        else if ((시간대 % 4) == 3)   //저녁
+        else if ((DataBaseManager.시간대 % 4) == 3)   //저녁
         {
             밖배경판.GetComponent<SpriteRenderer>().sprite = 저녁이미지;
             차배경판.GetComponent<SpriteRenderer>().sprite = 저녁이미지차;
@@ -61,7 +71,7 @@ public class 시간_배경매니저_강가 : MonoBehaviour
             현관배경판.GetComponent<SpriteRenderer>().sprite = 저녁이미지현관;
 
         }
-        else if ((시간대 % 4) == 0)   //밤
+        else if ((DataBaseManager.시간대 % 4) == 0)   //밤
         {
             밖배경판.GetComponent<SpriteRenderer>().sprite = 밤이미지;
             차배경판.GetComponent<SpriteRenderer>().sprite = 밤이미지차;

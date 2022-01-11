@@ -2919,6 +2919,7 @@ GameObject:
   - component: {fileID: 729485699}
   - component: {fileID: 729485700}
   - component: {fileID: 729485701}
+  - component: {fileID: 729485702}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -3034,6 +3035,19 @@ MonoBehaviour:
   "\uC2E0\uBB38\uC0AC\uC54C\uB9AC\uBBF8": {fileID: 0}
   "\uC758\uB8B0\uC790\uC758\uC9D1\uC54C\uB9AC\uBBF8": {fileID: 0}
   "\uC544\uCE84\uC5ED\uC54C\uB9AC\uBBF8": {fileID: 1210346373}
+--- !u!114 &729485702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729485695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15265d18deb83844a4c61d19f7e9efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "\uB300\uD559\uC0DD\uC624\uBE0C\uC81D\uD2B8": {fileID: 4206543624656324254}
 --- !u!1 &758686443
 GameObject:
   m_ObjectHideFlags: 0
@@ -10415,7 +10429,7 @@ MonoBehaviour:
   "\uB178\uC544\uD45C\uC8158": {fileID: 8478417496771377713}
   "\uB178\uC544\uD45C\uC8159": {fileID: 8478417496771377714}
   PlayerChar: {fileID: 992125331}
-  selectionUIManager: {fileID: 783647371}
+  selectionUIManager: {fileID: 0}
   isDialogON: 0
   go_dialogBar: {fileID: 4709325652682190766}
   go_dialogNameBar: {fileID: 4709325653032443053}
@@ -10827,7 +10841,7 @@ MonoBehaviour:
   "\uB178\uC544\uD45C\uC8158": {fileID: 8478417496771377713}
   "\uB178\uC544\uD45C\uC8159": {fileID: 8478417496771377714}
   PlayerChar: {fileID: 992125331}
-  selectionUIManager: {fileID: 783647371}
+  selectionUIManager: {fileID: 0}
   isDialogON: 0
   go_dialogBar: {fileID: 4709325652831588251}
   go_dialogNameBar: {fileID: 4709325653018344600}

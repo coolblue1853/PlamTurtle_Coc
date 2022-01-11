@@ -33,6 +33,13 @@ public class InterctionController_D1경찰서 : MonoBehaviour
     public GameObject 알버트_1일차낮_실종사건1;
     public GameObject 알버트_1일차낮_잘모름;
 
+
+    public GameObject 알버트_1일차낮_실종취재;
+    public GameObject 알버트_1일차낮_비릿한냄새;
+    public GameObject 알버트_1일차낮_대화전실종취재;
+    public GameObject 알버트_1일차낮_하수도의섬뜩한눈;
+    public GameObject 알버트_1일차낮_하수도괴담;
+
     // Start is called before the first frame update
 
     public DialogManager_D1경찰서 theDM;
@@ -49,6 +56,64 @@ public class InterctionController_D1경찰서 : MonoBehaviour
     {
 
     }
+    public void 알버트_1일차낮_실종취재대화()
+    {
+
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+
+            theDM.ShowDialog(알버트_1일차낮_실종취재.transform.GetComponent<interactionEvent>().GetDialogs());
+
+        }
+    }
+    public void 알버트_1일차낮_비릿한냄새대화()
+    {
+
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+
+            theDM.ShowDialog(알버트_1일차낮_비릿한냄새.transform.GetComponent<interactionEvent>().GetDialogs());
+
+        }
+    }
+    public void 알버트_1일차낮_대화전실종취재대화()
+    {
+
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+
+            theDM.ShowDialog(알버트_1일차낮_대화전실종취재.transform.GetComponent<interactionEvent>().GetDialogs());
+
+        }
+    }
+    public void 알버트_1일차낮_섬뜩한눈대화()
+    {
+
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+
+            theDM.ShowDialog(알버트_1일차낮_하수도의섬뜩한눈.transform.GetComponent<interactionEvent>().GetDialogs());
+
+        }
+    }
+    public void 알버트_1일차낮_하수도괴담대화()
+    {
+
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+
+            theDM.ShowDialog(알버트_1일차낮_하수도괴담.transform.GetComponent<interactionEvent>().GetDialogs());
+
+        }
+    }
+
+
+
 
     public void 경찰관1_1일차낮_최초대화()
     {

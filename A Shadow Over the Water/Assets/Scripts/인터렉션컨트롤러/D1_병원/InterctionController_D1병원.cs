@@ -46,6 +46,23 @@ public class InterctionController_D1병원 : MonoBehaviour
     public GameObject 의사1_1일차낮_최초;
     public GameObject 의사1_1일차낮_반복;
 
+
+    public GameObject 의사1_1일차저녁_최초;
+    public GameObject 의사1_1일차저녁_반복;
+    public GameObject 의사1_1일차저녁_반복2;
+    public GameObject 의사1_1일차저녁_편집증키워드;
+    public GameObject 의사1_1일차저녁_불면증키워드;
+    public GameObject 의사1_1일차저녁_비릿한냄새키워드;
+    public GameObject 의사1_1일차저녁_그외키워드;
+
+    public GameObject 간호사1_1일차저녁_최초;
+    public GameObject 간호사1_1일차저녁_반복;
+    public GameObject 간호사1_1일차저녁_반복2;
+    public GameObject 간호사1_1일차저녁_편집증키워드;
+    public GameObject 간호사1_1일차저녁_불면증키워드;
+    public GameObject 간호사1_1일차저녁_비릿한냄새키워드;
+    public GameObject 간호사1_1일차저녁_그외키워드;
+
     public GameObject 간호사1_1일차낮_최초;
     public GameObject 간호사1_1일차낮_반복1;
     public GameObject 간호사1_1일차낮_반복2;
@@ -139,6 +156,69 @@ public class InterctionController_D1병원 : MonoBehaviour
         }
     }
 
+
+    //의사 저녁
+    public void 의사1_1일차저녁_최초대화()
+    {
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+            theDM.ShowDialog(의사1_1일차저녁_최초.transform.GetComponent<interactionEvent>().GetDialogs());
+        }
+    }
+    public void 의사1_1일차저녁_반복대화1()
+    {
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+            theDM.ShowDialog(의사1_1일차저녁_반복.transform.GetComponent<interactionEvent>().GetDialogs());
+        }
+    }
+    public void 의사1_1일차저녁_반복대화2()
+    {
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+            theDM.ShowDialog(의사1_1일차저녁_반복2.transform.GetComponent<interactionEvent>().GetDialogs());
+        }
+    }
+    public void 의사1_1일차저녁_편집증키워드대화()
+    {
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+            theDM.ShowDialog(의사1_1일차저녁_편집증키워드.transform.GetComponent<interactionEvent>().GetDialogs());
+        }
+    }
+    public void 의사1_1일차저녁_불면증키워드대화()
+    {
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+            theDM.ShowDialog(의사1_1일차저녁_불면증키워드.transform.GetComponent<interactionEvent>().GetDialogs());
+        }
+    }
+    public void 의사1_1일차저녁_비릿한냄새키워드대화()
+    {
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+            theDM.ShowDialog(의사1_1일차저녁_비릿한냄새키워드.transform.GetComponent<interactionEvent>().GetDialogs());
+        }
+    }
+    public void 의사1_1일차저녁_그외키워드대화()
+    {
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+            theDM.ShowDialog(의사1_1일차저녁_그외키워드.transform.GetComponent<interactionEvent>().GetDialogs());
+        }
+    }
+
+
+
+
+
     //간호사
 
     public void 간호사1_1일차낮_최초대화()
@@ -166,6 +246,90 @@ public class InterctionController_D1병원 : MonoBehaviour
             theDM.ShowDialog(간호사1_1일차낮_반복2.transform.GetComponent<interactionEvent>().GetDialogs());
         }
     }
+
+    //간호사 저녁
+    public void 간호사1_1일차저녁_최초대화()
+    {
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+            theDM.ShowDialog(간호사1_1일차저녁_최초.transform.GetComponent<interactionEvent>().GetDialogs());
+        }
+    }
+    public void 간호사1_1일차저녁_반복대화1()
+    {
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+            theDM.ShowDialog(간호사1_1일차저녁_반복.transform.GetComponent<interactionEvent>().GetDialogs());
+        }
+    }
+    public void 간호사1_1일차저녁_반복대화2()
+    {
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+            theDM.ShowDialog(간호사1_1일차저녁_반복2.transform.GetComponent<interactionEvent>().GetDialogs());
+        }
+    }
+    public void 간호사1_1일차저녁_편집증키워드대화()
+    {
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+            theDM.ShowDialog(간호사1_1일차저녁_편집증키워드.transform.GetComponent<interactionEvent>().GetDialogs());
+        }
+    }
+    public void 간호사1_1일차저녁_불면증키워드대화()
+    {
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+            theDM.ShowDialog(간호사1_1일차저녁_불면증키워드.transform.GetComponent<interactionEvent>().GetDialogs());
+        }
+    }
+    public void 간호사1_1일차저녁_비릿한냄새키워드대화()
+    {
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+            theDM.ShowDialog(간호사1_1일차저녁_비릿한냄새키워드.transform.GetComponent<interactionEvent>().GetDialogs());
+        }
+    }
+    public void 간호사1_1일차저녁_그외키워드대화()
+    {
+        if (theDM.isDialogON == false)
+        {
+            theDM.isDialogON = true;
+            theDM.ShowDialog(간호사1_1일차저녁_그외키워드.transform.GetComponent<interactionEvent>().GetDialogs());
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /*
     public void 경찰관1_1일차낮_최초대화()
     {

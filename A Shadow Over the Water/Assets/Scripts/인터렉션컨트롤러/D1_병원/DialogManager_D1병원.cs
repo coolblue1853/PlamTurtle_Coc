@@ -418,13 +418,34 @@ public class DialogManager_D1병원 : MonoBehaviour
                             }
                             if (t_ReplaceText[i + 3] == '2')
                             {
-                                if(t_ReplaceText[i + 4] == '불')
+                                if (t_ReplaceText[i + 4] == '불')
                                 {
                                     DataBaseManager.불면증정보1 = true;
                                     정보창매니저.불면증정보추가();
                                 }
 
                             }
+
+
+                            if (t_ReplaceText[i + 3] == '2')
+                            {
+                                if (t_ReplaceText[i + 4] == '편')
+                                {
+                                    DataBaseManager.편집증정보2 = true;
+                                    정보창매니저.편집증정보추가2();
+                                }
+
+                            }
+                            if (t_ReplaceText[i + 3] == '3')
+                            {
+                                if (t_ReplaceText[i + 4] == '불')
+                                {
+                                    DataBaseManager.불면증정보3 = true;
+                                    정보창매니저.불면증정보추가3();
+                                }
+
+                            }
+
                         }
 
                     }
@@ -666,6 +687,7 @@ public class DialogManager_D1병원 : MonoBehaviour
 
                 case '●': if (t_ReplaceText[i + -1] == '(') { t_ignore = true; } break;
                 case '2': if (t_ReplaceText[i + -1] == '●') { t_ignore = true; } break;
+                case '3': if (t_ReplaceText[i + -1] == '●') { t_ignore = true; } break;
                 //case '0': if (t_ReplaceText[i + 1] == '§') { t_ignore = true; } if (t_ReplaceText[i - 1] == '☆') { t_ignore = true; } break;
                 case '①': if (t_ReplaceText[i - 3] == '§' || t_ReplaceText[i - 1] == '☆' || t_ReplaceText[i - 1] == '★' || t_ReplaceText[i - 1] == '◎') { t_ignore = true; } break;
                 case '②': if (t_ReplaceText[i - 3] == '§' || t_ReplaceText[i - 1] == '☆' || t_ReplaceText[i - 1] == '◎') { t_ignore = true; } break;

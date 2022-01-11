@@ -30,18 +30,18 @@ public class 시간_배경매니저_ : MonoBehaviour
     void Update()
     {
 
-        if ((시간대 % 4) == 1)   //아침
+        if ((DataBaseManager.시간대 % 4) == 1)   //아침
         {
             배경판.GetComponent<SpriteRenderer>().sprite = 아침이미지;
 
         }
-        else if ((시간대 % 4) == 2)   //점심
+        else if ((DataBaseManager.시간대 % 4) == 2)   //점심
         {
             배경판.GetComponent<SpriteRenderer>().sprite = 점심이미지;
 
 
         }
-        else if ((시간대 % 4) == 3)   //저녁
+        else if ((DataBaseManager.시간대 % 4) == 3)   //저녁
         {
             배경판.GetComponent<SpriteRenderer>().sprite = 저녁이미지;
 
