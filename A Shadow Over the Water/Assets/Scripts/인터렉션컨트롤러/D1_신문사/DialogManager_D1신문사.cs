@@ -625,7 +625,11 @@ public class DialogManager_D1신문사 : MonoBehaviour
 
                 // 최초 심리학 기능판정 선택지 출력창.
                 case '※'://기능판단온
-                    if (t_ReplaceText[i + 1] == '㉦') { selectionUIManager.엘라심리학선택지출력(); };
+                    if(DataBaseManager.스킵활성화 == false)
+                    {
+                        if (t_ReplaceText[i + 1] == '㉦') { selectionUIManager.엘라심리학선택지출력(); };
+                    }
+
                     t_ignore = true;
                     break;
 

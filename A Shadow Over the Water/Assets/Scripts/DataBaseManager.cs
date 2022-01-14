@@ -13,6 +13,8 @@ public class DataBaseManager : MonoBehaviour
     public static bool 하수도관찰력판정여부 = false;
     public static bool 노교수관찰력판정여부 = false;
 
+
+
     public static bool 대학생관찰력판정여부 = false;
 
     public static bool 스탠리언변술판정여부 = false;
@@ -20,6 +22,7 @@ public class DataBaseManager : MonoBehaviour
     public static bool 스탠리언변술성공여부 = false;
 
 
+    public static bool 의뢰인의집독백여부 = false;
     public static bool 에이든의학판정여부 = false;
     public static bool 에이든정신분석판정여부 = false;
     public static bool 에이든1일차최초대화완료여부 = false;

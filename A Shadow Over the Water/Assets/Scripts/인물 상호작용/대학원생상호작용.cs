@@ -355,7 +355,7 @@ public class 대학원생상호작용 : MonoBehaviour
         전투클릭여부 = false;
         결과.text = "----";
         일의자리.text = "0";
-        DataBaseManager.에이든정신분석판정여부 = true;
+        DataBaseManager.대학생관찰력판정여부 = true;
 
         판정창.SetActive(true);
 

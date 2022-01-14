@@ -11,7 +11,8 @@ public class 시간_배경매니저_내방 : MonoBehaviour
     public Sprite 저녁이미지;
     public Sprite 밤이미지;
 
-
+    public GameObject 멜리사;
+    public GameObject 신문;
     public GameObject 다이닝;
     public GameObject 소파1;
     public GameObject 소파2;
@@ -79,6 +80,8 @@ public class 시간_배경매니저_내방 : MonoBehaviour
         }
         else if ((시간대 % 4) == 0)   //밤
         {
+            멜리사.SetActive(false);
+            신문.SetActive(false);
             배경판.GetComponent<SpriteRenderer>().sprite = 밤이미지;
         }
     }

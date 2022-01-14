@@ -128,7 +128,7 @@ public class 하수구상호작용 : MonoBehaviour
             배틀사운드매니저.효과음멈춤();
         }
     
-        if (DataBaseManager.대학생관찰력판정여부 == false)
+        if (DataBaseManager.하수도관찰력판정여부 == false)
         {
             관찰력버튼.SetActive(true);
         }
@@ -151,8 +151,7 @@ public class 하수구상호작용 : MonoBehaviour
     void Start()
     {
 
-        DataBaseManager.악몽정보1 = true;
-        DataBaseManager.불면증정보1 = true;
+
     }
 
     public SoundManager 배틀사운드매니저;
@@ -237,7 +236,7 @@ public class 하수구상호작용 : MonoBehaviour
         결과.text = "----";
         룰렛활성여부 = false;
         전투클릭여부 = false;
-        DataBaseManager.하수도관찰력판정여부 = false;
+        DataBaseManager.하수도관찰력판정여부 = true;
 
         판정창.SetActive(true);
 

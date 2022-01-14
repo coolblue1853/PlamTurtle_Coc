@@ -307,6 +307,7 @@ public class stressManager : MonoBehaviour
         판정진행 = true;
         DataBaseManager.연출진행중 = true;
 
+
     }
 
     IEnumerator 스트래스판정()
@@ -791,7 +792,7 @@ public class stressManager : MonoBehaviour
 
         yield return new WaitForSeconds(waitingTime);
 
-        if (사용기능.text == "의지력 판정:" + DataBaseManager.지능)
+        if (사용기능.text == "의지력 판정:" + DataBaseManager.의지력)
         {
             StartCoroutine(스트래스판정결과());
         }

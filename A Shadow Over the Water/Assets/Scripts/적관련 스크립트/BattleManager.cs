@@ -5056,7 +5056,7 @@ public class BattleManager : MonoBehaviour
 
             yield return new WaitForSeconds(waitingTime);
             배틀사운드매니저.찰칵효과음함수();
-            노아기술.text = "사격술 : " + DataBaseManager.검술;
+            노아기술.text = "단검술 : " + DataBaseManager.검술;
             적기술.text = "회피 : " + 심해인1.심해인회피;
 
             yield return new WaitForSeconds(waitingTime);
@@ -5889,7 +5889,7 @@ public class BattleManager : MonoBehaviour
 
             yield return new WaitForSeconds(waitingTime);
 
-            노아기술.text = "사격술 : " + DataBaseManager.검술;
+            노아기술.text = "단검술 : " + DataBaseManager.검술;
             적기술.text = "회피 : " + 심해인2.심해인회피;
 
             yield return new WaitForSeconds(waitingTime);
@@ -7085,7 +7085,7 @@ public class BattleManager : MonoBehaviour
 
             yield return new WaitForSeconds(2f);
 
-            노아기술.text = "사격술 : " + DataBaseManager.검술;
+            노아기술.text = "단검술 : " + DataBaseManager.검술;
             적기술.text = "회피 : " + 심해인3.심해인회피;
 
             yield return new WaitForSeconds(2f);

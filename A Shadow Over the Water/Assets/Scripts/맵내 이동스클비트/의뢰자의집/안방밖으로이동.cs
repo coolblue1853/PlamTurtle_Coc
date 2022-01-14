@@ -25,6 +25,8 @@ public class 안방밖으로이동 : MonoBehaviour
 
     }
 
+
+
     // Update is called once per frame
     void Update()
     {
@@ -33,10 +35,11 @@ public class 안방밖으로이동 : MonoBehaviour
         {
 
 
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.W) )
             {
-                if(DataBaseManager.에이든1일차최초대화완료여부 == true)
+                if(DataBaseManager.에이든1일차최초대화완료여부 == true && DataBaseManager.의뢰인의집독백여부 == false)
                 {
+                    DataBaseManager.의뢰인의집독백여부 = true;
                     연출매니저.안방나가는연출();
                 }
 

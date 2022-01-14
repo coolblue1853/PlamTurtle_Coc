@@ -2811,6 +2811,8 @@ MonoBehaviour:
   "\uB178\uC544\uD45C\uC8158": {fileID: 652991455}
   "\uB178\uC544\uD45C\uC8159": {fileID: 284082424}
   "\uC5D8\uB77C1": {fileID: 0}
+  "\uC5D8\uB77C2": {fileID: 0}
+  "\uBA5C\uB9AC\uC0AC1": {fileID: 0}
 --- !u!114 &729485700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6516,7 +6518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog:
     name: "\uC120\uD0DD1\uC774\uD6C4"
-    line: {x: 42, y: 43}
+    line: {x: 41, y: 42}
     dialogs:
     - tf_target: {fileID: 0}
       name: 
@@ -10266,7 +10268,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 328171760}
+      - m_Target: {fileID: 8169413021653206034}
         m_MethodName: "\uADF8\uB9CC\uB450\uAE30"
         m_Mode: 1
         m_Arguments:

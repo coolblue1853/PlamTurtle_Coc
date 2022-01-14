@@ -152,7 +152,7 @@ public class DialogManager_D1강가 : MonoBehaviour
     public GameObject 스킵스탑버튼;
     public void 스킵온()
     {
-        if (isSelectButton == false)
+        if (isSelectButton == false && DataBaseManager.연출진행중 == false)
         {
             스킵버튼.SetActive(false);
             스킵스탑버튼.SetActive(true);

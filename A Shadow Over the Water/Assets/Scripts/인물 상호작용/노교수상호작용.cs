@@ -143,7 +143,7 @@ public class 노교수상호작용 : MonoBehaviour
             배틀사운드매니저.효과음멈춤();
         }
     
-        if (DataBaseManager.대학생관찰력판정여부 == false)
+        if (DataBaseManager.노교수관찰력판정여부 == false)
         {
             관찰력버튼.SetActive(true);
         }
@@ -166,8 +166,7 @@ public class 노교수상호작용 : MonoBehaviour
     void Start()
     {
 
-        DataBaseManager.스트레스게이지 = 9;
-        DataBaseManager.눈썰미 = 9;
+
     }
 
     public SoundManager 배틀사운드매니저;
@@ -252,7 +251,7 @@ public class 노교수상호작용 : MonoBehaviour
         결과.text = "----";
         룰렛활성여부 = false;
         전투클릭여부 = false;
-        DataBaseManager.노교수관찰력판정여부 = false;
+        DataBaseManager.노교수관찰력판정여부 = true;
 
         판정창.SetActive(true);
 

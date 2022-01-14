@@ -36,14 +36,18 @@ public class 시간_배경매니저_강가 : MonoBehaviour
     void Update()
     {
 
-
-        if (DataBaseManager.시간대 == 3 && DataBaseManager.시간대 == 4)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            노교수오브젝트.SetActive(false);
+            DataBaseManager.시간대 += 1;
+        }
+
+        if (DataBaseManager.시간대 == 3 && DataBaseManager.시간대 ==4)
+        {
+
         }
         else
         {
-            노교수오브젝트.SetActive(true);
+
         }
 
         if ((DataBaseManager.시간대 % 4) == 1)   //아침
@@ -56,6 +60,7 @@ public class 시간_배경매니저_강가 : MonoBehaviour
         }
         else if ((DataBaseManager.시간대 % 4) == 2)   //점심
         {
+            노교수오브젝트.SetActive(true);
             밖배경판.GetComponent<SpriteRenderer>().sprite = 점심이미지;
             차배경판.GetComponent<SpriteRenderer>().sprite = 점심이미지차;
 
@@ -65,6 +70,7 @@ public class 시간_배경매니저_강가 : MonoBehaviour
         }
         else if ((DataBaseManager.시간대 % 4) == 3)   //저녁
         {
+            노교수오브젝트.SetActive(false);
             밖배경판.GetComponent<SpriteRenderer>().sprite = 저녁이미지;
             차배경판.GetComponent<SpriteRenderer>().sprite = 저녁이미지차;
 
@@ -73,6 +79,7 @@ public class 시간_배경매니저_강가 : MonoBehaviour
         }
         else if ((DataBaseManager.시간대 % 4) == 0)   //밤
         {
+            노교수오브젝트.SetActive(false);
             밖배경판.GetComponent<SpriteRenderer>().sprite = 밤이미지;
             차배경판.GetComponent<SpriteRenderer>().sprite = 밤이미지차;
 
