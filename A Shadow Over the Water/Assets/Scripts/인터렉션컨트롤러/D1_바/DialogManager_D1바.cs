@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 
 using WindowsInput;
-public class DialogManager_D1의뢰자의집 : MonoBehaviour
+public class DialogManager_D1바 : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject 대화창일러;
@@ -41,7 +41,7 @@ public class DialogManager_D1의뢰자의집 : MonoBehaviour
 
     public GameObject PlayerChar;
 
-    public selectionUIManager_D1의뢰자의집 selectionUIManager;
+    public selectionUIManager_D1바 selectionUIManager;
     public bool isDialogON = false;
     [SerializeField] GameObject go_dialogBar;
     [SerializeField] GameObject go_dialogNameBar;
@@ -304,6 +304,7 @@ public class DialogManager_D1의뢰자의집 : MonoBehaviour
     public GameObject 정보플로팅위치;
     void EndDialog()
     {
+  
         DeleteChilds(정보플로팅위치);
         DataBaseManager.대화창켜짐 = false;
         DataBaseManager.판정창여부 = false;
@@ -388,14 +389,10 @@ public class DialogManager_D1의뢰자의집 : MonoBehaviour
                     {
                         if (t_ReplaceText[i + 2] == '●')
                         {
-                            if (t_ReplaceText[i + 3] == '하')
+                            if (t_ReplaceText[i + 3] == '해')
                             {
-                                if(DataBaseManager.하수도괴담정보1 == false)
-                                {
-                                    DataBaseManager.하수도괴담정보1 = true;
-                                    정보창매니저.하수도의괴담추가();
-                                }
-
+                                DataBaseManager.하수도노동자정보1 = true;
+                                정보창매니저.하수도노동자정보1추가();
 
 
                             }
@@ -423,10 +420,10 @@ public class DialogManager_D1의뢰자의집 : MonoBehaviour
                     {
                         if (t_ReplaceText[i + 2] == '●')
                         {
-                            if (t_ReplaceText[i + 3] == '병')
+                            if (t_ReplaceText[i + 3] == '하')
                             {
-                                DataBaseManager.병원정보1 = true;
-                                //정보창매니저.병원정보추가();
+                                DataBaseManager.하수정비사무소정보1 = true;
+                                정보창매니저.하수정비사무소정보추가1();
                             }
                             if (t_ReplaceText[i + 3] == '서')
                             {
@@ -453,10 +450,10 @@ public class DialogManager_D1의뢰자의집 : MonoBehaviour
                     {
                         if (t_ReplaceText[i + 2] == '●')
                         {
-                            if (t_ReplaceText[i + 3] == '엘')
+                            if (t_ReplaceText[i + 3] == '교')
                             {
-                                DataBaseManager.엘라정보1 = true;
-                                정보창매니저.엘라정보추가();
+                                DataBaseManager.노교수정보1 = true;
+                                정보창매니저.노교수정보추가1();
                             }
                             if (t_ReplaceText[i + 3] == '에')
                             {

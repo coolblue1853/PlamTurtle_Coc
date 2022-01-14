@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class DataBaseManager : MonoBehaviour
 {
+    public static bool 아침사무소연출 = false;
+
     public static string 키워드주제 = "";
     public static string 키워드상위 = "";
     public static string 키워드하위 = "";

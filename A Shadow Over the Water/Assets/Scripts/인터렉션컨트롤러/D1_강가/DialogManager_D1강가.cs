@@ -114,7 +114,7 @@ public class DialogManager_D1강가 : MonoBehaviour
             if (isNext)
             {
 
-                if (Input.GetKeyDown(KeyCode.E) && isSelectButton == false && DataBaseManager.연출진행중 == false)
+                if (Input.GetKeyDown(KeyCode.E) && isSelectButton == false && DataBaseManager.연출진행중 == false && DataBaseManager.옵션창여부 == false)
                 {
                     z키로넘기기여부2 = false;
                     z키로넘기기여부 = false;

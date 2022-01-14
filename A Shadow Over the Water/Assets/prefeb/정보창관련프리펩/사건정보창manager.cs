@@ -1538,7 +1538,7 @@ public class 사건정보창manager : MonoBehaviour
         {
             하수도노동자정보1획득 = true;
             var clone = Instantiate(정보프리팹);
-            clone.GetComponent<Text>().text = "<하수도노동자 정보1>";
+            clone.GetComponent<Text>().text = " <size=20>< 하수도노동자의 부당해고 ></size> \n최근들어 하수도 노동자들이 부당해고 당하는 일이 발생했다고 한다.\n대체 인력으로 채워졌다는데 힘든 직업 상황상 드문 일이라고.";
             clone.transform.SetParent(하수도노동자정보컨텐츠.transform);
             clone.transform.localScale = new Vector3(1, 1, 1);
         }

@@ -14707,6 +14707,22 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 328315610}
+    - target: {fileID: 1548278141, guid: 0e5a0df3c113fd145b69cc656f6b9c41, type: 3}
+      propertyPath: "\uB300\uD654\uCC3D1"
+      value: 
+      objectReference: {fileID: 4000467346828550849}
+    - target: {fileID: 1548278141, guid: 0e5a0df3c113fd145b69cc656f6b9c41, type: 3}
+      propertyPath: "\uB300\uD654\uCC3D2"
+      value: 
+      objectReference: {fileID: 4000467347178541506}
+    - target: {fileID: 1668974955, guid: 0e5a0df3c113fd145b69cc656f6b9c41, type: 3}
+      propertyPath: "\uB300\uD654\uCC3D1"
+      value: 
+      objectReference: {fileID: 4000467346828550849}
+    - target: {fileID: 1668974955, guid: 0e5a0df3c113fd145b69cc656f6b9c41, type: 3}
+      propertyPath: "\uB300\uD654\uCC3D2"
+      value: 
+      objectReference: {fileID: 4000467347178541506}
     - target: {fileID: 1672627339, guid: 0e5a0df3c113fd145b69cc656f6b9c41, type: 3}
       propertyPath: PlayerChar
       value: 

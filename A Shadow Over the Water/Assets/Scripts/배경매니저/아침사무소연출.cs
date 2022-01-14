@@ -149,12 +149,19 @@ public class 아침사무소연출 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DataBaseManager.연출진행중 = true;
-        투명.a = 0;
-        원래컬러 = 주인공캐릭터스프라이트랜더러.color;
-        주인공캐릭터스프라이트랜더러.color = 투명;
-        DataBaseManager.연출중움직임제한 = true;
+        if(DataBaseManager.시간대 == 1)
+        {
+            DataBaseManager.연출진행중 = true;
+            투명.a = 0;
+            원래컬러 = 주인공캐릭터스프라이트랜더러.color;
+            주인공캐릭터스프라이트랜더러.color = 투명;
+            DataBaseManager.연출중움직임제한 = true;
+        }
 
+        else
+        {
+            주인공의자신문유.SetActive(false);
+        }
 
     }
     void Update()

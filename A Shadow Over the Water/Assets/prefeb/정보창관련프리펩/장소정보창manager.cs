@@ -2053,7 +2053,7 @@ public class 장소정보창manager : MonoBehaviour
         {
             하수정비사무소정보1획득 = true;
             var clone = Instantiate(정보프리팹);
-            clone.GetComponent<Text>().text = "<하수정비사무소 정보1>";
+            clone.GetComponent<Text>().text = " <size=20>< 하수정비사무소의 위치 ></size> \n하수정비사무소는 강가 근처에 있다고 한다.";
             clone.transform.SetParent(하수정비사무소정보컨텐츠.transform);
         }
         if (DataBaseManager.하수정비사무소정보2 == true && 하수정비사무소정보2획득 == false)

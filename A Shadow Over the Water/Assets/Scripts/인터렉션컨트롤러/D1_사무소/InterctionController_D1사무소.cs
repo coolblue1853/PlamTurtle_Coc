@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InterctionController_D1사무소 : MonoBehaviour
 {
@@ -74,8 +75,26 @@ public class InterctionController_D1사무소 : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(startNaertion());
+
+        if (DataBaseManager.시간대 == 1)
+        {
+
+            StartCoroutine(startNaertion());
+        }
     }
+
+
+    void OnEnable()
+    {
+
+    }
+
+    // 체인을 걸어서 이 함수는 매 씬마다 호출된다.
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+
+    }
+
     void Update()
     {
 

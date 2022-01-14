@@ -352,11 +352,13 @@ public class 키워드매니저 : MonoBehaviour
     bool 비릿한냄새리스트추가여부 = false;
     bool 강의수질추가여부 = false;
     bool 섬뜩한눈추가여부 = false;
+    bool 부당해고추가여부 = false;
     //장소
     bool 병원추가여부 = false;
     bool 의뢰자의집추가여부 = false;
     bool 신문사추가여부 = false;
     bool 강가추가여부 = false;
+    bool 하수정비사무소추가여부 = false;
     //인물
     bool 에이든추가여부 = false;
     bool 엘라추가여부 = false;
@@ -455,6 +457,14 @@ public class 키워드매니저 : MonoBehaviour
                 상위사건키워드리스트.Add("하수도의 섬뜩한 눈");
             }
         }
+        if (부당해고추가여부 == false)
+        {
+            if (DataBaseManager.하수도노동자정보1 == true || DataBaseManager.하수도노동자정보2 == true || DataBaseManager.하수도노동자정보3 == true || DataBaseManager.하수도노동자정보4 == true || DataBaseManager.하수도노동자정보5 == true || DataBaseManager.하수도노동자정보6 == true)
+            {
+                부당해고추가여부 = true;
+                상위사건키워드리스트.Add("하수도 노동자");
+            }
+        }
         //장소
         if (병원추가여부 == false)
         {
@@ -488,7 +498,14 @@ public class 키워드매니저 : MonoBehaviour
                 상위장소키워드리스트.Add("미스캐토닉 강");
             }
         }
-
+        if (하수정비사무소추가여부 == false)
+        {
+            if (DataBaseManager.하수정비사무소정보1 == true || DataBaseManager.하수정비사무소정보2 == true || DataBaseManager.하수정비사무소정보3 == true || DataBaseManager.하수정비사무소정보4 == true || DataBaseManager.하수정비사무소정보5 == true || DataBaseManager.하수정비사무소정보6 == true)
+            {
+                하수정비사무소추가여부 = true;
+                상위장소키워드리스트.Add("하수정비사무소");
+            }
+        }
 
 
 
@@ -566,6 +583,10 @@ public class 키워드매니저 : MonoBehaviour
     List<string> 섬뜩한눈리스트 = new List<string>();//string들어가야하고
     int 섬뜩한눈키워드개수 = 0;
     int 섬뜩한눈키워드넘버 = 0;
+
+    List<string> 부당해고리스트 = new List<string>();//string들어가야하고
+    int 부당해고키워드개수 = 0;
+    int 부당해고키워드넘버 = 0;
     //사건
     bool 행성대직렬정보1추가여부 = false;
     bool 악몽정보1추가여부 = false;
@@ -581,6 +602,7 @@ public class 키워드매니저 : MonoBehaviour
     bool 비릿한냄새정보1추가여부 = false;
     bool 강의수질정보1추가여부 = false;
     bool 섬뜩한눈정보1추가여부 = false;
+    bool 부당해고정보1추가여부 = false;
     // ------------------------------- 인물하위
     List<string> 에이든리스트 = new List<string>();//string들어가야하고
     int 에이든키워드개수 = 0;
@@ -618,11 +640,16 @@ public class 키워드매니저 : MonoBehaviour
     List<string> 강가리스트 = new List<string>();//string들어가야하고
     int 강가키워드개수 = 0;
     int 강가키워드넘버 = 0;
+
+    List<string> 하수정비사무소리스트 = new List<string>();//string들어가야하고
+    int 하수정비사무소키워드개수 = 0;
+    int 하수정비사무소키워드넘버 = 0;
     //사건
     bool 병원정보1추가여부 = false;
     bool 신문사정보1추가여부 = false;
     bool 의뢰자의집정보1추가여부 = false;
     bool 강가정보1추가여부 = false;
+    bool 하수정비사무소정보1추가여부 = false;
     public void 하위키워드업데이터()
     {        
 
@@ -635,6 +662,7 @@ public class 키워드매니저 : MonoBehaviour
         비릿한냄새키워드개수 = 비릿한냄새리스트.Count - 1;
         강의수질키워드개수 = 강의수질리스트.Count - 1;
         섬뜩한눈키워드개수 = 섬뜩한눈리스트.Count - 1;
+        부당해고키워드개수 = 부당해고리스트.Count - 1;
 
         엘라키워드개수 = 엘라리스트.Count - 1;
         에이든키워드개수 = 에이든리스트.Count - 1;
@@ -645,6 +673,7 @@ public class 키워드매니저 : MonoBehaviour
         의뢰자의집키워드개수 = 의뢰자의집리스트.Count - 1;
         신문사키워드개수 = 신문사리스트.Count - 1;
         강가키워드개수 = 강가리스트.Count - 1;
+        하수정비사무소키워드개수 = 하수정비사무소리스트.Count - 1;
 
 
         // 사건 
@@ -784,6 +813,18 @@ public class 키워드매니저 : MonoBehaviour
             섬뜩한눈정보1추가여부 = true;
             섬뜩한눈리스트.Add("하수도의 섬뜩한 눈");
         }
+
+        // 부당해고
+        else if (DataBaseManager.키워드상위 == "하수도 노동자" && 부당해고키워드개수 >= 0)
+        {
+            DataBaseManager.키워드하위 = 부당해고리스트[부당해고키워드넘버];
+        }
+
+        if (DataBaseManager.하수도노동자정보1 == true && 부당해고정보1추가여부 == false)
+        {
+            부당해고정보1추가여부 = true;
+            부당해고리스트.Add("하수도노동자의 부당해고");
+        }
         // 인물
 
         // 에이든
@@ -887,7 +928,16 @@ public class 키워드매니저 : MonoBehaviour
             강가정보1추가여부 = true;
             강가리스트.Add("강과 교수");
         }
-
+        // 하수정비사무소
+        if (DataBaseManager.키워드상위 == "하수정비사무소" && 하수정비사무소키워드개수 >= 0)
+        {
+            DataBaseManager.키워드하위 = 하수정비사무소리스트[하수정비사무소키워드넘버];
+        }
+        if (DataBaseManager.하수정비사무소정보1 == true && 하수정비사무소정보1추가여부 == false)
+        {
+            하수정비사무소정보1추가여부 = true;
+            하수정비사무소리스트.Add("하수정비사무소의 위치");
+        }
     }
 
     // Start is called before the first frame update

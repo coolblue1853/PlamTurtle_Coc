@@ -37,7 +37,7 @@ public class 시간_배경매니저_강가 : MonoBehaviour
     {
 
 
-        if (DataBaseManager.시간대 == 3)
+        if (DataBaseManager.시간대 == 3 && DataBaseManager.시간대 == 4)
         {
             노교수오브젝트.SetActive(false);
         }
